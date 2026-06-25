@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supported Formats — Raza Photos</title>
+    <meta name="description" content="Raza Photos supports every image and video format Apple's frameworks recognise — including HEIC, JPEG, PNG, AVIF, ProRes, HEVC, HDR with gain maps, and Live Photos.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Format grid ── */
+        .format-section { margin-bottom: 52px; }
+
+        .format-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .format-section .desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .format-card {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 16px 18px;
+            border: 1px solid var(--border);
+        }
+
+        .format-card strong {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            margin-bottom: 4px;
+        }
+
+        .format-card span {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            display: block;
+        }
+
+        .format-card.highlight {
+            border-color: var(--blue);
+            background: rgba(26,143,255,0.04);
+        }
+
+        .format-card.limited strong { color: var(--orange); }
+        .format-card.limited { border-color: var(--orange); background: rgba(255,159,10,0.04); }
+
+        hr { margin: 52px 0; }
+
+        /* ── Callout ── */
+        .callout {
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin: 20px 0;
+        }
+
+        .callout-blue {
+            background: rgba(26,143,255,0.06);
+            border: 1.5px solid rgba(26,143,255,0.2);
+        }
+
+        .callout-orange {
+            background: rgba(255,159,10,0.07);
+            border: 1.5px solid rgba(255,159,10,0.3);
+        }
+
+        .callout-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .callout-blue .callout-label { color: var(--blue); }
+        .callout-orange .callout-label { color: var(--orange); }
+
+        .callout p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── HDR gain map explainer ── */
+        .hdr-card {
+            background: var(--text);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            margin: 20px 0;
+        }
+
+        .hdr-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .hdr-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .hdr-card p:last-child { margin-bottom: 0; }
+        .hdr-card strong { color: #fff; }
+
+        /* ── Live Photo flow ── */
+        .live-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .live-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 22px 26px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .live-step:last-child { border-bottom: none; }
+
+        .live-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+            width: 40px;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        .live-step h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .live-step p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            .hdr-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero-page">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Supported formats</span>
+        <h1>If your iPhone can open it,<br>Raza Photos can too.</h1>
+        <p>Raza Photos uses Apple's own frameworks to read and display images and videos. The supported format list is Apple's, not ours — which means it stays current as Apple adds new formats.</p>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="format-section">
+        <h2>Photos</h2>
+        <p class="desc">Any file that Apple's system recognises as an image is accepted. In practice, that means every format your iPhone camera produces and every format Photos.app can open.</p>
+        <div class="format-grid">
+            <div class="format-card highlight">
+                <strong>HEIC / HEIF</strong>
+                <span>Apple's default photo format since iPhone 7. Efficient, high quality, full HDR support.</span>
+            </div>
+            <div class="format-card highlight">
+                <strong>JPEG</strong>
+                <span>The universal standard. Every camera, every phone, every decade.</span>
+            </div>
+            <div class="format-card">
+                <strong>PNG</strong>
+                <span>Lossless, with transparency. Screenshots and graphics.</span>
+            </div>
+            <div class="format-card">
+                <strong>TIFF</strong>
+                <span>Professional archival format, full metadata support.</span>
+            </div>
+            <div class="format-card">
+                <strong>PSD</strong>
+                <span>Photoshop documents. Metadata is read and written.</span>
+            </div>
+            <div class="format-card">
+                <strong>AVIF</strong>
+                <span>Next-generation format. Read support — metadata changes are stored in the library.</span>
+            </div>
+            <div class="format-card">
+                <strong>WebP</strong>
+                <span>Google's modern format, supported on macOS Ventura and iOS 14 and later.</span>
+            </div>
+            <div class="format-card">
+                <strong>GIF</strong>
+                <span>Static and animated. Shown as a still frame.</span>
+            </div>
+            <div class="format-card">
+                <strong>JPEG 2000</strong>
+                <span>Legacy high-quality format used in some professional workflows.</span>
+            </div>
+            <div class="format-card">
+                <strong>BMP</strong>
+                <span>Windows bitmap format, read as a regular image.</span>
+            </div>
+        </div>
+
+        <div class="callout callout-blue" style="margin-top: 20px;">
+            <span class="callout-label">What about RAW?</span>
+            <p>RAW formats from cameras (DNG, CR2, ARW, NEF, and others) are not supported. Raza Photos is built around your photo library — the kind of files your iPhone and Photos.app produce — not a professional RAW workflow.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="format-section">
+        <h2>Videos</h2>
+        <p class="desc">Raza Photos plays the videos that come from your camera roll. It uses Apple's AVFoundation framework directly, so any format your iPhone records or your Apple device natively supports will play correctly.</p>
+        <div class="format-grid">
+            <div class="format-card highlight">
+                <strong>MOV</strong>
+                <span>Apple's QuickTime container. Used by iPhones and Macs for recorded video.</span>
+            </div>
+            <div class="format-card highlight">
+                <strong>MP4</strong>
+                <span>The universal video standard. Works everywhere, plays natively.</span>
+            </div>
+            <div class="format-card">
+                <strong>M4V</strong>
+                <span>Apple's iTunes video container.</span>
+            </div>
+            <div class="format-card">
+                <strong>HEVC / H.265</strong>
+                <span>Apple's efficient codec for 4K and HDR video. Used on all modern iPhones.</span>
+            </div>
+            <div class="format-card">
+                <strong>H.264</strong>
+                <span>The workhorse codec. Compatible with everything.</span>
+            </div>
+            <div class="format-card">
+                <strong>ProRes</strong>
+                <span>Apple's professional lossless codec. Supported on iPhone 13 Pro and later.</span>
+            </div>
+        </div>
+
+        <div class="callout callout-orange" style="margin-top: 20px;">
+            <span class="callout-label">This is not a movie player</span>
+            <p>Raza Photos is a photo library app that also handles your camera roll videos. It will not open MKV, AVI, WMV, or other formats associated with downloaded movies or video editing. If a format is not natively supported by Apple's frameworks, it will not play.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="format-section">
+        <h2>HDR — photos and video</h2>
+        <p class="desc">Raza Photos renders HDR content using Apple's native display pipeline. On supported displays — iPhone 12 and later, MacBook Pro with Liquid Retina XDR, Pro Display XDR — photos and videos appear with the full brightness and colour range they were captured in.</p>
+
+        <div class="hdr-card">
+            <h3>How gain maps work</h3>
+            <p>Most HDR photos are not actually stored in HDR. They contain a standard SDR image — which looks correct on every screen — plus a hidden <strong>gain map</strong> attached to the same file. The gain map is a set of instructions that tells a capable display how to boost specific areas to full HDR brightness.</p>
+            <p>On a standard display, the SDR image is shown and the gain map is ignored. On an HDR-capable display, the gain map is applied on top of the SDR image, and the photo lights up the way it looked when you took it.</p>
+            <p>Raza Photos passes the complete file — gain map included — directly to Apple's display framework. Nothing is decoded or composited by us. The display does the work.</p>
+        </div>
+
+        <div class="format-grid" style="margin-top: 16px;">
+            <div class="format-card highlight">
+                <strong>Apple Adaptive HDR</strong>
+                <span>HEIC files with an embedded Apple gain map. Every photo taken on iPhone 12 and later.</span>
+            </div>
+            <div class="format-card highlight">
+                <strong>Ultra HDR JPEG</strong>
+                <span>JPEG files with an ISO 21496-1 gain map. Produced by iPhone cameras since iOS 17.</span>
+            </div>
+            <div class="format-card">
+                <strong>Dolby Vision</strong>
+                <span>Dynamic HDR metadata in MOV and MP4 video. Shot on iPhone 12 Pro and later.</span>
+            </div>
+            <div class="format-card">
+                <strong>HDR10</strong>
+                <span>Static HDR metadata in video files.</span>
+            </div>
+            <div class="format-card">
+                <strong>HLG</strong>
+                <span>Hybrid Log-Gamma, used in broadcast HDR video.</span>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="format-section">
+        <h2>Live Photos</h2>
+        <p class="desc">Live Photos are not really a file format. They are two files — a still image and a short video clip — that belong together. Here is how that works in practice.</p>
+
+        <div class="callout callout-blue">
+            <span class="callout-label">What a Live Photo actually is</span>
+            <p>When you take a Live Photo, your iPhone captures 1.5 seconds of video before and after the shutter moment, alongside the still image. Inside Apple Photos, you see one item. On disk, it is always two separate files: a HEIC for the still and a MOV for the motion. They are linked by a shared identifier hidden in the metadata of both files.</p>
+        </div>
+
+        <p class="desc" style="margin-top: 20px; margin-bottom: 16px;">To get Live Photos out of Apple Photos with the link intact, you need to export using <strong>File → Export Unmodified Originals</strong>. This preserves the metadata identifier that connects the two files. A regular export will produce just the still image.</p>
+
+        <div class="live-flow">
+            <div class="live-step">
+                <div class="live-icon">📷</div>
+                <div>
+                    <h3>You export from Apple Photos</h3>
+                    <p>Using File → Export Unmodified Originals. For each Live Photo, you get two files in the same folder: <code style="font-size:13px; background:var(--bg-alt); padding:1px 5px; border-radius:4px;">IMG_1234.HEIC</code> and <code style="font-size:13px; background:var(--bg-alt); padding:1px 5px; border-radius:4px;">IMG_1234.MOV</code>.</p>
+                </div>
+            </div>
+            <div class="live-step">
+                <div class="live-icon">🔍</div>
+                <div>
+                    <h3>Raza Photos reads both files</h3>
+                    <p>When it imports the folder, it reads the shared Live Photo identifier from the HEIC's Apple MakerNote metadata and from the MOV's QuickTime metadata. Files with a matching identifier are recognised as a pair.</p>
+                </div>
+            </div>
+            <div class="live-step">
+                <div class="live-icon">🔗</div>
+                <div>
+                    <h3>The pair is linked automatically</h3>
+                    <p>The MOV disappears from your grid — it is not shown as a separate video. Instead, the HEIC entry becomes a Live Photo. The motion plays when you tap or hover, exactly as it does in Apple Photos.</p>
+                </div>
+            </div>
+            <div class="live-step">
+                <div class="live-icon">✅</div>
+                <div>
+                    <h3>Nothing to configure</h3>
+                    <p>No special folder structure, no naming convention. As long as both files are in the same imported folder and the metadata identifier is intact, the pairing is automatic.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="callout callout-orange" style="margin-top: 4px;">
+            <span class="callout-label">If the live photo plays as a still</span>
+            <p>This usually means the MOV companion file is missing. It can happen if you copied only the HEIC from Apple Photos, or exported using a format other than Unmodified Original. Re-export using File → Export Unmodified Originals and import again.</p>
+        </div>
+    </div>
+
+    <div class="other-links">
+        <a href="metadata-read.html" class="link-card">
+            <span class="label">Metadata</span>
+            <strong>What Raza Photos reads</strong>
+            <span>EXIF, IPTC, XMP, Apple MakerNote, and more</span>
+        </a>
+        <a href="metadata-write.html" class="link-card">
+            <span class="label">Metadata</span>
+            <strong>What Raza Photos writes</strong>
+            <span>Non-destructive, pixel-safe metadata saves</span>
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos">
+        <span>Raza Photos</span>
+    </div>
+    <ul class="footer-links">
+        <li><a href="mailto:razaphotos@outlook.com">Support</a></li>
+        <li><a href="metadata-read.html">Metadata reading</a></li>
+        <li><a href="metadata-write.html">Metadata writing</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+    <p class="footer-note">This website uses no cookies and collects no data from visitors.</p>
+</footer>
+
+</body>
+</html>
