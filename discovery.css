@@ -1,0 +1,164 @@
+/* ── Analogy card ── */
+.analogy {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin: 20px 0;
+    border-left: 4px solid var(--blue);
+}
+
+.analogy .analogy-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--blue);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.analogy p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0 !important;
+}
+
+/* ── Step flow ── */
+.flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.flow-step:last-child { border-bottom: none; }
+
+.flow-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    width: 44px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.flow-step h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.flow-step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0 !important;
+}
+
+/* ── You already know this ── */
+.familiar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.familiar-card {
+    background: var(--bg-alt);
+    border-radius: 12px;
+    padding: 18px 16px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.familiar-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+
+.familiar-card strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.familiar-card span { font-size: 12px; color: var(--text-secondary); line-height: 1.4; display: block; }
+
+/* ── Highlight ── */
+.highlight-box {
+    background: var(--text);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    margin: 24px 0;
+}
+
+.highlight-box p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+.highlight-box p:last-child { margin-bottom: 0; }
+.highlight-box strong { color: #fff; }
+
+/* ── Q&A ── */
+.qa { margin: 24px 0; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+
+.qa-item { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+.qa-item:last-child { border-bottom: none; }
+
+.qa-item h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.qa-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 0 !important;
+}
+
+/* ── Permission note ── */
+.permission-note {
+    background: rgba(26,143,255,0.06);
+    border: 1.5px solid rgba(26,143,255,0.2);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin: 20px 0;
+}
+
+.permission-note .perm-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--blue);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.permission-note p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .highlight-box { padding: 24px; }
+}
