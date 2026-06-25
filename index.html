@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raza Photos — Your photo library, on every Apple device at home</title>
+    <meta name="description" content="Browse your Mac photo library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #1a8fff;
+            --blue-dark: #0070e0;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg: #ffffff;
+            --bg-alt: #f5f5f7;
+            --border: #d2d2d7;
+            --radius: 18px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Nav ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
+
+        .nav-brand span { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 20px;
+            border-radius: 980px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary { background: var(--blue); color: #fff; }
+        .btn-primary:hover { background: var(--blue-dark); }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--blue);
+            border: 1.5px solid var(--blue);
+        }
+        .btn-outline:hover { background: var(--blue); color: #fff; }
+
+        /* ── Hero ── */
+        .hero {
+            text-align: center;
+            padding: 80px 24px 0;
+            overflow: hidden;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            max-width: 820px;
+            margin: 0 auto 24px;
+        }
+
+        .hero h1 span { color: var(--blue); }
+
+        .hero p {
+            font-size: clamp(17px, 2vw, 21px);
+            color: var(--text-secondary);
+            max-width: 580px;
+            margin: 0 auto 40px;
+            line-height: 1.55;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 64px;
+        }
+
+        .hero-actions .btn { font-size: 16px; padding: 13px 28px; }
+
+        .hero-image { max-width: 1000px; margin: 0 auto; }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.15));
+        }
+
+        /* ── Section ── */
+        section { padding: 96px 24px; }
+
+        .section-inner { max-width: 1040px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 560px;
+            line-height: 1.55;
+        }
+
+        /* ── How it works ── */
+        .how { background: var(--bg-alt); }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 56px;
+        }
+
+        .step {
+            background: var(--bg);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            border: 1px solid var(--border);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .step h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; }
+        .step p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* ── Features ── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px;
+            margin-top: 56px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .feature {
+            background: var(--bg);
+            padding: 36px 32px;
+            border: 1px solid var(--border);
+            margin: -1px;
+        }
+
+        .feature-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+        .feature h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+        .feature p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* ── Feature showcase ── */
+        .showcase { background: var(--bg); }
+
+        .showcase-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            padding: 72px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .showcase-item:last-child { border-bottom: none; }
+        .showcase-item.reverse { direction: rtl; }
+        .showcase-item.reverse > * { direction: ltr; }
+
+        .showcase-text .section-label { margin-bottom: 10px; }
+
+        .showcase-text h3 {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        .showcase-text p { font-size: 16px; color: var(--text-secondary); line-height: 1.65; }
+
+        .showcase-text ul {
+            list-style: none;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .showcase-text ul li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .showcase-text ul li::before {
+            content: '→';
+            color: var(--blue);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .showcase-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            filter: drop-shadow(0 16px 40px rgba(0,0,0,0.13));
+            display: block;
+            transition: opacity 0.2s;
+        }
+
+        .showcase-image.is-iphone img {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* ── Device picker ── */
+        .device-picker {
+            display: flex;
+            gap: 6px;
+            margin-top: 16px;
+            justify-content: center;
+        }
+
+        .device-btn {
+            padding: 5px 14px;
+            border-radius: 980px;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.15s;
+            font-family: inherit;
+        }
+
+        .device-btn.active,
+        .device-btn:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            background: rgba(26,143,255,0.07);
+        }
+
+        /* ── Metadata ── */
+        .metadata-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 640px) { .metadata-cols { grid-template-columns: 1fr; } }
+
+        .metadata-card {
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            padding: 32px;
+            border: 1px solid var(--border);
+        }
+
+        .metadata-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.01em; }
+
+        .metadata-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+        .metadata-list li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .metadata-list li::before {
+            content: '✓';
+            color: var(--blue);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .metadata-formats { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(26,143,255,0.08);
+            color: var(--blue);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        /* ── Privacy ── */
+        .privacy { background: var(--text); color: #fff; }
+        .privacy .section-label { color: #63c5ff; }
+        .privacy .section-title { color: #fff; }
+        .privacy .section-sub { color: rgba(255,255,255,0.6); }
+
+        .privacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 56px;
+        }
+
+        .privacy-item {
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .privacy-item .icon { font-size: 28px; margin-bottom: 14px; display: block; }
+        .privacy-item h3 { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+        .privacy-item p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* ── Pricing ── */
+        .pricing { background: var(--bg-alt); text-align: center; }
+
+        .price-card {
+            background: var(--bg);
+            border-radius: var(--radius);
+            padding: 56px 48px;
+            max-width: 460px;
+            margin: 48px auto 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .price-amount { font-size: 56px; font-weight: 700; letter-spacing: -0.04em; margin-bottom: 4px; }
+        .price-amount sup { font-size: 28px; vertical-align: super; letter-spacing: 0; }
+        .price-label { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; }
+
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .price-features li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-features li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+        .price-note { font-size: 13px; color: var(--text-secondary); margin-top: 20px; }
+
+        /* ── Footer ── */
+        footer {
+            padding: 48px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-brand { display: flex; align-items: center; gap: 10px; }
+        .footer-brand img { width: 24px; height: 24px; border-radius: 6px; }
+        .footer-brand span { font-size: 14px; font-weight: 600; }
+
+        .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--text); }
+        .footer-copy { font-size: 13px; color: var(--text-secondary); }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            nav { padding: 0 16px; }
+            .nav-links { display: none; }
+            section { padding: 64px 20px; }
+            .hero { padding: 56px 20px 0; }
+            footer { flex-direction: column; align-items: flex-start; }
+            .showcase-item, .showcase-item.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+                gap: 24px;
+                padding: 48px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+    <a href="#" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#showcase">See it in action</a></li>
+        <li><a href="#metadata">Metadata</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="mailto:razaphotos@outlook.com">Support</a></li>
+    </ul>
+    <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn btn-primary">Download Free</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <span class="hero-eyebrow">For Mac, iPhone &amp; iPad</span>
+    <h1>Your photos, on every Apple device at home. <span>No cloud required.</span></h1>
+    <p>Import your photo folders on Mac. Open Raza Photos on any iPhone or iPad in the house. Your library is just there — no IP address, no account, no setup.</p>
+    <div class="hero-actions">
+        <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+        </a>
+        <a href="#features" class="btn btn-outline">See features</a>
+    </div>
+    <div class="hero-image">
+        <img src="assets/all-devices.jpg" alt="Raza Photos running on Mac, iPad, and iPhone">
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="how" id="how">
+    <div class="section-inner">
+        <div class="section-label">How it works</div>
+        <h2 class="section-title">Three steps.<br>Then you're done forever.</h2>
+        <p class="section-sub">No maintenance, no updates to a server, no VPN to configure. Set it up once and forget about it.</p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Import on Mac</h3>
+                <p>Point Raza Photos at your photo folders. It indexes the metadata and leaves every file exactly where it is — nothing moves, nothing is copied.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Your Mac advertises itself</h3>
+                <p>Using Bonjour, your Mac quietly announces the library on your local network. No ports to open. No router settings. Nothing to configure. <a href="discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">How does that work? →</a></p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Open and browse</h3>
+                <p>On any iPhone, iPad, or other Mac in the house, open Raza Photos. The library is just there. If you have multiple Macs, all libraries appear merged into one.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section id="features">
+    <div class="section-inner">
+        <div class="section-label">Features</div>
+        <h2 class="section-title">Everything you'd expect.<br>None of what you don't.</h2>
+        <p class="section-sub">Built from scratch in Swift 6 for the latest Apple platforms — native, fast, and designed to fit right in.</p>
+        <div class="features-grid">
+            <div class="feature">
+                <span class="feature-icon">📅</span>
+                <h3>Browse by date, place, people, albums &amp; events</h3>
+                <p>Your library organized the way you think about it — filter by year, location, faces, custom albums, or travel events. All from the sidebar.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🗺</span>
+                <h3>Map view</h3>
+                <p>See where every photo was taken on a map. Add or correct countries and cities from your iPhone using reverse geocoding — all processed locally on-device.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">👤</span>
+                <h3>Local face detection</h3>
+                <p>Faces are detected and grouped entirely on your device. No photo ever leaves your home network for recognition — not even for a moment.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📸</span>
+                <h3>Burst photos with natural navigation</h3>
+                <p>Burst sequences are grouped automatically. Scroll vertically to move through the burst frame by frame. Scroll horizontally to continue through your timeline.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✨</span>
+                <h3>HDR &amp; Live Photos</h3>
+                <p>Full HDR rendering with gain map support, and Live Photos that play just as they would in Photos.app — because this is a native app, not a browser.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">✏️</span>
+                <h3>Edit metadata from your iPhone</h3>
+                <p>Fix a date, assign a location, tag a person — from the couch, on your phone. Changes write back to the original files as XMP/EXIF without touching a single pixel.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🖥</span>
+                <h3>Multiple libraries, one view</h3>
+                <p>Got photos on two Macs? Both are discovered automatically and shown as a single unified, deduplicated library. No merging, no copying.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <h3>Server on demand</h3>
+                <p>Start or stop sharing your library whenever you want. When the server is off, the app works as a local viewer on your Mac alone.</p>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📦</span>
+                <h3>Your files, your format</h3>
+                <p>Supports JPEG, HEIC, PNG, TIFF, PSD, and AVIF. Metadata exports to open standards so you can move your library to any other app, anytime.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Feature showcase -->
+<section class="showcase" id="showcase">
+    <div class="section-inner">
+
+        <div class="showcase-item">
+            <div class="showcase-text">
+                <div class="section-label">Map view</div>
+                <h3>See exactly where every memory was made.</h3>
+                <p>Switch from grid to map and your photos appear as pins on an Apple Maps canvas. Tap a cluster to zoom in. Filter by country, city, or event and the map updates instantly.</p>
+                <ul>
+                    <li>Apple Maps integration, fully native</li>
+                    <li>Photo thumbnails shown directly on the map</li>
+                    <li>Works with your existing GPS data</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img class="platform-img"
+                     data-mac="assets/mac-map.jpg"
+                     data-ipad="assets/ipad-map.jpg"
+                     data-iphone="assets/iphone-map.jpg"
+                     src="assets/mac-map.jpg"
+                     alt="Raza Photos map view">
+                <div class="device-picker">
+                    <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                    <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                    <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-item reverse">
+            <div class="showcase-text">
+                <div class="section-label">Organize</div>
+                <h3>Edit dates, locations, albums and people — right from the grid.</h3>
+                <p>Select one photo or a hundred, then change their metadata in one action. Changes are queued and written back to the original files when you're ready.</p>
+                <ul>
+                    <li>Change date, location, album, person, or event</li>
+                    <li>Batch editing across any selection</li>
+                    <li>Writes to XMP/EXIF — compatible with any app</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img class="platform-img"
+                     data-mac="assets/mac-edit-menu.jpg"
+                     data-ipad="assets/ipad-edit-menu.jpg"
+                     data-iphone="assets/iphone-edit-menu.jpg"
+                     src="assets/mac-edit-menu.jpg"
+                     alt="Raza Photos batch editing menu">
+                <div class="device-picker">
+                    <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                    <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                    <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-item">
+            <div class="showcase-text">
+                <div class="section-label">Photo viewer</div>
+                <h3>Immersive viewing with location context.</h3>
+                <p>Open any photo into a full-screen viewer. The location is shown subtly in the corner — always present, never in the way. HDR and Live Photos are rendered natively.</p>
+                <ul>
+                    <li>Full-screen, distraction-free viewing</li>
+                    <li>Location badge from GPS metadata</li>
+                    <li>HDR and Live Photos rendered natively</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img class="platform-img"
+                     data-mac="assets/mac-viewer.jpg"
+                     data-ipad="assets/ipad-viewer.jpg"
+                     data-iphone="assets/iphone-viewer.jpg"
+                     src="assets/mac-viewer.jpg"
+                     alt="Raza Photos full-screen photo viewer">
+                <div class="device-picker">
+                    <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                    <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                    <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-item reverse">
+            <div class="showcase-text">
+                <div class="section-label">Fix location data</div>
+                <h3>Drop a pin to correct where a photo was taken.</h3>
+                <p>Photos without GPS, or with wrong coordinates, can be fixed by dragging a pin on a map. The new location is reverse-geocoded on-device and saved back to the file.</p>
+                <ul>
+                    <li>Interactive pin drag — no coordinates to type</li>
+                    <li>Reverse geocoding runs entirely on-device</li>
+                    <li>Works on photos that never had GPS data</li>
+                </ul>
+            </div>
+            <div class="showcase-image">
+                <img class="platform-img"
+                     data-mac="assets/mac-change-place.jpg"
+                     data-ipad="assets/ipad-change-place.jpg"
+                     data-iphone="assets/iphone-change-place.jpg"
+                     src="assets/mac-change-place.jpg"
+                     alt="Raza Photos Change Place dialog">
+                <div class="device-picker">
+                    <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                    <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                    <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Metadata -->
+<section id="metadata">
+    <div class="section-inner">
+        <div class="section-label">Metadata</div>
+        <h2 class="section-title">Your data stays portable.</h2>
+        <p class="section-sub">Raza Photos reads from seven metadata standards and writes back to open formats — so nothing is locked in, ever. <a href="metadata-read.html" style="color:var(--blue);text-decoration:none;font-weight:500;">Full details →</a></p>
+        <div class="metadata-cols">
+            <div class="metadata-card">
+                <h3>What Raza Photos reads</h3>
+                <ul class="metadata-list">
+                    <li>Date taken with full timezone and format support</li>
+                    <li>GPS coordinates, country and city</li>
+                    <li>Titles from IPTC, XMP, or filename fallback</li>
+                    <li>People names and face bounding boxes</li>
+                    <li>Albums, events, and category hierarchies</li>
+                    <li>Burst sequences from Apple MakerNote or XMP</li>
+                    <li>File creation and modification dates</li>
+                </ul>
+                <div class="metadata-formats" style="margin-top:20px;">
+                    <span class="tag">EXIF</span>
+                    <span class="tag">IPTC</span>
+                    <span class="tag">XMP</span>
+                    <span class="tag">GPS</span>
+                    <span class="tag">Apple MakerNote</span>
+                    <span class="tag">ACDSee XML</span>
+                    <span class="tag">Filesystem</span>
+                </div>
+            </div>
+            <div class="metadata-card">
+                <h3>What Raza Photos writes</h3>
+                <ul class="metadata-list">
+                    <li>Dates back to EXIF and TIFF standards</li>
+                    <li>GPS coordinates to EXIF GPS dictionary</li>
+                    <li>Titles to IPTC and XMP</li>
+                    <li>Locations to IPTC, XMP, and ACDSee</li>
+                    <li>People and face regions to XMP</li>
+                    <li>Albums and events — compatible with Lightroom</li>
+                    <li>Burst groupings via custom XMP namespace</li>
+                </ul>
+                <p style="font-size:13px; color:var(--text-secondary); margin-top:20px; line-height:1.6;">
+                    Writes use <code>CGImageDestinationCopyImageSource()</code> — only metadata sections are touched. Your image pixels are never decoded or re-encoded.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Privacy -->
+<section class="privacy" id="privacy">
+    <div class="section-inner">
+        <div class="section-label">Privacy</div>
+        <h2 class="section-title">Your photos never leave your home.</h2>
+        <p class="section-sub">Not to our servers. Not to anyone's servers. Raza Photos has no servers.</p>
+        <div class="privacy-grid">
+            <div class="privacy-item">
+                <span class="icon">🚫</span>
+                <h3>No internet connection</h3>
+                <p>The app never makes an outbound network request. Ever.</p>
+            </div>
+            <div class="privacy-item">
+                <span class="icon">📊</span>
+                <h3>No telemetry</h3>
+                <p>No analytics, no crash reporting sent anywhere, no usage data.</p>
+            </div>
+            <div class="privacy-item">
+                <span class="icon">👤</span>
+                <h3>No account</h3>
+                <p>No sign-up, no email, no profile. Nothing to create, nothing to delete.</p>
+            </div>
+            <div class="privacy-item">
+                <span class="icon">🏠</span>
+                <h3>Local network only</h3>
+                <p>All communication stays within your home Wi-Fi. Nothing is routed externally. <a href="discovery.html" style="color: #63c5ff; text-decoration: none; font-weight: 500;">How? →</a></p>
+            </div>
+        </div>
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="local-first.html" style="display: inline-flex; align-items: center; gap: 8px; color: #63c5ff; font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid rgba(99,197,255,0.3); padding: 10px 22px; border-radius: 980px;">
+                Why local-first matters →
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Family controls -->
+<section style="background: var(--bg-alt); padding: 96px 24px;">
+    <div style="max-width: 1040px; margin: 0 auto;">
+        <div style="max-width: 560px; margin-bottom: 56px;">
+            <div class="section-label">Family controls</div>
+            <h2 class="section-title">Let the kids browse.<br>Not rearrange.</h2>
+            <p class="section-sub">Raza Photos gives you three levels of access control — no configuration wizard, no user accounts, no passwords to hand out.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,143,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px;">🖥</div>
+                <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px;">Read-only server</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65;">Lock the Mac server entirely. Remote devices — every iPhone, iPad, or other Mac on the network — can browse the full library but cannot make any changes whatsoever. The library is yours to curate, from your Mac alone.</p>
+            </div>
+            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,143,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px;">✏️</div>
+                <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px;">Block remote edits only</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65;">Allow browsing from any device on the network, but prevent metadata changes — no editing dates, locations, albums, or people tags from iOS. Browsing remains completely unrestricted.</p>
+            </div>
+            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,143,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px;">📱</div>
+                <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px;">Read-only client</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65;">Set a specific iPhone or iPad to read-only mode on the device itself. That device becomes a pure viewer — no editing controls are shown, regardless of what the server allows.</p>
+            </div>
+        </div>
+        <p style="margin-top: 32px; font-size: 14px; color: var(--text-secondary); text-align: center;">No accounts, no passwords, no parental control apps. Just a toggle. <a href="security.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">Learn more about security →</a></p>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+    <div class="section-inner">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">Simple pricing.<br>Pay once.</h2>
+        <div class="price-card">
+            <div class="price-amount"><sup>$</sup>20</div>
+            <div class="price-label">One-time purchase &mdash; currently free during early release</div>
+            <ul class="price-features">
+                <li>Mac, iPhone, and iPad</li>
+                <li>All current features included</li>
+                <li>Free updates during early release</li>
+                <li>No subscription, ever</li>
+                <li>No account required</li>
+            </ul>
+            <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn btn-primary" style="width:100%; justify-content:center; font-size:16px; padding:14px;">
+                Download Free on the App Store
+            </a>
+            <p class="price-note">Requires macOS 26 and iOS 26 or later.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos">
+        <span>Raza Photos</span>
+    </div>
+    <ul class="footer-links">
+        <li><a href="mailto:razaphotos@outlook.com">Support</a></li>
+        <li><a href="metadata-read.html">Metadata reading</a></li>
+        <li><a href="metadata-write.html">Metadata writing</a></li>
+        <li><a href="discovery.html">How discovery works</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+</footer>
+
+<script>
+    let activePlatform = 'mac';
+
+    function selectDevice(platform, btn) {
+        activePlatform = platform;
+
+        // swap all platform images
+        document.querySelectorAll('.platform-img').forEach(img => {
+            const src = img.dataset[platform];
+            if (src) img.src = src;
+        });
+
+        // constrain portrait images on iPhone
+        document.querySelectorAll('.showcase-image').forEach(el => {
+            el.classList.toggle('is-iphone', platform === 'iphone');
+        });
+
+        // sync all device pickers
+        document.querySelectorAll('.device-btn').forEach(b => {
+            b.classList.toggle('active', b.textContent.toLowerCase() === platform);
+        });
+    }
+</script>
+
+</body>
+</html>

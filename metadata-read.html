@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata Reading — Raza Photos</title>
+    <meta name="description" content="Raza Photos reads metadata from seven standards including EXIF, IPTC, XMP, Apple MakerNote, and ACDSee XML to build your photo library.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #1a8fff;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg: #ffffff;
+            --bg-alt: #f5f5f7;
+            --border: #d2d2d7;
+            --radius: 18px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
+        .nav-brand span { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero {
+            background: var(--bg-alt);
+            padding: 64px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-inner { max-width: 720px; margin: 0 auto; }
+
+        .hero-eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            max-width: 600px;
+        }
+
+        .standards-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 28px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(26,143,255,0.08);
+            color: var(--blue);
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px 96px;
+        }
+
+        .field-section {
+            margin-bottom: 48px;
+        }
+
+        .field-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .field-section .desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 16px;
+        }
+
+        .priority-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .priority-table thead {
+            background: var(--bg-alt);
+        }
+
+        .priority-table th {
+            padding: 11px 16px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .priority-table td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .priority-table tr:last-child td { border-bottom: none; }
+
+        .priority-table tr:hover td { background: var(--bg-alt); }
+
+        .rank {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .note {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .note strong { color: var(--text); }
+
+        hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+        .standards-section {
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+
+        .standards-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .standard-card {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 16px 18px;
+            border: 1px solid var(--border);
+        }
+
+        .standard-card strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .standard-card span {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .other-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .link-card {
+            flex: 1;
+            min-width: 220px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            text-decoration: none;
+            color: var(--text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .link-card:hover {
+            border-color: var(--blue);
+            box-shadow: 0 4px 20px rgba(26,143,255,0.1);
+        }
+
+        .link-card .label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .link-card strong {
+            display: block;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+        }
+
+        .link-card span {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            padding: 48px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-brand { display: flex; align-items: center; gap: 10px; }
+        .footer-brand img { width: 24px; height: 24px; border-radius: 6px; }
+        .footer-brand span { font-size: 14px; font-weight: 600; }
+        .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+        .footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+        .footer-copy { font-size: 13px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 16px; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Metadata</span>
+        <h1>What Raza Photos reads from your files</h1>
+        <p>Raza Photos reads metadata embedded in your image files by cameras, photo editors, and organizing tools. It supports seven metadata standards and applies a strict priority order when the same field appears in multiple places.</p>
+        <div class="standards-strip">
+            <span class="tag">EXIF</span>
+            <span class="tag">IPTC</span>
+            <span class="tag">XMP</span>
+            <span class="tag">GPS</span>
+            <span class="tag">Apple MakerNote</span>
+            <span class="tag">ACDSee XML</span>
+            <span class="tag">Filesystem</span>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="standards-section">
+        <h2>Supported metadata standards</h2>
+        <div class="standards-grid">
+            <div class="standard-card">
+                <strong>EXIF</strong>
+                <span>Written by cameras and smartphones at capture time</span>
+            </div>
+            <div class="standard-card">
+                <strong>IPTC</strong>
+                <span>Added by photo editing software and asset management tools</span>
+            </div>
+            <div class="standard-card">
+                <strong>XMP</strong>
+                <span>Used by Adobe Lightroom, Photoshop, and modern editors</span>
+            </div>
+            <div class="standard-card">
+                <strong>GPS dictionary</strong>
+                <span>Location data embedded within the EXIF block</span>
+            </div>
+            <div class="standard-card">
+                <strong>Apple MakerNote</strong>
+                <span>Proprietary extensions written by iOS and macOS cameras</span>
+            </div>
+            <div class="standard-card">
+                <strong>ACDSee XML</strong>
+                <span>Proprietary fields written by ACDSee Photo Studio</span>
+            </div>
+            <div class="standard-card">
+                <strong>Filesystem</strong>
+                <span>File creation and modification dates from the operating system</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="field-section">
+        <h2>Date taken</h2>
+        <p class="desc">The most precise capture timestamp available is used. Raza Photos handles EXIF, IPTC, and ISO 8601 date formats automatically, including timezone offsets.</p>
+        <table class="priority-table">
+            <thead>
+                <tr>
+                    <th>Priority</th>
+                    <th>Source</th>
+                    <th>Standard</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="rank">1</span></td><td>Original capture time</td><td>EXIF DateTimeOriginal</td></tr>
+                <tr><td><span class="rank">2</span></td><td>Digitization time</td><td>EXIF DateTimeDigitized</td></tr>
+                <tr><td><span class="rank">3</span></td><td>TIFF datetime</td><td>TIFF DateTime</td></tr>
+                <tr><td><span class="rank">4</span></td><td>XMP creation date</td><td>XMP CreateDate</td></tr>
+                <tr><td><span class="rank">5</span></td><td>IPTC dates</td><td>IPTC DateCreated / TimeCreated</td></tr>
+                <tr><td><span class="rank">6</span></td><td>File creation date</td><td>Filesystem</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>GPS coordinates</h2>
+        <p class="desc">Latitude and longitude are read from the EXIF GPS dictionary, capturing directional references. If coordinates are present, Raza Photos can reverse-geocode them on-device to derive the city and country.</p>
+        <div class="note">
+            <strong>On-device only.</strong> Reverse geocoding is performed using Apple's on-device framework. No coordinates are sent to an external service.
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>Country and city</h2>
+        <p class="desc">Location labels (country and city) can be stored directly in metadata by tools like Lightroom, ACDSee, or a previous Raza Photos save. When they are absent, reverse geocoding fills them in from GPS coordinates.</p>
+        <table class="priority-table">
+            <thead>
+                <tr>
+                    <th>Priority</th>
+                    <th>Source</th>
+                    <th>Standard</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="rank">1</span></td><td>Country / City fields</td><td>IPTC</td></tr>
+                <tr><td><span class="rank">2</span></td><td>Location extension fields</td><td>XMP</td></tr>
+                <tr><td><span class="rank">3</span></td><td>Category hierarchy</td><td>ACDSee XML</td></tr>
+                <tr><td><span class="rank">4</span></td><td>Reverse geocoding from GPS</td><td>On-device (Apple Maps)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>Title</h2>
+        <p class="desc">A human-readable title for the photo. Falls back to the filename if no title is found in metadata.</p>
+        <table class="priority-table">
+            <thead>
+                <tr>
+                    <th>Priority</th>
+                    <th>Source</th>
+                    <th>Standard</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="rank">1</span></td><td>Object name</td><td>IPTC ObjectName</td></tr>
+                <tr><td><span class="rank">2</span></td><td>Title field</td><td>XMP dc:title</td></tr>
+                <tr><td><span class="rank">3</span></td><td>Filename (without extension)</td><td>Filesystem fallback</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>People and face regions</h2>
+        <p class="desc">Person names and face bounding boxes are read from XMP and ACDSee metadata. Face regions written by ACDSee are converted to a standard format for display.</p>
+        <table class="priority-table">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Person names</td><td>XMP PersonInImage or ACDSee region names</td></tr>
+                <tr><td>Face bounding boxes</td><td>ACDSee regions (converted to standard format) or XMP</td></tr>
+            </tbody>
+        </table>
+        <div class="note">
+            <strong>On-device detection.</strong> If face data is not present in the metadata, Raza Photos can detect and group faces using Apple's on-device Vision framework. No images are sent to any server for recognition.
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>Albums and events</h2>
+        <p class="desc">Albums and events are extracted from ACDSee's category XML hierarchy embedded in the file. This allows libraries previously organized in ACDSee to carry their structure into Raza Photos without manual re-organisation.</p>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>Burst sequences</h2>
+        <p class="desc">iPhone burst sequences are identified and grouped automatically. Raza Photos checks three sources in order to detect burst membership.</p>
+        <table class="priority-table">
+            <thead>
+                <tr>
+                    <th>Priority</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="rank">1</span></td><td>Apple MakerNote burst fields</td></tr>
+                <tr><td><span class="rank">2</span></td><td>XMP custom burst tags</td></tr>
+                <tr><td><span class="rank">3</span></td><td>Burst metadata previously written by Raza Photos</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>File dates</h2>
+        <p class="desc">File creation and modification timestamps are read from the filesystem and used as a last-resort fallback for date sorting when no embedded capture date is available.</p>
+    </div>
+
+    <div class="other-links">
+        <a href="metadata-write.html" class="link-card">
+            <span class="label">Next</span>
+            <strong>Writing metadata</strong>
+            <span>What Raza Photos saves back to your files and how</span>
+        </a>
+        <a href="privacy.html" class="link-card">
+            <span class="label">Privacy</span>
+            <strong>Privacy policy</strong>
+            <span>No data leaves your home network, ever</span>
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos">
+        <span>Raza Photos</span>
+    </div>
+    <ul class="footer-links">
+        <li><a href="mailto:razaphotos@outlook.com">Support</a></li>
+        <li><a href="metadata-read.html">Metadata reading</a></li>
+        <li><a href="metadata-write.html">Metadata writing</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+</footer>
+
+</body>
+</html>

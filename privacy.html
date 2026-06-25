@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Raza Photos</title>
+    <meta name="description" content="Raza Photos collects nothing, records nothing, and transmits nothing. Your photos never leave your home network.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #1a8fff;
+            --blue-dark: #0070e0;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg: #ffffff;
+            --bg-alt: #f5f5f7;
+            --border: #d2d2d7;
+            --radius: 18px;
+            --green: #34c759;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Nav ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
+        .nav-brand span { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-back svg { flex-shrink: 0; }
+
+        /* ── Hero ── */
+        .hero {
+            background: var(--text);
+            color: #fff;
+            padding: 72px 24px 80px;
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #63c5ff;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 60px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            max-width: 720px;
+            margin: 0 auto 24px;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: rgba(255,255,255,0.65);
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ── Summary cards ── */
+        .summary {
+            padding: 0 24px;
+            margin-top: -32px;
+        }
+
+        .summary-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+        }
+
+        .summary-card .icon {
+            font-size: 32px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .summary-card strong {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+
+        .summary-card span {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ── Content ── */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 72px 24px 96px;
+        }
+
+        .statement {
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            margin-bottom: 56px;
+            border-left: 4px solid var(--green);
+        }
+
+        .statement p {
+            font-size: 19px;
+            line-height: 1.65;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .policy-section {
+            margin-bottom: 52px;
+        }
+
+        .policy-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .policy-section p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .policy-section p:last-child { margin-bottom: 0; }
+
+        .policy-section ul {
+            list-style: none;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .policy-section ul li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.6;
+        }
+
+        .policy-section ul li::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .policy-section ul.no-list li::before {
+            content: '→';
+            color: var(--blue);
+        }
+
+        .never-list li::before {
+            content: '✗' !important;
+            color: #ff3b30 !important;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 52px 0;
+        }
+
+        .highlight {
+            display: inline;
+            background: rgba(52, 199, 89, 0.12);
+            color: #1a7a30;
+            border-radius: 4px;
+            padding: 1px 5px;
+            font-weight: 600;
+        }
+
+        .updated {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ── Footer ── */
+        footer {
+            padding: 48px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-brand { display: flex; align-items: center; gap: 10px; }
+        .footer-brand img { width: 24px; height: 24px; border-radius: 6px; }
+        .footer-brand span { font-size: 14px; font-weight: 600; }
+
+        .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--text); }
+        .footer-copy { font-size: 13px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 16px; }
+            .statement { padding: 28px 24px; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <span class="hero-eyebrow">Privacy Policy</span>
+    <h1>We collect nothing.<br>We record nothing.<br>We transmit nothing.</h1>
+    <p>This is not a legal disclaimer softening bad news. It is a description of how the app actually works.</p>
+</div>
+
+<!-- Summary cards -->
+<div class="summary">
+    <div class="summary-inner">
+        <div class="summary-card">
+            <span class="icon">🚫</span>
+            <strong>No data collected</strong>
+            <span>Not your name, not your email, not your usage patterns</span>
+        </div>
+        <div class="summary-card">
+            <span class="icon">📡</span>
+            <strong>No internet access</strong>
+            <span>The app never makes an outbound connection</span>
+        </div>
+        <div class="summary-card">
+            <span class="icon">🏠</span>
+            <strong>Local network only</strong>
+            <span>Your photos stay within your home Wi-Fi</span>
+        </div>
+        <div class="summary-card">
+            <span class="icon">👤</span>
+            <strong>No account needed</strong>
+            <span>No sign-up, no profile, no password</span>
+        </div>
+        <div class="summary-card">
+            <span class="icon">📊</span>
+            <strong>No telemetry</strong>
+            <span>No analytics, no crash reports, no usage statistics</span>
+        </div>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+    <div class="statement">
+        <p>Raza Photos is designed to work entirely offline and within your home network. Your photos, your metadata, your browsing habits, and your device information are never seen by us — because they are never sent anywhere.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>What Raza Photos does not do</h2>
+        <p>To be as explicit as possible:</p>
+        <ul class="never-list">
+            <li>Does not connect to the internet</li>
+            <li>Does not send your photos to any server</li>
+            <li>Does not collect analytics or usage data</li>
+            <li>Does not send crash reports to us or any third party</li>
+            <li>Does not track which photos you view or how often</li>
+            <li>Does not contain any third-party advertising or tracking SDKs</li>
+            <li>Does not require an account, email address, or any personal information</li>
+            <li>Does not store any data outside of your own devices</li>
+        </ul>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+        <h2>What the app accesses and why</h2>
+        <p>Raza Photos needs access to certain things on your device to function. Here is exactly what, and why:</p>
+        <ul>
+            <li><strong>Your photo folders (Mac).</strong> You explicitly choose which folders to import. The app reads photo files and indexes their metadata. It does not copy, move, or modify your files unless you explicitly trigger a metadata save.</li>
+            <li><strong>Local network (all devices).</strong> The Mac uses Bonjour to advertise the library on your local network. iOS and iPadOS devices use Bonjour to discover it. All traffic stays within your home Wi-Fi — nothing is routed through any external server.</li>
+            <li><strong>On-device processing.</strong> Face detection and reverse geocoding (turning GPS coordinates into city and country names) run entirely on the device. No photo or coordinate is sent to an external service.</li>
+        </ul>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+        <h2>Your photos never leave your home</h2>
+        <p>When you browse your library on an iPhone or iPad, the photos are served directly from the Mac on your local network — the same Wi-Fi your devices share at home. There is no relay server, no cloud intermediary, no proxy.</p>
+        <p>If your Mac is off, or you are not on your home network, there is nothing to connect to. <span class="highlight">The app does not route traffic through our infrastructure because we have no infrastructure.</span></p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+        <h2>Metadata</h2>
+        <p>When you edit metadata in Raza Photos — correcting a date, assigning a location, tagging a person — those changes are stored in a local database on your Mac. When you choose to save, they are written back into the original image files on your Mac using standard formats (XMP, EXIF, IPTC).</p>
+        <p>None of this information is transmitted anywhere. It stays in your files, on your machine.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+        <h2>The App Store</h2>
+        <p>Raza Photos is distributed through Apple's App Store. Apple may collect data as part of the download and installation process, subject to Apple's own privacy policy. We have no visibility into or control over what Apple collects.</p>
+        <p>We do not use any App Store analytics features or any other Apple-provided tracking tools.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+        <h2>Can you verify this?</h2>
+        <p>Yes. You can run a network proxy such as Charles Proxy or Little Snitch on your Mac while using Raza Photos and observe that the app makes no outbound connections beyond your local network. We encourage this.</p>
+        <p>The app also works entirely without an internet connection. Disconnect your router and use it — it will behave identically.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="policy-section">
+        <h2>Contact</h2>
+        <p>If you have any questions about privacy in Raza Photos, you can reach us at <a href="mailto:razaphotos@outlook.com" style="color: var(--blue);">razaphotos@outlook.com</a>.</p>
+        <p>Raza Software is based in the European Union.</p>
+    </div>
+
+    <p class="updated">Last updated: June 2026</p>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos">
+        <span>Raza Photos</span>
+    </div>
+    <ul class="footer-links">
+        <li><a href="mailto:razaphotos@outlook.com">Support</a></li>
+        <li><a href="https://github.com/raduzaharia-medium/raza-photos-support">Documentation</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+</footer>
+
+</body>
+</html>

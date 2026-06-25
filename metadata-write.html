@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata Writing — Raza Photos</title>
+    <meta name="description" content="Raza Photos writes metadata back to your original image files without touching the image pixels. Non-destructive, atomic, and compatible with Lightroom and other apps.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #1a8fff;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg: #ffffff;
+            --bg-alt: #f5f5f7;
+            --border: #d2d2d7;
+            --radius: 18px;
+            --green: #34c759;
+            --orange: #ff9f0a;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
+        .nav-brand span { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero {
+            background: var(--bg-alt);
+            padding: 64px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-inner { max-width: 720px; margin: 0 auto; }
+
+        .hero-eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            max-width: 600px;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px 96px;
+        }
+
+        .safety-statement {
+            background: #fff;
+            border: 1.5px solid var(--green);
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            margin-bottom: 48px;
+        }
+
+        .safety-statement h2 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .safety-statement p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .safety-statement p + p { margin-top: 10px; }
+
+        .field-section { margin-bottom: 48px; }
+
+        .field-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .field-section .desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 16px;
+        }
+
+        .write-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 560px) { .write-grid { grid-template-columns: 1fr; } }
+
+        .write-card {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 18px 20px;
+            border: 1px solid var(--border);
+        }
+
+        .write-card strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .write-card span {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .format-card {
+            background: var(--bg-alt);
+            border-radius: 10px;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .format-card strong {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 4px;
+        }
+
+        .format-card span { font-size: 12px; color: var(--text-secondary); }
+
+        .format-card.limited {
+            border-color: var(--orange);
+            background: rgba(255, 159, 10, 0.05);
+        }
+
+        .format-card.limited strong { color: var(--orange); }
+
+        .protected-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .protected-list li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        .protected-list li::before {
+            content: '🔒';
+            flex-shrink: 0;
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+        .tech-card {
+            background: var(--text);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            margin-bottom: 48px;
+        }
+
+        .tech-card h2 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .tech-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .tech-card p:last-child { margin-bottom: 0; }
+
+        .tech-card code {
+            background: rgba(255,255,255,0.1);
+            color: #63c5ff;
+            padding: 2px 7px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+
+        .steps-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .steps-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .step-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+        .note {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .note strong { color: var(--text); }
+
+        .other-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .link-card {
+            flex: 1;
+            min-width: 220px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            text-decoration: none;
+            color: var(--text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .link-card:hover {
+            border-color: var(--blue);
+            box-shadow: 0 4px 20px rgba(26,143,255,0.1);
+        }
+
+        .link-card .label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .link-card strong {
+            display: block;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+        }
+
+        .link-card span { font-size: 14px; color: var(--text-secondary); }
+
+        footer {
+            padding: 48px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-brand { display: flex; align-items: center; gap: 10px; }
+        .footer-brand img { width: 24px; height: 24px; border-radius: 6px; }
+        .footer-brand span { font-size: 14px; font-weight: 600; }
+        .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+        .footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+        .footer-copy { font-size: 13px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 16px; }
+            .tech-card { padding: 24px; }
+            .safety-statement { padding: 24px; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Metadata</span>
+        <h1>What Raza Photos writes back to your files</h1>
+        <p>When you organize photos in Raza Photos — fixing dates, assigning locations, tagging people — those changes can be saved back into the original image files using open standards, without touching a single pixel.</p>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="safety-statement">
+        <h2>Your pixels are never touched</h2>
+        <p>A photo file has two distinct areas: the compressed image (your actual pixels) and the metadata (everything else). Raza Photos operates exclusively on the metadata area. The compressed image is never decoded, processed, or re-encoded during a metadata save.</p>
+        <p>This means there is no generation loss, no recompression, and no risk of corrupting the image data. A metadata save is a precise surgical operation on a small part of the file.</p>
+    </div>
+
+    <div class="field-section">
+        <h2>How saving works</h2>
+        <p class="desc">Changes you make in Raza Photos are queued in memory as you work. They are not written to disk automatically. To save, choose <strong>Save Metadata</strong> from the Library menu on Mac. You can cancel at any time, and photos without pending changes are never touched.</p>
+        <ul class="steps-list">
+            <li><span class="step-num">1</span>You make changes — assign a location, fix a date, tag a person</li>
+            <li><span class="step-num">2</span>Changes are held in the local database until you are ready</li>
+            <li><span class="step-num">3</span>You choose Save Metadata from the Library menu</li>
+            <li><span class="step-num">4</span>Raza Photos reads the existing metadata, merges your changes, and writes the updated file atomically to disk</li>
+            <li><span class="step-num">5</span>Only files with pending changes are modified — everything else is untouched</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>Supported file formats</h2>
+        <p class="desc">Metadata write-back works with the most common image formats. One exception applies to AVIF.</p>
+        <div class="format-grid">
+            <div class="format-card">
+                <strong>JPEG</strong>
+                <span>Full read &amp; write</span>
+            </div>
+            <div class="format-card">
+                <strong>HEIC</strong>
+                <span>Full read &amp; write</span>
+            </div>
+            <div class="format-card">
+                <strong>PNG</strong>
+                <span>Full read &amp; write</span>
+            </div>
+            <div class="format-card">
+                <strong>TIFF</strong>
+                <span>Full read &amp; write</span>
+            </div>
+            <div class="format-card">
+                <strong>PSD</strong>
+                <span>Full read &amp; write</span>
+            </div>
+            <div class="format-card limited">
+                <strong>AVIF</strong>
+                <span>Read only — changes stored in library database</span>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>What gets written</h2>
+        <p class="desc">Raza Photos writes to multiple metadata standards simultaneously to ensure maximum compatibility with other photo apps and DAMs.</p>
+        <div class="write-grid">
+            <div class="write-card">
+                <strong>Dates</strong>
+                <span>Written to EXIF DateTimeOriginal and TIFF DateTime</span>
+            </div>
+            <div class="write-card">
+                <strong>Titles</strong>
+                <span>Written to IPTC ObjectName and XMP dc:title</span>
+            </div>
+            <div class="write-card">
+                <strong>GPS coordinates</strong>
+                <span>Written to the EXIF GPS dictionary with directional references</span>
+            </div>
+            <div class="write-card">
+                <strong>Country &amp; city</strong>
+                <span>Written to IPTC, XMP extension, and ACDSee location fields</span>
+            </div>
+            <div class="write-card">
+                <strong>People &amp; faces</strong>
+                <span>Names and bounding boxes written to XMP PersonInImage and region fields</span>
+            </div>
+            <div class="write-card">
+                <strong>Albums &amp; events</strong>
+                <span>Written to multiple formats including Lightroom hierarchical subjects</span>
+            </div>
+            <div class="write-card">
+                <strong>Burst groupings</strong>
+                <span>Written to a custom XMP namespace for burst sequence identification</span>
+            </div>
+        </div>
+        <div class="note" style="margin-top:16px;">
+            <strong>Lightroom compatibility.</strong> Albums and events are written as Lightroom-compatible hierarchical subjects, so your organisation carries over if you import the same files into Lightroom.
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="field-section">
+        <h2>What is never changed</h2>
+        <p class="desc">Raza Photos uses merge semantics — it reads all existing metadata first, then only updates the specific fields you changed. Everything else is preserved exactly as it was.</p>
+        <ul class="protected-list">
+            <li>Camera settings (aperture, shutter speed, ISO, focal length, lens info)</li>
+            <li>Copyright and creator information</li>
+            <li>Color profiles and ICC data</li>
+            <li>File timestamps (creation and modification dates on disk)</li>
+            <li>All metadata fields not managed by Raza Photos</li>
+            <li>The compressed image data itself</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="tech-card">
+        <h2>How it works technically</h2>
+        <p>Metadata writes use Apple's <code>CGImageDestinationCopyImageSource()</code> function, which operates exclusively on the metadata sections of an image file. The compressed image data is streamed directly from the source file without being decoded.</p>
+        <p>The update process uses merge semantics: existing metadata is read in full, your changes are applied on top, and the result is assembled entirely in memory. A single atomic write then replaces the original file on disk — there is no intermediate temporary file that could leave a partial state if interrupted.</p>
+        <p>This approach means the write operation is fast, lossless, and safe regardless of file size.</p>
+    </div>
+
+    <div class="other-links">
+        <a href="metadata-read.html" class="link-card">
+            <span class="label">See also</span>
+            <strong>Reading metadata</strong>
+            <span>What Raza Photos reads from your files and in what priority order</span>
+        </a>
+        <a href="privacy.html" class="link-card">
+            <span class="label">Privacy</span>
+            <strong>Privacy policy</strong>
+            <span>No data leaves your home network, ever</span>
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos">
+        <span>Raza Photos</span>
+    </div>
+    <ul class="footer-links">
+        <li><a href="mailto:razaphotos@outlook.com">Support</a></li>
+        <li><a href="metadata-read.html">Metadata reading</a></li>
+        <li><a href="metadata-write.html">Metadata writing</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+</footer>
+
+</body>
+</html>

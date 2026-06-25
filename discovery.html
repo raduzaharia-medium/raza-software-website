@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How discovery works — Raza Photos</title>
+    <meta name="description" content="How Raza Photos finds your library instantly, on every device, with no IP address and no configuration. The technology behind the magic.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #1a8fff;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg: #ffffff;
+            --bg-alt: #f5f5f7;
+            --border: #d2d2d7;
+            --radius: 18px;
+            --green: #34c759;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
+        .nav-brand span { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: var(--bg-alt);
+            padding: 64px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-inner { max-width: 720px; margin: 0 auto; }
+
+        .hero-eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            max-width: 600px;
+        }
+
+        /* ── Content ── */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 72px 24px 96px;
+        }
+
+        .section { margin-bottom: 52px; }
+
+        .section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .section p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        hr { border: none; border-top: 1px solid var(--border); margin: 52px 0; }
+
+        /* ── Analogy card ── */
+        .analogy {
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            margin: 20px 0;
+            border-left: 4px solid var(--blue);
+        }
+
+        .analogy .analogy-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .analogy p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── Step flow ── */
+        .flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 24px 0;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px 28px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .flow-step:last-child { border-bottom: none; }
+
+        .flow-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+            width: 44px;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        .flow-step h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .flow-step p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── You already know this ── */
+        .familiar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .familiar-card {
+            background: var(--bg-alt);
+            border-radius: 12px;
+            padding: 18px 16px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .familiar-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+
+        .familiar-card strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .familiar-card span { font-size: 12px; color: var(--text-secondary); line-height: 1.4; display: block; }
+
+        /* ── Highlight ── */
+        .highlight-box {
+            background: var(--text);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p:last-child { margin-bottom: 0; }
+        .highlight-box strong { color: #fff; }
+
+        /* ── Q&A ── */
+        .qa { margin: 24px 0; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+
+        .qa-item { padding: 24px 28px; border-bottom: 1px solid var(--border); }
+        .qa-item:last-child { border-bottom: none; }
+
+        .qa-item h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .qa-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── Permission note ── */
+        .permission-note {
+            background: rgba(26,143,255,0.06);
+            border: 1.5px solid rgba(26,143,255,0.2);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            margin: 20px 0;
+        }
+
+        .permission-note .perm-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--blue);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .permission-note p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0 !important;
+        }
+
+        /* ── Other links ── */
+        .other-links { display: flex; gap: 16px; margin-top: 48px; flex-wrap: wrap; }
+
+        .link-card {
+            flex: 1;
+            min-width: 200px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            text-decoration: none;
+            color: var(--text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .link-card:hover { border-color: var(--blue); box-shadow: 0 4px 20px rgba(26,143,255,0.1); }
+
+        .link-card .label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .link-card strong { display: block; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 4px; }
+        .link-card span { font-size: 14px; color: var(--text-secondary); }
+
+        footer {
+            padding: 48px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-brand { display: flex; align-items: center; gap: 10px; }
+        .footer-brand img { width: 24px; height: 24px; border-radius: 6px; }
+        .footer-brand span { font-size: 14px; font-weight: 600; }
+        .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+        .footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+        .footer-copy { font-size: 13px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 16px; }
+            .highlight-box { padding: 24px; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">How discovery works</span>
+        <h1>Your library appears on your iPhone.<br>Here's why that isn't magic.</h1>
+        <p>Raza Photos uses a technology called Bonjour to find devices on your network automatically. No IP addresses. No configuration. This page explains how it works — for the curious.</p>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="section">
+        <h2>You already use this technology every day</h2>
+        <p>Bonjour is Apple's zero-configuration networking protocol. It has been built into every Apple device for over two decades. It is the technology behind AirDrop finding nearby devices, AirPlay discovering your Apple TV, your Mac automatically finding a network printer, and your iPhone seeing a nearby HomePod.</p>
+        <p>Every time you see a device appear in a list without you having to type an IP address or go into settings — that is almost certainly Bonjour doing the work.</p>
+
+        <div class="familiar-grid">
+            <div class="familiar-card">
+                <span class="icon">📡</span>
+                <strong>AirDrop</strong>
+                <span>Finds nearby Apple devices automatically</span>
+            </div>
+            <div class="familiar-card">
+                <span class="icon">📺</span>
+                <strong>AirPlay</strong>
+                <span>Discovers Apple TV and HomePod on your network</span>
+            </div>
+            <div class="familiar-card">
+                <span class="icon">🖨</span>
+                <strong>Printers</strong>
+                <span>Mac finds network printers without driver setup</span>
+            </div>
+            <div class="familiar-card">
+                <span class="icon">📸</span>
+                <strong>Raza Photos</strong>
+                <span>Finds your photo library the same way</span>
+            </div>
+        </div>
+
+        <p>Raza Photos does exactly the same thing as AirPlay — except instead of discovering a speaker, your iPhone discovers a photo library.</p>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>What actually happens when you open the app</h2>
+
+        <div class="flow">
+            <div class="flow-step">
+                <div class="flow-icon">🖥</div>
+                <div>
+                    <h3>The Mac announces itself</h3>
+                    <p>When Raza Photos is running on your Mac and sharing is enabled, it broadcasts a Bonjour announcement on the local network. Think of it as the Mac quietly saying "I'm here, and I have a photo library" — once per second, to anyone listening on the same network.</p>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon">📱</div>
+                <div>
+                    <h3>The iPhone listens</h3>
+                    <p>When you open Raza Photos on your iPhone or iPad, it starts listening for those Bonjour announcements. Within a second or two, it hears the Mac — and immediately knows its name, its address on the local network, and the port to connect to. No typing required.</p>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon">🔗</div>
+                <div>
+                    <h3>A direct connection is made</h3>
+                    <p>Your iPhone connects directly to your Mac over your home Wi-Fi. Not through Apple's servers. Not through any relay. A straight line from your phone to your Mac, entirely within your home network.</p>
+                </div>
+            </div>
+            <div class="flow-step">
+                <div class="flow-icon">🖼</div>
+                <div>
+                    <h3>Your library appears</h3>
+                    <p>Photos, filters, albums, faces, map data — all served directly from the Mac. The iPhone renders them natively. The whole exchange happens over Wi-Fi at whatever speed your router supports, typically fast enough to load a full-resolution photo in under a second.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Multiple Macs, one library</h2>
+        <p>If you have photos on two Macs — say, a desktop with the main family archive and a laptop with recent travel shots — both can run Raza Photos simultaneously. Your iPhone hears both Bonjour announcements, connects to both, and presents the combined contents as a single unified library, with deduplication handled automatically.</p>
+        <p>There is no merging, no copying, no syncing between the Macs. Each Mac serves its own photos. Your iPhone simply asks both of them and assembles the result. From your perspective, it is one library.</p>
+
+        <div class="analogy">
+            <span class="analogy-label">Analogy</span>
+            <p>It is like having two bookshelves in different rooms. You do not need to move all the books to one shelf to read them — you just know where both shelves are and can pull from either.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Why it stops at your router</h2>
+        <p>Bonjour announcements are local network broadcasts. They travel over your Wi-Fi but stop at your router — they do not go out to the internet. A device outside your home, even one that knows your IP address, cannot receive these announcements and cannot initiate a connection to your library.</p>
+        <p>This is not a firewall rule you have to configure. It is simply how local network broadcasts work. The announcements are addressed to every device on your network, but "your network" ends at the router.</p>
+
+        <div class="highlight-box">
+            <p><strong>The internet cannot see your library</strong> because the library never announces itself to the internet. It only speaks to devices that are already inside your home network — and even then, only to devices that are actively listening for it.</p>
+            <p>There is no open port, no forwarded address, no way to reach it from outside. It is not that the door is locked. There is simply no door facing outward.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>What happens when you leave the house</h2>
+        <p>When your iPhone leaves your home network — the moment you step outside and your phone switches from Wi-Fi to cellular — it can no longer hear the Bonjour announcements from your Mac. The library becomes unreachable, and the app will show no connected library.</p>
+        <p>This is intentional. Remote access would require either a relay server (which we deliberately do not have) or opening a port on your router (which we deliberately do not ask you to do). The tradeoff is that your library is available everywhere in the house and nowhere outside it.</p>
+
+        <div class="analogy">
+            <span class="analogy-label">Why this is the right tradeoff</span>
+            <p>A library that is only accessible inside your home is a library that cannot be accessed by anyone outside your home. The limitation and the security guarantee are the same thing.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Common questions</h2>
+
+        <div class="qa">
+            <div class="qa-item">
+                <h3>Why does iOS ask for local network permission?</h3>
+                <p>Apple requires apps to ask your permission before they can listen for Bonjour announcements or connect to devices on your local network. This is a privacy protection — it prevents apps from silently scanning your network in the background. When Raza Photos asks for local network access, it is asking for exactly the permission it needs to find your Mac, and nothing more.</p>
+            </div>
+            <div class="qa-item">
+                <h3>What if my Mac and iPhone are on different Wi-Fi bands?</h3>
+                <p>Modern routers broadcast on both 2.4GHz and 5GHz simultaneously but keep them on the same network segment. Devices on different bands can still find each other via Bonjour — band is a radio frequency choice, not a network boundary. The exception is if your router has "band steering" or "AP isolation" enabled, which some routers do incorrectly — if discovery fails, checking those settings is a good first step.</p>
+            </div>
+            <div class="qa-item">
+                <h3>What about Ethernet? Does it still work?</h3>
+                <p>Yes. If your Mac is connected via Ethernet and your iPhone is on Wi-Fi, Bonjour still works — they are on the same local network regardless of how they connect to the router. A wired Mac will actually serve photos faster since it has a more stable, higher-bandwidth connection to the router.</p>
+            </div>
+            <div class="qa-item">
+                <h3>Why can't guests on my guest network find the library?</h3>
+                <p>Guest networks are a separate network segment from your main network. Bonjour announcements from your Mac do not cross that boundary — they stay within the main network. A device on the guest network simply never hears the announcement, so it never knows the library exists. This is not a setting — it is a structural property of how your router separates the networks.</p>
+            </div>
+            <div class="qa-item">
+                <h3>Does the Mac need to be awake?</h3>
+                <p>Yes. The Bonjour announcement is sent by the Raza Photos app running on your Mac. If the Mac is asleep or the app is not running, there is nothing to announce and nothing to connect to. You can configure your Mac to not sleep when charging, or simply start the app when you know you want to browse from your phone.</p>
+            </div>
+            <div class="qa-item">
+                <h3>How fast does discovery happen?</h3>
+                <p>Typically within one to two seconds of opening the app on your iPhone or iPad. Bonjour announcements are sent frequently and the iOS side begins listening immediately on launch. On a well-functioning home network, the library appears almost instantly.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="other-links">
+        <a href="security.html" class="link-card">
+            <span class="label">Security</span>
+            <strong>Security model</strong>
+            <span>Who can access your library and how to control it</span>
+        </a>
+        <a href="privacy.html" class="link-card">
+            <span class="label">Privacy</span>
+            <strong>Privacy policy</strong>
+            <span>Nothing collected, nothing transmitted</span>
+        </a>
+        <a href="local-first.html" class="link-card">
+            <span class="label">Local-first</span>
+            <strong>Why local-first matters</strong>
+            <span>No infrastructure means no infrastructure to breach</span>
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos">
+        <span>Raza Photos</span>
+    </div>
+    <ul class="footer-links">
+        <li><a href="mailto:razaphotos@outlook.com">Support</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="metadata-read.html">Metadata reading</a></li>
+        <li><a href="metadata-write.html">Metadata writing</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+</footer>
+
+</body>
+</html>

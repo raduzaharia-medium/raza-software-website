@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your photos stay on your disk — Raza Photos</title>
+    <meta name="description" content="Raza Photos stores nothing in the cloud. Your photos live on your Mac, in your folders, on your terms. No subscription. No vendor. No risk.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue: #1a8fff;
+            --text: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg: #ffffff;
+            --bg-alt: #f5f5f7;
+            --border: #d2d2d7;
+            --radius: 18px;
+            --green: #34c759;
+            --red: #ff3b30;
+            --orange: #ff9f0a;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-brand img { width: 28px; height: 28px; border-radius: 7px; }
+        .nav-brand span { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: var(--text);
+            color: #fff;
+            padding: 80px 24px 88px;
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #63c5ff;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 5vw, 56px);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            max-width: 760px;
+            margin: 0 auto 24px;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 19px);
+            color: rgba(255,255,255,0.6);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.65;
+        }
+
+        /* ── Content ── */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 72px 24px 96px;
+        }
+
+        .section { margin-bottom: 56px; }
+
+        .section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 14px;
+        }
+
+        .section p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        hr { border: none; border-top: 1px solid var(--border); margin: 56px 0; }
+
+        /* ── Comparison ── */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        @media (max-width: 560px) { .comparison { grid-template-columns: 1fr; } }
+
+        .compare-card {
+            border-radius: var(--radius);
+            padding: 28px 28px;
+            border: 1px solid var(--border);
+        }
+
+        .compare-card.cloud { background: var(--bg-alt); }
+        .compare-card.local { background: #fff; border-color: var(--green); }
+
+        .compare-card .card-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .compare-card.cloud .card-label { color: var(--text-secondary); }
+        .compare-card.local .card-label { color: var(--green); }
+
+        .compare-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .compare-list li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            line-height: 1.5;
+        }
+
+        .compare-list li .dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .cloud-dot { background: rgba(255,59,48,0.1); color: var(--red); }
+        .local-dot { background: rgba(52,199,89,0.12); color: var(--green); }
+
+        /* ── Tradeoff ── */
+        .tradeoff {
+            background: var(--bg-alt);
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            border-left: 4px solid var(--orange);
+            margin: 32px 0;
+        }
+
+        .tradeoff h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .tradeoff p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .tradeoff p:last-child { margin-bottom: 0; }
+
+        .backup-options {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .backup-options li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.55;
+        }
+
+        .backup-options li::before {
+            content: '→';
+            color: var(--blue);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── Philosophy ── */
+        .philosophy {
+            background: var(--text);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 40px 44px;
+            margin: 48px 0;
+        }
+
+        .philosophy p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        .philosophy p:last-child { margin-bottom: 0; }
+
+        .philosophy strong { color: #fff; }
+
+        /* ── Callout ── */
+        .callout {
+            text-align: center;
+            padding: 48px 0 0;
+        }
+
+        .callout p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 980px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: var(--blue);
+            color: #fff;
+            border: none;
+        }
+
+        .btn:hover { background: #0070e0; }
+
+        .other-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 56px;
+            flex-wrap: wrap;
+        }
+
+        .link-card {
+            flex: 1;
+            min-width: 200px;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            text-decoration: none;
+            color: var(--text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .link-card:hover {
+            border-color: var(--blue);
+            box-shadow: 0 4px 20px rgba(26,143,255,0.1);
+        }
+
+        .link-card .label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .link-card strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+        }
+
+        .link-card span { font-size: 14px; color: var(--text-secondary); }
+
+        footer {
+            padding: 48px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-brand { display: flex; align-items: center; gap: 10px; }
+        .footer-brand img { width: 24px; height: 24px; border-radius: 6px; }
+        .footer-brand span { font-size: 14px; font-weight: 600; }
+        .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+        .footer-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+        .footer-copy { font-size: 13px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 16px; }
+            .philosophy { padding: 28px 24px; }
+            .tradeoff { padding: 24px 24px; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero">
+    <span class="hero-eyebrow">Local-first</span>
+    <h1>Your photos don't go through our infrastructure.<br>Because we have none.</h1>
+    <p>This is not a privacy policy promise. It is an architectural fact. There is no server to send your photos to.</p>
+</div>
+
+<div class="content">
+
+    <div class="section">
+        <h2>Where your photos actually live</h2>
+        <p>When you use Raza Photos, your photos stay exactly where they are — in whatever folders you already have on your Mac. Raza Photos reads them there and indexes their metadata into a local database. Nothing is copied, nothing is uploaded, nothing is moved.</p>
+        <p>When you browse your library on an iPhone or iPad, the photos are served directly from your Mac over your home Wi-Fi. Your phone is talking to your Mac, not to a data center somewhere.</p>
+        <p>When your Mac is off, there is nothing to connect to. That is not a bug. That is the system working exactly as designed.</p>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Cloud storage vs. local storage</h2>
+        <p>Most photo apps are built around cloud storage. That comes with real tradeoffs worth understanding.</p>
+
+        <div class="comparison">
+            <div class="compare-card cloud">
+                <span class="card-label">Cloud photo storage</span>
+                <ul class="compare-list">
+                    <li><span class="dot cloud-dot">✗</span>Monthly or yearly subscription</li>
+                    <li><span class="dot cloud-dot">✗</span>Your photos on someone else's servers</li>
+                    <li><span class="dot cloud-dot">✗</span>Access depends on the company staying in business</li>
+                    <li><span class="dot cloud-dot">✗</span>Requires internet to browse your own photos</li>
+                    <li><span class="dot cloud-dot">✗</span>Subject to data breaches you have no control over</li>
+                    <li><span class="dot cloud-dot">✗</span>Terms of service can change at any time</li>
+                </ul>
+            </div>
+            <div class="compare-card local">
+                <span class="card-label">Raza Photos</span>
+                <ul class="compare-list">
+                    <li><span class="dot local-dot">✓</span>One-time purchase, no subscription</li>
+                    <li><span class="dot local-dot">✓</span>Your photos on your own hardware</li>
+                    <li><span class="dot local-dot">✓</span>Works forever, regardless of what happens to us</li>
+                    <li><span class="dot local-dot">✓</span>Works without internet, within your home network</li>
+                    <li><span class="dot local-dot">✓</span>No external server means no external breach</li>
+                    <li><span class="dot local-dot">✓</span>Your files, in open formats, always</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>The honest tradeoff: backup is your responsibility</h2>
+
+        <div class="tradeoff">
+            <h3>We will say this plainly</h3>
+            <p>Cloud storage services include offsite backup as part of what you pay for. Raza Photos does not. If your Mac's hard drive fails and you have no backup, you could lose your photos.</p>
+            <p>This is the one real cost of local-first storage. We think it is worth being honest about it rather than pretending it does not exist.</p>
+        </div>
+
+        <p>That said, good backup solutions for local photo libraries are straightforward and many are either free or already included with your Mac:</p>
+
+        <ul class="backup-options">
+            <li><strong>Time Machine</strong> — Apple's built-in backup to an external drive. Set it up once and it runs automatically. Your photo folders are included by default.</li>
+            <li><strong>External hard drives</strong> — A second copy on a drive kept elsewhere (a drawer at work, a relative's house) is simple offsite backup.</li>
+            <li><strong>NAS devices</strong> — A network-attached storage device at home gives you redundant local copies without a subscription.</li>
+            <li><strong>Selective cloud backup</strong> — Tools like Backblaze or Arq let you back up specific folders to cloud storage at a fraction of the cost of a photo subscription, without giving any app access to browse or process your library.</li>
+        </ul>
+
+        <p style="margin-top: 20px;">The 3-2-1 rule is a sensible baseline: three copies of your data, on two different types of media, with one copy offsite. Time Machine plus one external drive satisfies this.</p>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>What you actually own</h2>
+
+        <div class="philosophy">
+            <p><strong>When your photos are in iCloud or Google Photos, you are a tenant.</strong> The service can change its pricing, its terms, or shut down entirely. Companies get acquired. Storage tiers change. In 2011, Google said Google Photos would be free forever. In 2020, they changed their mind.</p>
+            <p><strong>When your photos are on your own drive, you are the owner.</strong> Raza Photos could disappear tomorrow and your photos would be completely unaffected — they are still in the same folders, in the same formats, readable by any software that opens JPEG or HEIC files. We deliberately use open metadata standards so that your organisational work — your albums, your face tags, your location data — lives in the files themselves, not locked in a proprietary database.</p>
+            <p><strong>The subscription model creates a dependency.</strong> You pay not to access the service, but to keep access to your own memories. We find that arrangement difficult to justify.</p>
+        </div>
+    </div>
+
+    <div class="callout">
+        <p>Ready to move your photos back home?</p>
+        <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download Free on the App Store
+        </a>
+    </div>
+
+    <div class="other-links">
+        <a href="privacy.html" class="link-card">
+            <span class="label">Privacy</span>
+            <strong>Privacy policy</strong>
+            <span>Full details on what we collect — which is nothing</span>
+        </a>
+        <a href="metadata-write.html" class="link-card">
+            <span class="label">Metadata</span>
+            <strong>Your data stays portable</strong>
+            <span>Open formats, no lock-in, readable by any app</span>
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos">
+        <span>Raza Photos</span>
+    </div>
+    <ul class="footer-links">
+        <li><a href="mailto:razaphotos@outlook.com">Support</a></li>
+        <li><a href="metadata-read.html">Metadata reading</a></li>
+        <li><a href="metadata-write.html">Metadata writing</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+</footer>
+
+</body>
+</html>
