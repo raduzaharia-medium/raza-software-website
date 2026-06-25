@@ -1,136 +1,310 @@
-/* ── Format grid ── */
-.format-section { margin-bottom: 52px; }
+/* ── Section ── */
+.fmt-section { margin-bottom: 52px; }
 
-.format-section h2 {
+.fmt-section h2 {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: 8px;
 }
 
-.format-section .desc {
+.fmt-intro {
     font-size: 15px;
     color: var(--text-secondary);
-    line-height: 1.65;
+    line-height: 1.7;
     margin-bottom: 20px;
 }
 
-.format-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-}
-
-.format-card {
-    background: var(--bg-alt);
-    border-radius: 12px;
-    padding: 16px 18px;
-    border: 1px solid var(--border);
-}
-
-.format-card strong {
-    display: block;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    margin-bottom: 4px;
-}
-
-.format-card span {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    display: block;
-}
-
-.format-card.highlight {
-    border-color: var(--blue);
-    background: rgba(26,143,255,0.04);
-}
-
-.format-card.limited strong { color: var(--orange); }
-.format-card.limited { border-color: var(--orange); background: rgba(255,159,10,0.04); }
-
 hr { margin: 52px 0; }
 
-/* ── Callout ── */
-.callout {
-    border-radius: var(--radius);
-    padding: 24px 28px;
-    margin: 20px 0;
+/* ── Hero format cards (2-up) ── */
+.fmt-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
-.callout-blue {
-    background: rgba(26,143,255,0.06);
-    border: 1.5px solid rgba(26,143,255,0.2);
+/* ── Secondary format grid ── */
+.fmt-secondary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
 }
 
-.callout-orange {
-    background: rgba(255,159,10,0.07);
-    border: 1.5px solid rgba(255,159,10,0.3);
-}
-
-.callout-label {
+.fmt-also-label {
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-bottom: 8px;
-    display: block;
-}
-
-.callout-blue .callout-label { color: var(--blue); }
-.callout-orange .callout-label { color: var(--orange); }
-
-.callout p {
-    font-size: 15px;
     color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 0 !important;
+    margin: 16px 0 10px;
 }
 
-/* ── HDR gain map explainer ── */
-.hdr-card {
+/* ── Format card ── */
+.fmt-card {
+    background: var(--bg-alt);
+    border-radius: 14px;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+}
+
+.fmt-card.primary {
+    padding: 24px 24px;
+    border-color: var(--blue);
+    background: rgba(26,143,255,0.04);
+}
+
+.fmt-ext {
+    display: block;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+}
+
+.fmt-card.primary .fmt-ext { color: var(--blue); }
+
+.fmt-card strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+}
+
+.fmt-card.primary strong { font-size: 17px; }
+
+.fmt-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.fmt-badge {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: rgba(26,143,255,0.1);
+    color: var(--blue);
+    letter-spacing: 0.02em;
+}
+
+/* ── Callout ── */
+.fmt-callout {
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-top: 16px;
+}
+
+.fmt-callout strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.fmt-callout p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.fmt-callout-neutral {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+}
+
+.fmt-callout-neutral strong { color: var(--text); }
+
+.fmt-callout-blue {
+    background: rgba(26,143,255,0.06);
+    border: 1.5px solid rgba(26,143,255,0.2);
+}
+
+.fmt-callout-blue strong { color: var(--blue); }
+
+.fmt-callout-orange {
+    background: rgba(255,159,10,0.07);
+    border: 1.5px solid rgba(255,159,10,0.3);
+}
+
+.fmt-callout-orange strong { color: var(--orange); }
+
+/* ── Codec section ── */
+.codec-section {
+    margin: 12px 0 16px;
+}
+
+.codec-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.codec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+}
+
+.codec-chip {
+    background: var(--bg-alt);
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+}
+
+.codec-chip strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    letter-spacing: 0.01em;
+}
+
+.codec-chip span {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ── HDR explainer ── */
+.hdr-explainer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: start;
     background: var(--text);
-    color: #fff;
     border-radius: var(--radius);
     padding: 32px 36px;
-    margin: 20px 0;
+    margin-bottom: 16px;
 }
 
-.hdr-card h3 {
+.hdr-explainer-text h3 {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
     margin-bottom: 12px;
 }
 
-.hdr-card p {
-    font-size: 15px;
-    color: rgba(255,255,255,0.65);
+.hdr-explainer-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
     line-height: 1.7;
     margin-bottom: 10px;
 }
 
-.hdr-card p:last-child { margin-bottom: 0; }
-.hdr-card strong { color: #fff; }
+.hdr-explainer-text p:last-child { margin-bottom: 0; }
+.hdr-explainer-text strong { color: #fff; }
+
+.hdr-explainer-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 160px;
+}
+
+.hdr-layer {
+    width: 100%;
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: center;
+}
+
+.hdr-layer-sdr { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
+.hdr-layer-map { background: rgba(26,143,255,0.2); border: 1px solid rgba(26,143,255,0.4); }
+.hdr-layer-result { background: rgba(255,214,10,0.15); border: 1px solid rgba(255,214,10,0.4); }
+
+.hdr-layer-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.hdr-layer-sub {
+    display: block;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+}
+
+.hdr-layer-plus,
+.hdr-layer-equals {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    line-height: 1;
+}
+
+/* ── HDR formats split ── */
+.hdr-formats-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.hdr-col {
+    background: var(--bg-alt);
+    border-radius: 14px;
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hdr-col-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+}
+
+.hdr-format-item strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.hdr-format-item span {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
 
 /* ── Live Photo flow ── */
 .live-flow {
     display: flex;
     flex-direction: column;
-    gap: 0;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    margin: 20px 0;
+    margin: 16px 0;
 }
 
 .live-step {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding: 22px 26px;
+    padding: 20px 24px;
     border-bottom: 1px solid var(--border);
     background: var(--bg);
 }
@@ -138,26 +312,31 @@ hr { margin: 52px 0; }
 .live-step:last-child { border-bottom: none; }
 
 .live-icon {
-    font-size: 24px;
+    font-size: 22px;
     flex-shrink: 0;
-    width: 40px;
+    width: 36px;
     text-align: center;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 .live-step h3 {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     margin-bottom: 4px;
 }
 
 .live-step p {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-secondary);
     line-height: 1.6;
-    margin-bottom: 0 !important;
+    margin: 0;
 }
 
+/* ── Responsive ── */
 @media (max-width: 768px) {
-    .hdr-card { padding: 24px; }
+    .fmt-hero-grid { grid-template-columns: 1fr; }
+    .hdr-explainer { grid-template-columns: 1fr; }
+    .hdr-explainer-diagram { flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: unset; }
+    .hdr-layer { min-width: 120px; }
+    .hdr-formats-split { grid-template-columns: 1fr; }
 }
