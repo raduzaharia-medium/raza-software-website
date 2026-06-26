@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="components/summary-card.css">
+    <link rel="stylesheet" href="components/info-card.css">
     <link rel="stylesheet" href="components/callout-box.css">
     <link rel="stylesheet" href="security.css">
     <meta property="og:type" content="website">
@@ -125,26 +126,20 @@
         <h2>Family controls — three levels of access</h2>
         <p>Browsing is one thing. Editing metadata — changing dates, assigning locations, tagging people — is another. Raza Photos gives you three distinct controls over what remote devices can do, without passwords, accounts, or per-user setup.</p>
 
-        <div class="setting-card" style="margin-top: 24px;">
-            <span class="setting-label">Level 1 — Server setting</span>
-            <h3>Read-only server</h3>
+        <info-card variant="dark" style="margin-top: 24px;" label="Level 1 — Server setting" heading="Read-only server">
             <p>Lock the Mac server entirely. Every device on the network — every iPhone, iPad, or other Mac — can browse the full library but cannot make any changes whatsoever. The setting lives on the Mac. No cooperation from the remote device required.</p>
             <p>Best for: families where one person curates the library and everyone else is a viewer.</p>
-        </div>
+        </info-card>
 
-        <div class="setting-card" style="margin-top: 12px;">
-            <span class="setting-label">Level 2 — Server setting</span>
-            <h3>Block remote edits only</h3>
+        <info-card variant="dark" style="margin-top: 12px;" label="Level 2 — Server setting" heading="Block remote edits only">
             <p>Remote devices can browse freely — filtering, searching, viewing photos on the map, opening bursts — but metadata editing is disabled. No changing dates, locations, albums, or people tags from iOS. The Mac can still edit locally.</p>
             <p>Best for: households that want full browsing from anywhere in the house but want to keep library organisation tidy.</p>
-        </div>
+        </info-card>
 
-        <div class="setting-card" style="margin-top: 12px;">
-            <span class="setting-label">Level 3 — Client setting</span>
-            <h3>Read-only client</h3>
+        <info-card variant="dark" style="margin-top: 12px;" label="Level 3 — Client setting" heading="Read-only client">
             <p>Set a specific iPhone or iPad to read-only mode on the device itself. That device becomes a pure viewer — editing controls are hidden entirely in the UI, regardless of what the server allows. Useful when you want to hand a device to a child or guest without worrying about accidental changes.</p>
             <p>Best for: kids' devices, or shared iPads used for browsing only.</p>
-        </div>
+        </info-card>
 
         <callout-box variant="green" heading="In practice" style="margin-top: 24px;">
             <p>A family can run a read-only server for day-to-day browsing, and temporarily disable it when the parent wants to do an organisation session from their iPhone on the couch. One toggle, no reconfiguration.</p>
@@ -171,6 +166,7 @@
 <script src="components/link-card.js"></script>
 <script src="components/summary-card.js"></script>
 <script src="components/callout-box.js"></script>
+<script src="components/info-card.js"></script>
 
 </body>
 </html>

@@ -63,40 +63,16 @@
 .status-never { background: rgba(142,142,147,0.12); color: var(--text-secondary); }
 
 /* ── Setting highlight ── */
-.setting-card {
-    background: var(--text);
-    border-radius: var(--radius);
-    padding: 36px 40px;
-    color: #fff;
-    margin: 24px 0;
+.section info-card[variant="dark"] {
+    --card-padding: 36px 40px;
 }
 
-.setting-card .setting-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #63c5ff;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.setting-card h3 {
+.section info-card[variant="dark"] .card-heading {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 12px;
-    color: #fff;
 }
-
-.setting-card p {
-    font-size: 15px;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.7;
-    margin-bottom: 10px;
-}
-
-.setting-card p:last-child { margin-bottom: 0; }
 
 @media (max-width: 768px) {
-    .setting-card { padding: 24px; }
+    .section info-card[variant="dark"] { --card-padding: 24px; }
 }

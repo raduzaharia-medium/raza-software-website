@@ -28,6 +28,24 @@ info-card[variant="dark"] {
   color: #fff;
 }
 
+info-card[variant="dark"] .card-label {
+  color: #63c5ff;
+}
+
+info-card[variant="dark"] .card-body p {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+info-card[variant="dark"] .card-body p:last-child {
+  margin-bottom: 0;
+}
+
+info-card[variant="dark"] .card-body strong {
+  color: #fff;
+}
+
 /* ── Inner elements ── */
 
 .card-icon {
