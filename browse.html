@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/platform-screenshot.css">
+    <link rel="stylesheet" href="components/showcase-item.css">
     <link rel="stylesheet" href="components/footer.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Raza Photos">
@@ -37,56 +38,38 @@
 <div class="content-wide">
 <div class="showcase-section">
 
-    <div class="showcase-item">
-        <div class="showcase-text">
-            <div class="section-label">Grid view</div>
-            <h3>Every photo, instantly.</h3>
-            <p>The grid loads thumbnails the moment you open the app — no sync, no waiting for the cloud. Scroll through years of memories as fast as your finger moves. Filter by date, location, or event with a tap.</p>
-            <ul>
-                <li>Instant thumbnail loading over Wi-Fi</li>
-                <li>Filter and search across the full library</li>
-                <li>Tap any photo to go full-screen</li>
-                <li>Swipe into a burst without leaving the grid</li>
-            </ul>
-        </div>
-        <div class="showcase-image">
-            <platform-screenshot mac="assets/mac-grid.webp" ipad="assets/ipad-grid.webp" iphone="assets/iphone-grid.webp" alt="Raza Photos grid view"></platform-screenshot>
-        </div>
-    </div>
+    <showcase-item label="Grid view" heading="Every photo, instantly."
+        mac="assets/mac-grid.webp" ipad="assets/ipad-grid.webp" iphone="assets/iphone-grid.webp" alt="Raza Photos grid view">
+        <p>The grid loads thumbnails the moment you open the app — no sync, no waiting for the cloud. Scroll through years of memories as fast as your finger moves. Filter by date, location, or event with a tap.</p>
+        <ul>
+            <li>Instant thumbnail loading over Wi-Fi</li>
+            <li>Filter and search across the full library</li>
+            <li>Tap any photo to go full-screen</li>
+            <li>Swipe into a burst without leaving the grid</li>
+        </ul>
+    </showcase-item>
 
-    <div class="showcase-item reverse">
-        <div class="showcase-text">
-            <div class="section-label">Map view</div>
-            <h3>See exactly where every memory was made.</h3>
-            <p>Switch from grid to map and your photos appear as pins on an Apple Maps canvas. Tap a cluster to zoom in — keep tapping and the map zooms until the pins separate. When you've narrowed it down far enough, tap the cluster one more time to see just those photos in the grid.</p>
-            <ul>
-                <li>Apple Maps integration, fully native</li>
-                <li>Photo thumbnails shown directly on the map</li>
-                <li>Tap clusters to zoom in progressively</li>
-                <li>Tap a tight cluster to open it in the grid</li>
-            </ul>
-        </div>
-        <div class="showcase-image">
-            <platform-screenshot mac="assets/mac-map.webp" ipad="assets/ipad-map.webp" iphone="assets/iphone-map.webp" alt="Raza Photos map view"></platform-screenshot>
-        </div>
-    </div>
+    <showcase-item reverse label="Map view" heading="See exactly where every memory was made."
+        mac="assets/mac-map.webp" ipad="assets/ipad-map.webp" iphone="assets/iphone-map.webp" alt="Raza Photos map view">
+        <p>Switch from grid to map and your photos appear as pins on an Apple Maps canvas. Tap a cluster to zoom in — keep tapping and the map zooms until the pins separate. When you've narrowed it down far enough, tap the cluster one more time to see just those photos in the grid.</p>
+        <ul>
+            <li>Apple Maps integration, fully native</li>
+            <li>Photo thumbnails shown directly on the map</li>
+            <li>Tap clusters to zoom in progressively</li>
+            <li>Tap a tight cluster to open it in the grid</li>
+        </ul>
+    </showcase-item>
 
-    <div class="showcase-item">
-        <div class="showcase-text">
-            <div class="section-label">Photo viewer</div>
-            <h3>Immersive viewing, right down to the location.</h3>
-            <p>Open any photo into a full-screen viewer. The location is shown subtly in the corner — always present, never in the way. HDR and Live Photos are rendered natively, exactly as they appear in Photos.app.</p>
-            <ul>
-                <li>Full-screen, distraction-free viewing</li>
-                <li>Location badge pulled from GPS metadata</li>
-                <li>Full HDR with gain map support</li>
-                <li>Live Photos play on tap or hover</li>
-            </ul>
-        </div>
-        <div class="showcase-image">
-            <platform-screenshot mac="assets/mac-viewer.webp" ipad="assets/ipad-viewer.webp" iphone="assets/iphone-viewer.webp" alt="Raza Photos full-screen photo viewer"></platform-screenshot>
-        </div>
-    </div>
+    <showcase-item label="Photo viewer" heading="Immersive viewing, right down to the location."
+        mac="assets/mac-viewer.webp" ipad="assets/ipad-viewer.webp" iphone="assets/iphone-viewer.webp" alt="Raza Photos full-screen photo viewer">
+        <p>Open any photo into a full-screen viewer. The location is shown subtly in the corner — always present, never in the way. HDR and Live Photos are rendered natively, exactly as they appear in Photos.app.</p>
+        <ul>
+            <li>Full-screen, distraction-free viewing</li>
+            <li>Location badge pulled from GPS metadata</li>
+            <li>Full HDR with gain map support</li>
+            <li>Live Photos play on tap or hover</li>
+        </ul>
+    </showcase-item>
 
 </div>
 
@@ -99,8 +82,8 @@
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
 <script src="components/link-card.js"></script>
-
 <script src="components/platform-screenshot.js"></script>
+<script src="components/showcase-item.js"></script>
 
 </body>
 </html>

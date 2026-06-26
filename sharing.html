@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/link-card.css">
+    <link rel="stylesheet" href="components/showcase-item.css">
     <link rel="stylesheet" href="components/footer.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Raza Photos">
@@ -36,23 +37,16 @@
 <div class="content-wide">
 <div class="showcase-section">
 
-    <div class="showcase-item">
-        <div class="showcase-text">
-            <div class="section-label">Server settings</div>
-            <h3>One toggle. Full control.</h3>
-            <p>The sharing panel on Mac gives you everything in one place. Turn the server on or off, set it to start automatically at login, choose who can make changes, and see at a glance what's currently shared.</p>
-            <ul>
-                <li>Start or stop sharing with a single click</li>
-                <li>Launch at login for always-on family access</li>
-                <li>Set the server to read-only — no remote edits allowed</li>
-                <li>Works as a local Mac viewer when sharing is off</li>
-            </ul>
-        </div>
-        <div class="showcase-image">
-            <img src="assets/mac-sharing.webp" alt="Raza Photos sharing settings on Mac"
-                 style="width: 100%; border-radius: var(--radius); filter: drop-shadow(0 16px 40px rgba(0,0,0,0.13)); display: block;">
-        </div>
-    </div>
+    <showcase-item label="Server settings" heading="One toggle. Full control."
+        image="assets/mac-sharing.webp" alt="Raza Photos sharing settings on Mac">
+        <p>The sharing panel on Mac gives you everything in one place. Turn the server on or off, set it to start automatically at login, choose who can make changes, and see at a glance what's currently shared.</p>
+        <ul>
+            <li>Start or stop sharing with a single click</li>
+            <li>Launch at login for always-on family access</li>
+            <li>Set the server to read-only — no remote edits allowed</li>
+            <li>Works as a local Mac viewer when sharing is off</li>
+        </ul>
+    </showcase-item>
 
 </div>
 
@@ -65,6 +59,7 @@
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
 <script src="components/link-card.js"></script>
+<script src="components/showcase-item.js"></script>
 
 </body>
 </html>
