@@ -7,6 +7,8 @@
     <meta name="description" content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos — all on your home network.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/link-card.css">
+    <link rel="stylesheet" href="components/platform-screenshot.css">
     <link rel="stylesheet" href="components/footer.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Raza Photos">
@@ -48,17 +50,7 @@
             </ul>
         </div>
         <div class="showcase-image">
-            <img class="platform-img"
-                 data-mac="assets/mac-grid.webp"
-                 data-ipad="assets/ipad-grid.webp"
-                 data-iphone="assets/iphone-grid.webp"
-                 src="assets/mac-grid.webp"
-                 alt="Raza Photos grid view">
-            <div class="device-picker">
-                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-            </div>
+            <platform-screenshot mac="assets/mac-grid.webp" ipad="assets/ipad-grid.webp" iphone="assets/iphone-grid.webp" alt="Raza Photos grid view"></platform-screenshot>
         </div>
     </div>
 
@@ -75,17 +67,7 @@
             </ul>
         </div>
         <div class="showcase-image">
-            <img class="platform-img"
-                 data-mac="assets/mac-map.webp"
-                 data-ipad="assets/ipad-map.webp"
-                 data-iphone="assets/iphone-map.webp"
-                 src="assets/mac-map.webp"
-                 alt="Raza Photos map view">
-            <div class="device-picker">
-                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-            </div>
+            <platform-screenshot mac="assets/mac-map.webp" ipad="assets/ipad-map.webp" iphone="assets/iphone-map.webp" alt="Raza Photos map view"></platform-screenshot>
         </div>
     </div>
 
@@ -102,50 +84,23 @@
             </ul>
         </div>
         <div class="showcase-image">
-            <img class="platform-img"
-                 data-mac="assets/mac-viewer.webp"
-                 data-ipad="assets/ipad-viewer.webp"
-                 data-iphone="assets/iphone-viewer.webp"
-                 src="assets/mac-viewer.webp"
-                 alt="Raza Photos full-screen photo viewer">
-            <div class="device-picker">
-                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-            </div>
+            <platform-screenshot mac="assets/mac-viewer.webp" ipad="assets/ipad-viewer.webp" iphone="assets/iphone-viewer.webp" alt="Raza Photos full-screen photo viewer"></platform-screenshot>
         </div>
     </div>
 
 </div>
 
 <div class="other-links" style="max-width: 1040px; margin: 0 auto;">
-    <a href="formats.html" class="link-card">
-        <span class="label">Formats</span>
-        <strong>Supported formats</strong>
-        <span>HEIC, JPEG, ProRes, HDR gain maps, Live Photos</span>
-    </a>
-    <a href="burst.html" class="link-card">
-        <span class="label">Navigation</span>
-        <strong>Burst navigation</strong>
-        <span>Two axes, two meanings — no menus, no mode switches</span>
-    </a>
+    <link-card href="formats.html" label="Formats" heading="Supported formats" description="HEIC, JPEG, ProRes, HDR gain maps, Live Photos"></link-card>
+    <link-card href="burst.html" label="Navigation" heading="Burst navigation" description="Two axes, two meanings — no menus, no mode switches"></link-card>
 </div>
 </div>
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/link-card.js"></script>
 
-<script>
-    function selectDevice(platform, btn) {
-        document.querySelectorAll('.platform-img').forEach(img => {
-            const src = img.dataset[platform];
-            if (src) img.src = src;
-        });
-        document.querySelectorAll('.device-btn').forEach(b => {
-            b.classList.toggle('active', b.textContent.toLowerCase() === platform);
-        });
-    }
-</script>
+<script src="components/platform-screenshot.js"></script>
 
 </body>
 </html>

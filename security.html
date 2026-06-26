@@ -7,6 +7,7 @@
     <meta name="description" content="Raza Photos is designed for trusted home networks. No internet exposure, guest network isolation via Bonjour, and a setting to protect your library from remote changes.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="security.css">
     <meta property="og:type" content="website">
@@ -172,16 +173,8 @@
     </div>
 
     <div class="other-links">
-        <a href="privacy.html" class="link-card">
-            <span class="label">Privacy</span>
-            <strong>Privacy policy</strong>
-            <span>What we collect — which is nothing</span>
-        </a>
-        <a href="local-first.html" class="link-card">
-            <span class="label">Local-first</span>
-            <strong>Why local-first matters</strong>
-            <span>No infrastructure means no infrastructure to breach</span>
-        </a>
+        <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="What we collect — which is nothing"></link-card>
+        <link-card href="local-first.html" label="Local-first" heading="Why local-first matters" description="No infrastructure means no infrastructure to breach"></link-card>
     </div>
 
 </div>
@@ -189,6 +182,7 @@
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/link-card.js"></script>
 
 </body>
 </html>

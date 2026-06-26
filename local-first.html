@@ -7,6 +7,7 @@
     <meta name="description" content="Raza Photos stores nothing in the cloud. Your photos live on your Mac, in your folders, on your terms. No subscription. No vendor. No risk.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="local-first.css">
     <meta property="og:type" content="website">
@@ -117,16 +118,8 @@
     </div>
 
     <div class="other-links">
-        <a href="privacy.html" class="link-card">
-            <span class="label">Privacy</span>
-            <strong>Privacy policy</strong>
-            <span>Full details on what we collect — which is nothing</span>
-        </a>
-        <a href="metadata-write.html" class="link-card">
-            <span class="label">Metadata</span>
-            <strong>Your data stays portable</strong>
-            <span>Open formats, no lock-in, readable by any app</span>
-        </a>
+        <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="Full details on what we collect — which is nothing"></link-card>
+        <link-card href="metadata-write.html" label="Metadata" heading="Your data stays portable" description="Open formats, no lock-in, readable by any app"></link-card>
     </div>
 
 </div>
@@ -134,6 +127,7 @@
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/link-card.js"></script>
 
 </body>
 </html>

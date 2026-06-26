@@ -7,6 +7,8 @@
     <meta name="description" content="Fix dates, assign locations, tag people — from your iPhone, on the couch. Changes write back to the original files without touching a single pixel.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/link-card.css">
+    <link rel="stylesheet" href="components/platform-screenshot.css">
     <link rel="stylesheet" href="components/footer.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Raza Photos">
@@ -48,17 +50,7 @@
             </ul>
         </div>
         <div class="showcase-image">
-            <img class="platform-img"
-                 data-mac="assets/mac-edit-menu.webp"
-                 data-ipad="assets/ipad-edit-menu.webp"
-                 data-iphone="assets/iphone-edit-menu.webp"
-                 src="assets/mac-edit-menu.webp"
-                 alt="Raza Photos batch editing menu">
-            <div class="device-picker">
-                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-            </div>
+            <platform-screenshot mac="assets/mac-edit-menu.webp" ipad="assets/ipad-edit-menu.webp" iphone="assets/iphone-edit-menu.webp" alt="Raza Photos batch editing menu"></platform-screenshot>
         </div>
     </div>
 
@@ -75,50 +67,23 @@
             </ul>
         </div>
         <div class="showcase-image">
-            <img class="platform-img"
-                 data-mac="assets/mac-change-place.webp"
-                 data-ipad="assets/ipad-change-place.webp"
-                 data-iphone="assets/iphone-change-place.webp"
-                 src="assets/mac-change-place.webp"
-                 alt="Raza Photos change place dialog">
-            <div class="device-picker">
-                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-            </div>
+            <platform-screenshot mac="assets/mac-change-place.webp" ipad="assets/ipad-change-place.webp" iphone="assets/iphone-change-place.webp" alt="Raza Photos change place dialog"></platform-screenshot>
         </div>
     </div>
 
 </div>
 
 <div class="other-links" style="max-width: 1040px; margin: 0 auto;">
-    <a href="metadata-write.html" class="link-card">
-        <span class="label">Technical details</span>
-        <strong>How metadata writing works</strong>
-        <span>Pixel-safe, atomic writes using open standards</span>
-    </a>
-    <a href="metadata-read.html" class="link-card">
-        <span class="label">Reading</span>
-        <strong>What Raza Photos reads</strong>
-        <span>Seven metadata standards, one unified view</span>
-    </a>
+    <link-card href="metadata-write.html" label="Technical details" heading="How metadata writing works" description="Pixel-safe, atomic writes using open standards"></link-card>
+    <link-card href="metadata-read.html" label="Reading" heading="What Raza Photos reads" description="Seven metadata standards, one unified view"></link-card>
 </div>
 </div>
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/link-card.js"></script>
 
-<script>
-    function selectDevice(platform, btn) {
-        document.querySelectorAll('.platform-img').forEach(img => {
-            const src = img.dataset[platform];
-            if (src) img.src = src;
-        });
-        document.querySelectorAll('.device-btn').forEach(b => {
-            b.classList.toggle('active', b.textContent.toLowerCase() === platform);
-        });
-    }
-</script>
+<script src="components/platform-screenshot.js"></script>
 
 </body>
 </html>

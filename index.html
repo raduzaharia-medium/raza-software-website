@@ -392,23 +392,5 @@
     <raza-footer></raza-footer>
     <script src="components/footer.js"></script>
 
-    <script>
-      let activePlatform = "mac";
-
-      function selectDevice(platform, btn) {
-        activePlatform = platform;
-
-        // swap all platform images
-        document.querySelectorAll(".platform-img").forEach((img) => {
-          const src = img.dataset[platform];
-          if (src) img.src = src;
-        });
-
-        // sync all device pickers
-        document.querySelectorAll(".device-btn").forEach((b) => {
-          b.classList.toggle("active", b.textContent.toLowerCase() === platform);
-        });
-      }
-    </script>
   </body>
 </html>

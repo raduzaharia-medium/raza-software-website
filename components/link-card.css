@@ -1,0 +1,49 @@
+link-card {
+    display: contents;
+}
+
+.other-links {
+    display: flex;
+    gap: 16px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+}
+
+.link-card {
+    flex: 1;
+    min-width: 200px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.link-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 20px rgba(26, 143, 255, 0.1);
+}
+
+.link-card .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.link-card strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+}
+
+.link-card span { font-size: 14px; color: var(--text-secondary); }

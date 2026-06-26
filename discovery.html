@@ -7,6 +7,7 @@
     <meta name="description" content="How Raza Photos finds your library instantly, on every device, with no IP address and no configuration. The technology behind the magic.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="discovery.css">
     <meta property="og:type" content="website">
@@ -177,21 +178,9 @@
     </div>
 
     <div class="other-links">
-        <a href="security.html" class="link-card">
-            <span class="label">Security</span>
-            <strong>Security model</strong>
-            <span>Who can access your library and how to control it</span>
-        </a>
-        <a href="privacy.html" class="link-card">
-            <span class="label">Privacy</span>
-            <strong>Privacy policy</strong>
-            <span>Nothing collected, nothing transmitted</span>
-        </a>
-        <a href="local-first.html" class="link-card">
-            <span class="label">Local-first</span>
-            <strong>Why local-first matters</strong>
-            <span>No infrastructure means no infrastructure to breach</span>
-        </a>
+        <link-card href="security.html" label="Security" heading="Security model" description="Who can access your library and how to control it"></link-card>
+        <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="Nothing collected, nothing transmitted"></link-card>
+        <link-card href="local-first.html" label="Local-first" heading="Why local-first matters" description="No infrastructure means no infrastructure to breach"></link-card>
     </div>
 
 </div>
@@ -199,6 +188,7 @@
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/link-card.js"></script>
 
 </body>
 </html>

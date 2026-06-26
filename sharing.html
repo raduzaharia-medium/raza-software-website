@@ -7,6 +7,7 @@
     <meta name="description" content="Your Mac shares its photo library only when you want it to. Start at login for always-on access, or turn sharing off entirely when you need privacy.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Raza Photos">
@@ -56,21 +57,14 @@
 </div>
 
 <div class="other-links" style="max-width: 1040px; margin: 0 auto;">
-    <a href="security.html" class="link-card">
-        <span class="label">Security</span>
-        <strong>Security model</strong>
-        <span>What the network boundary means in practice</span>
-    </a>
-    <a href="discovery.html" class="link-card">
-        <span class="label">How it works</span>
-        <strong>How discovery works</strong>
-        <span>How iPhones and iPads find your Mac automatically</span>
-    </a>
+    <link-card href="security.html" label="Security" heading="Security model" description="What the network boundary means in practice"></link-card>
+    <link-card href="discovery.html" label="How it works" heading="How discovery works" description="How iPhones and iPads find your Mac automatically"></link-card>
 </div>
 </div>
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/link-card.js"></script>
 
 </body>
 </html>

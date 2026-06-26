@@ -7,6 +7,7 @@
     <meta name="description" content="Raza Photos reads metadata from seven standards including EXIF, IPTC, XMP, Apple MakerNote, and ACDSee XML to build your photo library.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="metadata-read.css">
     <meta property="og:type" content="website">
@@ -211,16 +212,8 @@
     </div>
 
     <div class="other-links">
-        <a href="metadata-write.html" class="link-card">
-            <span class="label">Next</span>
-            <strong>Writing metadata</strong>
-            <span>What Raza Photos saves back to your files and how</span>
-        </a>
-        <a href="privacy.html" class="link-card">
-            <span class="label">Privacy</span>
-            <strong>Privacy policy</strong>
-            <span>No data leaves your home network, ever</span>
-        </a>
+        <link-card href="metadata-write.html" label="Next" heading="Writing metadata" description="What Raza Photos saves back to your files and how"></link-card>
+        <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="No data leaves your home network, ever"></link-card>
     </div>
 
 </div>
@@ -228,6 +221,7 @@
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/link-card.js"></script>
 
 </body>
 </html>

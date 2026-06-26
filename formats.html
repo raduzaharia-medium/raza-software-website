@@ -7,6 +7,7 @@
     <meta name="description" content="Raza Photos supports every image and video format Apple's frameworks recognise — including HEIC, JPEG, PNG, AVIF, ProRes, HEVC, HDR with gain maps, and Live Photos.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="formats.css">
     <meta property="og:type" content="website">
@@ -256,16 +257,8 @@
     </div>
 
     <div class="other-links">
-        <a href="metadata-read.html" class="link-card">
-            <span class="label">Metadata</span>
-            <strong>What Raza Photos reads</strong>
-            <span>EXIF, IPTC, XMP, Apple MakerNote, and more</span>
-        </a>
-        <a href="metadata-write.html" class="link-card">
-            <span class="label">Metadata</span>
-            <strong>What Raza Photos writes</strong>
-            <span>Non-destructive, pixel-safe metadata saves</span>
-        </a>
+        <link-card href="metadata-read.html" label="Metadata" heading="What Raza Photos reads" description="EXIF, IPTC, XMP, Apple MakerNote, and more"></link-card>
+        <link-card href="metadata-write.html" label="Metadata" heading="What Raza Photos writes" description="Non-destructive, pixel-safe metadata saves"></link-card>
     </div>
 
 </div>
@@ -273,6 +266,7 @@
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/link-card.js"></script>
 
 </body>
 </html>
