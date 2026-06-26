@@ -38,7 +38,7 @@ hr { margin: 52px 0; }
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--text-secondary);
-    margin: 16px 0 10px;
+    margin: 36px 0 12px;
 }
 
 /* ── Format card ── */
@@ -140,7 +140,7 @@ hr { margin: 52px 0; }
 
 /* ── Codec section ── */
 .codec-section {
-    margin: 12px 0 16px;
+    margin: 36px 0 16px;
 }
 
 .codec-label {

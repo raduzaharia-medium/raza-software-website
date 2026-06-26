@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burst Navigation — Raza Photos</title>
+    <meta name="description" content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings — no menus, no mode switches.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="burst.css">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Raza Photos">
+    <meta property="og:url" content="https://razasoftware.eu/burst.html">
+    <meta property="og:title" content="Burst Navigation — Raza Photos">
+    <meta property="og:description" content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings.">
+    <meta property="og:image" content="https://razasoftware.eu/assets/iphone-burst.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Burst Navigation — Raza Photos">
+    <meta name="twitter:description" content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings.">
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/iphone-burst.png">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero-page">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Burst navigation</span>
+        <h1>Two directions.<br>Two meanings.</h1>
+        <p>Swipe left or right to move through your library. When you're on a burst, swipe up or down to step through the frames. No menus, no mode switches — the gesture tells you where you are.</p>
+    </div>
+</div>
+
+<div class="burst-visual">
+    <div class="burst-visual-inner">
+        <div class="burst-label burst-label-left">
+            <span class="burst-arrow">←</span>
+            <span>Previous photo</span>
+        </div>
+        <img src="assets/iphone-burst.webp" alt="Burst navigation showing horizontal timeline scroll and vertical burst frame scroll">
+        <div class="burst-label burst-label-right">
+            <span>Next photo</span>
+            <span class="burst-arrow">→</span>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+
+    <div class="axis-grid">
+        <div class="axis-card">
+            <div class="axis-icon">↔</div>
+            <h3>Horizontal — your timeline</h3>
+            <p>Swiping left or right always moves through your photo library in time. One swipe, one photo. Every photo in your library is one swipe away from the next, including bursts — the burst appears as a single entry in the timeline.</p>
+        </div>
+        <div class="axis-card axis-card-burst">
+            <div class="axis-icon">↕</div>
+            <h3>Vertical — inside a burst</h3>
+            <p>When the photo you're looking at belongs to a burst, swiping up or down steps through the frames of that burst. You stay in the same moment in time — you're just drilling into the depth of it, frame by frame.</p>
+        </div>
+    </div>
+
+    <div class="burst-explainer">
+        <h2>Why this way?</h2>
+        <p>A burst is a single moment captured many times. It makes sense to navigate it on a different axis than time — because it isn't time moving forward, it's the same instant repeating. Keeping bursts off the horizontal axis means you never accidentally swipe past 40 nearly-identical frames to get to the next photo.</p>
+        <p>The photos peeking in from the left and right tell you you're in the timeline. The photo visible below tells you there's a burst here. The whole layout speaks before you touch anything.</p>
+    </div>
+
+    <div class="burst-details">
+        <div class="burst-detail-item">
+            <h4>Automatic grouping</h4>
+            <p>Bursts are detected and grouped automatically when you import a folder. No tagging, no manual work. The app reads the burst identifier from the photo metadata and groups the frames silently.</p>
+        </div>
+        <div class="burst-detail-item">
+            <h4>One photo in the grid</h4>
+            <p>In the photo grid, a burst appears as a single thumbnail — the first frame, with a small indicator. You won't see 40 copies of the same shot side by side.</p>
+        </div>
+        <div class="burst-detail-item">
+            <h4>Frame counter</h4>
+            <p>While navigating a burst, the current frame number and total frame count are shown so you always know where you are inside the sequence.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <img src="assets/icon_web.png" alt="Raza Photos">
+            <span>Raza Photos</span>
+        </div>
+        <div class="footer-nav">
+            <div class="footer-group">
+                <span class="footer-group-label">Features</span>
+                <ul>
+                    <li><a href="formats.html">Supported formats</a></li>
+                    <li><a href="burst.html">Burst navigation</a></li>
+                    <li><a href="metadata-read.html">Metadata reading</a></li>
+                    <li><a href="metadata-write.html">Metadata writing</a></li>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <span class="footer-group-label">How it works</span>
+                <ul>
+                    <li><a href="discovery.html">How discovery works</a></li>
+                    <li><a href="local-first.html">Local-first</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <span class="footer-group-label">Help</span>
+                <ul>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+        <p class="footer-note">This website uses no cookies and collects no data from visitors.</p>
+    </div>
+</footer>
+
+</body>
+</html>
