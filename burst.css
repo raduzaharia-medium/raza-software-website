@@ -17,7 +17,7 @@
     width: 100%;
     display: block;
     filter: drop-shadow(0 24px 48px rgba(0,0,0,0.22)) drop-shadow(0 4px 12px rgba(0,0,0,0.12));
-    transform: perspective(900px) rotateX(4deg) rotateY(-8deg) rotate(-1deg);
+    transform: none;
 }
 
 .burst-label {
