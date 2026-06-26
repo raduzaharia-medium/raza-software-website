@@ -1,338 +1,451 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse your Mac photo library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/" />
+    <meta property="og:title" content="Raza Photos — Your photo library, on every Apple device at home" />
+    <meta
+      property="og:description"
+      content="Browse your Mac photo library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Raza Photos — Your photo library, on every Apple device at home" />
+    <meta
+      name="twitter:description"
+      content="Browse your Mac photo library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
     <title>Raza Photos — Your photo library, on every Apple device at home</title>
-    <meta name="description" content="Browse your Mac photo library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Raza Photos">
-    <meta property="og:url" content="https://razasoftware.eu/">
-    <meta property="og:title" content="Raza Photos — Your photo library, on every Apple device at home">
-    <meta property="og:description" content="Browse your Mac photo library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry.">
-    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Raza Photos — Your photo library, on every Apple device at home">
-    <meta name="twitter:description" content="Browse your Mac photo library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry.">
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
-</head>
-<body>
 
-<!-- Nav -->
-<nav>
-    <a href="#" class="nav-brand">
-        <img src="assets/icon_web.png" alt="Raza Photos icon">
-        <span>Raza Photos</span>
-    </a>
-    <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="browse.html">See it in action</a></li>
-        <li><a href="#metadata">Metadata</a></li>
-        <li><a href="formats.html">Formats</a></li>
-        <li><a href="discovery.html">Discovery</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="support.html">Support</a></li>
-    </ul>
-    <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn btn-primary">Download Free</a>
-</nav>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+    <script src="raza-nav.js"></script>
 
-<!-- Hero -->
-<section class="hero">
-    <span class="hero-eyebrow">For Mac, iPhone &amp; iPad</span>
-    <h1>Your photos, on every Apple device at home. <span>No cloud required.</span></h1>
-    <p>Import your photo folders on Mac. Open Raza Photos on any iPhone or iPad in the house. Your library is just there — no IP address, no account, no setup.</p>
-    <div class="hero-actions">
+    <!-- Hero -->
+    <section class="hero">
+      <span class="hero-eyebrow">For Mac, iPhone &amp; iPad</span>
+      <h1>
+        Your photos, on every Apple device at home.
+        <span>No cloud required.</span>
+      </h1>
+      <p>
+        Import your photo folders on Mac. Open Raza Photos on any iPhone or iPad in the house. Your library is just there — no IP address, no account, no setup.
+      </p>
+      <div class="hero-actions">
         <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Download on the App Store
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+            />
+          </svg>
+          Download on the App Store
         </a>
         <a href="#features" class="btn btn-outline">See features</a>
-    </div>
-    <div class="hero-image">
-        <img src="assets/all-devices.webp" alt="Raza Photos running on Mac, iPad, and iPhone">
-    </div>
-</section>
+      </div>
+      <div class="hero-image">
+        <img src="assets/all-devices.webp" alt="Raza Photos running on Mac, iPad, and iPhone" />
+      </div>
+    </section>
 
-<!-- How it works -->
-<section class="how" id="how">
-    <div class="section-inner">
+    <!-- How it works -->
+    <section class="how" id="how">
+      <div class="section-inner">
         <div class="section-label">How it works</div>
-        <h2 class="section-title">Three steps.<br>Then you're done forever.</h2>
+        <h2 class="section-title">Three steps.<br />Then you're done forever.</h2>
         <p class="section-sub">No maintenance, no updates to a server, no VPN to configure. Set it up once and forget about it.</p>
         <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Import on Mac</h3>
-                <p>Point Raza Photos at your photo folders. It indexes the metadata and leaves every file exactly where it is — nothing moves, nothing is copied. <a href="formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">Supported formats →</a></p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Your Mac advertises itself</h3>
-                <p>Using Bonjour, your Mac quietly announces the library on your local network. No ports to open. No router settings. Nothing to configure. <a href="discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">How does that work? →</a></p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Open and browse</h3>
-                <p>On any iPhone, iPad, or other Mac in the house, open Raza Photos. The library is just there. If you have multiple Macs, all libraries appear merged into one. <a href="security.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">Who can see it? →</a></p>
-            </div>
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Import on Mac</h3>
+            <p>
+              Point Raza Photos at your photo folders. It indexes the metadata and leaves every file exactly where it is — nothing moves, nothing is copied.
+              <a href="formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Supported formats →</a>
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Your Mac advertises itself</h3>
+            <p>
+              Using Bonjour, your Mac quietly announces the library on your local network. No ports to open. No router settings. Nothing to configure.
+              <a href="discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How does that work? →</a>
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Open and browse</h3>
+            <p>
+              On any iPhone, iPad, or other Mac in the house, open Raza Photos. The library is just there. If you have multiple Macs, all libraries appear
+              merged into one.
+              <a href="security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Who can see it? →</a>
+            </p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Features -->
-<section id="features">
-    <div class="section-inner">
+    <!-- Features -->
+    <section id="features">
+      <div class="section-inner">
         <div class="section-label">Features</div>
-        <h2 class="section-title">Everything you'd expect.<br>None of what you don't.</h2>
+        <h2 class="section-title">Everything you'd expect.<br />None of what you don't.</h2>
         <p class="section-sub">Built from scratch in Swift 6 for the latest Apple platforms — native, fast, and designed to fit right in.</p>
         <div class="features-grid">
-            <div class="feature">
-                <span class="feature-icon">📅</span>
-                <h3>Browse by date, place, people, albums &amp; events</h3>
-                <p>Your library organized the way you think about it — filter by year, location, faces, custom albums, or travel events. All from the sidebar. <a href="browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">See it →</a></p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🗺</span>
-                <h3>Map view</h3>
-                <p>See where every photo was taken on a map. Add or correct countries and cities from your iPhone using reverse geocoding — all processed locally on-device. <a href="browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">See it →</a></p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">👤</span>
-                <h3>Local face detection</h3>
-                <p>Faces are detected and grouped entirely on your device. No photo ever leaves your home network for recognition — not even for a moment.</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📸</span>
-                <h3>Burst photos with natural navigation</h3>
-                <p>Burst sequences are grouped automatically. Scroll vertically to move through the burst frame by frame. Scroll horizontally to continue through your timeline. <a href="burst.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">How it works →</a></p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">✨</span>
-                <h3>HDR &amp; Live Photos</h3>
-                <p>Full HDR rendering with gain map support, and Live Photos that play just as they would in Photos.app — because this is a native app, not a browser.</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">✏️</span>
-                <h3>Edit metadata from your iPhone</h3>
-                <p>Fix a date, assign a location, tag a person — from the couch, on your phone. Changes write back to the original files as XMP/EXIF without touching a single pixel. <a href="editing.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">See it →</a></p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🖥</span>
-                <h3>Multiple libraries, one view</h3>
-                <p>Got photos on two Macs? Both are discovered automatically and shown as a single unified, deduplicated library. No merging, no copying.</p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🔒</span>
-                <h3>Server on demand</h3>
-                <p>Start or stop sharing your library whenever you want. When the server is off, the app works as a local viewer on your Mac alone. <a href="sharing.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">See it →</a></p>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📦</span>
-                <h3>Your files, your format</h3>
-                <p>Supports JPEG, HEIC, PNG, TIFF, PSD, and AVIF. Metadata exports to open standards so you can move your library to any other app, anytime.</p>
-            </div>
+          <div class="feature">
+            <span class="feature-icon">📅</span>
+            <h3>Browse by date, place, people, albums &amp; events</h3>
+            <p>
+              Your library organized the way you think about it — filter by year, location, faces, custom albums, or travel events. All from the sidebar.
+              <a href="browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🗺</span>
+            <h3>Map view</h3>
+            <p>
+              See where every photo was taken on a map. Add or correct countries and cities from your iPhone using reverse geocoding — all processed locally
+              on-device.
+              <a href="browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">👤</span>
+            <h3>Local face detection</h3>
+            <p>Faces are detected and grouped entirely on your device. No photo ever leaves your home network for recognition — not even for a moment.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">📸</span>
+            <h3>Burst photos with natural navigation</h3>
+            <p>
+              Burst sequences are grouped automatically. Scroll vertically to move through the burst frame by frame. Scroll horizontally to continue through
+              your timeline.
+              <a href="burst.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How it works →</a>
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">✨</span>
+            <h3>HDR &amp; Live Photos</h3>
+            <p>
+              Full HDR rendering with gain map support, and Live Photos that play just as they would in Photos.app — because this is a native app, not a
+              browser.
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">✏️</span>
+            <h3>Edit metadata from your iPhone</h3>
+            <p>
+              Fix a date, assign a location, tag a person — from the couch, on your phone. Changes write back to the original files as XMP/EXIF without touching
+              a single pixel.
+              <a href="editing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🖥</span>
+            <h3>Multiple libraries, one view</h3>
+            <p>Got photos on two Macs? Both are discovered automatically and shown as a single unified, deduplicated library. No merging, no copying.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">🔒</span>
+            <h3>Server on demand</h3>
+            <p>
+              Start or stop sharing your library whenever you want. When the server is off, the app works as a local viewer on your Mac alone.
+              <a href="sharing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+            </p>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">📦</span>
+            <h3>Your files, your format</h3>
+            <p>Supports JPEG, HEIC, PNG, TIFF, PSD, and AVIF. Metadata exports to open standards so you can move your library to any other app, anytime.</p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Metadata -->
-<section id="metadata">
-    <div class="section-inner">
+    <!-- Metadata -->
+    <section id="metadata">
+      <div class="section-inner">
         <div class="section-label">Metadata</div>
         <h2 class="section-title">Your data stays portable.</h2>
-        <p class="section-sub">Raza Photos reads from seven metadata standards and writes back to open formats — so nothing is locked in, ever. <a href="metadata-read.html" style="color:var(--blue);text-decoration:none;font-weight:500;">Full details →</a></p>
+        <p class="section-sub">
+          Raza Photos reads from seven metadata standards and writes back to open formats — so nothing is locked in, ever.
+          <a href="metadata-read.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Full details →</a>
+        </p>
         <div class="metadata-cols">
-            <div class="metadata-card">
-                <h3>What Raza Photos reads</h3>
-                <ul class="metadata-list">
-                    <li>Date taken with full timezone and format support</li>
-                    <li>GPS coordinates, country and city</li>
-                    <li>Titles from IPTC, XMP, or filename fallback</li>
-                    <li>People names and face bounding boxes</li>
-                    <li>Albums, events, and category hierarchies</li>
-                    <li>Burst sequences from Apple MakerNote or XMP</li>
-                    <li>File creation and modification dates</li>
-                </ul>
-                <div class="metadata-formats" style="margin-top:20px;">
-                    <span class="tag">EXIF</span>
-                    <span class="tag">IPTC</span>
-                    <span class="tag">XMP</span>
-                    <span class="tag">GPS</span>
-                    <span class="tag">Apple MakerNote</span>
-                    <span class="tag">ACDSee XML</span>
-                    <span class="tag">Filesystem</span>
-                </div>
+          <div class="metadata-card">
+            <h3>What Raza Photos reads</h3>
+            <ul class="metadata-list">
+              <li>Date taken with full timezone and format support</li>
+              <li>GPS coordinates, country and city</li>
+              <li>Titles from IPTC, XMP, or filename fallback</li>
+              <li>People names and face bounding boxes</li>
+              <li>Albums, events, and category hierarchies</li>
+              <li>Burst sequences from Apple MakerNote or XMP</li>
+              <li>File creation and modification dates</li>
+            </ul>
+            <div class="metadata-formats" style="margin-top: 20px">
+              <span class="tag">EXIF</span>
+              <span class="tag">IPTC</span>
+              <span class="tag">XMP</span>
+              <span class="tag">GPS</span>
+              <span class="tag">Apple MakerNote</span>
+              <span class="tag">ACDSee XML</span>
+              <span class="tag">Filesystem</span>
             </div>
-            <div class="metadata-card">
-                <h3>What Raza Photos writes</h3>
-                <ul class="metadata-list">
-                    <li>Dates back to EXIF and TIFF standards</li>
-                    <li>GPS coordinates to EXIF GPS dictionary</li>
-                    <li>Titles to IPTC and XMP</li>
-                    <li>Locations to IPTC, XMP, and ACDSee</li>
-                    <li>People and face regions to XMP</li>
-                    <li>Albums and events — compatible with Lightroom</li>
-                    <li>Burst groupings via custom XMP namespace</li>
-                </ul>
-                <p style="font-size:13px; color:var(--text-secondary); margin-top:20px; line-height:1.6;">
-                    Writes use <code>CGImageDestinationCopyImageSource()</code> — only metadata sections are touched. Your image pixels are never decoded or re-encoded.
-                </p>
-            </div>
+          </div>
+          <div class="metadata-card">
+            <h3>What Raza Photos writes</h3>
+            <ul class="metadata-list">
+              <li>Dates back to EXIF and TIFF standards</li>
+              <li>GPS coordinates to EXIF GPS dictionary</li>
+              <li>Titles to IPTC and XMP</li>
+              <li>Locations to IPTC, XMP, and ACDSee</li>
+              <li>People and face regions to XMP</li>
+              <li>Albums and events — compatible with Lightroom</li>
+              <li>Burst groupings via custom XMP namespace</li>
+            </ul>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-top: 20px; line-height: 1.6">
+              Writes use <code>CGImageDestinationCopyImageSource()</code> — only metadata sections are touched. Your image pixels are never decoded or
+              re-encoded.
+            </p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Privacy -->
-<section class="privacy" id="privacy">
-    <div class="section-inner">
+    <!-- Privacy -->
+    <section class="privacy" id="privacy">
+      <div class="section-inner">
         <div class="section-label">Privacy</div>
         <h2 class="section-title">Your photos never leave your home.</h2>
         <p class="section-sub">Not to our servers. Not to anyone's servers. Raza Photos has no servers.</p>
         <div class="privacy-grid">
-            <div class="privacy-item">
-                <span class="icon">🚫</span>
-                <h3>No internet connection</h3>
-                <p>The app never makes an outbound network request. Ever.</p>
-            </div>
-            <div class="privacy-item">
-                <span class="icon">📊</span>
-                <h3>No telemetry</h3>
-                <p>No analytics, no crash reporting sent anywhere, no usage data.</p>
-            </div>
-            <div class="privacy-item">
-                <span class="icon">👤</span>
-                <h3>No account</h3>
-                <p>No sign-up, no email, no profile. Nothing to create, nothing to delete.</p>
-            </div>
-            <div class="privacy-item">
-                <span class="icon">🏠</span>
-                <h3>Local network only</h3>
-                <p>All communication stays within your home Wi-Fi. Nothing is routed externally. <a href="discovery.html" style="color: #63c5ff; text-decoration: none; font-weight: 500;">How? →</a></p>
-            </div>
+          <div class="privacy-item">
+            <span class="icon">🚫</span>
+            <h3>No internet connection</h3>
+            <p>The app never makes an outbound network request. Ever.</p>
+          </div>
+          <div class="privacy-item">
+            <span class="icon">📊</span>
+            <h3>No telemetry</h3>
+            <p>No analytics, no crash reporting sent anywhere, no usage data.</p>
+          </div>
+          <div class="privacy-item">
+            <span class="icon">👤</span>
+            <h3>No account</h3>
+            <p>No sign-up, no email, no profile. Nothing to create, nothing to delete.</p>
+          </div>
+          <div class="privacy-item">
+            <span class="icon">🏠</span>
+            <h3>Local network only</h3>
+            <p>
+              All communication stays within your home Wi-Fi. Nothing is routed externally.
+              <a href="discovery.html" style="color: #63c5ff; text-decoration: none; font-weight: 500">How? →</a>
+            </p>
+          </div>
         </div>
-        <div style="margin-top: 40px; text-align: center;">
-            <a href="local-first.html" style="display: inline-flex; align-items: center; gap: 8px; color: #63c5ff; font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid rgba(99,197,255,0.3); padding: 10px 22px; border-radius: 980px;">
-                Why local-first matters →
-            </a>
+        <div style="margin-top: 40px; text-align: center">
+          <a
+            href="local-first.html"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              color: #63c5ff;
+              font-size: 15px;
+              font-weight: 500;
+              text-decoration: none;
+              border: 1px solid rgba(99, 197, 255, 0.3);
+              padding: 10px 22px;
+              border-radius: 980px;
+            "
+          >
+            Why local-first matters →
+          </a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Family controls -->
-<section style="background: var(--bg-alt); padding: 96px 24px;">
-    <div style="max-width: 1040px; margin: 0 auto;">
-        <div style="max-width: 560px; margin-bottom: 56px;">
-            <div class="section-label">Family controls</div>
-            <h2 class="section-title">Let the kids browse.<br>Not rearrange.</h2>
-            <p class="section-sub">Raza Photos gives you three levels of access control — no configuration wizard, no user accounts, no passwords to hand out.</p>
+    <!-- Family controls -->
+    <section style="background: var(--bg-alt); padding: 96px 24px">
+      <div style="max-width: 1040px; margin: 0 auto">
+        <div style="max-width: 560px; margin-bottom: 56px">
+          <div class="section-label">Family controls</div>
+          <h2 class="section-title">Let the kids browse.<br />Not rearrange.</h2>
+          <p class="section-sub">Raza Photos gives you three levels of access control — no configuration wizard, no user accounts, no passwords to hand out.</p>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px;">
-                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,143,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px;">🖥</div>
-                <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px;">Read-only server</h3>
-                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65;">Lock the Mac server entirely. Remote devices — every iPhone, iPad, or other Mac on the network — can browse the full library but cannot make any changes whatsoever. The library is yours to curate, from your Mac alone.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+          <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px">
+            <div
+              style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background: rgba(26, 143, 255, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+                margin-bottom: 20px;
+              "
+            >
+              🖥
             </div>
-            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px;">
-                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,143,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px;">✏️</div>
-                <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px;">Block remote edits only</h3>
-                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65;">Allow browsing from any device on the network, but prevent metadata changes — no editing dates, locations, albums, or people tags from iOS. Browsing remains completely unrestricted.</p>
+            <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px">Read-only server</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65">
+              Lock the Mac server entirely. Remote devices — every iPhone, iPad, or other Mac on the network — can browse the full library but cannot make any
+              changes whatsoever. The library is yours to curate, from your Mac alone.
+            </p>
+          </div>
+          <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px">
+            <div
+              style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background: rgba(26, 143, 255, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+                margin-bottom: 20px;
+              "
+            >
+              ✏️
             </div>
-            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px;">
-                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(26,143,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px;">📱</div>
-                <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px;">Read-only client</h3>
-                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65;">Set a specific iPhone or iPad to read-only mode on the device itself. That device becomes a pure viewer — no editing controls are shown, regardless of what the server allows.</p>
+            <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px">Block remote edits only</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65">
+              Allow browsing from any device on the network, but prevent metadata changes — no editing dates, locations, albums, or people tags from iOS.
+              Browsing remains completely unrestricted.
+            </p>
+          </div>
+          <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 36px 32px">
+            <div
+              style="
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background: rgba(26, 143, 255, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+                margin-bottom: 20px;
+              "
+            >
+              📱
             </div>
+            <h3 style="font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px">Read-only client</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.65">
+              Set a specific iPhone or iPad to read-only mode on the device itself. That device becomes a pure viewer — no editing controls are shown,
+              regardless of what the server allows.
+            </p>
+          </div>
         </div>
-        <p style="margin-top: 32px; font-size: 14px; color: var(--text-secondary); text-align: center;">No accounts, no passwords, no parental control apps. Just a toggle. <a href="security.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">Learn more about security →</a></p>
-    </div>
-</section>
+        <p style="margin-top: 32px; font-size: 14px; color: var(--text-secondary); text-align: center">
+          No accounts, no passwords, no parental control apps. Just a toggle.
+          <a href="security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more about security →</a>
+        </p>
+      </div>
+    </section>
 
-<!-- Pricing -->
-<section class="pricing" id="pricing">
-    <div class="section-inner">
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+      <div class="section-inner">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">Simple pricing.<br>Pay once.</h2>
+        <h2 class="section-title">Simple pricing.<br />Pay once.</h2>
         <div class="price-card">
-            <div class="price-amount"><sup>$</sup>20</div>
-            <div class="price-label">One-time purchase &mdash; currently free during early release</div>
-            <ul class="price-features">
-                <li>Mac, iPhone, and iPad</li>
-                <li>All current features included</li>
-                <li>Free updates during early release</li>
-                <li>No subscription, ever</li>
-                <li>No account required</li>
-            </ul>
-            <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn btn-primary" style="width:100%; justify-content:center; font-size:16px; padding:14px;">
-                Download Free on the App Store
-            </a>
-            <p class="price-note">Requires macOS 26 and iOS 26 or later.</p>
+          <div class="price-amount"><sup>$</sup>20</div>
+          <div class="price-label">One-time purchase &mdash; currently free during early release</div>
+          <ul class="price-features">
+            <li>Mac, iPhone, and iPad</li>
+            <li>All current features included</li>
+            <li>Free updates during early release</li>
+            <li>No subscription, ever</li>
+            <li>No account required</li>
+          </ul>
+          <a
+            href="https://apps.apple.com/ro/app/raza-photos/id6766848491"
+            class="btn btn-primary"
+            style="width: 100%; justify-content: center; font-size: 16px; padding: 14px"
+          >
+            Download Free on the App Store
+          </a>
+          <p class="price-note">Requires macOS 26 and iOS 26 or later.</p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Footer -->
-<footer>
-    <div class="footer-top">
+    <!-- Footer -->
+    <footer>
+      <div class="footer-top">
         <div class="footer-brand">
-            <img src="assets/icon_web.png" alt="Raza Photos">
-            <span>Raza Photos</span>
+          <img src="assets/icon_web.png" alt="Raza Photos" />
+          <span>Raza Photos</span>
         </div>
         <div class="footer-nav">
-            <div class="footer-group">
-                <span class="footer-group-label">Features</span>
-                <ul>
-                    <li><a href="browse.html">Browsing</a></li>
-                    <li><a href="formats.html">Supported formats</a></li>
-                    <li><a href="burst.html">Burst navigation</a></li>
-                    <li><a href="editing.html">Editing</a></li>
-                    <li><a href="sharing.html">Sharing</a></li>
-                </ul>
-            </div>
-            <div class="footer-group">
-                <span class="footer-group-label">How it works</span>
-                <ul>
-                    <li><a href="discovery.html">How discovery works</a></li>
-                    <li><a href="local-first.html">Local-first</a></li>
-                    <li><a href="security.html">Security</a></li>
-                    <li><a href="metadata-read.html">Metadata reading</a></li>
-                    <li><a href="metadata-write.html">Metadata writing</a></li>
-                </ul>
-            </div>
-            <div class="footer-group">
-                <span class="footer-group-label">Help</span>
-                <ul>
-                    <li><a href="support.html">Support</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
+          <div class="footer-group">
+            <span class="footer-group-label">Features</span>
+            <ul>
+              <li><a href="browse.html">Browsing</a></li>
+              <li><a href="formats.html">Supported formats</a></li>
+              <li><a href="burst.html">Burst navigation</a></li>
+              <li><a href="editing.html">Editing</a></li>
+              <li><a href="sharing.html">Sharing</a></li>
+            </ul>
+          </div>
+          <div class="footer-group">
+            <span class="footer-group-label">How it works</span>
+            <ul>
+              <li><a href="discovery.html">How discovery works</a></li>
+              <li><a href="local-first.html">Local-first</a></li>
+              <li><a href="security.html">Security</a></li>
+              <li><a href="metadata-read.html">Metadata reading</a></li>
+              <li><a href="metadata-write.html">Metadata writing</a></li>
+            </ul>
+          </div>
+          <div class="footer-group">
+            <span class="footer-group-label">Help</span>
+            <ul>
+              <li><a href="support.html">Support</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <div class="footer-bottom">
+      </div>
+      <div class="footer-bottom">
         <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
         <p class="footer-note">This website uses no cookies and collects no data from visitors.</p>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<script>
-    let activePlatform = 'mac';
+    <script>
+      let activePlatform = "mac";
 
-    function selectDevice(platform, btn) {
+      function selectDevice(platform, btn) {
         activePlatform = platform;
 
         // swap all platform images
-        document.querySelectorAll('.platform-img').forEach(img => {
-            const src = img.dataset[platform];
-            if (src) img.src = src;
+        document.querySelectorAll(".platform-img").forEach((img) => {
+          const src = img.dataset[platform];
+          if (src) img.src = src;
         });
 
         // sync all device pickers
-        document.querySelectorAll('.device-btn').forEach(b => {
-            b.classList.toggle('active', b.textContent.toLowerCase() === platform);
+        document.querySelectorAll(".device-btn").forEach((b) => {
+          b.classList.toggle("active", b.textContent.toLowerCase() === platform);
         });
-    }
-</script>
-
-</body>
+      }
+    </script>
+  </body>
 </html>
