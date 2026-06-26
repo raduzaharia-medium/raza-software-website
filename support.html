@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Raza Photos</title>
+    <meta name="description" content="Get help with Raza Photos. Common questions answered, and a direct line to the developer.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="support.css">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Raza Photos">
+    <meta property="og:url" content="https://razasoftware.eu/support.html">
+    <meta property="og:title" content="Support — Raza Photos">
+    <meta property="og:description" content="Get help with Raza Photos. Common questions answered, and a direct line to the developer.">
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Support — Raza Photos">
+    <meta name="twitter:description" content="Get help with Raza Photos. Common questions answered, and a direct line to the developer.">
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero-page">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Support</span>
+        <h1>We're here to help.</h1>
+        <p>Browse the common questions below. If you don't find what you need, send an email — you'll hear back from the developer directly, not a support queue.</p>
+    </div>
+</div>
+
+<div class="content">
+
+    <a href="mailto:razaphotos@outlook.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+            <strong>Email support</strong>
+            <span>razaphotos@outlook.com — questions, bug reports, feedback</span>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="contact-arrow">
+            <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <div class="faq-section">
+        <h2>Common questions</h2>
+
+        <div class="faq-group">
+            <h3>Connecting</h3>
+
+            <div class="faq-item">
+                <h4>I don't see my photo library on my iPhone or iPad</h4>
+                <p>Both your Mac and your iPhone need to be on the same Wi-Fi network. Check that your Mac is awake and that Raza Photos is running on it — the library is only available while the Mac app is open. Also make sure your iPhone is not on a guest network, which is isolated from the main network by design.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>I left the house and my photos disappeared</h4>
+                <p>This is expected. Raza Photos works entirely on your local home network — there is no cloud, no relay, and no remote access. When you leave your home Wi-Fi, there is nothing to connect to. Your photos are still safe on your Mac; they will reappear the moment you get back on your home network.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>My Mac is on but the library still doesn't appear</h4>
+                <p>Try quitting and reopening Raza Photos on the Mac. Bonjour discovery occasionally needs a nudge after the Mac wakes from sleep. If the problem persists, check that your router does not have AP isolation or multicast filtering enabled — these block Bonjour from working across devices.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>I have multiple Macs — can I see all of them?</h4>
+                <p>Yes. Every Mac running Raza Photos on the same network advertises its library independently. On iPhone and iPad, all available libraries appear merged into a single unified view.</p>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h3>Photos and video</h3>
+
+            <div class="faq-item">
+                <h4>My Live Photos play as still images</h4>
+                <p>The MOV companion file is probably missing. This happens when you export from Apple Photos without using <strong>File → Export Unmodified Originals</strong>. A standard export gives only the still image; the motion clip stays behind. Re-export using Unmodified Originals and import the folder again — the pairing will happen automatically.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Some of my videos won't play</h4>
+                <p>Raza Photos plays videos using Apple's native framework, so it supports the same formats your iPhone records — MOV, MP4, HEVC, H.264, and ProRes. It does not support MKV, AVI, WMV, or other formats associated with downloaded movies. If a video from your camera roll won't play, please get in touch.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>My HDR photos don't look any different</h4>
+                <p>HDR requires a compatible display — iPhone 12 or later, MacBook Pro with Liquid Retina XDR, or Pro Display XDR. On a standard display the SDR version of the photo is shown, which is correct behaviour. If you are on a supported display and HDR still looks flat, please send us a note.</p>
+            </div>
+        </div>
+
+        <div class="faq-group">
+            <h3>Editing and metadata</h3>
+
+            <div class="faq-item">
+                <h4>I can't edit anything from my iPhone</h4>
+                <p>The Mac server may be set to read-only mode, or your iPhone may have its own read-only setting enabled. Check Settings on the Mac first — there is an option to block remote edits. If the Mac allows edits, check the Settings screen on your iPhone as well.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>I changed a date or location — where is it saved?</h4>
+                <p>Changes are held in the library database until you explicitly save them. To write changes back to the original file, use the Save action in the app. Raza Photos only touches the metadata sections of the file — your image pixels are never re-encoded.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="support-footer-note">
+        <p>Didn't find what you were looking for? <a href="mailto:razaphotos@outlook.com">Send an email</a> — bug reports, feature requests, and questions are all welcome.</p>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos">
+        <span>Raza Photos</span>
+    </div>
+    <ul class="footer-links">
+        <li><a href="support.html">Support</a></li>
+        <li><a href="formats.html">Supported formats</a></li>
+        <li><a href="metadata-read.html">Metadata reading</a></li>
+        <li><a href="metadata-write.html">Metadata writing</a></li>
+        <li><a href="discovery.html">How discovery works</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+    <p class="footer-note">This website uses no cookies and collects no data from visitors.</p>
+</footer>
+
+</body>
+</html>
