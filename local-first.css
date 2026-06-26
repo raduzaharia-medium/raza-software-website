@@ -93,24 +93,17 @@
 }
 
 /* ── Philosophy ── */
-.philosophy {
-    background: var(--text);
-    color: #fff;
-    border-radius: var(--radius);
-    padding: 40px 44px;
+info-card.philosophy {
+    --card-padding: 40px 44px;
     margin: 48px 0;
 }
 
-.philosophy p {
+info-card.philosophy .card-body p {
     font-size: 17px;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
     line-height: 1.75;
     margin-bottom: 16px;
 }
-
-.philosophy p:last-child { margin-bottom: 0; }
-
-.philosophy strong { color: #fff; }
 
 /* ── Callout ── */
 .callout {
@@ -129,6 +122,6 @@
 .other-links { margin-top: 56px; }
 
 @media (max-width: 768px) {
-    .philosophy { padding: 28px 24px; }
-    .tradeoff { padding: 24px 24px; }
+    info-card.philosophy { --card-padding: 28px 24px; }
+    .tradeoff { padding: 24px; }
 }

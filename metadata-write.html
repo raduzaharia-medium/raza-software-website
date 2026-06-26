@@ -39,11 +39,10 @@
 <div class="content">
 <div class="content-body">
 
-    <div class="safety-statement">
-        <h2>Your pixels are never touched</h2>
+    <info-card variant="green" heading="Your pixels are never touched">
         <p>A photo file has two distinct areas: the compressed image (your actual pixels) and the metadata (everything else). Raza Photos operates exclusively on the metadata area. The compressed image is never decoded, processed, or re-encoded during a metadata save.</p>
         <p>This means there is no generation loss, no recompression, and no risk of corrupting the image data. A metadata save is a precise surgical operation on a small part of the file.</p>
-    </div>
+    </info-card>
 
     <div class="section">
         <h2>How saving works</h2>
@@ -63,30 +62,12 @@
         <h2>Supported file formats</h2>
         <p class="desc">Metadata write-back works with the most common image formats. One exception applies to AVIF.</p>
         <div class="format-grid">
-            <div class="format-card">
-                <strong>JPEG</strong>
-                <span>Full read &amp; write</span>
-            </div>
-            <div class="format-card">
-                <strong>HEIC</strong>
-                <span>Full read &amp; write</span>
-            </div>
-            <div class="format-card">
-                <strong>PNG</strong>
-                <span>Full read &amp; write</span>
-            </div>
-            <div class="format-card">
-                <strong>TIFF</strong>
-                <span>Full read &amp; write</span>
-            </div>
-            <div class="format-card">
-                <strong>PSD</strong>
-                <span>Full read &amp; write</span>
-            </div>
-            <div class="format-card limited">
-                <strong>AVIF</strong>
-                <span>Read only — changes stored in library database</span>
-            </div>
+            <info-card variant="alt" heading="JPEG" description="Full read &amp; write"></info-card>
+            <info-card variant="alt" heading="HEIC" description="Full read &amp; write"></info-card>
+            <info-card variant="alt" heading="PNG" description="Full read &amp; write"></info-card>
+            <info-card variant="alt" heading="TIFF" description="Full read &amp; write"></info-card>
+            <info-card variant="alt" heading="PSD" description="Full read &amp; write"></info-card>
+            <info-card variant="orange" heading="AVIF" description="Read only — changes stored in library database"></info-card>
         </div>
     </div>
 
@@ -126,12 +107,11 @@
 
     <hr>
 
-    <div class="tech-card">
-        <h2>How it works technically</h2>
+    <info-card variant="dark" heading="How it works technically">
         <p>Metadata writes use Apple's <code>CGImageDestinationCopyImageSource()</code> function, which operates exclusively on the metadata sections of an image file. The compressed image data is streamed directly from the source file without being decoded.</p>
         <p>The update process uses merge semantics: existing metadata is read in full, your changes are applied on top, and the result is assembled entirely in memory. A single atomic write then replaces the original file on disk — there is no intermediate temporary file that could leave a partial state if interrupted.</p>
         <p>This approach means the write operation is fast, lossless, and safe regardless of file size.</p>
-    </div>
+    </info-card>
 
     <div class="other-links">
         <link-card href="metadata-read.html" label="See also" heading="Reading metadata" description="What Raza Photos reads from your files and in what priority order"></link-card>

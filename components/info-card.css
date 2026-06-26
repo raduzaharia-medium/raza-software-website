@@ -22,6 +22,13 @@ info-card[variant="green"] {
   --card-border-color: var(--green);
 }
 
+info-card[variant="orange"] {
+  --card-bg: rgba(255, 159, 10, 0.05);
+  --card-border-color: var(--orange);
+}
+
+info-card[variant="orange"] .card-heading { color: var(--orange); }
+
 info-card[variant="dark"] {
   --card-bg: var(--text);
   --card-border-color: transparent;

@@ -1,25 +1,22 @@
-.safety-statement {
-    background: #fff;
-    border: 1.5px solid var(--green);
-    border-radius: var(--radius);
-    padding: 32px 36px;
+/* ── Safety statement ── */
+info-card[variant="green"] {
+    --card-padding: 32px 36px;
     margin-bottom: 48px;
 }
 
-.safety-statement h2 {
+info-card[variant="green"] .card-heading {
     font-size: 19px;
     font-weight: 700;
     margin-bottom: 12px;
     color: var(--text);
 }
 
-.safety-statement p {
+info-card[variant="green"] .card-body p {
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.7;
+    margin-bottom: 10px;
 }
-
-.safety-statement p + p { margin-top: 10px; }
 
 
 .write-grid {
@@ -42,30 +39,20 @@
     margin-top: 16px;
 }
 
-.format-card {
-    background: var(--bg-alt);
-    border-radius: 10px;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
+/* ── Format grid ── */
+.format-grid info-card {
+    --card-radius: 10px;
+    --card-padding: 14px 16px;
     text-align: center;
 }
 
-.format-card strong {
-    display: block;
+.format-grid .card-heading {
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.02em;
-    margin-bottom: 4px;
 }
 
-.format-card span { font-size: 12px; color: var(--text-secondary); }
-
-.format-card.limited {
-    border-color: var(--orange);
-    background: rgba(255, 159, 10, 0.05);
-}
-
-.format-card.limited strong { color: var(--orange); }
+.format-grid .card-description { font-size: 12px; }
 
 .protected-list {
     list-style: none;
@@ -90,32 +77,26 @@
     margin-top: 2px;
 }
 
-.tech-card {
-    background: var(--text);
-    color: #fff;
-    border-radius: var(--radius);
-    padding: 32px 36px;
+/* ── Tech card ── */
+.content-body > info-card[variant="dark"] {
+    --card-padding: 32px 36px;
     margin-bottom: 48px;
 }
 
-.tech-card h2 {
+.content-body > info-card[variant="dark"] .card-heading {
     font-size: 19px;
     font-weight: 700;
     margin-bottom: 16px;
-    color: #fff;
 }
 
-.tech-card p {
+.content-body > info-card[variant="dark"] .card-body p {
     font-size: 15px;
-    color: rgba(255,255,255,0.65);
     line-height: 1.7;
     margin-bottom: 12px;
 }
 
-.tech-card p:last-child { margin-bottom: 0; }
-
-.tech-card code {
-    background: rgba(255,255,255,0.1);
+.content-body > info-card[variant="dark"] code {
+    background: rgba(255, 255, 255, 0.1);
     color: #63c5ff;
     padding: 2px 7px;
     border-radius: 5px;
@@ -158,6 +139,6 @@
 hr { margin: 48px 0; }
 
 @media (max-width: 768px) {
-    .tech-card { padding: 24px; }
-    .safety-statement { padding: 24px; }
+    info-card[variant="green"],
+    .content-body > info-card[variant="dark"] { --card-padding: 24px; }
 }

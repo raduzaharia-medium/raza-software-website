@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/link-card.css">
+    <link rel="stylesheet" href="components/info-card.css">
+    <link rel="stylesheet" href="components/callout-box.css">
     <link rel="stylesheet" href="components/flow-step.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="components/faq-item.css">
@@ -46,26 +48,10 @@
         <p>Every time you see a device appear in a list without you having to type an IP address or go into settings — that is almost certainly Bonjour doing the work.</p>
 
         <div class="familiar-grid">
-            <div class="familiar-card">
-                <span class="icon">📡</span>
-                <strong>AirDrop</strong>
-                <span>Finds nearby Apple devices automatically</span>
-            </div>
-            <div class="familiar-card">
-                <span class="icon">📺</span>
-                <strong>AirPlay</strong>
-                <span>Discovers Apple TV and HomePod on your network</span>
-            </div>
-            <div class="familiar-card">
-                <span class="icon">🖨</span>
-                <strong>Printers</strong>
-                <span>Mac finds network printers without driver setup</span>
-            </div>
-            <div class="familiar-card">
-                <span class="icon">📸</span>
-                <strong>Raza Photos</strong>
-                <span>Finds your photo library the same way</span>
-            </div>
+            <info-card variant="alt" icon="📡" heading="AirDrop" description="Finds nearby Apple devices automatically"></info-card>
+            <info-card variant="alt" icon="📺" heading="AirPlay" description="Discovers Apple TV and HomePod on your network"></info-card>
+            <info-card variant="alt" icon="🖨" heading="Printers" description="Mac finds network printers without driver setup"></info-card>
+            <info-card variant="alt" icon="📸" heading="Raza Photos" description="Finds your photo library the same way"></info-card>
         </div>
 
         <p>Raza Photos does exactly the same thing as AirPlay — except instead of discovering a speaker, your iPhone discovers a photo library.</p>
@@ -99,10 +85,9 @@
         <p>If you have photos on two Macs — say, a desktop with the main family archive and a laptop with recent travel shots — both can run Raza Photos simultaneously. Your iPhone hears both Bonjour announcements, connects to both, and presents the combined contents as a single unified library, with deduplication handled automatically.</p>
         <p>There is no merging, no copying, no syncing between the Macs. Each Mac serves its own photos. Your iPhone simply asks both of them and assembles the result. From your perspective, it is one library.</p>
 
-        <div class="analogy">
-            <span class="analogy-label">Analogy</span>
+        <callout-box variant="blue" heading="Analogy">
             <p>It is like having two bookshelves in different rooms. You do not need to move all the books to one shelf to read them — you just know where both shelves are and can pull from either.</p>
-        </div>
+        </callout-box>
     </div>
 
     <hr>
@@ -112,10 +97,10 @@
         <p>Bonjour announcements are local network broadcasts. They travel over your Wi-Fi but stop at your router — they do not go out to the internet. A device outside your home, even one that knows your IP address, cannot receive these announcements and cannot initiate a connection to your library.</p>
         <p>This is not a firewall rule you have to configure. It is simply how local network broadcasts work. The announcements are addressed to every device on your network, but "your network" ends at the router.</p>
 
-        <div class="highlight-box">
+        <info-card variant="dark" class="highlight-box">
             <p><strong>The internet cannot see your library</strong> because the library never announces itself to the internet. It only speaks to devices that are already inside your home network — and even then, only to devices that are actively listening for it.</p>
             <p>There is no open port, no forwarded address, no way to reach it from outside. It is not that the door is locked. There is simply no door facing outward.</p>
-        </div>
+        </info-card>
     </div>
 
     <hr>
@@ -125,10 +110,9 @@
         <p>When your iPhone leaves your home network — the moment you step outside and your phone switches from Wi-Fi to cellular — it can no longer hear the Bonjour announcements from your Mac. The library becomes unreachable, and the app will show no connected library.</p>
         <p>This is intentional. Remote access would require either a relay server (which we deliberately do not have) or opening a port on your router (which we deliberately do not ask you to do). The tradeoff is that your library is available everywhere in the house and nowhere outside it.</p>
 
-        <div class="analogy">
-            <span class="analogy-label">Why this is the right tradeoff</span>
+        <callout-box variant="blue" heading="Why this is the right tradeoff">
             <p>A library that is only accessible inside your home is a library that cannot be accessed by anyone outside your home. The limitation and the security guarantee are the same thing.</p>
-        </div>
+        </callout-box>
     </div>
 
     <hr>
@@ -158,6 +142,8 @@
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
 <script src="components/link-card.js"></script>
+<script src="components/info-card.js"></script>
+<script src="components/callout-box.js"></script>
 <script src="components/faq-item.js"></script>
 <script src="components/flow-step.js"></script>
 
