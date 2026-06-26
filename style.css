@@ -196,7 +196,7 @@ nav {
 }
 
 /* ── Showcase (shared: browse, metadata-write) ── */
-.showcase-section { max-width: 1040px; margin: 0 auto; padding: 72px 24px 96px; }
+.showcase-section { max-width: 1040px; margin: 0 auto; padding: 72px 0 96px; }
 
 .showcase-item {
     display: grid;
@@ -305,7 +305,7 @@ nav {
     margin-top: -28px;
     position: relative;
     z-index: 1;
-    padding-bottom: 80px;
+    padding: 0 24px 80px;
 }
 
 /* ── Text sections ── */
