@@ -47,24 +47,9 @@
 
 @media (max-width: 560px) { .write-grid { grid-template-columns: 1fr; } }
 
-.write-card {
-    background: var(--bg-alt);
-    border-radius: 12px;
-    padding: 18px 20px;
-    border: 1px solid var(--border);
-}
-
-.write-card strong {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.write-card span {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.5;
+.write-grid info-card {
+    --card-radius: 12px;
+    --card-padding: 18px 20px;
 }
 
 .format-grid {

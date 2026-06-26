@@ -7,6 +7,7 @@
     <meta name="description" content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings — no menus, no mode switches.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
+    <link rel="stylesheet" href="components/info-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="burst.css">
     <meta property="og:type" content="website">
@@ -51,16 +52,8 @@
 <div class="content-body">
 
     <div class="axis-grid">
-        <div class="axis-card">
-            <div class="axis-icon">↔</div>
-            <h3>Horizontal — your timeline</h3>
-            <p>Swiping left or right always moves through your photo library in time. One swipe, one photo. Every photo in your library is one swipe away from the next, including bursts — the burst appears as a single entry in the timeline.</p>
-        </div>
-        <div class="axis-card axis-card-burst">
-            <div class="axis-icon">↕</div>
-            <h3>Vertical — inside a burst</h3>
-            <p>When the photo you're looking at belongs to a burst, swiping up or down steps through the frames of that burst. You stay in the same moment in time — you're just drilling into the depth of it, frame by frame.</p>
-        </div>
+        <info-card variant="alt" icon="↔" heading="Horizontal — your timeline" description="Swiping left or right always moves through your photo library in time. One swipe, one photo. Every photo in your library is one swipe away from the next, including bursts — the burst appears as a single entry in the timeline."></info-card>
+        <info-card variant="blue" icon="↕" heading="Vertical — inside a burst" description="When the photo you're looking at belongs to a burst, swiping up or down steps through the frames of that burst. You stay in the same moment in time — you're just drilling into the depth of it, frame by frame."></info-card>
     </div>
 
     <div class="burst-explainer">
@@ -89,6 +82,7 @@
 
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/info-card.js"></script>
 
 </body>
 </html>

@@ -4,6 +4,7 @@ class LinkCard extends HTMLElement {
     const label = this.getAttribute("label") ?? "";
     const heading = this.getAttribute("heading") ?? "";
     const description = this.getAttribute("description") ?? "";
+
     this.innerHTML = `<a href="${href}" class="link-card">
       <span class="label">${label}</span>
       <strong>${heading}</strong>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/link-card.css">
+    <link rel="stylesheet" href="components/flow-step.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="components/faq-item.css">
     <link rel="stylesheet" href="discovery.css">
@@ -74,36 +75,20 @@
     <div class="section">
         <h2>What actually happens when you open the app</h2>
 
-        <div class="flow">
-            <div class="flow-step">
-                <div class="flow-icon">🖥</div>
-                <div>
-                    <h3>The Mac announces itself</h3>
-                    <p>When Raza Photos is running on your Mac and sharing is enabled, it broadcasts a Bonjour announcement on the local network. Think of it as the Mac quietly saying "I'm here, and I have a photo library" — once per second, to anyone listening on the same network.</p>
-                </div>
-            </div>
-            <div class="flow-step">
-                <div class="flow-icon">📱</div>
-                <div>
-                    <h3>The iPhone listens</h3>
-                    <p>When you open Raza Photos on your iPhone or iPad, it starts listening for those Bonjour announcements. Within a second or two, it hears the Mac — and immediately knows its name, its address on the local network, and the port to connect to. No typing required.</p>
-                </div>
-            </div>
-            <div class="flow-step">
-                <div class="flow-icon">🔗</div>
-                <div>
-                    <h3>A direct connection is made</h3>
-                    <p>Your iPhone connects directly to your Mac over your home Wi-Fi. Not through Apple's servers. Not through any relay. A straight line from your phone to your Mac, entirely within your home network.</p>
-                </div>
-            </div>
-            <div class="flow-step">
-                <div class="flow-icon">🖼</div>
-                <div>
-                    <h3>Your library appears</h3>
-                    <p>Photos, filters, albums, faces, map data — all served directly from the Mac. The iPhone renders them natively. The whole exchange happens over Wi-Fi at whatever speed your router supports, typically fast enough to load a full-resolution photo in under a second.</p>
-                </div>
-            </div>
-        </div>
+        <step-flow>
+            <flow-step icon="🖥" heading="The Mac announces itself">
+                <p>When Raza Photos is running on your Mac and sharing is enabled, it broadcasts a Bonjour announcement on the local network. Think of it as the Mac quietly saying "I'm here, and I have a photo library" — once per second, to anyone listening on the same network.</p>
+            </flow-step>
+            <flow-step icon="📱" heading="The iPhone listens">
+                <p>When you open Raza Photos on your iPhone or iPad, it starts listening for those Bonjour announcements. Within a second or two, it hears the Mac — and immediately knows its name, its address on the local network, and the port to connect to. No typing required.</p>
+            </flow-step>
+            <flow-step icon="🔗" heading="A direct connection is made">
+                <p>Your iPhone connects directly to your Mac over your home Wi-Fi. Not through Apple's servers. Not through any relay. A straight line from your phone to your Mac, entirely within your home network.</p>
+            </flow-step>
+            <flow-step icon="🖼" heading="Your library appears">
+                <p>Photos, filters, albums, faces, map data — all served directly from the Mac. The iPhone renders them natively. The whole exchange happens over Wi-Fi at whatever speed your router supports, typically fast enough to load a full-resolution photo in under a second.</p>
+            </flow-step>
+        </step-flow>
     </div>
 
     <hr>
@@ -173,6 +158,7 @@
 <script src="components/footer.js"></script>
 <script src="components/link-card.js"></script>
 <script src="components/faq-item.js"></script>
+<script src="components/flow-step.js"></script>
 
 </body>
 </html>

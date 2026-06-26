@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/link-card.css">
+    <link rel="stylesheet" href="components/info-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="metadata-write.css">
     <meta property="og:type" content="website">
@@ -94,34 +95,13 @@
         <h2>What gets written</h2>
         <p class="desc">Raza Photos writes to multiple metadata standards simultaneously to ensure maximum compatibility with other photo apps and DAMs.</p>
         <div class="write-grid">
-            <div class="write-card">
-                <strong>Dates</strong>
-                <span>Written to EXIF DateTimeOriginal and TIFF DateTime</span>
-            </div>
-            <div class="write-card">
-                <strong>Titles</strong>
-                <span>Written to IPTC ObjectName and XMP dc:title</span>
-            </div>
-            <div class="write-card">
-                <strong>GPS coordinates</strong>
-                <span>Written to the EXIF GPS dictionary with directional references</span>
-            </div>
-            <div class="write-card">
-                <strong>Country &amp; city</strong>
-                <span>Written to IPTC, XMP extension, and ACDSee location fields</span>
-            </div>
-            <div class="write-card">
-                <strong>People &amp; faces</strong>
-                <span>Names and bounding boxes written to XMP PersonInImage and region fields</span>
-            </div>
-            <div class="write-card">
-                <strong>Albums &amp; events</strong>
-                <span>Written to multiple formats including Lightroom hierarchical subjects</span>
-            </div>
-            <div class="write-card">
-                <strong>Burst groupings</strong>
-                <span>Written to a custom XMP namespace for burst sequence identification</span>
-            </div>
+            <info-card variant="alt" heading="Dates" description="Written to EXIF DateTimeOriginal and TIFF DateTime"></info-card>
+            <info-card variant="alt" heading="Titles" description="Written to IPTC ObjectName and XMP dc:title"></info-card>
+            <info-card variant="alt" heading="GPS coordinates" description="Written to the EXIF GPS dictionary with directional references"></info-card>
+            <info-card variant="alt" heading="Country &amp; city" description="Written to IPTC, XMP extension, and ACDSee location fields"></info-card>
+            <info-card variant="alt" heading="People &amp; faces" description="Names and bounding boxes written to XMP PersonInImage and region fields"></info-card>
+            <info-card variant="alt" heading="Albums &amp; events" description="Written to multiple formats including Lightroom hierarchical subjects"></info-card>
+            <info-card variant="alt" heading="Burst groupings" description="Written to a custom XMP namespace for burst sequence identification"></info-card>
         </div>
         <div class="note" style="margin-top:16px;">
             <strong>Lightroom compatibility.</strong> Albums and events are written as Lightroom-compatible hierarchical subjects, so your organisation carries over if you import the same files into Lightroom.
@@ -163,6 +143,7 @@
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
 <script src="components/link-card.js"></script>
+<script src="components/info-card.js"></script>
 
 </body>
 </html>

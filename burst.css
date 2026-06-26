@@ -61,38 +61,18 @@
     margin-bottom: 48px;
 }
 
-.axis-card {
-    background: var(--bg-alt);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    padding: 28px 28px;
+.axis-grid info-card {
+    --card-padding: 28px;
 }
 
-.axis-card-burst {
-    border-color: var(--blue);
-    background: rgba(26,143,255,0.04);
-}
-
-.axis-icon {
-    font-size: 28px;
-    margin-bottom: 14px;
-    line-height: 1;
+.axis-grid .card-icon {
     color: var(--blue);
     font-weight: 300;
+    font-size: 28px;
 }
 
-.axis-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 10px;
-}
-
-.axis-card p {
-    font-size: 14px;
-    color: var(--text-secondary);
+.axis-grid .card-description {
     line-height: 1.7;
-    margin: 0;
 }
 
 /* ── Explainer ── */

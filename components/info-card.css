@@ -1,0 +1,116 @@
+info-card {
+  display: block;
+  background: var(--card-bg, var(--bg));
+  border: 1px solid var(--card-border-color, var(--border));
+  border-radius: var(--card-radius, var(--radius));
+  padding: var(--card-padding, 20px);
+}
+
+/* ── Variants ── */
+
+info-card[variant="alt"] {
+  --card-bg: var(--bg-alt);
+}
+
+info-card[variant="blue"] {
+  --card-bg: rgba(26, 143, 255, 0.04);
+  --card-border-color: var(--blue);
+}
+
+info-card[variant="green"] {
+  --card-bg: #fff;
+  --card-border-color: var(--green);
+}
+
+info-card[variant="dark"] {
+  --card-bg: var(--text);
+  --card-border-color: transparent;
+  color: #fff;
+}
+
+/* ── Inner elements ── */
+
+.card-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.card-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+info-card[variant="blue"] .card-label {
+  color: var(--blue);
+}
+
+info-card[variant="green"] .card-label {
+  color: var(--green);
+}
+
+.card-heading {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+info-card[variant="dark"] .card-heading {
+  color: #fff;
+}
+
+.card-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+info-card[variant="dark"] .card-description {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.card-body {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.card-badge {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(26, 143, 255, 0.1);
+  color: var(--blue);
+  letter-spacing: 0.02em;
+}
+
+/* ── Link card ── */
+
+.card-link {
+  display: contents;
+  text-decoration: none;
+  color: inherit;
+}
+
+info-card[href] {
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+info-card[href]:hover {
+  border-color: var(--blue);
+  box-shadow: 0 4px 20px rgba(26, 143, 255, 0.1);
+}

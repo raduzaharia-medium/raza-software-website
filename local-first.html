@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/link-card.css">
+    <link rel="stylesheet" href="components/info-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="local-first.css">
     <meta property="og:type" content="website">
@@ -49,8 +50,7 @@
         <p>Most photo apps are built around cloud storage. That comes with real tradeoffs worth understanding.</p>
 
         <div class="comparison">
-            <div class="compare-card cloud">
-                <span class="card-label">Cloud photo storage</span>
+            <info-card variant="alt" label="Cloud photo storage">
                 <ul class="compare-list">
                     <li><span class="dot cloud-dot">✗</span>Monthly or yearly subscription</li>
                     <li><span class="dot cloud-dot">✗</span>Your photos on someone else's servers</li>
@@ -59,9 +59,8 @@
                     <li><span class="dot cloud-dot">✗</span>Subject to data breaches you have no control over</li>
                     <li><span class="dot cloud-dot">✗</span>Terms of service can change at any time</li>
                 </ul>
-            </div>
-            <div class="compare-card local">
-                <span class="card-label">Raza Photos</span>
+            </info-card>
+            <info-card variant="green" label="Raza Photos">
                 <ul class="compare-list">
                     <li><span class="dot local-dot">✓</span>One-time purchase, no subscription</li>
                     <li><span class="dot local-dot">✓</span>Your photos on your own hardware</li>
@@ -70,7 +69,7 @@
                     <li><span class="dot local-dot">✓</span>No external server means no external breach</li>
                     <li><span class="dot local-dot">✓</span>Your files, in open formats, always</li>
                 </ul>
-            </div>
+            </info-card>
         </div>
     </div>
 
@@ -128,6 +127,7 @@
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
 <script src="components/link-card.js"></script>
+<script src="components/info-card.js"></script>
 
 </body>
 </html>

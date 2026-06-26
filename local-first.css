@@ -34,26 +34,9 @@ hr { margin: 56px 0; }
 
 @media (max-width: 560px) { .comparison { grid-template-columns: 1fr; } }
 
-.compare-card {
-    border-radius: var(--radius);
-    padding: 28px 28px;
-    border: 1px solid var(--border);
+.comparison info-card {
+    --card-padding: 28px;
 }
-
-.compare-card.cloud { background: var(--bg-alt); }
-.compare-card.local { background: #fff; border-color: var(--green); }
-
-.compare-card .card-label {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    margin-bottom: 16px;
-    display: block;
-}
-
-.compare-card.cloud .card-label { color: var(--text-secondary); }
-.compare-card.local .card-label { color: var(--green); }
 
 .compare-list {
     list-style: none;

@@ -98,22 +98,7 @@ hr { margin: 48px 0; }
     gap: 12px;
 }
 
-.standard-card {
-    background: var(--bg);
-    border-radius: 12px;
-    padding: 16px 18px;
-    border: 1px solid var(--border);
-}
-
-.standard-card strong {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.standard-card span {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.5;
+.standards-grid info-card {
+    --card-radius: 12px;
+    --card-padding: 16px 18px;
 }

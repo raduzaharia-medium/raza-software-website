@@ -42,101 +42,38 @@ hr { margin: 52px 0; }
 }
 
 /* ── Format card ── */
-.fmt-card {
-    background: var(--bg-alt);
-    border-radius: 14px;
-    padding: 18px 20px;
-    border: 1px solid var(--border);
+.fmt-hero-grid info-card,
+.fmt-secondary-grid info-card {
+    --card-radius: 14px;
+    --card-padding: 18px 20px;
 }
 
-.fmt-card.primary {
-    padding: 24px 24px;
-    border-color: var(--blue);
-    background: rgba(26,143,255,0.04);
+.fmt-hero-grid info-card[variant="blue"] {
+    --card-padding: 24px;
 }
 
-.fmt-ext {
-    display: block;
+.fmt-hero-grid info-card[variant="blue"] .card-heading { font-size: 17px; }
+
+.fmt-hero-grid info-card .card-label,
+.fmt-secondary-grid info-card .card-label {
     font-family: 'SF Mono', 'Fira Code', monospace;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-secondary);
+    text-transform: none;
     letter-spacing: 0.04em;
-    margin-bottom: 8px;
 }
 
-.fmt-card.primary .fmt-ext { color: var(--blue); }
-
-.fmt-card strong {
-    display: block;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 6px;
+.codec-grid info-card {
+    --card-radius: 10px;
+    --card-padding: 14px 16px;
 }
 
-.fmt-card.primary strong { font-size: 17px; }
-
-.fmt-card p {
+.codec-grid .card-heading {
+    font-family: 'SF Mono', 'Fira Code', monospace;
     font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 0;
+    letter-spacing: 0.01em;
 }
 
-.fmt-badge {
-    display: inline-block;
-    margin-top: 14px;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 9px;
-    border-radius: 6px;
-    background: rgba(26,143,255,0.1);
-    color: var(--blue);
-    letter-spacing: 0.02em;
-}
+.codec-grid .card-description { font-size: 12px; }
 
-/* ── Callout ── */
-.fmt-callout {
-    border-radius: var(--radius);
-    padding: 20px 24px;
-    margin-top: 16px;
-}
-
-.fmt-callout strong {
-    display: block;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.fmt-callout p {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.65;
-    margin: 0;
-}
-
-.fmt-callout-neutral {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-}
-
-.fmt-callout-neutral strong { color: var(--text); }
-
-.fmt-callout-blue {
-    background: rgba(26,143,255,0.06);
-    border: 1.5px solid rgba(26,143,255,0.2);
-}
-
-.fmt-callout-blue strong { color: var(--blue); }
-
-.fmt-callout-orange {
-    background: rgba(255,159,10,0.07);
-    border: 1.5px solid rgba(255,159,10,0.3);
-}
-
-.fmt-callout-orange strong { color: var(--orange); }
 
 /* ── Codec section ── */
 .codec-section {
@@ -159,27 +96,7 @@ hr { margin: 52px 0; }
     gap: 8px;
 }
 
-.codec-chip {
-    background: var(--bg-alt);
-    border-radius: 10px;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-}
 
-.codec-chip strong {
-    display: block;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    letter-spacing: 0.01em;
-}
-
-.codec-chip span {
-    font-size: 12px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
 
 /* ── HDR explainer ── */
 .hdr-explainer {
@@ -290,47 +207,6 @@ hr { margin: 52px 0; }
     line-height: 1.5;
 }
 
-/* ── Live Photo flow ── */
-.live-flow {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin: 16px 0;
-}
-
-.live-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg);
-}
-
-.live-step:last-child { border-bottom: none; }
-
-.live-icon {
-    font-size: 22px;
-    flex-shrink: 0;
-    width: 36px;
-    text-align: center;
-    margin-top: 1px;
-}
-
-.live-step h3 {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.live-step p {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0;
-}
 
 /* ── Responsive ── */
 @media (max-width: 768px) {

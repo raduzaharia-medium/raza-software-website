@@ -24,48 +24,6 @@
     margin-bottom: 0 !important;
 }
 
-/* ── Step flow ── */
-.flow {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 24px 0;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-}
-
-.flow-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 24px 28px;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg);
-}
-
-.flow-step:last-child { border-bottom: none; }
-
-.flow-icon {
-    font-size: 28px;
-    flex-shrink: 0;
-    width: 44px;
-    text-align: center;
-    margin-top: 2px;
-}
-
-.flow-step h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.flow-step p {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 0 !important;
-}
 
 /* ── You already know this ── */
 .familiar-grid {

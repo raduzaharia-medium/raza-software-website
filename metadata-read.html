@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/link-card.css">
+    <link rel="stylesheet" href="components/info-card.css">
     <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="metadata-read.css">
     <meta property="og:type" content="website">
@@ -49,34 +50,13 @@
     <div class="standards-section">
         <h2>Supported metadata standards</h2>
         <div class="standards-grid">
-            <div class="standard-card">
-                <strong>EXIF</strong>
-                <span>Written by cameras and smartphones at capture time</span>
-            </div>
-            <div class="standard-card">
-                <strong>IPTC</strong>
-                <span>Added by photo editing software and asset management tools</span>
-            </div>
-            <div class="standard-card">
-                <strong>XMP</strong>
-                <span>Used by Adobe Lightroom, Photoshop, and modern editors</span>
-            </div>
-            <div class="standard-card">
-                <strong>GPS dictionary</strong>
-                <span>Location data embedded within the EXIF block</span>
-            </div>
-            <div class="standard-card">
-                <strong>Apple MakerNote</strong>
-                <span>Proprietary extensions written by iOS and macOS cameras</span>
-            </div>
-            <div class="standard-card">
-                <strong>ACDSee XML</strong>
-                <span>Proprietary fields written by ACDSee Photo Studio</span>
-            </div>
-            <div class="standard-card">
-                <strong>Filesystem</strong>
-                <span>File creation and modification dates from the operating system</span>
-            </div>
+            <info-card heading="EXIF" description="Written by cameras and smartphones at capture time"></info-card>
+            <info-card heading="IPTC" description="Added by photo editing software and asset management tools"></info-card>
+            <info-card heading="XMP" description="Used by Adobe Lightroom, Photoshop, and modern editors"></info-card>
+            <info-card heading="GPS dictionary" description="Location data embedded within the EXIF block"></info-card>
+            <info-card heading="Apple MakerNote" description="Proprietary extensions written by iOS and macOS cameras"></info-card>
+            <info-card heading="ACDSee XML" description="Proprietary fields written by ACDSee Photo Studio"></info-card>
+            <info-card heading="Filesystem" description="File creation and modification dates from the operating system"></info-card>
         </div>
     </div>
 
@@ -222,6 +202,7 @@
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
 <script src="components/link-card.js"></script>
+<script src="components/info-card.js"></script>
 
 </body>
 </html>

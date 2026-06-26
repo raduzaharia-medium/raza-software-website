@@ -1,0 +1,56 @@
+callout-box {
+  display: block;
+  border-radius: var(--radius);
+  padding: var(--callout-padding, 22px 28px);
+  margin: 16px 0;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+}
+
+/* ── Variants ── */
+
+callout-box[variant="blue"] {
+  background: rgba(26, 143, 255, 0.06);
+  border: 1.5px solid rgba(26, 143, 255, 0.2);
+}
+
+callout-box[variant="green"] {
+  background: rgba(52, 199, 89, 0.07);
+  border: 1.5px solid rgba(52, 199, 89, 0.3);
+}
+
+callout-box[variant="orange"] {
+  background: rgba(255, 159, 10, 0.07);
+  border: 1.5px solid rgba(255, 159, 10, 0.3);
+}
+
+callout-box[variant="red"] {
+  background: rgba(255, 59, 48, 0.05);
+  border: 1.5px solid rgba(255, 59, 48, 0.2);
+}
+
+/* ── Inner elements ── */
+
+.callout-heading {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+callout-box[variant="blue"] .callout-heading  { color: var(--blue); }
+callout-box[variant="green"] .callout-heading { color: var(--green); }
+callout-box[variant="orange"] .callout-heading { color: var(--orange); }
+callout-box[variant="red"] .callout-heading   { color: var(--red); }
+
+.callout-body p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.callout-body p + p {
+  margin-top: 8px;
+}
