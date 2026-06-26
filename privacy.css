@@ -42,12 +42,6 @@
     line-height: 1.5;
 }
 
-/* ── Content ── */
-.content {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 72px 24px 96px;
-}
 
 .statement {
     background: var(--bg-alt);

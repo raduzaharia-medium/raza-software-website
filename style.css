@@ -196,7 +196,7 @@ nav {
 }
 
 /* ── Showcase (shared: browse, metadata-write) ── */
-.showcase-section { max-width: 1040px; margin: 0 auto; padding: 72px 0 96px; }
+.showcase-section { max-width: 1040px; margin: 0 auto; padding: 0 0 48px; }
 
 .showcase-item {
     display: grid;
@@ -207,7 +207,8 @@ nav {
     border-bottom: 1px solid var(--border);
 }
 
-.showcase-item:last-child { border-bottom: none; }
+.showcase-item:first-child { padding-top: 0; }
+.showcase-item:last-child { border-bottom: none; padding-bottom: 0; }
 .showcase-item.reverse { direction: rtl; }
 .showcase-item.reverse > * { direction: ltr; }
 
@@ -282,30 +283,26 @@ nav {
     }
 }
 
-/* ── Content area ── */
-.content {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 72px 24px 96px;
-}
-
-/* ── Content wrapper ── */
-.content {
-    background: #ffffff;
-    border-radius: 28px 28px 0 0;
-    margin-top: -28px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Wide content wrapper — same white bg/rounding but no max-width (inner sections control their own) */
+/* ── Content wrappers ── */
+/* Both are white floating cards sitting on the blue gradient — same visual treatment, different widths */
+.content,
 .content-wide {
     background: #ffffff;
     border-radius: 28px 28px 0 0;
-    margin-top: -28px;
+    margin: -28px auto 0;
     position: relative;
     z-index: 1;
-    padding: 0 24px 80px;
+}
+
+.content {
+    max-width: 720px;
+    padding: 72px 48px 96px;
+}
+
+.content-wide {
+    width: calc(100% - 48px);
+    max-width: 1136px;
+    padding: 72px 48px 80px;
 }
 
 /* ── Text sections ── */
