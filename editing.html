@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing — Raza Photos</title>
+    <meta name="description" content="Fix dates, assign locations, tag people — from your iPhone, on the couch. Changes write back to the original files without touching a single pixel.">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Raza Photos">
+    <meta property="og:url" content="https://razasoftware.eu/editing.html">
+    <meta property="og:title" content="Editing — Raza Photos">
+    <meta property="og:description" content="Fix dates, assign locations, tag people — from your iPhone, on the couch. Changes write back to the original files without touching a single pixel.">
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Editing — Raza Photos">
+    <meta name="twitter:description" content="Fix dates, assign locations, tag people — from your iPhone, on the couch. Changes write back to the original files without touching a single pixel.">
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero-page">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Editing</span>
+        <h1>Fix it from the couch.<br>Save it to the file.</h1>
+        <p>Change dates, assign locations, tag people — from your iPhone, without touching the Mac. Changes are written back to the original files as standard EXIF and XMP, compatible with any app.</p>
+    </div>
+</div>
+
+<div class="content-wide">
+<div class="showcase-section">
+
+    <div class="showcase-item">
+        <div class="showcase-text">
+            <div class="section-label">Organize</div>
+            <h3>Edit dates, locations, albums and people — right from the grid.</h3>
+            <p>Select one photo or a hundred, then change their metadata in a single action. The edit menu appears in context — no separate screen, no wizard.</p>
+            <ul>
+                <li>Change date, location, album, person, or event</li>
+                <li>Batch editing across any selection</li>
+                <li>Changes queued until you're ready to save</li>
+                <li>Writes to XMP and EXIF — compatible with any app</li>
+            </ul>
+        </div>
+        <div class="showcase-image">
+            <img class="platform-img"
+                 data-mac="assets/mac-edit-menu.webp"
+                 data-ipad="assets/ipad-edit-menu.webp"
+                 data-iphone="assets/iphone-edit-menu.webp"
+                 src="assets/mac-edit-menu.webp"
+                 alt="Raza Photos batch editing menu">
+            <div class="device-picker">
+                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="showcase-item reverse">
+        <div class="showcase-text">
+            <div class="section-label">Fix location data</div>
+            <h3>Drop a pin to correct where a photo was taken.</h3>
+            <p>Photos without GPS, or with wrong coordinates, can be fixed by dragging a pin on a map. The new location is reverse-geocoded on-device and saved back to the file — no coordinates to type, no internet required.</p>
+            <ul>
+                <li>Interactive pin drag — no coordinates to type</li>
+                <li>Reverse geocoding runs entirely on-device</li>
+                <li>Works on photos that never had GPS data</li>
+                <li>Saves GPS coordinates, country, and city</li>
+            </ul>
+        </div>
+        <div class="showcase-image">
+            <img class="platform-img"
+                 data-mac="assets/mac-change-place.webp"
+                 data-ipad="assets/ipad-change-place.webp"
+                 data-iphone="assets/iphone-change-place.webp"
+                 src="assets/mac-change-place.webp"
+                 alt="Raza Photos change place dialog">
+            <div class="device-picker">
+                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="other-links" style="max-width: 1040px; margin: 0 auto; padding: 0 24px 80px;">
+    <a href="metadata-write.html" class="link-card">
+        <span class="label">Technical details</span>
+        <strong>How metadata writing works</strong>
+        <span>Pixel-safe, atomic writes using open standards</span>
+    </a>
+    <a href="metadata-read.html" class="link-card">
+        <span class="label">Reading</span>
+        <strong>What Raza Photos reads</strong>
+        <span>Seven metadata standards, one unified view</span>
+    </a>
+</div>
+</div>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <img src="assets/icon_web.png" alt="Raza Photos">
+            <span>Raza Photos</span>
+        </div>
+        <div class="footer-nav">
+            <div class="footer-group">
+                <span class="footer-group-label">Features</span>
+                <ul>
+                    <li><a href="browse.html">Browsing</a></li>
+                    <li><a href="formats.html">Supported formats</a></li>
+                    <li><a href="burst.html">Burst navigation</a></li>
+                    <li><a href="metadata-read.html">Metadata reading</a></li>
+                    <li><a href="metadata-write.html">Metadata writing</a></li>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <span class="footer-group-label">How it works</span>
+                <ul>
+                    <li><a href="discovery.html">How discovery works</a></li>
+                    <li><a href="local-first.html">Local-first</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <span class="footer-group-label">Help</span>
+                <ul>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+        <p class="footer-note">This website uses no cookies and collects no data from visitors.</p>
+    </div>
+</footer>
+
+<script>
+    function selectDevice(platform, btn) {
+        document.querySelectorAll('.platform-img').forEach(img => {
+            const src = img.dataset[platform];
+            if (src) img.src = src;
+        });
+        document.querySelectorAll('.showcase-image').forEach(el => {
+            el.classList.toggle('is-iphone', platform === 'iphone');
+        });
+        document.querySelectorAll('.device-btn').forEach(b => {
+            b.classList.toggle('active', b.textContent.toLowerCase() === platform);
+        });
+    }
+</script>
+
+</body>
+</html>

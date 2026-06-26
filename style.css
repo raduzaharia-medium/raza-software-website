@@ -185,6 +185,103 @@ nav {
     display: block;
 }
 
+/* ── Section label (shared) ── */
+.section-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+/* ── Showcase (shared: browse, metadata-write) ── */
+.showcase-section { max-width: 1040px; margin: 0 auto; padding: 72px 24px 96px; }
+
+.showcase-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.showcase-item:last-child { border-bottom: none; }
+.showcase-item.reverse { direction: rtl; }
+.showcase-item.reverse > * { direction: ltr; }
+
+.showcase-text .section-label { margin-bottom: 10px; }
+
+.showcase-text h3 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+.showcase-text p { font-size: 16px; color: var(--text-secondary); line-height: 1.65; }
+
+.showcase-text ul {
+    list-style: none;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.showcase-text ul li {
+    font-size: 15px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+}
+
+.showcase-text ul li::before { content: '→'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
+
+.showcase-image img {
+    width: 100%;
+    border-radius: var(--radius);
+    filter: drop-shadow(0 16px 40px rgba(0,0,0,0.13));
+    display: block;
+    transition: opacity 0.2s;
+}
+
+.showcase-image.is-iphone img { max-width: 300px; margin: 0 auto; }
+
+.device-picker { display: flex; gap: 6px; margin-top: 16px; justify-content: center; }
+
+.device-btn {
+    padding: 5px 14px;
+    border-radius: 980px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.15s;
+    font-family: inherit;
+}
+
+.device-btn.active, .device-btn:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    background: rgba(26,143,255,0.07);
+}
+
+@media (max-width: 768px) {
+    .showcase-item, .showcase-item.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 24px;
+        padding: 48px 0;
+    }
+}
+
 /* ── Content area ── */
 .content {
     max-width: 720px;
@@ -199,6 +296,16 @@ nav {
     margin-top: -28px;
     position: relative;
     z-index: 1;
+}
+
+/* Wide content wrapper — same white bg/rounding but no max-width (inner sections control their own) */
+.content-wide {
+    background: #ffffff;
+    border-radius: 28px 28px 0 0;
+    margin-top: -28px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 80px;
 }
 
 /* ── Text sections ── */

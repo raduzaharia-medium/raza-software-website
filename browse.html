@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browsing — Raza Photos</title>
+    <meta name="description" content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos — all on your home network.">
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Raza Photos">
+    <meta property="og:url" content="https://razasoftware.eu/browse.html">
+    <meta property="og:title" content="Browsing — Raza Photos">
+    <meta property="og:description" content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos.">
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Browsing — Raza Photos">
+    <meta name="twitter:description" content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos.">
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img src="assets/icon_web.png" alt="Raza Photos icon">
+        <span>Raza Photos</span>
+    </a>
+    <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back
+    </a>
+</nav>
+
+<div class="hero-page">
+    <div class="hero-inner">
+        <span class="hero-eyebrow">Browsing</span>
+        <h1>Your whole library.<br>Every way you want to see it.</h1>
+        <p>Grid, map, full-screen viewer — all pulling from the same library, all native, all fast. No loading spinner. No browser. No compromise.</p>
+    </div>
+</div>
+
+<div class="content-wide">
+<div class="showcase-section">
+
+    <div class="showcase-item">
+        <div class="showcase-text">
+            <div class="section-label">Grid view</div>
+            <h3>Every photo, instantly.</h3>
+            <p>The grid loads thumbnails the moment you open the app — no sync, no waiting for the cloud. Scroll through years of memories as fast as your finger moves. Filter by date, location, or event with a tap.</p>
+            <ul>
+                <li>Instant thumbnail loading over Wi-Fi</li>
+                <li>Filter and search across the full library</li>
+                <li>Tap any photo to go full-screen</li>
+                <li>Swipe into a burst without leaving the grid</li>
+            </ul>
+        </div>
+        <div class="showcase-image">
+            <img class="platform-img"
+                 data-mac="assets/mac-grid.webp"
+                 data-ipad="assets/ipad-grid.webp"
+                 data-iphone="assets/iphone-grid.webp"
+                 src="assets/mac-grid.webp"
+                 alt="Raza Photos grid view">
+            <div class="device-picker">
+                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="showcase-item reverse">
+        <div class="showcase-text">
+            <div class="section-label">Map view</div>
+            <h3>See exactly where every memory was made.</h3>
+            <p>Switch from grid to map and your photos appear as pins on an Apple Maps canvas. Tap a cluster to zoom in — keep tapping and the map zooms until the pins separate. When you've narrowed it down far enough, tap the cluster one more time to see just those photos in the grid.</p>
+            <ul>
+                <li>Apple Maps integration, fully native</li>
+                <li>Photo thumbnails shown directly on the map</li>
+                <li>Tap clusters to zoom in progressively</li>
+                <li>Tap a tight cluster to open it in the grid</li>
+            </ul>
+        </div>
+        <div class="showcase-image">
+            <img class="platform-img"
+                 data-mac="assets/mac-map.webp"
+                 data-ipad="assets/ipad-map.webp"
+                 data-iphone="assets/iphone-map.webp"
+                 src="assets/mac-map.webp"
+                 alt="Raza Photos map view">
+            <div class="device-picker">
+                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="showcase-item">
+        <div class="showcase-text">
+            <div class="section-label">Photo viewer</div>
+            <h3>Immersive viewing, right down to the location.</h3>
+            <p>Open any photo into a full-screen viewer. The location is shown subtly in the corner — always present, never in the way. HDR and Live Photos are rendered natively, exactly as they appear in Photos.app.</p>
+            <ul>
+                <li>Full-screen, distraction-free viewing</li>
+                <li>Location badge pulled from GPS metadata</li>
+                <li>Full HDR with gain map support</li>
+                <li>Live Photos play on tap or hover</li>
+            </ul>
+        </div>
+        <div class="showcase-image">
+            <img class="platform-img"
+                 data-mac="assets/mac-viewer.webp"
+                 data-ipad="assets/ipad-viewer.webp"
+                 data-iphone="assets/iphone-viewer.webp"
+                 src="assets/mac-viewer.webp"
+                 alt="Raza Photos full-screen photo viewer">
+            <div class="device-picker">
+                <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
+                <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
+                <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="other-links" style="max-width: 1040px; margin: 0 auto; padding: 0 24px 80px;">
+    <a href="formats.html" class="link-card">
+        <span class="label">Formats</span>
+        <strong>Supported formats</strong>
+        <span>HEIC, JPEG, ProRes, HDR gain maps, Live Photos</span>
+    </a>
+    <a href="burst.html" class="link-card">
+        <span class="label">Navigation</span>
+        <strong>Burst navigation</strong>
+        <span>Two axes, two meanings — no menus, no mode switches</span>
+    </a>
+</div>
+</div>
+
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <img src="assets/icon_web.png" alt="Raza Photos">
+            <span>Raza Photos</span>
+        </div>
+        <div class="footer-nav">
+            <div class="footer-group">
+                <span class="footer-group-label">Features</span>
+                <ul>
+                    <li><a href="formats.html">Supported formats</a></li>
+                    <li><a href="burst.html">Burst navigation</a></li>
+                    <li><a href="editing.html">Editing</a></li>
+                    <li><a href="metadata-read.html">Metadata reading</a></li>
+                    <li><a href="metadata-write.html">Metadata writing</a></li>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <span class="footer-group-label">How it works</span>
+                <ul>
+                    <li><a href="discovery.html">How discovery works</a></li>
+                    <li><a href="local-first.html">Local-first</a></li>
+                    <li><a href="security.html">Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-group">
+                <span class="footer-group-label">Help</span>
+                <ul>
+                    <li><a href="support.html">Support</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 Raza Software. Built in the EU.</span>
+        <p class="footer-note">This website uses no cookies and collects no data from visitors.</p>
+    </div>
+</footer>
+
+<script>
+    function selectDevice(platform, btn) {
+        document.querySelectorAll('.platform-img').forEach(img => {
+            const src = img.dataset[platform];
+            if (src) img.src = src;
+        });
+        document.querySelectorAll('.showcase-image').forEach(el => {
+            el.classList.toggle('is-iphone', platform === 'iphone');
+        });
+        document.querySelectorAll('.device-btn').forEach(b => {
+            b.classList.toggle('active', b.textContent.toLowerCase() === platform);
+        });
+    }
+</script>
+
+</body>
+</html>

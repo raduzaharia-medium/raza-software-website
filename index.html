@@ -91,12 +91,12 @@
             <div class="feature">
                 <span class="feature-icon">📅</span>
                 <h3>Browse by date, place, people, albums &amp; events</h3>
-                <p>Your library organized the way you think about it — filter by year, location, faces, custom albums, or travel events. All from the sidebar.</p>
+                <p>Your library organized the way you think about it — filter by year, location, faces, custom albums, or travel events. All from the sidebar. <a href="browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">See it →</a></p>
             </div>
             <div class="feature">
                 <span class="feature-icon">🗺</span>
                 <h3>Map view</h3>
-                <p>See where every photo was taken on a map. Add or correct countries and cities from your iPhone using reverse geocoding — all processed locally on-device.</p>
+                <p>See where every photo was taken on a map. Add or correct countries and cities from your iPhone using reverse geocoding — all processed locally on-device. <a href="browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">See it →</a></p>
             </div>
             <div class="feature">
                 <span class="feature-icon">👤</span>
@@ -116,7 +116,7 @@
             <div class="feature">
                 <span class="feature-icon">✏️</span>
                 <h3>Edit metadata from your iPhone</h3>
-                <p>Fix a date, assign a location, tag a person — from the couch, on your phone. Changes write back to the original files as XMP/EXIF without touching a single pixel.</p>
+                <p>Fix a date, assign a location, tag a person — from the couch, on your phone. Changes write back to the original files as XMP/EXIF without touching a single pixel. <a href="editing.html" style="color: var(--blue); text-decoration: none; font-weight: 500;">See it →</a></p>
             </div>
             <div class="feature">
                 <span class="feature-icon">🖥</span>
@@ -140,110 +140,6 @@
 <!-- Feature showcase -->
 <section class="showcase" id="showcase">
     <div class="section-inner">
-
-        <div class="showcase-item">
-            <div class="showcase-text">
-                <div class="section-label">Map view</div>
-                <h3>See exactly where every memory was made.</h3>
-                <p>Switch from grid to map and your photos appear as pins on an Apple Maps canvas. Tap a cluster to zoom in. Filter by country, city, or event and the map updates instantly.</p>
-                <ul>
-                    <li>Apple Maps integration, fully native</li>
-                    <li>Photo thumbnails shown directly on the map</li>
-                    <li>Works with your existing GPS data</li>
-                </ul>
-            </div>
-            <div class="showcase-image">
-                <img class="platform-img"
-                     data-mac="assets/mac-map.webp"
-                     data-ipad="assets/ipad-map.webp"
-                     data-iphone="assets/iphone-map.webp"
-                     src="assets/mac-map.webp"
-                     alt="Raza Photos map view">
-                <div class="device-picker">
-                    <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                    <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                    <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="showcase-item reverse">
-            <div class="showcase-text">
-                <div class="section-label">Organize</div>
-                <h3>Edit dates, locations, albums and people — right from the grid.</h3>
-                <p>Select one photo or a hundred, then change their metadata in one action. Changes are queued and written back to the original files when you're ready.</p>
-                <ul>
-                    <li>Change date, location, album, person, or event</li>
-                    <li>Batch editing across any selection</li>
-                    <li>Writes to XMP/EXIF — compatible with any app</li>
-                </ul>
-            </div>
-            <div class="showcase-image">
-                <img class="platform-img"
-                     data-mac="assets/mac-edit-menu.webp"
-                     data-ipad="assets/ipad-edit-menu.webp"
-                     data-iphone="assets/iphone-edit-menu.webp"
-                     src="assets/mac-edit-menu.webp"
-                     alt="Raza Photos batch editing menu">
-                <div class="device-picker">
-                    <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                    <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                    <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="showcase-item">
-            <div class="showcase-text">
-                <div class="section-label">Photo viewer</div>
-                <h3>Immersive viewing with location context.</h3>
-                <p>Open any photo into a full-screen viewer. The location is shown subtly in the corner — always present, never in the way. HDR and Live Photos are rendered natively.</p>
-                <ul>
-                    <li>Full-screen, distraction-free viewing</li>
-                    <li>Location badge from GPS metadata</li>
-                    <li>HDR and Live Photos rendered natively</li>
-                </ul>
-            </div>
-            <div class="showcase-image">
-                <img class="platform-img"
-                     data-mac="assets/mac-viewer.webp"
-                     data-ipad="assets/ipad-viewer.webp"
-                     data-iphone="assets/iphone-viewer.webp"
-                     src="assets/mac-viewer.webp"
-                     alt="Raza Photos full-screen photo viewer">
-                <div class="device-picker">
-                    <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                    <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                    <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="showcase-item reverse">
-            <div class="showcase-text">
-                <div class="section-label">Fix location data</div>
-                <h3>Drop a pin to correct where a photo was taken.</h3>
-                <p>Photos without GPS, or with wrong coordinates, can be fixed by dragging a pin on a map. The new location is reverse-geocoded on-device and saved back to the file.</p>
-                <ul>
-                    <li>Interactive pin drag — no coordinates to type</li>
-                    <li>Reverse geocoding runs entirely on-device</li>
-                    <li>Works on photos that never had GPS data</li>
-                </ul>
-            </div>
-            <div class="showcase-image">
-                <img class="platform-img"
-                     data-mac="assets/mac-change-place.webp"
-                     data-ipad="assets/ipad-change-place.webp"
-                     data-iphone="assets/iphone-change-place.webp"
-                     src="assets/mac-change-place.webp"
-                     alt="Raza Photos Change Place dialog">
-                <div class="device-picker">
-                    <button class="device-btn active" onclick="selectDevice('mac', this)">Mac</button>
-                    <button class="device-btn" onclick="selectDevice('ipad', this)">iPad</button>
-                    <button class="device-btn" onclick="selectDevice('iphone', this)">iPhone</button>
-                </div>
-            </div>
-        </div>
 
     </div>
 </section>
@@ -394,8 +290,10 @@
             <div class="footer-group">
                 <span class="footer-group-label">Features</span>
                 <ul>
+                    <li><a href="browse.html">Browsing</a></li>
                     <li><a href="formats.html">Supported formats</a></li>
                     <li><a href="burst.html">Burst navigation</a></li>
+                    <li><a href="editing.html">Editing</a></li>
                     <li><a href="metadata-read.html">Metadata reading</a></li>
                     <li><a href="metadata-write.html">Metadata writing</a></li>
                 </ul>

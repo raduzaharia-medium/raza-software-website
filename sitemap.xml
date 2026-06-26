@@ -25,6 +25,14 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://razasoftware.eu/browse.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://razasoftware.eu/editing.html</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://razasoftware.eu/burst.html</loc>
         <priority>0.8</priority>
     </url>
