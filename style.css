@@ -251,7 +251,15 @@ nav {
     transition: opacity 0.2s;
 }
 
-.showcase-image.is-iphone img { max-width: 300px; margin: 0 auto; }
+.platform-img {
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    .platform-img { height: 260px; }
+}
 
 .device-picker { display: flex; gap: 6px; margin-top: 16px; justify-content: center; }
 

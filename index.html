@@ -327,11 +327,6 @@
             if (src) img.src = src;
         });
 
-        // constrain portrait images on iPhone
-        document.querySelectorAll('.showcase-image').forEach(el => {
-            el.classList.toggle('is-iphone', platform === 'iphone');
-        });
-
         // sync all device pickers
         document.querySelectorAll('.device-btn').forEach(b => {
             b.classList.toggle('active', b.textContent.toLowerCase() === platform);

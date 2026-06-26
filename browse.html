@@ -187,9 +187,6 @@
             const src = img.dataset[platform];
             if (src) img.src = src;
         });
-        document.querySelectorAll('.showcase-image').forEach(el => {
-            el.classList.toggle('is-iphone', platform === 'iphone');
-        });
         document.querySelectorAll('.device-btn').forEach(b => {
             b.classList.toggle('active', b.textContent.toLowerCase() === platform);
         });
