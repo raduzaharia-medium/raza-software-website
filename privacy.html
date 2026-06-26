@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/footer.css">
+    <link rel="stylesheet" href="components/summary-card.css">
     <link rel="stylesheet" href="privacy.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Raza Photos">
@@ -36,31 +37,11 @@
 <!-- Summary cards -->
 <div class="summary">
     <div class="summary-inner">
-        <div class="summary-card">
-            <span class="icon">🚫</span>
-            <strong>No data collected</strong>
-            <span>Not your name, not your email, not your usage patterns</span>
-        </div>
-        <div class="summary-card">
-            <span class="icon">📡</span>
-            <strong>No internet access</strong>
-            <span>The app never makes an outbound connection</span>
-        </div>
-        <div class="summary-card">
-            <span class="icon">🏠</span>
-            <strong>Local network only</strong>
-            <span>Your photos stay within your home Wi-Fi</span>
-        </div>
-        <div class="summary-card">
-            <span class="icon">👤</span>
-            <strong>No account needed</strong>
-            <span>No sign-up, no profile, no password</span>
-        </div>
-        <div class="summary-card">
-            <span class="icon">📊</span>
-            <strong>No telemetry</strong>
-            <span>No analytics, no crash reports, no usage statistics</span>
-        </div>
+        <summary-card icon="🚫" heading="No data collected" description="Not your name, not your email, not your usage patterns"></summary-card>
+        <summary-card icon="📡" heading="No internet access" description="The app never makes an outbound connection"></summary-card>
+        <summary-card icon="🏠" heading="Local network only" description="Your photos stay within your home Wi-Fi"></summary-card>
+        <summary-card icon="👤" heading="No account needed" description="No sign-up, no profile, no password"></summary-card>
+        <summary-card icon="📊" heading="No telemetry" description="No analytics, no crash reports, no usage statistics"></summary-card>
     </div>
 </div>
 
@@ -147,6 +128,7 @@
 <!-- Footer -->
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
+<script src="components/summary-card.js"></script>
 
 </body>
 </html>

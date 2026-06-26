@@ -116,22 +116,7 @@
 /* ── Q&A ── */
 .qa { margin: 24px 0; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 
-.qa-item { padding: 24px 28px; border-bottom: 1px solid var(--border); }
-.qa-item:last-child { border-bottom: none; }
-
-.qa-item h3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text);
-}
-
-.qa-item p {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.65;
-    margin-bottom: 0 !important;
-}
+.qa faq-item { padding: 24px 28px; }
 
 /* ── Permission note ── */
 .permission-note {

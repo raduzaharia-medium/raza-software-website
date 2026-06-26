@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="components/nav.css">
     <link rel="stylesheet" href="components/link-card.css">
     <link rel="stylesheet" href="components/footer.css">
+    <link rel="stylesheet" href="components/summary-card.css">
     <link rel="stylesheet" href="security.css">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Raza Photos">
@@ -36,22 +37,10 @@
 
 <div class="summary">
     <div class="summary-inner">
-        <div class="summary-card">
-            <span class="icon">🌐</span>
-            <strong>Not reachable from the internet</strong>
-        </div>
-        <div class="summary-card">
-            <span class="icon">📶</span>
-            <strong>Guest networks are fully isolated</strong>
-        </div>
-        <div class="summary-card">
-            <span class="icon">🔓</span>
-            <strong>No password — home network is the boundary</strong>
-        </div>
-        <div class="summary-card">
-            <span class="icon">✏️</span>
-            <strong>Remote changes can be disabled</strong>
-        </div>
+        <summary-card icon="🌐" heading="Not reachable from the internet"></summary-card>
+        <summary-card icon="📶" heading="Guest networks are fully isolated"></summary-card>
+        <summary-card icon="🔓" heading="No password — home network is the boundary"></summary-card>
+        <summary-card icon="✏️" heading="Remote changes can be disabled"></summary-card>
     </div>
 </div>
 
@@ -183,6 +172,7 @@
 <raza-footer></raza-footer>
 <script src="components/footer.js"></script>
 <script src="components/link-card.js"></script>
+<script src="components/summary-card.js"></script>
 
 </body>
 </html>
