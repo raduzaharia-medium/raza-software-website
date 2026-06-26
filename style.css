@@ -292,25 +292,21 @@ nav {
 }
 
 /* ── Content wrappers ── */
-/* Both are white floating cards sitting on the blue gradient — same visual treatment, different widths */
-.content,
+/* Full-width white sections sitting directly after the hero */
+.content {
+    background: #ffffff;
+    padding: 96px 24px;
+}
+
+/* Narrow centering wrapper for text-heavy pages */
+.content-body {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
 .content-wide {
     background: #ffffff;
-    border-radius: 28px 28px 0 0;
-    margin: -28px auto 0;
-    position: relative;
-    z-index: 1;
-}
-
-.content {
-    max-width: 720px;
-    padding: 72px 48px 96px;
-}
-
-.content-wide {
-    width: calc(100% - 48px);
-    max-width: 1136px;
-    padding: 72px 48px 80px;
+    padding: 96px 24px;
 }
 
 /* ── Text sections ── */
