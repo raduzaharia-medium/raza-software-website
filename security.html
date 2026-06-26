@@ -48,7 +48,7 @@
 <div class="content">
 <div class="content-body">
 
-    <div class="policy-section">
+    <div class="section">
         <h2>No authentication — and why</h2>
         <p>Raza Photos does not require a password or login to browse the photo library. This is a conscious design decision, not an oversight.</p>
         <p>The goal of the app is to make your photo library feel like it is simply there — on your iPhone, on your iPad, in the house — the same way your music plays on every HomePod without you logging in. Introducing a password would add friction for every family member, every time, on every device. For most households, that tradeoff is not worth it.</p>
@@ -61,7 +61,7 @@
 
     <hr>
 
-    <div class="policy-section">
+    <div class="section">
         <h2>Not reachable from the internet</h2>
         <p>The library is only discoverable and accessible within your local network. Raza Photos uses Bonjour for discovery — a local network protocol that does not traverse the internet and cannot be accessed from outside your router.</p>
         <p>There is no port forwarding required, no dynamic DNS, no VPN endpoint, no relay server. There is simply nothing listening for incoming connections from the outside world. An attacker on the internet cannot reach your library because there is no route to it.</p>
@@ -73,7 +73,7 @@
 
     <hr>
 
-    <div class="policy-section">
+    <div class="section">
         <h2>Guest networks are fully isolated</h2>
         <p>Most modern routers support a separate guest Wi-Fi network. Devices on the guest network are isolated from devices on your main network — they can reach the internet but cannot talk to your Mac, your NAS, your printer, or anything else on your home network.</p>
         <p>Bonjour discovery only works within a single network segment. A device on your guest network cannot discover or connect to a Raza Photos server on your main network. This is not a feature we built — it is how network segmentation works at the router level.</p>
@@ -109,7 +109,7 @@
 
     <hr>
 
-    <div class="policy-section">
+    <div class="section">
         <h2>The honest caveat: anyone on your main network can see your photos</h2>
         <p>We said the home network is the boundary, and that cuts both ways. Anyone who connects to your main Wi-Fi and installs Raza Photos will automatically discover the library and be able to browse it — with no further step required.</p>
         <p>For most families, this is exactly what they want. For others — households with flatmates, frequent guests given the main password, or simply families who want finer control — this is worth being aware of.</p>
@@ -121,7 +121,7 @@
 
     <hr>
 
-    <div class="policy-section">
+    <div class="section">
         <h2>Family controls — three levels of access</h2>
         <p>Browsing is one thing. Editing metadata — changing dates, assigning locations, tagging people — is another. Raza Photos gives you three distinct controls over what remote devices can do, without passwords, accounts, or per-user setup.</p>
 
@@ -153,7 +153,7 @@
 
     <hr>
 
-    <div class="policy-section">
+    <div class="section">
         <h2>Summary</h2>
         <p>Raza Photos is secure against external threats — the internet, guest networks, remote attackers. It is open within your trusted home network, by design. If everyone on your main Wi-Fi is someone you trust with your photos, you need to do nothing. If not, guest network isolation and the read-only setting give you the tools to draw that boundary yourself.</p>
     </div>

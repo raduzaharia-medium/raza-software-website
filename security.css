@@ -1,16 +1,3 @@
-/* ── Summary ── */
-.summary {
-    background: var(--bg-alt);
-    padding: 48px 24px;
-}
-
-.summary-inner {
-    max-width: 720px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-}
 
 
 /* ── Scenario diagram ── */

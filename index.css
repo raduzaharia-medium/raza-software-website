@@ -63,14 +63,6 @@ section { padding: 96px 24px; }
 
 .section-inner { max-width: 1040px; margin: 0 auto; }
 
-.section-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--blue);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 12px;
-}
 
 .section-title {
     font-size: clamp(28px, 4vw, 48px);

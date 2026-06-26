@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="field-section">
+    <div class="section">
         <h2>Date taken</h2>
         <p class="desc">The most precise capture timestamp available is used. Raza Photos handles EXIF, IPTC, and ISO 8601 date formats automatically, including timezone offsets.</p>
         <table class="priority-table">
@@ -84,7 +84,7 @@
 
     <hr>
 
-    <div class="field-section">
+    <div class="section">
         <h2>GPS coordinates</h2>
         <p class="desc">Latitude and longitude are read from the EXIF GPS dictionary, capturing directional references. If coordinates are present, Raza Photos can reverse-geocode them on-device to derive the city and country.</p>
         <div class="note">
@@ -94,7 +94,7 @@
 
     <hr>
 
-    <div class="field-section">
+    <div class="section">
         <h2>Country and city</h2>
         <p class="desc">Location labels (country and city) can be stored directly in metadata by tools like Lightroom, ACDSee, or a previous Raza Photos save. When they are absent, reverse geocoding fills them in from GPS coordinates.</p>
         <table class="priority-table">
@@ -116,7 +116,7 @@
 
     <hr>
 
-    <div class="field-section">
+    <div class="section">
         <h2>Title</h2>
         <p class="desc">A human-readable title for the photo. Falls back to the filename if no title is found in metadata.</p>
         <table class="priority-table">
@@ -137,7 +137,7 @@
 
     <hr>
 
-    <div class="field-section">
+    <div class="section">
         <h2>People and face regions</h2>
         <p class="desc">Person names and face bounding boxes are read from XMP and ACDSee metadata. Face regions written by ACDSee are converted to a standard format for display.</p>
         <table class="priority-table">
@@ -159,14 +159,14 @@
 
     <hr>
 
-    <div class="field-section">
+    <div class="section">
         <h2>Albums and events</h2>
         <p class="desc">Albums and events are extracted from ACDSee's category XML hierarchy embedded in the file. This allows libraries previously organized in ACDSee to carry their structure into Raza Photos without manual re-organisation.</p>
     </div>
 
     <hr>
 
-    <div class="field-section">
+    <div class="section">
         <h2>Burst sequences</h2>
         <p class="desc">iPhone burst sequences are identified and grouped automatically. Raza Photos checks three sources in order to detect burst membership.</p>
         <table class="priority-table">
@@ -186,7 +186,7 @@
 
     <hr>
 
-    <div class="field-section">
+    <div class="section">
         <h2>File dates</h2>
         <p class="desc">File creation and modification timestamps are read from the filesystem and used as a last-resort fallback for date sorting when no embedded capture date is available.</p>
     </div>

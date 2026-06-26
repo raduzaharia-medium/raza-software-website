@@ -7,25 +7,6 @@
 
 .tag { padding: 5px 12px; border-radius: 8px; }
 
-.content { padding-top: 64px; }
-
-.field-section {
-    margin-bottom: 48px;
-}
-
-.field-section h2 {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
-}
-
-.field-section .desc {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.65;
-    margin-bottom: 16px;
-}
 
 .priority-table {
     width: 100%;
