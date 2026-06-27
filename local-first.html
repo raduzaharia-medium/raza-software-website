@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="components/nav.css" />
     <link rel="stylesheet" href="components/link-card.css" />
     <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/detail-list.css" />
     <link rel="stylesheet" href="components/footer.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
     <link rel="stylesheet" href="local-first.css" />
@@ -40,6 +41,8 @@
     <script src="components/footer.js" defer></script>
     <script src="components/link-card.js" defer></script>
     <script src="components/info-card.js" defer></script>
+    <script src="components/detail-list.js" defer></script>
+    <script src="components/detail-item.js" defer></script>
     <script src="components/hero-section.js" defer></script>
   </head>
   <body>
@@ -113,20 +116,12 @@
 
           <p>That said, good backup solutions for local photo libraries are straightforward and many are either free or already included with your Mac:</p>
 
-          <ul class="backup-options">
-            <li>
-              <strong>Time Machine</strong> — Apple's built-in backup to an external drive. Set it up once and it runs automatically. Your photo folders are
-              included by default.
-            </li>
-            <li>
-              <strong>External hard drives</strong> — A second copy on a drive kept elsewhere (a drawer at work, a relative's house) is simple offsite backup.
-            </li>
-            <li><strong>NAS devices</strong> — A network-attached storage device at home gives you redundant local copies without a subscription.</li>
-            <li>
-              <strong>Selective cloud backup</strong> — Tools like Backblaze or Arq let you back up specific folders to cloud storage at a fraction of the cost
-              of a photo subscription, without giving any app access to browse or process your library.
-            </li>
-          </ul>
+          <detail-list>
+            <detail-item heading="Time Machine">Apple's built-in backup to an external drive. Set it up once and it runs automatically. Your photo folders are included by default.</detail-item>
+            <detail-item heading="External hard drives">A second copy on a drive kept elsewhere (a drawer at work, a relative's house) is simple offsite backup.</detail-item>
+            <detail-item heading="NAS devices">A network-attached storage device at home gives you redundant local copies without a subscription.</detail-item>
+            <detail-item heading="Selective cloud backup">Tools like Backblaze or Arq let you back up specific folders to cloud storage at a fraction of the cost of a photo subscription, without giving any app access to browse or process your library.</detail-item>
+          </detail-list>
 
           <p style="margin-top: 20px">
             The 3-2-1 rule is a sensible baseline: three copies of your data, on two different types of media, with one copy offsite. Time Machine plus one

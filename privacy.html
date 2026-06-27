@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="components/hero-section.css" />
     <link rel="stylesheet" href="components/explainer.css" />
     <link rel="stylesheet" href="components/explainer-list.css" />
+    <link rel="stylesheet" href="components/detail-list.css" />
     <link rel="stylesheet" href="privacy.css" />
   
     <script src="components/nav.js" defer></script>
@@ -39,6 +40,8 @@
     <script src="components/hero-section.js" defer></script>
     <script src="components/explainer.js" defer></script>
     <script src="components/explainer-list.js" defer></script>
+    <script src="components/detail-list.js" defer></script>
+    <script src="components/detail-item.js" defer></script>
   </head>
   <body>
     <!-- Nav -->
@@ -83,23 +86,15 @@
 
         <hr />
 
-        <explainer-list
-          heading="What the app accesses and why"
-          description="Raza Photos needs access to certain things on your device to function. Here is exactly what, and why:"
-        >
-          <li>
-            <strong>Your photo folders (Mac).</strong> You explicitly choose which folders to import. The app reads photo files and indexes their metadata. It
-            does not copy, move, or modify your files unless you explicitly trigger a metadata save.
-          </li>
-          <li>
-            <strong>Local network (all devices).</strong> The Mac uses Bonjour to advertise the library on your local network. iOS and iPadOS devices use
-            Bonjour to discover it. All traffic stays within your home Wi-Fi — nothing is routed through any external server.
-          </li>
-          <li>
-            <strong>On-device processing.</strong> Face detection and reverse geocoding (turning GPS coordinates into city and country names) run entirely on
-            the device. No photo or coordinate is sent to an external service.
-          </li>
-        </explainer-list>
+        <div class="section">
+          <h2>What the app accesses and why</h2>
+          <p>Raza Photos needs access to certain things on your device to function. Here is exactly what, and why:</p>
+          <detail-list>
+            <detail-item heading="Your photo folders (Mac).">You explicitly choose which folders to import. The app reads photo files and indexes their metadata. It does not copy, move, or modify your files unless you explicitly trigger a metadata save.</detail-item>
+            <detail-item heading="Local network (all devices).">The Mac uses Bonjour to advertise the library on your local network. iOS and iPadOS devices use Bonjour to discover it. All traffic stays within your home Wi-Fi — nothing is routed through any external server.</detail-item>
+            <detail-item heading="On-device processing.">Face detection and reverse geocoding (turning GPS coordinates into city and country names) run entirely on the device. No photo or coordinate is sent to an external service.</detail-item>
+          </detail-list>
+        </div>
 
         <hr />
 

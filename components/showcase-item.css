@@ -38,17 +38,17 @@ showcase-item[reverse] > * { direction: ltr; }
 .showcase-body ul {
   list-style: none;
   margin-top: 16px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 8px;
 }
 
 .showcase-body ul li {
   font-size: 15px;
   color: var(--text-secondary);
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 8px;
+  align-items: start;
   line-height: 1.5;
 }
 

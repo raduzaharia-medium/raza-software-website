@@ -126,7 +126,6 @@ info-card[variant="dark"] .card-description {
 
 info-card.highlight-box {
   --card-padding: 36px 40px;
-  margin: 24px 0;
 }
 
 info-card.highlight-box .card-body p {

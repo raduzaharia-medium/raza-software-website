@@ -1,7 +1,6 @@
 /* ── Safety statement ── */
 info-card[variant="green"] {
     --card-padding: 32px 36px;
-    margin-bottom: 48px;
 }
 
 info-card[variant="green"] .card-heading {
@@ -36,7 +35,6 @@ info-card[variant="green"] .card-body p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 10px;
-    margin-top: 16px;
 }
 
 /* ── Format grid ── */
@@ -56,23 +54,22 @@ info-card[variant="green"] .card-body p {
 
 .protected-list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 8px;
 }
 
 .protected-list li {
     font-size: 15px;
     color: var(--text-secondary);
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto 1fr;
     gap: 10px;
+    align-items: start;
     line-height: 1.5;
 }
 
 .protected-list li::before {
     content: '🔒';
-    flex-shrink: 0;
     font-size: 13px;
     margin-top: 2px;
 }
@@ -80,7 +77,6 @@ info-card[variant="green"] .card-body p {
 /* ── Tech card ── */
 .content-body > info-card[variant="dark"] {
     --card-padding: 32px 36px;
-    margin-bottom: 48px;
 }
 
 .content-body > info-card[variant="dark"] .card-heading {
@@ -106,16 +102,15 @@ info-card[variant="green"] .card-body p {
 
 .steps-list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 14px;
-    margin-top: 16px;
 }
 
 .steps-list li {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto 1fr;
     gap: 14px;
+    align-items: start;
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.6;
@@ -132,11 +127,8 @@ info-card[variant="green"] .card-body p {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     margin-top: 1px;
 }
-
-hr { margin: 48px 0; }
 
 @media (max-width: 768px) {
     info-card[variant="green"],

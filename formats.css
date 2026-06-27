@@ -5,12 +5,12 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--text-secondary);
-    margin: 36px 0 12px;
+    margin-top: 20px;
 }
 
 /* ── Codec section ── */
 .codec-section {
-    margin: 36px 0 16px;
+    margin-top: 20px;
 }
 
 .codec-label {
@@ -33,29 +33,29 @@
     background: var(--text);
     border-radius: var(--radius);
     padding: 32px 36px;
-    margin-bottom: 16px;
+}
+
+.hdr-explainer-text {
+    display: grid;
+    gap: 10px;
 }
 
 .hdr-explainer-text h3 {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 12px;
 }
 
 .hdr-explainer-text p {
     font-size: 14px;
     color: rgba(255,255,255,0.6);
     line-height: 1.7;
-    margin-bottom: 10px;
 }
 
-.hdr-explainer-text p:last-child { margin-bottom: 0; }
 .hdr-explainer-text strong { color: #fff; }
 
 .hdr-explainer-diagram {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
     gap: 6px;
     min-width: 160px;
@@ -107,16 +107,18 @@
 }
 
 .hdr-formats-split .card-body {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 14px;
 }
 
+.hdr-format-item {
+    display: grid;
+    gap: 3px;
+}
+
 .hdr-format-item strong {
-    display: block;
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 3px;
 }
 
 .hdr-format-item span {
@@ -129,7 +131,7 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
     .hdr-explainer { grid-template-columns: 1fr; }
-    .hdr-explainer-diagram { flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: unset; }
+    .hdr-explainer-diagram { grid-auto-flow: column; min-width: unset; }
     .hdr-layer { min-width: 120px; }
     .hdr-formats-split { grid-template-columns: 1fr; }
 }

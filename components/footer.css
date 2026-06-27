@@ -16,11 +16,10 @@ footer {
 .footer-brand img { width: 24px; height: 24px; border-radius: 6px; }
 .footer-brand span { font-size: 14px; font-weight: 600; }
 
-.footer-nav { display: flex; gap: 48px; }
+.footer-nav { display: flex; gap: 48px; align-items: start; }
 
 .footer-group {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 12px;
     min-width: 120px;
 }
@@ -33,7 +32,7 @@ footer {
     color: var(--text);
 }
 
-.footer-group ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-group ul { list-style: none; display: grid; gap: 8px; }
 
 .footer-group a {
     font-size: 13px;

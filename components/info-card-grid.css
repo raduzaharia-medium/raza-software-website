@@ -19,7 +19,6 @@ info-card-grid[columns="2"] .card-grid {
 /* ── Modifiers ── */
 
 info-card-grid.familiar {
-    margin: 20px 0;
     text-align: center;
     --grid-min-width: 160px;
 }
@@ -30,7 +29,6 @@ info-card-grid.familiar info-card {
 }
 
 info-card-grid.featured {
-    margin-bottom: 12px;
 }
 
 info-card-grid.featured info-card {

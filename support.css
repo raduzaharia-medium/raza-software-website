@@ -1,6 +1,7 @@
 /* ── Contact card ── */
 .contact-card {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 16px;
     background: var(--bg-alt);
