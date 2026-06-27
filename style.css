@@ -144,3 +144,22 @@ hr { border: none; border-top: 1px solid var(--border); }
 /* ── Dot indicators ── */
 .cloud-dot { background: rgba(255,59,48,0.1); color: var(--red); }
 .local-dot { background: rgba(52,199,89,0.12); color: var(--green); }
+
+/* ── Inline highlight ── */
+.highlight {
+    display: inline;
+    background: rgba(52, 199, 89, 0.12);
+    color: #1a7a30;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-weight: 600;
+}
+
+/* ── Last updated footer line ── */
+.updated {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}

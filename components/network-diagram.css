@@ -1,0 +1,58 @@
+network-diagram {
+    display: block;
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 32px;
+}
+
+.network-diagram-heading {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+network-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+network-row:last-child { border-bottom: none; padding-bottom: 0; }
+network-row:first-of-type { padding-top: 0; }
+
+.network-device {
+    font-size: 24px;
+    width: 36px;
+    text-align: center;
+}
+
+.network-info { display: flex; flex-direction: column; }
+
+.network-info strong {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.network-info span {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.network-status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.status-yes    { background: rgba(52,199,89,0.12);   color: #1a7a30; }
+.status-no     { background: rgba(255,59,48,0.08);   color: #c0392b; }
+.status-never  { background: rgba(142,142,147,0.12); color: var(--text-secondary); }

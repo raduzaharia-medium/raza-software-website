@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="components/info-card.css" />
     <link rel="stylesheet" href="components/callout-box.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
-    <link rel="stylesheet" href="security.css" />
+    <link rel="stylesheet" href="components/network-diagram.css" />
   
     <script src="components/nav.js" defer></script>
     <script src="components/footer.js" defer></script>
@@ -45,6 +45,7 @@
     <script src="components/callout-box.js" defer></script>
     <script src="components/info-card.js" defer></script>
     <script src="components/hero-section.js" defer></script>
+    <script src="components/network-diagram.js" defer></script>
   </head>
   <body>
     <raza-nav></raza-nav>
@@ -118,33 +119,11 @@
             your main network. This is not a feature we built — it is how network segmentation works at the router level.
           </p>
 
-          <div class="network-diagram">
-            <h3>Who can discover your library</h3>
-            <div class="network-row">
-              <div class="network-device">💻</div>
-              <div class="network-info">
-                <strong>Family iPhone on main Wi-Fi</strong>
-                <span>Same network segment as the Mac server</span>
-              </div>
-              <span class="network-status status-yes">Discovers library</span>
-            </div>
-            <div class="network-row">
-              <div class="network-device">📱</div>
-              <div class="network-info">
-                <strong>Guest device on guest Wi-Fi</strong>
-                <span>Isolated network segment — Bonjour does not cross</span>
-              </div>
-              <span class="network-status status-no">Cannot discover</span>
-            </div>
-            <div class="network-row">
-              <div class="network-device">🌍</div>
-              <div class="network-info">
-                <strong>Anyone on the internet</strong>
-                <span>No route exists — nothing is listening externally</span>
-              </div>
-              <span class="network-status status-never">No route</span>
-            </div>
-          </div>
+          <network-diagram heading="Who can discover your library">
+            <network-row icon="💻" label="Family iPhone on main Wi-Fi" description="Same network segment as the Mac server" status="Discovers library" status-variant="yes"></network-row>
+            <network-row icon="📱" label="Guest device on guest Wi-Fi" description="Isolated network segment — Bonjour does not cross" status="Cannot discover" status-variant="no"></network-row>
+            <network-row icon="🌍" label="Anyone on the internet" description="No route exists — nothing is listening externally" status="No route" status-variant="never"></network-row>
+          </network-diagram>
         </div>
 
         <hr />
@@ -177,7 +156,7 @@
             controls over what remote devices can do, without passwords, accounts, or per-user setup.
           </p>
 
-          <info-card variant="dark" style="margin-top: 24px" label="Level 1 — Server setting" heading="Read-only server">
+          <info-card variant="dark" class="highlight-box" style="margin-top: 24px" label="Level 1 — Server setting" heading="Read-only server">
             <p>
               Lock the Mac server entirely. Every device on the network — every iPhone, iPad, or other Mac — can browse the full library but cannot make any
               changes whatsoever. The setting lives on the Mac. No cooperation from the remote device required.
@@ -185,7 +164,7 @@
             <p>Best for: families where one person curates the library and everyone else is a viewer.</p>
           </info-card>
 
-          <info-card variant="dark" style="margin-top: 12px" label="Level 2 — Server setting" heading="Block remote edits only">
+          <info-card variant="dark" class="highlight-box" style="margin-top: 12px" label="Level 2 — Server setting" heading="Block remote edits only">
             <p>
               Remote devices can browse freely — filtering, searching, viewing photos on the map, opening bursts — but metadata editing is disabled. No changing
               dates, locations, albums, or people tags from iOS. The Mac can still edit locally.
@@ -193,7 +172,7 @@
             <p>Best for: households that want full browsing from anywhere in the house but want to keep library organisation tidy.</p>
           </info-card>
 
-          <info-card variant="dark" style="margin-top: 12px" label="Level 3 — Client setting" heading="Read-only client">
+          <info-card variant="dark" class="highlight-box" style="margin-top: 12px" label="Level 3 — Client setting" heading="Read-only client">
             <p>
               Set a specific iPhone or iPad to read-only mode on the device itself. That device becomes a pure viewer — editing controls are hidden entirely in
               the UI, regardless of what the server allows. Useful when you want to hand a device to a child or guest without worrying about accidental changes.
