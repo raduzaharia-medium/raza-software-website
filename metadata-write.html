@@ -34,12 +34,13 @@
     <link rel="stylesheet" href="components/info-card.css" />
     <link rel="stylesheet" href="components/footer.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
-    <link rel="stylesheet" href="metadata-write.css" />
+    <link rel="stylesheet" href="components/info-card-grid.css" />
   
     <script src="components/nav.js" defer></script>
     <script src="components/footer.js" defer></script>
     <script src="components/link-card.js" defer></script>
     <script src="components/info-card.js" defer></script>
+    <script src="components/info-card-grid.js" defer></script>
     <script src="components/hero-section.js" defer></script>
   </head>
   <body>
@@ -53,7 +54,7 @@
 
     <div class="content">
       <div class="content-body">
-        <info-card variant="green" heading="Your pixels are never touched">
+        <info-card variant="green" class="highlight-box" style="--card-padding: 32px 36px; margin-bottom: 40px" heading="Your pixels are never touched">
           <p>
             A photo file has two distinct areas: the compressed image (your actual pixels) and the metadata (everything else). Raza Photos operates exclusively
             on the metadata area. The compressed image is never decoded, processed, or re-encoded during a metadata save.
@@ -84,14 +85,14 @@
         <div class="section">
           <h2>Supported file formats</h2>
           <p class="desc">Metadata write-back works with the most common image formats. One exception applies to AVIF.</p>
-          <div class="format-grid">
+          <info-card-grid class="format">
             <info-card variant="alt" heading="JPEG" description="Full read &amp; write"></info-card>
             <info-card variant="alt" heading="HEIC" description="Full read &amp; write"></info-card>
             <info-card variant="alt" heading="PNG" description="Full read &amp; write"></info-card>
             <info-card variant="alt" heading="TIFF" description="Full read &amp; write"></info-card>
             <info-card variant="alt" heading="PSD" description="Full read &amp; write"></info-card>
             <info-card variant="orange" heading="AVIF" description="Read only — changes stored in library database"></info-card>
-          </div>
+          </info-card-grid>
         </div>
 
         <hr />
@@ -99,7 +100,7 @@
         <div class="section">
           <h2>What gets written</h2>
           <p class="desc">Raza Photos writes to multiple metadata standards simultaneously to ensure maximum compatibility with other photo apps and DAMs.</p>
-          <div class="write-grid">
+          <info-card-grid columns="2" class="featured">
             <info-card variant="alt" heading="Dates" description="Written to EXIF DateTimeOriginal and TIFF DateTime"></info-card>
             <info-card variant="alt" heading="Titles" description="Written to IPTC ObjectName and XMP dc:title"></info-card>
             <info-card variant="alt" heading="GPS coordinates" description="Written to the EXIF GPS dictionary with directional references"></info-card>
@@ -115,7 +116,7 @@
               description="Written to multiple formats including Lightroom hierarchical subjects"
             ></info-card>
             <info-card variant="alt" heading="Burst groupings" description="Written to a custom XMP namespace for burst sequence identification"></info-card>
-          </div>
+          </info-card-grid>
           <div class="note" style="margin-top: 16px">
             <strong>Lightroom compatibility.</strong> Albums and events are written as Lightroom-compatible hierarchical subjects, so your organisation carries
             over if you import the same files into Lightroom.
@@ -142,7 +143,7 @@
 
         <hr />
 
-        <info-card variant="dark" heading="How it works technically">
+        <info-card variant="dark" class="highlight-box" style="--card-padding: 32px 36px" heading="How it works technically">
           <p>
             Metadata writes use Apple's <code>CGImageDestinationCopyImageSource()</code> function, which operates exclusively on the metadata sections of an
             image file. The compressed image data is streamed directly from the source file without being decoded.

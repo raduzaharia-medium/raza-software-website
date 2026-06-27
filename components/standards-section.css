@@ -1,0 +1,24 @@
+.standards-section {
+    display: grid;
+    gap: 20px;
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 32px;
+}
+
+.standards-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.standards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.standards-grid info-card {
+    --card-radius: 12px;
+    --card-padding: 16px 18px;
+}

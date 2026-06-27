@@ -1,31 +1,4 @@
-
-.fmt-also-label {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    margin-top: 20px;
-}
-
-/* ── Codec section ── */
-.codec-section {
-    margin-top: 20px;
-}
-
-.codec-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    margin-bottom: 10px;
-}
-
-
-/* ── HDR explainer ── */
-.hdr-explainer {
+hdr-explainer {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 32px;
@@ -68,9 +41,9 @@
     text-align: center;
 }
 
-.hdr-layer-sdr { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
-.hdr-layer-map { background: rgba(26,143,255,0.2); border: 1px solid rgba(26,143,255,0.4); }
-.hdr-layer-result { background: rgba(255,214,10,0.15); border: 1px solid rgba(255,214,10,0.4); }
+.hdr-layer-sdr    { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); }
+.hdr-layer-map    { background: rgba(26,143,255,0.2);   border: 1px solid rgba(26,143,255,0.4); }
+.hdr-layer-result { background: rgba(255,214,10,0.15);  border: 1px solid rgba(255,214,10,0.4); }
 
 .hdr-layer-label {
     display: block;
@@ -95,26 +68,15 @@
     line-height: 1;
 }
 
-/* ── HDR formats split ── */
-.hdr-formats-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
+/* ── HDR format cards ── */
+concept-pair.hdr-formats { --card-padding: 20px 22px; }
 
-.hdr-formats-split info-card {
-    --card-padding: 20px 22px;
-}
-
-.hdr-formats-split .card-body {
+concept-pair.hdr-formats .card-body {
     display: grid;
     gap: 14px;
 }
 
-.hdr-format-item {
-    display: grid;
-    gap: 3px;
-}
+.hdr-format-item { display: grid; gap: 3px; }
 
 .hdr-format-item strong {
     font-size: 14px;
@@ -127,11 +89,16 @@
     line-height: 1.5;
 }
 
-
 /* ── Responsive ── */
 @media (max-width: 768px) {
-    .hdr-explainer { grid-template-columns: 1fr; }
-    .hdr-explainer-diagram { grid-auto-flow: column; min-width: unset; }
+    hdr-explainer {
+        grid-template-columns: 1fr;
+    }
+
+    .hdr-explainer-diagram {
+        grid-auto-flow: column;
+        min-width: unset;
+    }
+
     .hdr-layer { min-width: 120px; }
-    .hdr-formats-split { grid-template-columns: 1fr; }
 }

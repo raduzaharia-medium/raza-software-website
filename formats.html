@@ -37,7 +37,8 @@
     <link rel="stylesheet" href="components/flow-step.css" />
     <link rel="stylesheet" href="components/footer.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
-    <link rel="stylesheet" href="formats.css" />
+    <link rel="stylesheet" href="components/concept-pair.css" />
+    <link rel="stylesheet" href="components/hdr-explainer.css" />
   
     <script src="components/nav.js" defer></script>
     <script src="components/footer.js" defer></script>
@@ -47,6 +48,8 @@
     <script src="components/callout-box.js" defer></script>
     <script src="components/flow-step.js" defer></script>
     <script src="components/hero-section.js" defer></script>
+    <script src="components/concept-pair.js" defer></script>
+    <script src="components/hdr-explainer.js" defer></script>
   </head>
   <body>
     <raza-nav></raza-nav>
@@ -82,7 +85,7 @@
             ></info-card>
           </info-card-grid>
 
-          <div class="fmt-also-label">Also fully supported</div>
+          <span class="sub-label" style="margin-top: 20px">Also fully supported</span>
           <info-card-grid class="secondary label-mono">
             <info-card
               variant="alt"
@@ -146,8 +149,8 @@
             ></info-card>
           </info-card-grid>
 
-          <div class="codec-section">
-            <span class="codec-label">Codecs inside those containers</span>
+          <div style="margin-top: 20px">
+            <span class="sub-label" style="margin-bottom: 10px">Codecs inside those containers</span>
             <info-card-grid class="mono">
               <info-card variant="alt" heading="HEVC / H.265" description="4K, HDR, and Dolby Vision. Used on all modern iPhones."></info-card>
               <info-card variant="alt" heading="H.264" description="The workhorse. Compatible with everything, including older recordings."></info-card>
@@ -172,40 +175,21 @@
             bright and vivid as when you captured them.
           </p>
 
-          <div class="hdr-explainer">
-            <div class="hdr-explainer-text">
-              <h3>The gain map trick</h3>
-              <p>
-                HDR photos are not stored as HDR. Each file contains a standard SDR image — which looks perfectly normal on every screen — plus a hidden
-                <strong>gain map</strong>: a set of instructions for how to boost specific areas when shown on a capable display.
-              </p>
-              <p>
-                On a standard screen, the gain map is ignored. On an HDR screen, it lights the photo up to its full captured brightness. One file, two
-                presentations, every screen looks correct.
-              </p>
-              <p>
-                Raza Photos hands the complete file — gain map and all — directly to Apple's display framework. We decode nothing. The display does the work.
-              </p>
-            </div>
-            <div class="hdr-explainer-diagram">
-              <div class="hdr-layer hdr-layer-sdr">
-                <span class="hdr-layer-label">SDR image</span>
-                <span class="hdr-layer-sub">Looks correct on every screen</span>
-              </div>
-              <div class="hdr-layer-plus">+</div>
-              <div class="hdr-layer hdr-layer-map">
-                <span class="hdr-layer-label">Gain map</span>
-                <span class="hdr-layer-sub">Hidden brightness instructions</span>
-              </div>
-              <div class="hdr-layer-equals">=</div>
-              <div class="hdr-layer hdr-layer-result">
-                <span class="hdr-layer-label">Full HDR</span>
-                <span class="hdr-layer-sub">On capable displays</span>
-              </div>
-            </div>
-          </div>
+          <hdr-explainer heading="The gain map trick">
+            <p>
+              HDR photos are not stored as HDR. Each file contains a standard SDR image — which looks perfectly normal on every screen — plus a hidden
+              <strong>gain map</strong>: a set of instructions for how to boost specific areas when shown on a capable display.
+            </p>
+            <p>
+              On a standard screen, the gain map is ignored. On an HDR screen, it lights the photo up to its full captured brightness. One file, two
+              presentations, every screen looks correct.
+            </p>
+            <p>
+              Raza Photos hands the complete file — gain map and all — directly to Apple's display framework. We decode nothing. The display does the work.
+            </p>
+          </hdr-explainer>
 
-          <div class="hdr-formats-split">
+          <concept-pair class="hdr-formats">
             <info-card variant="alt" label="Photos">
               <div class="hdr-format-item">
                 <strong>Apple Adaptive HDR</strong>
@@ -230,7 +214,7 @@
                 <span>Hybrid Log-Gamma, used in broadcast HDR video.</span>
               </div>
             </info-card>
-          </div>
+          </concept-pair>
         </div>
 
         <hr />

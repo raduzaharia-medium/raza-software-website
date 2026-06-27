@@ -163,3 +163,67 @@ hr { border: none; border-top: 1px solid var(--border); }
     padding-top: 24px;
     border-top: 1px solid var(--border);
 }
+
+/* ── Steps list ── */
+.steps-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+}
+
+.steps-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: start;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+/* ── Protected list ── */
+.protected-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+}
+
+.protected-list li {
+    font-size: 15px;
+    color: var(--text-secondary);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: start;
+    line-height: 1.5;
+}
+
+.protected-list li::before {
+    content: '🔒';
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+/* ── Sub-label (small uppercase section label in secondary colour) ── */
+.sub-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+}

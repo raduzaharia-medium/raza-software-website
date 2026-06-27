@@ -134,10 +134,23 @@ info-card.highlight-box .card-body p {
   margin-bottom: 12px;
 }
 
-info-card.highlight-box[variant="dark"] .card-heading {
+info-card.highlight-box[variant="dark"] .card-heading,
+info-card.highlight-box[variant="green"] .card-heading {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 12px;
+  color: var(--text);
+}
+
+info-card.highlight-box[variant="dark"] .card-body p { margin-bottom: 12px; }
+
+info-card.highlight-box[variant="dark"] code {
+  background: rgba(255, 255, 255, 0.1);
+  color: #63c5ff;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
 }
 
 @media (max-width: 768px) {

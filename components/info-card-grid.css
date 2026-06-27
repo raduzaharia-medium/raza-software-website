@@ -73,3 +73,22 @@ info-card-grid.mono .card-heading {
 }
 
 info-card-grid.mono .card-description { font-size: 12px; }
+
+info-card-grid.format {
+    text-align: center;
+    --grid-min-width: 120px;
+    --grid-gap: 10px;
+}
+
+info-card-grid.format info-card {
+    --card-radius: 10px;
+    --card-padding: 14px 16px;
+}
+
+info-card-grid.format .card-heading {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+info-card-grid.format .card-description { font-size: 12px; }
