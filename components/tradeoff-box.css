@@ -1,0 +1,26 @@
+tradeoff-box {
+    display: grid;
+    gap: 10px;
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    border-left: 4px solid var(--orange);
+}
+
+.tradeoff-heading {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.tradeoff-body p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.tradeoff-body p + p { margin-top: 6px; }
+
+@media (max-width: 768px) {
+    tradeoff-box { padding: 24px; }
+}

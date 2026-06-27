@@ -1,0 +1,13 @@
+page-callout {
+    display: block;
+    text-align: center;
+    padding-top: 48px;
+}
+
+page-callout p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+page-callout .btn { padding: 13px 28px; font-size: 16px; }

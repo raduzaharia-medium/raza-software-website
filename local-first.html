@@ -32,18 +32,22 @@
     <link rel="stylesheet" href="components/nav.css" />
     <link rel="stylesheet" href="components/link-card.css" />
     <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/concept-pair.css" />
     <link rel="stylesheet" href="components/detail-list.css" />
     <link rel="stylesheet" href="components/footer.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
-    <link rel="stylesheet" href="local-first.css" />
-  
+    <link rel="stylesheet" href="components/tradeoff-box.css" />
+    <link rel="stylesheet" href="components/page-callout.css" />
     <script src="components/nav.js" defer></script>
     <script src="components/footer.js" defer></script>
     <script src="components/link-card.js" defer></script>
     <script src="components/info-card.js" defer></script>
+    <script src="components/concept-pair.js" defer></script>
     <script src="components/detail-list.js" defer></script>
     <script src="components/detail-item.js" defer></script>
     <script src="components/hero-section.js" defer></script>
+    <script src="components/tradeoff-box.js" defer></script>
+    <script src="components/page-callout.js" defer></script>
   </head>
   <body>
     <raza-nav></raza-nav>
@@ -76,7 +80,7 @@
           <h2>Cloud storage vs. local storage</h2>
           <p>Most photo apps are built around cloud storage. That comes with real tradeoffs worth understanding.</p>
 
-          <div class="comparison">
+          <concept-pair>
             <info-card variant="alt" label="Cloud photo storage">
               <ul class="compare-list">
                 <li><span class="dot cloud-dot">✗</span>Monthly or yearly subscription</li>
@@ -97,7 +101,7 @@
                 <li><span class="dot local-dot">✓</span>Your files, in open formats, always</li>
               </ul>
             </info-card>
-          </div>
+          </concept-pair>
         </div>
 
         <hr />
@@ -105,14 +109,13 @@
         <div class="section">
           <h2>The honest tradeoff: backup is your responsibility</h2>
 
-          <div class="tradeoff">
-            <h3>We will say this plainly</h3>
+          <tradeoff-box heading="We will say this plainly">
             <p>
               Cloud storage services include offsite backup as part of what you pay for. Raza Photos does not. If your Mac's hard drive fails and you have no
               backup, you could lose your photos.
             </p>
             <p>This is the one real cost of local-first storage. We think it is worth being honest about it rather than pretending it does not exist.</p>
-          </div>
+          </tradeoff-box>
 
           <p>That said, good backup solutions for local photo libraries are straightforward and many are either free or already included with your Mac:</p>
 
@@ -153,8 +156,7 @@
           </info-card>
         </div>
 
-        <div class="callout">
-          <p>Ready to move your photos back home?</p>
+        <page-callout text="Ready to move your photos back home?">
           <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -163,7 +165,7 @@
             </svg>
             Download Free on the App Store
           </a>
-        </div>
+        </page-callout>
 
         <div class="other-links">
           <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="Full details on what we collect — which is nothing"></link-card>

@@ -138,6 +138,23 @@ info-card.highlight-box .card-body p {
   info-card.highlight-box { --card-padding: 24px; }
 }
 
+/* ── Philosophy modifier ── */
+
+info-card.philosophy {
+  --card-padding: 40px 44px;
+}
+
+info-card.philosophy .card-body p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  info-card.philosophy { --card-padding: 28px 24px; }
+}
+
 /* ── Link card ── */
 
 .card-link {

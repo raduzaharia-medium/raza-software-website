@@ -19,6 +19,34 @@ concept-pair .card-icon {
 
 concept-pair .card-description { line-height: 1.7; }
 
+concept-pair .compare-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+concept-pair .compare-list li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 9px;
+    align-items: start;
+    line-height: 1.5;
+}
+
+concept-pair .compare-list li .dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 1px;
+}
+
 @media (max-width: 768px) {
     .pair-grid { grid-template-columns: 1fr; }
 }
