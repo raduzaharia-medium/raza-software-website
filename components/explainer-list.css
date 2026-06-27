@@ -1,0 +1,8 @@
+explainer-list {
+    display: block;
+}
+
+explainer-list[variant="negative"] .section ul li::before {
+    content: '✗';
+    color: var(--red);
+}

@@ -67,59 +67,6 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* ── Sub-page hero (blue gradient) ── */
-.hero-page {
-    background: transparent;
-    padding: 64px 24px;
-}
-
-.hero-page h1 {
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 16px;
-    color: #fff;
-}
-
-.hero-page p {
-    font-size: 17px;
-    color: rgba(255,255,255,0.88);
-    line-height: 1.65;
-    max-width: 600px;
-}
-
-.hero-page .hero-eyebrow { color: rgba(255,255,255,0.78); }
-
-/* ── Main hero (dark) ── */
-.hero-dark {
-    background: transparent;
-    color: #fff;
-    padding: 72px 24px 80px;
-    text-align: center;
-}
-
-.hero-dark .hero-eyebrow { color: #63c5ff; }
-
-.hero-dark h1 {
-    font-size: clamp(32px, 5vw, 60px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    max-width: 720px;
-    margin: 0 auto 24px;
-}
-
-.hero-dark p {
-    font-size: clamp(16px, 2vw, 20px);
-    color: rgba(255,255,255,0.85);
-    max-width: 540px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* ── Hero shared ── */
-.hero-inner { max-width: 720px; margin: 0 auto; }
 
 .hero-eyebrow {
     font-size: 13px;
@@ -149,8 +96,6 @@ body {
 }
 
 /* Sub-pages: hero already provides top spacing */
-.hero-page + .content,
-.hero-dark + .content { padding-top: 64px; }
 
 /* Narrow centering wrapper for text-heavy pages */
 .content-body {
@@ -177,67 +122,6 @@ body {
     gap: 16px;
 }
 
-/* ── Text sections ── */
-.section { margin-bottom: 52px; }
-
-.section h2 {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
-}
-
-.desc {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.section p {
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    margin-bottom: 12px;
-}
-
-.section p:last-child { margin-bottom: 0; }
-
-.section ul {
-    list-style: none;
-    margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.section ul li {
-    font-size: 15px;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.6;
-}
-
-.section ul li::before {
-    content: '✓';
-    color: var(--green);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-}
-
-.section ul.arrow-list li::before {
-    content: '→';
-    color: var(--blue);
-}
-
-.section ul.never-list li::before,
-.never-list li::before {
-    content: '✗';
-    color: var(--red);
-}
 
 hr { border: none; border-top: 1px solid var(--border); margin: 52px 0; }
 

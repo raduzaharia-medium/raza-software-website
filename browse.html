@@ -1,90 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/icon_web.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos — all on your home network."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/browse.html" />
+    <meta property="og:title" content="Browsing — Raza Photos" />
+    <meta
+      property="og:description"
+      content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Browsing — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
     <title>Browsing — Raza Photos</title>
-    <meta name="description" content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos — all on your home network.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="components/nav.css">
-    <link rel="stylesheet" href="components/link-card.css">
-    <link rel="stylesheet" href="components/platform-screenshot.css">
-    <link rel="stylesheet" href="components/showcase-item.css">
-    <link rel="stylesheet" href="components/footer.css">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Raza Photos">
-    <meta property="og:url" content="https://razasoftware.eu/browse.html">
-    <meta property="og:title" content="Browsing — Raza Photos">
-    <meta property="og:description" content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos.">
-    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Browsing — Raza Photos">
-    <meta name="twitter:description" content="Browse your photo library on a map, in the grid, or full-screen. Native Apple Maps integration, HDR rendering, and Live Photos.">
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
-</head>
-<body>
 
-<raza-nav></raza-nav>
-<script src="components/nav.js"></script>
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/platform-screenshot.css" />
+    <link rel="stylesheet" href="components/showcase-item.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+    <script src="components/nav.js"></script>
 
-<div class="hero-page">
-    <div class="hero-inner">
-        <span class="hero-eyebrow">Browsing</span>
-        <h1>Your whole library.<br>Every way you want to see it.</h1>
-        <p>Grid, map, full-screen viewer — all pulling from the same library, all native, all fast. No loading spinner. No browser. No compromise.</p>
-    </div>
-</div>
+    <hero-section
+      eyebrow="Browsing"
+      heading="Your whole library. Every way you want to see it."
+      description="Grid, map, full-screen viewer — all pulling from the same library, all native, all fast. No loading spinner. No browser. No compromise."
+    ></hero-section>
 
-<div class="content-wide">
-<div class="showcase-section">
-
-    <showcase-item label="Grid view" heading="Every photo, instantly."
-        mac="assets/mac-grid.webp" ipad="assets/ipad-grid.webp" iphone="assets/iphone-grid.webp" alt="Raza Photos grid view">
-        <p>The grid loads thumbnails the moment you open the app — no sync, no waiting for the cloud. Scroll through years of memories as fast as your finger moves. Filter by date, location, or event with a tap.</p>
-        <ul>
+    <div class="content-wide">
+      <div class="showcase-section">
+        <showcase-item
+          label="Grid view"
+          heading="Every photo, instantly."
+          mac="assets/mac-grid.webp"
+          ipad="assets/ipad-grid.webp"
+          iphone="assets/iphone-grid.webp"
+          alt="Raza Photos grid view"
+        >
+          <p>
+            The grid loads thumbnails the moment you open the app — no sync, no waiting for the cloud. Scroll through years of memories as fast as your finger
+            moves. Filter by date, location, or event with a tap.
+          </p>
+          <ul>
             <li>Instant thumbnail loading over Wi-Fi</li>
             <li>Filter and search across the full library</li>
             <li>Tap any photo to go full-screen</li>
             <li>Swipe into a burst without leaving the grid</li>
-        </ul>
-    </showcase-item>
+          </ul>
+        </showcase-item>
 
-    <showcase-item reverse label="Map view" heading="See exactly where every memory was made."
-        mac="assets/mac-map.webp" ipad="assets/ipad-map.webp" iphone="assets/iphone-map.webp" alt="Raza Photos map view">
-        <p>Switch from grid to map and your photos appear as pins on an Apple Maps canvas. Tap a cluster to zoom in — keep tapping and the map zooms until the pins separate. When you've narrowed it down far enough, tap the cluster one more time to see just those photos in the grid.</p>
-        <ul>
+        <showcase-item
+          reverse
+          label="Map view"
+          heading="See exactly where every memory was made."
+          mac="assets/mac-map.webp"
+          ipad="assets/ipad-map.webp"
+          iphone="assets/iphone-map.webp"
+          alt="Raza Photos map view"
+        >
+          <p>
+            Switch from grid to map and your photos appear as pins on an Apple Maps canvas. Tap a cluster to zoom in — keep tapping and the map zooms until the
+            pins separate. When you've narrowed it down far enough, tap the cluster one more time to see just those photos in the grid.
+          </p>
+          <ul>
             <li>Apple Maps integration, fully native</li>
             <li>Photo thumbnails shown directly on the map</li>
             <li>Tap clusters to zoom in progressively</li>
             <li>Tap a tight cluster to open it in the grid</li>
-        </ul>
-    </showcase-item>
+          </ul>
+        </showcase-item>
 
-    <showcase-item label="Photo viewer" heading="Immersive viewing, right down to the location."
-        mac="assets/mac-viewer.webp" ipad="assets/ipad-viewer.webp" iphone="assets/iphone-viewer.webp" alt="Raza Photos full-screen photo viewer">
-        <p>Open any photo into a full-screen viewer. The location is shown subtly in the corner — always present, never in the way. HDR and Live Photos are rendered natively, exactly as they appear in Photos.app.</p>
-        <ul>
+        <showcase-item
+          label="Photo viewer"
+          heading="Immersive viewing, right down to the location."
+          mac="assets/mac-viewer.webp"
+          ipad="assets/ipad-viewer.webp"
+          iphone="assets/iphone-viewer.webp"
+          alt="Raza Photos full-screen photo viewer"
+        >
+          <p>
+            Open any photo into a full-screen viewer. The location is shown subtly in the corner — always present, never in the way. HDR and Live Photos are
+            rendered natively, exactly as they appear in Photos.app.
+          </p>
+          <ul>
             <li>Full-screen, distraction-free viewing</li>
             <li>Location badge pulled from GPS metadata</li>
             <li>Full HDR with gain map support</li>
             <li>Live Photos play on tap or hover</li>
-        </ul>
-    </showcase-item>
+          </ul>
+        </showcase-item>
+      </div>
 
-</div>
+      <div class="other-links" style="max-width: 1040px; margin: 0 auto">
+        <link-card href="formats.html" label="Formats" heading="Supported formats" description="HEIC, JPEG, ProRes, HDR gain maps, Live Photos"></link-card>
+        <link-card
+          href="burst.html"
+          label="Navigation"
+          heading="Burst navigation"
+          description="Two axes, two meanings — no menus, no mode switches"
+        ></link-card>
+      </div>
+    </div>
 
-<div class="other-links" style="max-width: 1040px; margin: 0 auto;">
-    <link-card href="formats.html" label="Formats" heading="Supported formats" description="HEIC, JPEG, ProRes, HDR gain maps, Live Photos"></link-card>
-    <link-card href="burst.html" label="Navigation" heading="Burst navigation" description="Two axes, two meanings — no menus, no mode switches"></link-card>
-</div>
-</div>
-
-<raza-footer></raza-footer>
-<script src="components/footer.js"></script>
-<script src="components/link-card.js"></script>
-<script src="components/platform-screenshot.js"></script>
-<script src="components/showcase-item.js"></script>
-
-</body>
+    <raza-footer></raza-footer>
+    <script src="components/footer.js"></script>
+    <script src="components/link-card.js"></script>
+    <script src="components/platform-screenshot.js"></script>
+    <script src="components/showcase-item.js"></script>
+    <script src="components/hero-section.js"></script>
+  </body>
 </html>

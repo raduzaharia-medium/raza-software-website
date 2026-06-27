@@ -2,21 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="assets/icon_web.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Supported Formats — Raza Photos</title>
     <meta
       name="description"
       content="Raza Photos supports every image and video format Apple's frameworks recognise — including HEIC, JPEG, PNG, AVIF, ProRes, HEVC, HDR with gain maps, and Live Photos."
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="components/nav.css" />
-    <link rel="stylesheet" href="components/link-card.css" />
-    <link rel="stylesheet" href="components/info-card.css" />
-    <link rel="stylesheet" href="components/callout-box.css" />
-    <link rel="stylesheet" href="components/flow-step.css" />
-    <link rel="stylesheet" href="components/footer.css" />
-    <link rel="stylesheet" href="formats.css" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raza Photos" />
     <meta property="og:url" content="https://razasoftware.eu/formats.html" />
@@ -33,25 +23,33 @@
       content="Raza Photos supports every image and video format Apple's frameworks recognise — HEIC, JPEG, PNG, AVIF, ProRes, HEVC, HDR with gain maps, and Live Photos."
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
+    <title>Supported Formats — Raza Photos</title>
+
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/explainer.css">
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/callout-box.css" />
+    <link rel="stylesheet" href="components/flow-step.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="formats.css" />
   </head>
   <body>
     <raza-nav></raza-nav>
     <script src="components/nav.js"></script>
 
-    <div class="hero-page">
-      <div class="hero-inner">
-        <span class="hero-eyebrow">Supported formats</span>
-        <h1>If your iPhone can open it,<br />Raza Photos can too.</h1>
-        <p>
-          We use Apple's own frameworks to read and display your photos and videos. The supported format list is Apple's, not ours — which means it stays
-          current automatically as Apple adds new formats.
-        </p>
-      </div>
-    </div>
+    <hero-section
+      eyebrow="Supported formats"
+      heading="If your iPhone can open it, Raza Photos can too."
+      description="We use Apple's own frameworks to read and display your photos and videos. The supported format list is Apple's, not ours — which means it stays current automatically as Apple adds new formats."
+    ></hero-section>
 
     <div class="content">
       <div class="content-body">
-        <!-- ── Photos ── -->
         <div class="section">
           <h2>Photos</h2>
           <p class="desc">
@@ -115,7 +113,6 @@
 
         <hr />
 
-        <!-- ── Videos ── -->
         <div class="section">
           <h2>Videos</h2>
           <p class="desc">
@@ -159,7 +156,6 @@
 
         <hr />
 
-        <!-- ── HDR ── -->
         <div class="section" id="hdr">
           <h2>HDR</h2>
           <p class="desc">
@@ -230,7 +226,6 @@
 
         <hr />
 
-        <!-- ── Live Photos ── -->
         <div class="section" id="live-photos">
           <h2>Live Photos</h2>
           <p class="desc">
@@ -310,5 +305,6 @@
     <script src="components/info-card.js"></script>
     <script src="components/callout-box.js"></script>
     <script src="components/flow-step.js"></script>
+    <script src="components/hero-section.js"></script>
   </body>
 </html>

@@ -1,134 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/icon_web.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Raza Photos stores nothing in the cloud. Your photos live on your Mac, in your folders, on your terms. No subscription. No vendor. No risk."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/local-first.html" />
+    <meta property="og:title" content="Why Local-First — Raza Photos" />
+    <meta
+      property="og:description"
+      content="No cloud means no subscription, no breach risk, and no one else's servers between you and your photos. Local-first isn't a limitation — it's the point."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why Local-First — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="No cloud means no subscription, no breach risk, and no one else's servers between you and your photos. Local-first isn't a limitation — it's the point."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
     <title>Your photos stay on your disk — Raza Photos</title>
-    <meta name="description" content="Raza Photos stores nothing in the cloud. Your photos live on your Mac, in your folders, on your terms. No subscription. No vendor. No risk.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="components/nav.css">
-    <link rel="stylesheet" href="components/link-card.css">
-    <link rel="stylesheet" href="components/info-card.css">
-    <link rel="stylesheet" href="components/footer.css">
-    <link rel="stylesheet" href="local-first.css">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Raza Photos">
-    <meta property="og:url" content="https://razasoftware.eu/local-first.html">
-    <meta property="og:title" content="Why Local-First — Raza Photos">
-    <meta property="og:description" content="No cloud means no subscription, no breach risk, and no one else's servers between you and your photos. Local-first isn't a limitation — it's the point.">
-    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Why Local-First — Raza Photos">
-    <meta name="twitter:description" content="No cloud means no subscription, no breach risk, and no one else's servers between you and your photos. Local-first isn't a limitation — it's the point.">
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
-</head>
-<body>
 
-<raza-nav></raza-nav>
-<script src="components/nav.js"></script>
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/explainer.css">
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="local-first.css" />
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+    <script src="components/nav.js"></script>
 
-<div class="hero-dark">
-    <span class="hero-eyebrow">Local-first</span>
-    <h1>Your photos don't go through our infrastructure.<br>Because we have none.</h1>
-    <p>This is not a privacy policy promise. It is an architectural fact. There is no server to send your photos to.</p>
-</div>
+    <hero-section
+      variant="dark"
+      eyebrow="Local-first"
+      heading="Your photos don't go through our infrastructure. Because we have none."
+      description="This is not a privacy policy promise. It is an architectural fact. There is no server to send your photos to."
+    ></hero-section>
 
-<div class="content">
-<div class="content-body">
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>Where your photos actually live</h2>
+          <p>
+            When you use Raza Photos, your photos stay exactly where they are — in whatever folders you already have on your Mac. Raza Photos reads them there
+            and indexes their metadata into a local database. Nothing is copied, nothing is uploaded, nothing is moved.
+          </p>
+          <p>
+            When you browse your library on an iPhone or iPad, the photos are served directly from your Mac over your home Wi-Fi. Your phone is talking to your
+            Mac, not to a data center somewhere.
+          </p>
+          <p>When your Mac is off, there is nothing to connect to. That is not a bug. That is the system working exactly as designed.</p>
+        </div>
 
-    <div class="section">
-        <h2>Where your photos actually live</h2>
-        <p>When you use Raza Photos, your photos stay exactly where they are — in whatever folders you already have on your Mac. Raza Photos reads them there and indexes their metadata into a local database. Nothing is copied, nothing is uploaded, nothing is moved.</p>
-        <p>When you browse your library on an iPhone or iPad, the photos are served directly from your Mac over your home Wi-Fi. Your phone is talking to your Mac, not to a data center somewhere.</p>
-        <p>When your Mac is off, there is nothing to connect to. That is not a bug. That is the system working exactly as designed.</p>
-    </div>
+        <hr />
 
-    <hr>
+        <div class="section">
+          <h2>Cloud storage vs. local storage</h2>
+          <p>Most photo apps are built around cloud storage. That comes with real tradeoffs worth understanding.</p>
 
-    <div class="section">
-        <h2>Cloud storage vs. local storage</h2>
-        <p>Most photo apps are built around cloud storage. That comes with real tradeoffs worth understanding.</p>
-
-        <div class="comparison">
+          <div class="comparison">
             <info-card variant="alt" label="Cloud photo storage">
-                <ul class="compare-list">
-                    <li><span class="dot cloud-dot">✗</span>Monthly or yearly subscription</li>
-                    <li><span class="dot cloud-dot">✗</span>Your photos on someone else's servers</li>
-                    <li><span class="dot cloud-dot">✗</span>Access depends on the company staying in business</li>
-                    <li><span class="dot cloud-dot">✗</span>Requires internet to browse your own photos</li>
-                    <li><span class="dot cloud-dot">✗</span>Subject to data breaches you have no control over</li>
-                    <li><span class="dot cloud-dot">✗</span>Terms of service can change at any time</li>
-                </ul>
+              <ul class="compare-list">
+                <li><span class="dot cloud-dot">✗</span>Monthly or yearly subscription</li>
+                <li><span class="dot cloud-dot">✗</span>Your photos on someone else's servers</li>
+                <li><span class="dot cloud-dot">✗</span>Access depends on the company staying in business</li>
+                <li><span class="dot cloud-dot">✗</span>Requires internet to browse your own photos</li>
+                <li><span class="dot cloud-dot">✗</span>Subject to data breaches you have no control over</li>
+                <li><span class="dot cloud-dot">✗</span>Terms of service can change at any time</li>
+              </ul>
             </info-card>
             <info-card variant="green" label="Raza Photos">
-                <ul class="compare-list">
-                    <li><span class="dot local-dot">✓</span>One-time purchase, no subscription</li>
-                    <li><span class="dot local-dot">✓</span>Your photos on your own hardware</li>
-                    <li><span class="dot local-dot">✓</span>Works forever, regardless of what happens to us</li>
-                    <li><span class="dot local-dot">✓</span>Works without internet, within your home network</li>
-                    <li><span class="dot local-dot">✓</span>No external server means no external breach</li>
-                    <li><span class="dot local-dot">✓</span>Your files, in open formats, always</li>
-                </ul>
+              <ul class="compare-list">
+                <li><span class="dot local-dot">✓</span>One-time purchase, no subscription</li>
+                <li><span class="dot local-dot">✓</span>Your photos on your own hardware</li>
+                <li><span class="dot local-dot">✓</span>Works forever, regardless of what happens to us</li>
+                <li><span class="dot local-dot">✓</span>Works without internet, within your home network</li>
+                <li><span class="dot local-dot">✓</span>No external server means no external breach</li>
+                <li><span class="dot local-dot">✓</span>Your files, in open formats, always</li>
+              </ul>
             </info-card>
+          </div>
         </div>
-    </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>The honest tradeoff: backup is your responsibility</h2>
+        <div class="section">
+          <h2>The honest tradeoff: backup is your responsibility</h2>
 
-        <div class="tradeoff">
+          <div class="tradeoff">
             <h3>We will say this plainly</h3>
-            <p>Cloud storage services include offsite backup as part of what you pay for. Raza Photos does not. If your Mac's hard drive fails and you have no backup, you could lose your photos.</p>
+            <p>
+              Cloud storage services include offsite backup as part of what you pay for. Raza Photos does not. If your Mac's hard drive fails and you have no
+              backup, you could lose your photos.
+            </p>
             <p>This is the one real cost of local-first storage. We think it is worth being honest about it rather than pretending it does not exist.</p>
+          </div>
+
+          <p>That said, good backup solutions for local photo libraries are straightforward and many are either free or already included with your Mac:</p>
+
+          <ul class="backup-options">
+            <li>
+              <strong>Time Machine</strong> — Apple's built-in backup to an external drive. Set it up once and it runs automatically. Your photo folders are
+              included by default.
+            </li>
+            <li>
+              <strong>External hard drives</strong> — A second copy on a drive kept elsewhere (a drawer at work, a relative's house) is simple offsite backup.
+            </li>
+            <li><strong>NAS devices</strong> — A network-attached storage device at home gives you redundant local copies without a subscription.</li>
+            <li>
+              <strong>Selective cloud backup</strong> — Tools like Backblaze or Arq let you back up specific folders to cloud storage at a fraction of the cost
+              of a photo subscription, without giving any app access to browse or process your library.
+            </li>
+          </ul>
+
+          <p style="margin-top: 20px">
+            The 3-2-1 rule is a sensible baseline: three copies of your data, on two different types of media, with one copy offsite. Time Machine plus one
+            external drive satisfies this.
+          </p>
         </div>
 
-        <p>That said, good backup solutions for local photo libraries are straightforward and many are either free or already included with your Mac:</p>
+        <hr />
 
-        <ul class="backup-options">
-            <li><strong>Time Machine</strong> — Apple's built-in backup to an external drive. Set it up once and it runs automatically. Your photo folders are included by default.</li>
-            <li><strong>External hard drives</strong> — A second copy on a drive kept elsewhere (a drawer at work, a relative's house) is simple offsite backup.</li>
-            <li><strong>NAS devices</strong> — A network-attached storage device at home gives you redundant local copies without a subscription.</li>
-            <li><strong>Selective cloud backup</strong> — Tools like Backblaze or Arq let you back up specific folders to cloud storage at a fraction of the cost of a photo subscription, without giving any app access to browse or process your library.</li>
-        </ul>
+        <div class="section">
+          <h2>What you actually own</h2>
 
-        <p style="margin-top: 20px;">The 3-2-1 rule is a sensible baseline: three copies of your data, on two different types of media, with one copy offsite. Time Machine plus one external drive satisfies this.</p>
-    </div>
+          <info-card variant="dark" class="philosophy">
+            <p>
+              <strong>When your photos are in iCloud or Google Photos, you are a tenant.</strong> The service can change its pricing, its terms, or shut down
+              entirely. Companies get acquired. Storage tiers change. In 2011, Google said Google Photos would be free forever. In 2020, they changed their
+              mind.
+            </p>
+            <p>
+              <strong>When your photos are on your own drive, you are the owner.</strong> Raza Photos could disappear tomorrow and your photos would be
+              completely unaffected — they are still in the same folders, in the same formats, readable by any software that opens JPEG or HEIC files. We
+              deliberately use open metadata standards so that your organisational work — your albums, your face tags, your location data — lives in the files
+              themselves, not locked in a proprietary database.
+            </p>
+            <p>
+              <strong>The subscription model creates a dependency.</strong> You pay not to access the service, but to keep access to your own memories. We find
+              that arrangement difficult to justify.
+            </p>
+          </info-card>
+        </div>
 
-    <hr>
-
-    <div class="section">
-        <h2>What you actually own</h2>
-
-        <info-card variant="dark" class="philosophy">
-            <p><strong>When your photos are in iCloud or Google Photos, you are a tenant.</strong> The service can change its pricing, its terms, or shut down entirely. Companies get acquired. Storage tiers change. In 2011, Google said Google Photos would be free forever. In 2020, they changed their mind.</p>
-            <p><strong>When your photos are on your own drive, you are the owner.</strong> Raza Photos could disappear tomorrow and your photos would be completely unaffected — they are still in the same folders, in the same formats, readable by any software that opens JPEG or HEIC files. We deliberately use open metadata standards so that your organisational work — your albums, your face tags, your location data — lives in the files themselves, not locked in a proprietary database.</p>
-            <p><strong>The subscription model creates a dependency.</strong> You pay not to access the service, but to keep access to your own memories. We find that arrangement difficult to justify.</p>
-        </info-card>
-    </div>
-
-    <div class="callout">
-        <p>Ready to move your photos back home?</p>
-        <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div class="callout">
+          <p>Ready to move your photos back home?</p>
+          <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+              />
+            </svg>
             Download Free on the App Store
-        </a>
+          </a>
+        </div>
+
+        <div class="other-links">
+          <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="Full details on what we collect — which is nothing"></link-card>
+          <link-card
+            href="metadata-write.html"
+            label="Metadata"
+            heading="Your data stays portable"
+            description="Open formats, no lock-in, readable by any app"
+          ></link-card>
+        </div>
+      </div>
     </div>
 
-    <div class="other-links">
-        <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="Full details on what we collect — which is nothing"></link-card>
-        <link-card href="metadata-write.html" label="Metadata" heading="Your data stays portable" description="Open formats, no lock-in, readable by any app"></link-card>
-    </div>
-
-</div>
-</div>
-
-<raza-footer></raza-footer>
-<script src="components/footer.js"></script>
-<script src="components/link-card.js"></script>
-<script src="components/info-card.js"></script>
-
-</body>
+    <raza-footer></raza-footer>
+    <script src="components/footer.js"></script>
+    <script src="components/link-card.js"></script>
+    <script src="components/info-card.js"></script>
+    <script src="components/hero-section.js"></script>
+  </body>
 </html>

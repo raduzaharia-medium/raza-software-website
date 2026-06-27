@@ -1,89 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/icon_web.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings — no menus, no mode switches."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/burst.html" />
+    <meta property="og:title" content="Burst Navigation — Raza Photos" />
+    <meta
+      property="og:description"
+      content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/iphone-burst.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Burst Navigation — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/iphone-burst.png" />
+
     <title>Burst Navigation — Raza Photos</title>
-    <meta name="description" content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings — no menus, no mode switches.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="components/nav.css">
-    <link rel="stylesheet" href="components/info-card.css">
-    <link rel="stylesheet" href="components/footer.css">
-    <link rel="stylesheet" href="burst.css">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Raza Photos">
-    <meta property="og:url" content="https://razasoftware.eu/burst.html">
-    <meta property="og:title" content="Burst Navigation — Raza Photos">
-    <meta property="og:description" content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings.">
-    <meta property="og:image" content="https://razasoftware.eu/assets/iphone-burst.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Burst Navigation — Raza Photos">
-    <meta name="twitter:description" content="Swipe left and right to move through your library. Swipe up and down to move through a burst. Two directions, two meanings.">
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/iphone-burst.png">
-</head>
-<body>
 
-<raza-nav></raza-nav>
-<script src="components/nav.js"></script>
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="burst.css" />
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+    <script src="components/nav.js"></script>
 
-<div class="hero-page">
-    <div class="hero-inner">
-        <span class="hero-eyebrow">Burst navigation</span>
-        <h1>Two directions.<br>Two meanings.</h1>
-        <p>Swipe left or right to move through your library. When you're on a burst, swipe up or down to step through the frames. No menus, no mode switches — the gesture tells you where you are.</p>
-    </div>
-</div>
+    <hero-section
+      eyebrow="Burst navigation"
+      heading="Two directions. Two meanings."
+      description="Swipe left or right to move through your library. When you're on a burst, swipe up or down to step through the frames. No menus, no mode switches — the gesture tells you where you are."
+    ></hero-section>
 
-<div class="burst-visual">
-    <div class="burst-visual-inner">
+    <div class="burst-visual">
+      <div class="burst-visual-inner">
         <div class="burst-label burst-label-left">
-            <span class="burst-arrow">←</span>
-            <span>Previous photo</span>
+          <span class="burst-arrow">←</span>
+          <span>Previous photo</span>
         </div>
-        <img src="assets/iphone-burst.webp" alt="Burst navigation showing horizontal timeline scroll and vertical burst frame scroll">
+        <img src="assets/iphone-burst.webp" alt="Burst navigation showing horizontal timeline scroll and vertical burst frame scroll" />
         <div class="burst-label burst-label-right">
-            <span>Next photo</span>
-            <span class="burst-arrow">→</span>
+          <span>Next photo</span>
+          <span class="burst-arrow">→</span>
         </div>
-    </div>
-</div>
-
-<div class="content">
-<div class="content-body">
-
-    <div class="axis-grid">
-        <info-card variant="alt" icon="↔" heading="Horizontal — your timeline" description="Swiping left or right always moves through your photo library in time. One swipe, one photo. Every photo in your library is one swipe away from the next, including bursts — the burst appears as a single entry in the timeline."></info-card>
-        <info-card variant="blue" icon="↕" heading="Vertical — inside a burst" description="When the photo you're looking at belongs to a burst, swiping up or down steps through the frames of that burst. You stay in the same moment in time — you're just drilling into the depth of it, frame by frame."></info-card>
+      </div>
     </div>
 
-    <div class="burst-explainer">
-        <h2>Why this way?</h2>
-        <p>A burst is a single moment captured many times. It makes sense to navigate it on a different axis than time — because it isn't time moving forward, it's the same instant repeating. Keeping bursts off the horizontal axis means you never accidentally swipe past 40 nearly-identical frames to get to the next photo.</p>
-        <p>The photos peeking in from the left and right tell you you're in the timeline. The photo visible below tells you there's a burst here. The whole layout speaks before you touch anything.</p>
-    </div>
+    <div class="content">
+      <div class="content-body">
+        <div class="axis-grid">
+          <info-card
+            variant="alt"
+            icon="↔"
+            heading="Horizontal — your timeline"
+            description="Swiping left or right always moves through your photo library in time. One swipe, one photo. Every photo in your library is one swipe away from the next, including bursts — the burst appears as a single entry in the timeline."
+          ></info-card>
+          <info-card
+            variant="blue"
+            icon="↕"
+            heading="Vertical — inside a burst"
+            description="When the photo you're looking at belongs to a burst, swiping up or down steps through the frames of that burst. You stay in the same moment in time — you're just drilling into the depth of it, frame by frame."
+          ></info-card>
+        </div>
 
-    <div class="burst-details">
-        <div class="burst-detail-item">
+        <div class="burst-explainer">
+          <h2>Why this way?</h2>
+          <p>
+            A burst is a single moment captured many times. It makes sense to navigate it on a different axis than time — because it isn't time moving forward,
+            it's the same instant repeating. Keeping bursts off the horizontal axis means you never accidentally swipe past 40 nearly-identical frames to get to
+            the next photo.
+          </p>
+          <p>
+            The photos peeking in from the left and right tell you you're in the timeline. The photo visible below tells you there's a burst here. The whole
+            layout speaks before you touch anything.
+          </p>
+        </div>
+
+        <div class="burst-details">
+          <div class="burst-detail-item">
             <h4>Automatic grouping</h4>
-            <p>Bursts are detected and grouped automatically when you import a folder. No tagging, no manual work. The app reads the burst identifier from the photo metadata and groups the frames silently.</p>
-        </div>
-        <div class="burst-detail-item">
+            <p>
+              Bursts are detected and grouped automatically when you import a folder. No tagging, no manual work. The app reads the burst identifier from the
+              photo metadata and groups the frames silently.
+            </p>
+          </div>
+          <div class="burst-detail-item">
             <h4>One photo in the grid</h4>
-            <p>In the photo grid, a burst appears as a single thumbnail — the first frame, with a small indicator. You won't see 40 copies of the same shot side by side.</p>
-        </div>
-        <div class="burst-detail-item">
+            <p>
+              In the photo grid, a burst appears as a single thumbnail — the first frame, with a small indicator. You won't see 40 copies of the same shot side
+              by side.
+            </p>
+          </div>
+          <div class="burst-detail-item">
             <h4>Frame counter</h4>
             <p>While navigating a burst, the current frame number and total frame count are shown so you always know where you are inside the sequence.</p>
+          </div>
         </div>
+      </div>
     </div>
 
-</div>
-</div>
-
-<raza-footer></raza-footer>
-<script src="components/footer.js"></script>
-<script src="components/info-card.js"></script>
-
-</body>
+    <raza-footer></raza-footer>
+    <script src="components/footer.js"></script>
+    <script src="components/info-card.js"></script>
+    <script src="components/hero-section.js"></script>
+  </body>
 </html>

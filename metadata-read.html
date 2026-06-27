@@ -1,56 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/icon_web.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Raza Photos reads metadata from seven standards including EXIF, IPTC, XMP, Apple MakerNote, and ACDSee XML to build your photo library."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/metadata-read.html" />
+    <meta property="og:title" content="What Raza Photos Reads — Metadata" />
+    <meta
+      property="og:description"
+      content="EXIF, IPTC, XMP, GPS, Apple MakerNote, ACDSee XML, and filesystem dates — all prioritised and merged into a single coherent view."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What Raza Photos Reads — Metadata" />
+    <meta
+      name="twitter:description"
+      content="EXIF, IPTC, XMP, GPS, Apple MakerNote, ACDSee XML, and filesystem dates — all prioritised and merged into a single coherent view."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
     <title>Metadata Reading — Raza Photos</title>
-    <meta name="description" content="Raza Photos reads metadata from seven standards including EXIF, IPTC, XMP, Apple MakerNote, and ACDSee XML to build your photo library.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="components/nav.css">
-    <link rel="stylesheet" href="components/link-card.css">
-    <link rel="stylesheet" href="components/info-card.css">
-    <link rel="stylesheet" href="components/footer.css">
-    <link rel="stylesheet" href="metadata-read.css">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Raza Photos">
-    <meta property="og:url" content="https://razasoftware.eu/metadata-read.html">
-    <meta property="og:title" content="What Raza Photos Reads — Metadata">
-    <meta property="og:description" content="EXIF, IPTC, XMP, GPS, Apple MakerNote, ACDSee XML, and filesystem dates — all prioritised and merged into a single coherent view.">
-    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="What Raza Photos Reads — Metadata">
-    <meta name="twitter:description" content="EXIF, IPTC, XMP, GPS, Apple MakerNote, ACDSee XML, and filesystem dates — all prioritised and merged into a single coherent view.">
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
-</head>
-<body>
 
-<raza-nav></raza-nav>
-<script src="components/nav.js"></script>
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/explainer.css">
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="metadata-read.css" />
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+    <script src="components/nav.js"></script>
 
-<div class="hero-page">
-    <div class="hero-inner">
-        <span class="hero-eyebrow">Metadata</span>
-        <h1>What Raza Photos reads from your files</h1>
-        <p>Raza Photos reads metadata embedded in your image files by cameras, photo editors, and organizing tools. It supports seven metadata standards and applies a strict priority order when the same field appears in multiple places.</p>
-        <div class="standards-strip">
-            <span class="tag">EXIF</span>
-            <span class="tag">IPTC</span>
-            <span class="tag">XMP</span>
-            <span class="tag">GPS</span>
-            <span class="tag">Apple MakerNote</span>
-            <span class="tag">ACDSee XML</span>
-            <span class="tag">Filesystem</span>
-        </div>
-    </div>
-</div>
+    <hero-section
+      eyebrow="Metadata"
+      heading="What Raza Photos reads from your files"
+      description="Raza Photos reads metadata embedded in your image files by cameras, photo editors, and organizing tools. It supports seven metadata standards and applies a strict priority order when the same field appears in multiple places."
+    ></hero-section>
 
-<div class="content">
-<div class="content-body">
-
-    <div class="standards-section">
-        <h2>Supported metadata standards</h2>
-        <div class="standards-grid">
+    <div class="content">
+      <div class="content-body">
+        <div class="standards-section">
+          <h2>Supported metadata standards</h2>
+          <div class="standards-grid">
             <info-card heading="EXIF" description="Written by cameras and smartphones at capture time"></info-card>
             <info-card heading="IPTC" description="Added by photo editing software and asset management tools"></info-card>
             <info-card heading="XMP" description="Used by Adobe Lightroom, Photoshop, and modern editors"></info-card>
@@ -58,152 +58,244 @@
             <info-card heading="Apple MakerNote" description="Proprietary extensions written by iOS and macOS cameras"></info-card>
             <info-card heading="ACDSee XML" description="Proprietary fields written by ACDSee Photo Studio"></info-card>
             <info-card heading="Filesystem" description="File creation and modification dates from the operating system"></info-card>
+          </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>Date taken</h2>
-        <p class="desc">The most precise capture timestamp available is used. Raza Photos handles EXIF, IPTC, and ISO 8601 date formats automatically, including timezone offsets.</p>
-        <table class="priority-table">
+        <div class="section">
+          <h2>Date taken</h2>
+          <p class="desc">
+            The most precise capture timestamp available is used. Raza Photos handles EXIF, IPTC, and ISO 8601 date formats automatically, including timezone
+            offsets.
+          </p>
+          <table class="priority-table">
             <thead>
-                <tr>
-                    <th>Priority</th>
-                    <th>Source</th>
-                    <th>Standard</th>
-                </tr>
+              <tr>
+                <th>Priority</th>
+                <th>Source</th>
+                <th>Standard</th>
+              </tr>
             </thead>
             <tbody>
-                <tr><td><span class="rank">1</span></td><td>Original capture time</td><td>EXIF DateTimeOriginal</td></tr>
-                <tr><td><span class="rank">2</span></td><td>Digitization time</td><td>EXIF DateTimeDigitized</td></tr>
-                <tr><td><span class="rank">3</span></td><td>TIFF datetime</td><td>TIFF DateTime</td></tr>
-                <tr><td><span class="rank">4</span></td><td>XMP creation date</td><td>XMP CreateDate</td></tr>
-                <tr><td><span class="rank">5</span></td><td>IPTC dates</td><td>IPTC DateCreated / TimeCreated</td></tr>
-                <tr><td><span class="rank">6</span></td><td>File creation date</td><td>Filesystem</td></tr>
+              <tr>
+                <td><span class="rank">1</span></td>
+                <td>Original capture time</td>
+                <td>EXIF DateTimeOriginal</td>
+              </tr>
+              <tr>
+                <td><span class="rank">2</span></td>
+                <td>Digitization time</td>
+                <td>EXIF DateTimeDigitized</td>
+              </tr>
+              <tr>
+                <td><span class="rank">3</span></td>
+                <td>TIFF datetime</td>
+                <td>TIFF DateTime</td>
+              </tr>
+              <tr>
+                <td><span class="rank">4</span></td>
+                <td>XMP creation date</td>
+                <td>XMP CreateDate</td>
+              </tr>
+              <tr>
+                <td><span class="rank">5</span></td>
+                <td>IPTC dates</td>
+                <td>IPTC DateCreated / TimeCreated</td>
+              </tr>
+              <tr>
+                <td><span class="rank">6</span></td>
+                <td>File creation date</td>
+                <td>Filesystem</td>
+              </tr>
             </tbody>
-        </table>
-    </div>
+          </table>
+        </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>GPS coordinates</h2>
-        <p class="desc">Latitude and longitude are read from the EXIF GPS dictionary, capturing directional references. If coordinates are present, Raza Photos can reverse-geocode them on-device to derive the city and country.</p>
-        <div class="note">
+        <div class="section">
+          <h2>GPS coordinates</h2>
+          <p class="desc">
+            Latitude and longitude are read from the EXIF GPS dictionary, capturing directional references. If coordinates are present, Raza Photos can
+            reverse-geocode them on-device to derive the city and country.
+          </p>
+          <div class="note">
             <strong>On-device only.</strong> Reverse geocoding is performed using Apple's on-device framework. No coordinates are sent to an external service.
+          </div>
         </div>
-    </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>Country and city</h2>
-        <p class="desc">Location labels (country and city) can be stored directly in metadata by tools like Lightroom, ACDSee, or a previous Raza Photos save. When they are absent, reverse geocoding fills them in from GPS coordinates.</p>
-        <table class="priority-table">
+        <div class="section">
+          <h2>Country and city</h2>
+          <p class="desc">
+            Location labels (country and city) can be stored directly in metadata by tools like Lightroom, ACDSee, or a previous Raza Photos save. When they are
+            absent, reverse geocoding fills them in from GPS coordinates.
+          </p>
+          <table class="priority-table">
             <thead>
-                <tr>
-                    <th>Priority</th>
-                    <th>Source</th>
-                    <th>Standard</th>
-                </tr>
+              <tr>
+                <th>Priority</th>
+                <th>Source</th>
+                <th>Standard</th>
+              </tr>
             </thead>
             <tbody>
-                <tr><td><span class="rank">1</span></td><td>Country / City fields</td><td>IPTC</td></tr>
-                <tr><td><span class="rank">2</span></td><td>Location extension fields</td><td>XMP</td></tr>
-                <tr><td><span class="rank">3</span></td><td>Category hierarchy</td><td>ACDSee XML</td></tr>
-                <tr><td><span class="rank">4</span></td><td>Reverse geocoding from GPS</td><td>On-device (Apple Maps)</td></tr>
+              <tr>
+                <td><span class="rank">1</span></td>
+                <td>Country / City fields</td>
+                <td>IPTC</td>
+              </tr>
+              <tr>
+                <td><span class="rank">2</span></td>
+                <td>Location extension fields</td>
+                <td>XMP</td>
+              </tr>
+              <tr>
+                <td><span class="rank">3</span></td>
+                <td>Category hierarchy</td>
+                <td>ACDSee XML</td>
+              </tr>
+              <tr>
+                <td><span class="rank">4</span></td>
+                <td>Reverse geocoding from GPS</td>
+                <td>On-device (Apple Maps)</td>
+              </tr>
             </tbody>
-        </table>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2>Title</h2>
-        <p class="desc">A human-readable title for the photo. Falls back to the filename if no title is found in metadata.</p>
-        <table class="priority-table">
-            <thead>
-                <tr>
-                    <th>Priority</th>
-                    <th>Source</th>
-                    <th>Standard</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td><span class="rank">1</span></td><td>Object name</td><td>IPTC ObjectName</td></tr>
-                <tr><td><span class="rank">2</span></td><td>Title field</td><td>XMP dc:title</td></tr>
-                <tr><td><span class="rank">3</span></td><td>Filename (without extension)</td><td>Filesystem fallback</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2>People and face regions</h2>
-        <p class="desc">Person names and face bounding boxes are read from XMP and ACDSee metadata. Face regions written by ACDSee are converted to a standard format for display.</p>
-        <table class="priority-table">
-            <thead>
-                <tr>
-                    <th>Field</th>
-                    <th>Source</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Person names</td><td>XMP PersonInImage or ACDSee region names</td></tr>
-                <tr><td>Face bounding boxes</td><td>ACDSee regions (converted to standard format) or XMP</td></tr>
-            </tbody>
-        </table>
-        <div class="note">
-            <strong>On-device detection.</strong> If face data is not present in the metadata, Raza Photos can detect and group faces using Apple's on-device Vision framework. No images are sent to any server for recognition.
+          </table>
         </div>
-    </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>Albums and events</h2>
-        <p class="desc">Albums and events are extracted from ACDSee's category XML hierarchy embedded in the file. This allows libraries previously organized in ACDSee to carry their structure into Raza Photos without manual re-organisation.</p>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2>Burst sequences</h2>
-        <p class="desc">iPhone burst sequences are identified and grouped automatically. Raza Photos checks three sources in order to detect burst membership.</p>
-        <table class="priority-table">
+        <div class="section">
+          <h2>Title</h2>
+          <p class="desc">A human-readable title for the photo. Falls back to the filename if no title is found in metadata.</p>
+          <table class="priority-table">
             <thead>
-                <tr>
-                    <th>Priority</th>
-                    <th>Source</th>
-                </tr>
+              <tr>
+                <th>Priority</th>
+                <th>Source</th>
+                <th>Standard</th>
+              </tr>
             </thead>
             <tbody>
-                <tr><td><span class="rank">1</span></td><td>Apple MakerNote burst fields</td></tr>
-                <tr><td><span class="rank">2</span></td><td>XMP custom burst tags</td></tr>
-                <tr><td><span class="rank">3</span></td><td>Burst metadata previously written by Raza Photos</td></tr>
+              <tr>
+                <td><span class="rank">1</span></td>
+                <td>Object name</td>
+                <td>IPTC ObjectName</td>
+              </tr>
+              <tr>
+                <td><span class="rank">2</span></td>
+                <td>Title field</td>
+                <td>XMP dc:title</td>
+              </tr>
+              <tr>
+                <td><span class="rank">3</span></td>
+                <td>Filename (without extension)</td>
+                <td>Filesystem fallback</td>
+              </tr>
             </tbody>
-        </table>
+          </table>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>People and face regions</h2>
+          <p class="desc">
+            Person names and face bounding boxes are read from XMP and ACDSee metadata. Face regions written by ACDSee are converted to a standard format for
+            display.
+          </p>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Person names</td>
+                <td>XMP PersonInImage or ACDSee region names</td>
+              </tr>
+              <tr>
+                <td>Face bounding boxes</td>
+                <td>ACDSee regions (converted to standard format) or XMP</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="note">
+            <strong>On-device detection.</strong> If face data is not present in the metadata, Raza Photos can detect and group faces using Apple's on-device
+            Vision framework. No images are sent to any server for recognition.
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Albums and events</h2>
+          <p class="desc">
+            Albums and events are extracted from ACDSee's category XML hierarchy embedded in the file. This allows libraries previously organized in ACDSee to
+            carry their structure into Raza Photos without manual re-organisation.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Burst sequences</h2>
+          <p class="desc">
+            iPhone burst sequences are identified and grouped automatically. Raza Photos checks three sources in order to detect burst membership.
+          </p>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Priority</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="rank">1</span></td>
+                <td>Apple MakerNote burst fields</td>
+              </tr>
+              <tr>
+                <td><span class="rank">2</span></td>
+                <td>XMP custom burst tags</td>
+              </tr>
+              <tr>
+                <td><span class="rank">3</span></td>
+                <td>Burst metadata previously written by Raza Photos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>File dates</h2>
+          <p class="desc">
+            File creation and modification timestamps are read from the filesystem and used as a last-resort fallback for date sorting when no embedded capture
+            date is available.
+          </p>
+        </div>
+
+        <div class="other-links">
+          <link-card
+            href="metadata-write.html"
+            label="Next"
+            heading="Writing metadata"
+            description="What Raza Photos saves back to your files and how"
+          ></link-card>
+          <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="No data leaves your home network, ever"></link-card>
+        </div>
+      </div>
     </div>
 
-    <hr>
-
-    <div class="section">
-        <h2>File dates</h2>
-        <p class="desc">File creation and modification timestamps are read from the filesystem and used as a last-resort fallback for date sorting when no embedded capture date is available.</p>
-    </div>
-
-    <div class="other-links">
-        <link-card href="metadata-write.html" label="Next" heading="Writing metadata" description="What Raza Photos saves back to your files and how"></link-card>
-        <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="No data leaves your home network, ever"></link-card>
-    </div>
-
-</div>
-</div>
-
-<raza-footer></raza-footer>
-<script src="components/footer.js"></script>
-<script src="components/link-card.js"></script>
-<script src="components/info-card.js"></script>
-
-</body>
+    <raza-footer></raza-footer>
+    <script src="components/footer.js"></script>
+    <script src="components/link-card.js"></script>
+    <script src="components/info-card.js"></script>
+    <script src="components/hero-section.js"></script>
+  </body>
 </html>

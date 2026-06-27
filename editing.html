@@ -2,19 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="assets/icon_web.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Editing — Raza Photos</title>
     <meta
       name="description"
       content="Fix dates, assign locations, tag people — from your iPhone, on the couch. Changes write back to the original files without touching a single pixel."
     />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="components/nav.css" />
-    <link rel="stylesheet" href="components/link-card.css" />
-    <link rel="stylesheet" href="components/platform-screenshot.css" />
-    <link rel="stylesheet" href="components/showcase-item.css" />
-    <link rel="stylesheet" href="components/footer.css" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raza Photos" />
     <meta property="og:url" content="https://razasoftware.eu/editing.html" />
@@ -31,26 +23,38 @@
       content="Fix dates, assign locations, tag people — from your iPhone, on the couch. Changes write back to the original files without touching a single pixel."
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
+    <title>Editing — Raza Photos</title>
+
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/platform-screenshot.css" />
+    <link rel="stylesheet" href="components/showcase-item.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="components/footer.css" />
   </head>
   <body>
     <raza-nav></raza-nav>
     <script src="components/nav.js"></script>
 
-    <div class="hero-page">
-      <div class="hero-inner">
-        <span class="hero-eyebrow">Editing</span>
-        <h1>Fix it from the couch.<br />Save it to the file.</h1>
-        <p>
-          Change dates, assign locations, tag people — from your iPhone, without touching the Mac. Changes are written back to the original files as standard
-          EXIF and XMP, compatible with any app.
-        </p>
-      </div>
-    </div>
+    <hero-section
+      eyebrow="Editing"
+      heading="Fix it from the couch. Save it to the file."
+      description="Change dates, assign locations, tag people — from your iPhone, without touching the Mac. Changes are written back to the original files as standard EXIF and XMP, compatible with any app."
+    ></hero-section>
 
     <div class="content-wide">
       <div class="showcase-section">
-        <showcase-item label="Organize" heading="Edit dates, locations, albums and people — right from the grid."
-            mac="assets/mac-edit-menu.webp" ipad="assets/ipad-edit-menu.webp" iphone="assets/iphone-edit-menu.webp" alt="Raza Photos batch editing menu">
+        <showcase-item
+          label="Organize"
+          heading="Edit dates, locations, albums and people — right from the grid."
+          mac="assets/mac-edit-menu.webp"
+          ipad="assets/ipad-edit-menu.webp"
+          iphone="assets/iphone-edit-menu.webp"
+          alt="Raza Photos batch editing menu"
+        >
           <p>Select one photo or a hundred, then change their metadata in a single action. The edit menu appears in context — no separate screen, no wizard.</p>
           <ul>
             <li>Change date, location, album, person, or event</li>
@@ -60,9 +64,19 @@
           </ul>
         </showcase-item>
 
-        <showcase-item reverse label="Fix location data" heading="Drop a pin to correct where a photo was taken."
-            mac="assets/mac-change-place.webp" ipad="assets/ipad-change-place.webp" iphone="assets/iphone-change-place.webp" alt="Raza Photos change place dialog">
-          <p>Photos without GPS, or with wrong coordinates, can be fixed by dragging a pin on a map. The new location is reverse-geocoded on-device and saved back to the file — no coordinates to type, no internet required.</p>
+        <showcase-item
+          reverse
+          label="Fix location data"
+          heading="Drop a pin to correct where a photo was taken."
+          mac="assets/mac-change-place.webp"
+          ipad="assets/ipad-change-place.webp"
+          iphone="assets/iphone-change-place.webp"
+          alt="Raza Photos change place dialog"
+        >
+          <p>
+            Photos without GPS, or with wrong coordinates, can be fixed by dragging a pin on a map. The new location is reverse-geocoded on-device and saved
+            back to the file — no coordinates to type, no internet required.
+          </p>
           <ul>
             <li>Interactive pin drag — no coordinates to type</li>
             <li>Reverse geocoding runs entirely on-device</li>
@@ -94,5 +108,6 @@
 
     <script src="components/platform-screenshot.js"></script>
     <script src="components/showcase-item.js"></script>
+    <script src="components/hero-section.js"></script>
   </body>
 </html>

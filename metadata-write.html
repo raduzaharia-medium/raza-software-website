@@ -1,130 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/icon_web.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Raza Photos writes metadata back to your original image files without touching the image pixels. Non-destructive, atomic, and compatible with Lightroom and other apps."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/metadata-write.html" />
+    <meta property="og:title" content="What Raza Photos Writes — Metadata" />
+    <meta
+      property="og:description"
+      content="Pixel-safe metadata writes using CGImageDestinationCopyImageSource. Only metadata sections are touched — your image pixels are never decoded or re-encoded."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What Raza Photos Writes — Metadata" />
+    <meta
+      name="twitter:description"
+      content="Pixel-safe metadata writes using CGImageDestinationCopyImageSource. Only metadata sections are touched — your image pixels are never decoded or re-encoded."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
     <title>Metadata Writing — Raza Photos</title>
-    <meta name="description" content="Raza Photos writes metadata back to your original image files without touching the image pixels. Non-destructive, atomic, and compatible with Lightroom and other apps.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="components/nav.css">
-    <link rel="stylesheet" href="components/link-card.css">
-    <link rel="stylesheet" href="components/info-card.css">
-    <link rel="stylesheet" href="components/footer.css">
-    <link rel="stylesheet" href="metadata-write.css">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Raza Photos">
-    <meta property="og:url" content="https://razasoftware.eu/metadata-write.html">
-    <meta property="og:title" content="What Raza Photos Writes — Metadata">
-    <meta property="og:description" content="Pixel-safe metadata writes using CGImageDestinationCopyImageSource. Only metadata sections are touched — your image pixels are never decoded or re-encoded.">
-    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="What Raza Photos Writes — Metadata">
-    <meta name="twitter:description" content="Pixel-safe metadata writes using CGImageDestinationCopyImageSource. Only metadata sections are touched — your image pixels are never decoded or re-encoded.">
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
-</head>
-<body>
 
-<raza-nav></raza-nav>
-<script src="components/nav.js"></script>
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/explainer.css">
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="metadata-write.css" />
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+    <script src="components/nav.js"></script>
 
-<div class="hero-page">
-    <div class="hero-inner">
-        <span class="hero-eyebrow">Metadata</span>
-        <h1>What Raza Photos writes back to your files</h1>
-        <p>When you organize photos in Raza Photos — fixing dates, assigning locations, tagging people — those changes can be saved back into the original image files using open standards, without touching a single pixel.</p>
-    </div>
-</div>
+    <hero-section
+      eyebrow="Metadata"
+      heading="What Raza Photos writes back to your files"
+      description="When you organize photos in Raza Photos — fixing dates, assigning locations, tagging people — those changes can be saved back into the original image files using open standards, without touching a single pixel."
+    ></hero-section>
 
-<div class="content">
-<div class="content-body">
+    <div class="content">
+      <div class="content-body">
+        <info-card variant="green" heading="Your pixels are never touched">
+          <p>
+            A photo file has two distinct areas: the compressed image (your actual pixels) and the metadata (everything else). Raza Photos operates exclusively
+            on the metadata area. The compressed image is never decoded, processed, or re-encoded during a metadata save.
+          </p>
+          <p>
+            This means there is no generation loss, no recompression, and no risk of corrupting the image data. A metadata save is a precise surgical operation
+            on a small part of the file.
+          </p>
+        </info-card>
 
-    <info-card variant="green" heading="Your pixels are never touched">
-        <p>A photo file has two distinct areas: the compressed image (your actual pixels) and the metadata (everything else). Raza Photos operates exclusively on the metadata area. The compressed image is never decoded, processed, or re-encoded during a metadata save.</p>
-        <p>This means there is no generation loss, no recompression, and no risk of corrupting the image data. A metadata save is a precise surgical operation on a small part of the file.</p>
-    </info-card>
-
-    <div class="section">
-        <h2>How saving works</h2>
-        <p class="desc">Changes you make in Raza Photos are queued in memory as you work. They are not written to disk automatically. To save, choose <strong>Save Metadata</strong> from the Library menu on Mac. You can cancel at any time, and photos without pending changes are never touched.</p>
-        <ul class="steps-list">
+        <div class="section">
+          <h2>How saving works</h2>
+          <p class="desc">
+            Changes you make in Raza Photos are queued in memory as you work. They are not written to disk automatically. To save, choose
+            <strong>Save Metadata</strong> from the Library menu on Mac. You can cancel at any time, and photos without pending changes are never touched.
+          </p>
+          <ul class="steps-list">
             <li><span class="step-num">1</span>You make changes — assign a location, fix a date, tag a person</li>
             <li><span class="step-num">2</span>Changes are held in the local database until you are ready</li>
             <li><span class="step-num">3</span>You choose Save Metadata from the Library menu</li>
             <li><span class="step-num">4</span>Raza Photos reads the existing metadata, merges your changes, and writes the updated file atomically to disk</li>
             <li><span class="step-num">5</span>Only files with pending changes are modified — everything else is untouched</li>
-        </ul>
-    </div>
+          </ul>
+        </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>Supported file formats</h2>
-        <p class="desc">Metadata write-back works with the most common image formats. One exception applies to AVIF.</p>
-        <div class="format-grid">
+        <div class="section">
+          <h2>Supported file formats</h2>
+          <p class="desc">Metadata write-back works with the most common image formats. One exception applies to AVIF.</p>
+          <div class="format-grid">
             <info-card variant="alt" heading="JPEG" description="Full read &amp; write"></info-card>
             <info-card variant="alt" heading="HEIC" description="Full read &amp; write"></info-card>
             <info-card variant="alt" heading="PNG" description="Full read &amp; write"></info-card>
             <info-card variant="alt" heading="TIFF" description="Full read &amp; write"></info-card>
             <info-card variant="alt" heading="PSD" description="Full read &amp; write"></info-card>
             <info-card variant="orange" heading="AVIF" description="Read only — changes stored in library database"></info-card>
+          </div>
         </div>
-    </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>What gets written</h2>
-        <p class="desc">Raza Photos writes to multiple metadata standards simultaneously to ensure maximum compatibility with other photo apps and DAMs.</p>
-        <div class="write-grid">
+        <div class="section">
+          <h2>What gets written</h2>
+          <p class="desc">Raza Photos writes to multiple metadata standards simultaneously to ensure maximum compatibility with other photo apps and DAMs.</p>
+          <div class="write-grid">
             <info-card variant="alt" heading="Dates" description="Written to EXIF DateTimeOriginal and TIFF DateTime"></info-card>
             <info-card variant="alt" heading="Titles" description="Written to IPTC ObjectName and XMP dc:title"></info-card>
             <info-card variant="alt" heading="GPS coordinates" description="Written to the EXIF GPS dictionary with directional references"></info-card>
             <info-card variant="alt" heading="Country &amp; city" description="Written to IPTC, XMP extension, and ACDSee location fields"></info-card>
-            <info-card variant="alt" heading="People &amp; faces" description="Names and bounding boxes written to XMP PersonInImage and region fields"></info-card>
-            <info-card variant="alt" heading="Albums &amp; events" description="Written to multiple formats including Lightroom hierarchical subjects"></info-card>
+            <info-card
+              variant="alt"
+              heading="People &amp; faces"
+              description="Names and bounding boxes written to XMP PersonInImage and region fields"
+            ></info-card>
+            <info-card
+              variant="alt"
+              heading="Albums &amp; events"
+              description="Written to multiple formats including Lightroom hierarchical subjects"
+            ></info-card>
             <info-card variant="alt" heading="Burst groupings" description="Written to a custom XMP namespace for burst sequence identification"></info-card>
+          </div>
+          <div class="note" style="margin-top: 16px">
+            <strong>Lightroom compatibility.</strong> Albums and events are written as Lightroom-compatible hierarchical subjects, so your organisation carries
+            over if you import the same files into Lightroom.
+          </div>
         </div>
-        <div class="note" style="margin-top:16px;">
-            <strong>Lightroom compatibility.</strong> Albums and events are written as Lightroom-compatible hierarchical subjects, so your organisation carries over if you import the same files into Lightroom.
-        </div>
-    </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>What is never changed</h2>
-        <p class="desc">Raza Photos uses merge semantics — it reads all existing metadata first, then only updates the specific fields you changed. Everything else is preserved exactly as it was.</p>
-        <ul class="protected-list">
+        <div class="section">
+          <h2>What is never changed</h2>
+          <p class="desc">
+            Raza Photos uses merge semantics — it reads all existing metadata first, then only updates the specific fields you changed. Everything else is
+            preserved exactly as it was.
+          </p>
+          <ul class="protected-list">
             <li>Camera settings (aperture, shutter speed, ISO, focal length, lens info)</li>
             <li>Copyright and creator information</li>
             <li>Color profiles and ICC data</li>
             <li>File timestamps (creation and modification dates on disk)</li>
             <li>All metadata fields not managed by Raza Photos</li>
             <li>The compressed image data itself</li>
-        </ul>
+          </ul>
+        </div>
+
+        <hr />
+
+        <info-card variant="dark" heading="How it works technically">
+          <p>
+            Metadata writes use Apple's <code>CGImageDestinationCopyImageSource()</code> function, which operates exclusively on the metadata sections of an
+            image file. The compressed image data is streamed directly from the source file without being decoded.
+          </p>
+          <p>
+            The update process uses merge semantics: existing metadata is read in full, your changes are applied on top, and the result is assembled entirely in
+            memory. A single atomic write then replaces the original file on disk — there is no intermediate temporary file that could leave a partial state if
+            interrupted.
+          </p>
+          <p>This approach means the write operation is fast, lossless, and safe regardless of file size.</p>
+        </info-card>
+
+        <div class="other-links">
+          <link-card
+            href="metadata-read.html"
+            label="See also"
+            heading="Reading metadata"
+            description="What Raza Photos reads from your files and in what priority order"
+          ></link-card>
+          <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="No data leaves your home network, ever"></link-card>
+        </div>
+      </div>
     </div>
 
-    <hr>
-
-    <info-card variant="dark" heading="How it works technically">
-        <p>Metadata writes use Apple's <code>CGImageDestinationCopyImageSource()</code> function, which operates exclusively on the metadata sections of an image file. The compressed image data is streamed directly from the source file without being decoded.</p>
-        <p>The update process uses merge semantics: existing metadata is read in full, your changes are applied on top, and the result is assembled entirely in memory. A single atomic write then replaces the original file on disk — there is no intermediate temporary file that could leave a partial state if interrupted.</p>
-        <p>This approach means the write operation is fast, lossless, and safe regardless of file size.</p>
-    </info-card>
-
-    <div class="other-links">
-        <link-card href="metadata-read.html" label="See also" heading="Reading metadata" description="What Raza Photos reads from your files and in what priority order"></link-card>
-        <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="No data leaves your home network, ever"></link-card>
-    </div>
-
-</div>
-</div>
-
-<raza-footer></raza-footer>
-<script src="components/footer.js"></script>
-<script src="components/link-card.js"></script>
-<script src="components/info-card.js"></script>
-
-</body>
+    <raza-footer></raza-footer>
+    <script src="components/footer.js"></script>
+    <script src="components/link-card.js"></script>
+    <script src="components/info-card.js"></script>
+    <script src="components/hero-section.js"></script>
+  </body>
 </html>
