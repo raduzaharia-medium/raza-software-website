@@ -11,4 +11,4 @@ class Explainer extends HTMLElement {
   }
 }
 
-customElements.define("explainer", Explainer);
+customElements.define("page-explainer", Explainer);

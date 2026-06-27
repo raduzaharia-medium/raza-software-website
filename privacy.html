@@ -77,46 +77,58 @@
 
         <hr />
 
-        <explainer-list heading="What the app accesses and why" description="Raza Photos needs access to certain things on your device to function. Here is exactly what, and why:">
-          <li><strong>Your photo folders (Mac).</strong> You explicitly choose which folders to import. The app reads photo files and indexes their metadata. It does not copy, move, or modify your files unless you explicitly trigger a metadata save.</li>
-          <li><strong>Local network (all devices).</strong> The Mac uses Bonjour to advertise the library on your local network. iOS and iPadOS devices use Bonjour to discover it. All traffic stays within your home Wi-Fi — nothing is routed through any external server.</li>
-          <li><strong>On-device processing.</strong> Face detection and reverse geocoding (turning GPS coordinates into city and country names) run entirely on the device. No photo or coordinate is sent to an external service.</li>
+        <explainer-list
+          heading="What the app accesses and why"
+          description="Raza Photos needs access to certain things on your device to function. Here is exactly what, and why:"
+        >
+          <li>
+            <strong>Your photo folders (Mac).</strong> You explicitly choose which folders to import. The app reads photo files and indexes their metadata. It
+            does not copy, move, or modify your files unless you explicitly trigger a metadata save.
+          </li>
+          <li>
+            <strong>Local network (all devices).</strong> The Mac uses Bonjour to advertise the library on your local network. iOS and iPadOS devices use
+            Bonjour to discover it. All traffic stays within your home Wi-Fi — nothing is routed through any external server.
+          </li>
+          <li>
+            <strong>On-device processing.</strong> Face detection and reverse geocoding (turning GPS coordinates into city and country names) run entirely on
+            the device. No photo or coordinate is sent to an external service.
+          </li>
         </explainer-list>
 
         <hr />
 
-        <explainer
+        <page-explainer
           heading="Your photos never leave your home"
           description="When you browse your library on an iPhone or iPad, the photos are served directly from the Mac on your local network — the same Wi-Fi your devices share at home. There is no relay server, no cloud intermediary, no proxy. If your Mac is off, or you are not on your home network, there is nothing to connect to. The app does not route traffic through our infrastructure because we have no infrastructure."
-        ></explainer>
+        ></page-explainer>
 
         <hr />
 
-        <explainer
+        <page-explainer
           heading="Metadata"
           description="When you edit metadata in Raza Photos — correcting a date, assigning a location, tagging a person — those changes are stored in a local database on your Mac. When you choose to save, they are written back into the original image files on your Mac using standard formats (XMP, EXIF, IPTC). None of this information is transmitted anywhere. It stays in your files, on your machine."
-        ></explainer>
+        ></page-explainer>
 
         <hr />
 
-        <explainer
+        <page-explainer
           heading="The App Store"
           description="Raza Photos is distributed through Apple's App Store. Apple may collect data as part of the download and installation process, subject to Apple's own privacy policy. We have no visibility into or control over what Apple collects. We do not use any App Store analytics features or any other Apple-provided tracking tools."
-        ></explainer>
+        ></page-explainer>
 
         <hr />
 
-        <explainer
+        <page-explainer
           heading="Can you verify this?"
           description="Yes. You can run a network proxy such as Charles Proxy or Little Snitch on your Mac while using Raza Photos and observe that the app makes no outbound connections beyond your local network. We encourage this. The app also works entirely without an internet connection. Disconnect your router and use it — it will behave identically."
-        ></explainer>
+        ></page-explainer>
 
         <hr />
 
-        <explainer
+        <page-explainer
           heading="Contact"
           description="If you have any questions about privacy in Raza Photos, reach us at razaphotos@outlook.com. Raza Software is based in the European Union."
-        ></explainer>
+        ></page-explainer>
 
         <p class="updated">Last updated: June 2026</p>
       </div>

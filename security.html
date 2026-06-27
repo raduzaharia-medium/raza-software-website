@@ -1,174 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/icon_web.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Raza Photos is designed for trusted home networks. No internet exposure, guest network isolation via Bonjour, and a setting to protect your library from remote changes."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/security.html" />
+    <meta property="og:title" content="Security — Raza Photos" />
+    <meta
+      property="og:description"
+      content="Designed for trusted home networks. Not reachable from the internet, guest networks fully isolated, and a setting to block remote metadata changes."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Security — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="Designed for trusted home networks. Not reachable from the internet, guest networks fully isolated, and a setting to block remote metadata changes."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
     <title>Security — Raza Photos</title>
-    <meta name="description" content="Raza Photos is designed for trusted home networks. No internet exposure, guest network isolation via Bonjour, and a setting to protect your library from remote changes.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="components/explainer.css">
-    <link rel="stylesheet" href="components/nav.css">
-    <link rel="stylesheet" href="components/link-card.css">
-    <link rel="stylesheet" href="components/footer.css">
-    <link rel="stylesheet" href="components/summary-card.css">
-    <link rel="stylesheet" href="components/info-card.css">
-    <link rel="stylesheet" href="components/callout-box.css">
-    <link rel="stylesheet" href="components/hero-section.css">
-    <link rel="stylesheet" href="security.css">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Raza Photos">
-    <meta property="og:url" content="https://razasoftware.eu/security.html">
-    <meta property="og:title" content="Security — Raza Photos">
-    <meta property="og:description" content="Designed for trusted home networks. Not reachable from the internet, guest networks fully isolated, and a setting to block remote metadata changes.">
-    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Security — Raza Photos">
-    <meta name="twitter:description" content="Designed for trusted home networks. Not reachable from the internet, guest networks fully isolated, and a setting to block remote metadata changes.">
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp">
-</head>
-<body>
 
-<raza-nav></raza-nav>
-<script src="components/nav.js"></script>
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/explainer.css" />
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+    <link rel="stylesheet" href="components/summary-card.css" />
+    <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/callout-box.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="security.css" />
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+    <script src="components/nav.js"></script>
 
-<hero-section
-    eyebrow="Security"
-    heading="Designed for trusted home networks"
-    description="Raza Photos makes a deliberate tradeoff: zero configuration over authentication. This page explains exactly what that means, what it protects you from, and what it doesn't."
-></hero-section>
+    <hero-section
+      eyebrow="Security"
+      heading="Designed for trusted home networks"
+      description="Raza Photos makes a deliberate tradeoff: zero configuration over authentication. This page explains exactly what that means, what it protects you from, and what it doesn't."
+    ></hero-section>
 
-<div class="summary">
-    <div class="summary-inner">
+    <div class="summary">
+      <div class="summary-inner">
         <summary-card icon="🌐" heading="Not reachable from the internet"></summary-card>
         <summary-card icon="📶" heading="Guest networks are fully isolated"></summary-card>
         <summary-card icon="🔓" heading="No password — home network is the boundary"></summary-card>
         <summary-card icon="✏️" heading="Remote changes can be disabled"></summary-card>
+      </div>
     </div>
-</div>
 
-<div class="content">
-<div class="content-body">
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>No authentication — and why</h2>
+          <p>Raza Photos does not require a password or login to browse the photo library. This is a conscious design decision, not an oversight.</p>
+          <p>
+            The goal of the app is to make your photo library feel like it is simply there — on your iPhone, on your iPad, in the house — the same way your
+            music plays on every HomePod without you logging in. Introducing a password would add friction for every family member, every time, on every device.
+            For most households, that tradeoff is not worth it.
+          </p>
+          <p>
+            Instead, the network itself is the boundary. Access to your library requires physical access to your home Wi-Fi network. That is the same boundary
+            that governs every other device in your house.
+          </p>
 
-    <div class="section">
-        <h2>No authentication — and why</h2>
-        <p>Raza Photos does not require a password or login to browse the photo library. This is a conscious design decision, not an oversight.</p>
-        <p>The goal of the app is to make your photo library feel like it is simply there — on your iPhone, on your iPad, in the house — the same way your music plays on every HomePod without you logging in. Introducing a password would add friction for every family member, every time, on every device. For most households, that tradeoff is not worth it.</p>
-        <p>Instead, the network itself is the boundary. Access to your library requires physical access to your home Wi-Fi network. That is the same boundary that governs every other device in your house.</p>
-
-        <callout-box variant="green" heading="The design principle" style="margin-top: 20px;">
+          <callout-box variant="green" heading="The design principle" style="margin-top: 20px">
             <p>Your home network is already a trusted perimeter. Raza Photos treats it as one, rather than adding a second perimeter on top of it.</p>
-        </callout-box>
-    </div>
+          </callout-box>
+        </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>Not reachable from the internet</h2>
-        <p>The library is only discoverable and accessible within your local network. Raza Photos uses Bonjour for discovery — a local network protocol that does not traverse the internet and cannot be accessed from outside your router.</p>
-        <p>There is no port forwarding required, no dynamic DNS, no VPN endpoint, no relay server. There is simply nothing listening for incoming connections from the outside world. An attacker on the internet cannot reach your library because there is no route to it.</p>
+        <div class="section">
+          <h2>Not reachable from the internet</h2>
+          <p>
+            The library is only discoverable and accessible within your local network. Raza Photos uses Bonjour for discovery — a local network protocol that
+            does not traverse the internet and cannot be accessed from outside your router.
+          </p>
+          <p>
+            There is no port forwarding required, no dynamic DNS, no VPN endpoint, no relay server. There is simply nothing listening for incoming connections
+            from the outside world. An attacker on the internet cannot reach your library because there is no route to it.
+          </p>
 
-        <callout-box variant="green" heading="What this means">
-            <p>Your photo library has no internet-facing attack surface. It cannot be accessed remotely, cannot be found by scanners, and cannot be breached from outside your home.</p>
-        </callout-box>
-    </div>
+          <callout-box variant="green" heading="What this means">
+            <p>
+              Your photo library has no internet-facing attack surface. It cannot be accessed remotely, cannot be found by scanners, and cannot be breached from
+              outside your home.
+            </p>
+          </callout-box>
+        </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>Guest networks are fully isolated</h2>
-        <p>Most modern routers support a separate guest Wi-Fi network. Devices on the guest network are isolated from devices on your main network — they can reach the internet but cannot talk to your Mac, your NAS, your printer, or anything else on your home network.</p>
-        <p>Bonjour discovery only works within a single network segment. A device on your guest network cannot discover or connect to a Raza Photos server on your main network. This is not a feature we built — it is how network segmentation works at the router level.</p>
+        <div class="section">
+          <h2>Guest networks are fully isolated</h2>
+          <p>
+            Most modern routers support a separate guest Wi-Fi network. Devices on the guest network are isolated from devices on your main network — they can
+            reach the internet but cannot talk to your Mac, your NAS, your printer, or anything else on your home network.
+          </p>
+          <p>
+            Bonjour discovery only works within a single network segment. A device on your guest network cannot discover or connect to a Raza Photos server on
+            your main network. This is not a feature we built — it is how network segmentation works at the router level.
+          </p>
 
-        <div class="network-diagram">
+          <div class="network-diagram">
             <h3>Who can discover your library</h3>
             <div class="network-row">
-                <div class="network-device">💻</div>
-                <div class="network-info">
-                    <strong>Family iPhone on main Wi-Fi</strong>
-                    <span>Same network segment as the Mac server</span>
-                </div>
-                <span class="network-status status-yes">Discovers library</span>
+              <div class="network-device">💻</div>
+              <div class="network-info">
+                <strong>Family iPhone on main Wi-Fi</strong>
+                <span>Same network segment as the Mac server</span>
+              </div>
+              <span class="network-status status-yes">Discovers library</span>
             </div>
             <div class="network-row">
-                <div class="network-device">📱</div>
-                <div class="network-info">
-                    <strong>Guest device on guest Wi-Fi</strong>
-                    <span>Isolated network segment — Bonjour does not cross</span>
-                </div>
-                <span class="network-status status-no">Cannot discover</span>
+              <div class="network-device">📱</div>
+              <div class="network-info">
+                <strong>Guest device on guest Wi-Fi</strong>
+                <span>Isolated network segment — Bonjour does not cross</span>
+              </div>
+              <span class="network-status status-no">Cannot discover</span>
             </div>
             <div class="network-row">
-                <div class="network-device">🌍</div>
-                <div class="network-info">
-                    <strong>Anyone on the internet</strong>
-                    <span>No route exists — nothing is listening externally</span>
-                </div>
-                <span class="network-status status-never">No route</span>
+              <div class="network-device">🌍</div>
+              <div class="network-info">
+                <strong>Anyone on the internet</strong>
+                <span>No route exists — nothing is listening externally</span>
+              </div>
+              <span class="network-status status-never">No route</span>
             </div>
+          </div>
         </div>
-    </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>The honest caveat: anyone on your main network can see your photos</h2>
-        <p>We said the home network is the boundary, and that cuts both ways. Anyone who connects to your main Wi-Fi and installs Raza Photos will automatically discover the library and be able to browse it — with no further step required.</p>
-        <p>For most families, this is exactly what they want. For others — households with flatmates, frequent guests given the main password, or simply families who want finer control — this is worth being aware of.</p>
+        <div class="section">
+          <h2>The honest caveat: anyone on your main network can see your photos</h2>
+          <p>
+            We said the home network is the boundary, and that cuts both ways. Anyone who connects to your main Wi-Fi and installs Raza Photos will
+            automatically discover the library and be able to browse it — with no further step required.
+          </p>
+          <p>
+            For most families, this is exactly what they want. For others — households with flatmates, frequent guests given the main password, or simply
+            families who want finer control — this is worth being aware of.
+          </p>
 
-        <callout-box variant="orange" heading="Practical advice">
-            <p>If you share your main Wi-Fi password with people you would not want browsing your photo library, consider using your router's guest network for visitors instead. Guest network isolation will do the rest.</p>
-        </callout-box>
-    </div>
+          <callout-box variant="orange" heading="Practical advice">
+            <p>
+              If you share your main Wi-Fi password with people you would not want browsing your photo library, consider using your router's guest network for
+              visitors instead. Guest network isolation will do the rest.
+            </p>
+          </callout-box>
+        </div>
 
-    <hr>
+        <hr />
 
-    <div class="section">
-        <h2>Family controls — three levels of access</h2>
-        <p>Browsing is one thing. Editing metadata — changing dates, assigning locations, tagging people — is another. Raza Photos gives you three distinct controls over what remote devices can do, without passwords, accounts, or per-user setup.</p>
+        <div class="section">
+          <h2>Family controls — three levels of access</h2>
+          <p>
+            Browsing is one thing. Editing metadata — changing dates, assigning locations, tagging people — is another. Raza Photos gives you three distinct
+            controls over what remote devices can do, without passwords, accounts, or per-user setup.
+          </p>
 
-        <info-card variant="dark" style="margin-top: 24px;" label="Level 1 — Server setting" heading="Read-only server">
-            <p>Lock the Mac server entirely. Every device on the network — every iPhone, iPad, or other Mac — can browse the full library but cannot make any changes whatsoever. The setting lives on the Mac. No cooperation from the remote device required.</p>
+          <info-card variant="dark" style="margin-top: 24px" label="Level 1 — Server setting" heading="Read-only server">
+            <p>
+              Lock the Mac server entirely. Every device on the network — every iPhone, iPad, or other Mac — can browse the full library but cannot make any
+              changes whatsoever. The setting lives on the Mac. No cooperation from the remote device required.
+            </p>
             <p>Best for: families where one person curates the library and everyone else is a viewer.</p>
-        </info-card>
+          </info-card>
 
-        <info-card variant="dark" style="margin-top: 12px;" label="Level 2 — Server setting" heading="Block remote edits only">
-            <p>Remote devices can browse freely — filtering, searching, viewing photos on the map, opening bursts — but metadata editing is disabled. No changing dates, locations, albums, or people tags from iOS. The Mac can still edit locally.</p>
+          <info-card variant="dark" style="margin-top: 12px" label="Level 2 — Server setting" heading="Block remote edits only">
+            <p>
+              Remote devices can browse freely — filtering, searching, viewing photos on the map, opening bursts — but metadata editing is disabled. No changing
+              dates, locations, albums, or people tags from iOS. The Mac can still edit locally.
+            </p>
             <p>Best for: households that want full browsing from anywhere in the house but want to keep library organisation tidy.</p>
-        </info-card>
+          </info-card>
 
-        <info-card variant="dark" style="margin-top: 12px;" label="Level 3 — Client setting" heading="Read-only client">
-            <p>Set a specific iPhone or iPad to read-only mode on the device itself. That device becomes a pure viewer — editing controls are hidden entirely in the UI, regardless of what the server allows. Useful when you want to hand a device to a child or guest without worrying about accidental changes.</p>
+          <info-card variant="dark" style="margin-top: 12px" label="Level 3 — Client setting" heading="Read-only client">
+            <p>
+              Set a specific iPhone or iPad to read-only mode on the device itself. That device becomes a pure viewer — editing controls are hidden entirely in
+              the UI, regardless of what the server allows. Useful when you want to hand a device to a child or guest without worrying about accidental changes.
+            </p>
             <p>Best for: kids' devices, or shared iPads used for browsing only.</p>
-        </info-card>
+          </info-card>
 
-        <callout-box variant="green" heading="In practice" style="margin-top: 24px;">
-            <p>A family can run a read-only server for day-to-day browsing, and temporarily disable it when the parent wants to do an organisation session from their iPhone on the couch. One toggle, no reconfiguration.</p>
-        </callout-box>
+          <callout-box variant="green" heading="In practice" style="margin-top: 24px">
+            <p>
+              A family can run a read-only server for day-to-day browsing, and temporarily disable it when the parent wants to do an organisation session from
+              their iPhone on the couch. One toggle, no reconfiguration.
+            </p>
+          </callout-box>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Summary</h2>
+          <p>
+            Raza Photos is secure against external threats — the internet, guest networks, remote attackers. It is open within your trusted home network, by
+            design. If everyone on your main Wi-Fi is someone you trust with your photos, you need to do nothing. If not, guest network isolation and the
+            read-only setting give you the tools to draw that boundary yourself.
+          </p>
+        </div>
+
+        <div class="other-links">
+          <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="What we collect — which is nothing"></link-card>
+          <link-card
+            href="local-first.html"
+            label="Local-first"
+            heading="Why local-first matters"
+            description="No infrastructure means no infrastructure to breach"
+          ></link-card>
+        </div>
+      </div>
     </div>
 
-    <hr>
-
-    <div class="section">
-        <h2>Summary</h2>
-        <p>Raza Photos is secure against external threats — the internet, guest networks, remote attackers. It is open within your trusted home network, by design. If everyone on your main Wi-Fi is someone you trust with your photos, you need to do nothing. If not, guest network isolation and the read-only setting give you the tools to draw that boundary yourself.</p>
-    </div>
-
-    <div class="other-links">
-        <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="What we collect — which is nothing"></link-card>
-        <link-card href="local-first.html" label="Local-first" heading="Why local-first matters" description="No infrastructure means no infrastructure to breach"></link-card>
-    </div>
-
-</div>
-</div>
-
-<raza-footer></raza-footer>
-<script src="components/footer.js"></script>
-<script src="components/link-card.js"></script>
-<script src="components/summary-card.js"></script>
-<script src="components/callout-box.js"></script>
-<script src="components/info-card.js"></script>
-<script src="components/hero-section.js"></script>
-
-</body>
+    <raza-footer></raza-footer>
+    <script src="components/footer.js"></script>
+    <script src="components/link-card.js"></script>
+    <script src="components/summary-card.js"></script>
+    <script src="components/callout-box.js"></script>
+    <script src="components/info-card.js"></script>
+    <script src="components/hero-section.js"></script>
+  </body>
 </html>
