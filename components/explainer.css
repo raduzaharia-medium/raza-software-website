@@ -1,5 +1,6 @@
 page-explainer {
     display: block;
+    margin-bottom: 52px;
 }
 
 page-explainer[accent] {
@@ -7,7 +8,7 @@ page-explainer[accent] {
     padding: 4px 0 4px 24px;
 }
 
-.section { margin-bottom: 52px; }
+.section { margin-bottom: 0; }
 
 .section h2 {
     font-size: 22px;
