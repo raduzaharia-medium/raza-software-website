@@ -1,0 +1,36 @@
+contact-card { display: block; margin-bottom: 48px; }
+
+.contact-card-link {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg-alt);
+    border: 1.5px solid var(--blue);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.contact-card-link:hover {
+    box-shadow: 0 4px 20px rgba(26,143,255,0.12);
+}
+
+.contact-icon { font-size: 28px; }
+
+.contact-info { display: flex; flex-direction: column; }
+
+.contact-info strong {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.contact-info span {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.contact-arrow { color: var(--blue); }

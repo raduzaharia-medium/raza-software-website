@@ -23,13 +23,16 @@
     <link rel="stylesheet" href="components/footer.css" />
     <link rel="stylesheet" href="components/detail-list.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
-    <link rel="stylesheet" href="support.css" />
+    <link rel="stylesheet" href="components/contact-card.css" />
+    <link rel="stylesheet" href="components/callout-box.css" />
   
     <script src="components/nav.js" defer></script>
     <script src="components/footer.js" defer></script>
     <script src="components/detail-list.js" defer></script>
     <script src="components/detail-item.js" defer></script>
     <script src="components/hero-section.js" defer></script>
+    <script src="components/contact-card.js" defer></script>
+    <script src="components/callout-box.js" defer></script>
   </head>
   <body>
     <raza-nav></raza-nav>
@@ -42,18 +45,14 @@
 
     <div class="content">
       <div class="content-body">
-        <a href="mailto:razaphotos@outlook.com" class="contact-card">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <strong>Email support</strong>
-            <span>razaphotos@outlook.com — questions, bug reports, feedback</span>
-          </div>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="contact-arrow">
-            <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </a>
+        <contact-card
+          href="mailto:razaphotos@outlook.com"
+          icon="✉️"
+          heading="Email support"
+          description="razaphotos@outlook.com — questions, bug reports, feedback"
+        ></contact-card>
 
-        <div class="faq-section">
+        <div class="section">
           <h2>Common questions</h2>
 
           <detail-list label="Connecting">
@@ -81,12 +80,9 @@
           </detail-list>
         </div>
 
-        <div class="support-footer-note">
-          <p>
-            Didn't find what you were looking for? <a href="mailto:razaphotos@outlook.com">Send an email</a> — bug reports, feature requests, and questions are
-            all welcome.
-          </p>
-        </div>
+        <callout-box centered style="margin-top: 48px">
+          <p>Didn't find what you were looking for? <a href="mailto:razaphotos@outlook.com">Send an email</a> — bug reports, feature requests, and questions are all welcome.</p>
+        </callout-box>
       </div>
     </div>
 

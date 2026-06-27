@@ -7,6 +7,8 @@ callout-box {
   border: 1px solid var(--border);
 }
 
+callout-box[centered] { text-align: center; }
+
 /* ── Variants ── */
 
 callout-box[variant="blue"] {
