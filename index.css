@@ -50,14 +50,6 @@
 
 .hero-actions .btn { font-size: 16px; padding: 13px 28px; }
 
-.hero-image { max-width: 1000px; margin: 0 auto; }
-
-.hero-image img {
-    width: 100%;
-    border-radius: var(--radius);
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.15));
-}
-
 /* ── Section ── */
 section { padding: 96px 24px; }
 

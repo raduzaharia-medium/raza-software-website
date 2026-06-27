@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="components/nav.css" />
     <link rel="stylesheet" href="components/footer.css" />
+    <link rel="stylesheet" href="components/feature-image.css" />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -56,9 +57,11 @@
         </a>
         <a href="#features" class="btn btn-outline">See features</a>
       </div>
-      <div class="hero-image">
-        <img src="assets/all-devices.webp" alt="Raza Photos running on Mac, iPad, and iPhone" />
-      </div>
+      <feature-image
+        src="assets/all-devices.webp"
+        alt="Raza Photos running on Mac, iPad, and iPhone"
+        style="--image-max-width: 1000px; --image-padding: 0; --image-radius: var(--radius); --image-shadow: drop-shadow(0 30px 60px rgba(0,0,0,0.15))"
+      ></feature-image>
     </section>
 
     <section class="how" id="how">
@@ -388,5 +391,6 @@
 
     <raza-footer></raza-footer>
     <script src="components/footer.js"></script>
+    <script src="components/feature-image.js"></script>
   </body>
 </html>

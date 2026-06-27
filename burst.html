@@ -30,8 +30,10 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="components/nav.css" />
     <link rel="stylesheet" href="components/info-card.css" />
-    <link rel="stylesheet" href="components/info-card-grid.css" />
+    <link rel="stylesheet" href="components/concept-pair.css" />
+    <link rel="stylesheet" href="components/feature-image.css" />
     <link rel="stylesheet" href="components/footer.css" />
+    <link rel="stylesheet" href="components/explainer.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
     <link rel="stylesheet" href="burst.css" />
   </head>
@@ -45,23 +47,15 @@
       description="Swipe left or right to move through your library. When you're on a burst, swipe up or down to step through the frames. No menus, no mode switches — the gesture tells you where you are."
     ></hero-section>
 
-    <div class="burst-visual">
-      <div class="burst-visual-inner">
-        <div class="burst-label burst-label-left">
-          <span class="burst-arrow">←</span>
-          <span>Previous photo</span>
-        </div>
-        <img src="assets/iphone-burst.webp" alt="Burst navigation showing horizontal timeline scroll and vertical burst frame scroll" />
-        <div class="burst-label burst-label-right">
-          <span>Next photo</span>
-          <span class="burst-arrow">→</span>
-        </div>
-      </div>
-    </div>
+    <feature-image
+      src="assets/iphone-burst.webp"
+      alt="Burst navigation showing horizontal timeline scroll and vertical burst frame scroll"
+      style="--image-max-width: 760px; --image-padding: 48px 24px 56px"
+    ></feature-image>
 
     <div class="content">
       <div class="content-body">
-        <info-card-grid columns="2" class="axis">
+        <concept-pair>
           <info-card
             variant="alt"
             icon="↔"
@@ -74,20 +68,14 @@
             heading="Vertical — inside a burst"
             description="When the photo you're looking at belongs to a burst, swiping up or down steps through the frames of that burst. You stay in the same moment in time — you're just drilling into the depth of it, frame by frame."
           ></info-card>
-        </info-card-grid>
+        </concept-pair>
 
-        <div class="burst-explainer">
-          <h2>Why this way?</h2>
-          <p>
-            A burst is a single moment captured many times. It makes sense to navigate it on a different axis than time — because it isn't time moving forward,
-            it's the same instant repeating. Keeping bursts off the horizontal axis means you never accidentally swipe past 40 nearly-identical frames to get to
-            the next photo.
-          </p>
-          <p>
-            The photos peeking in from the left and right tell you you're in the timeline. The photo visible below tells you there's a burst here. The whole
-            layout speaks before you touch anything.
-          </p>
-        </div>
+        <page-explainer
+          accent
+          heading="Why this way?"
+          description="A burst is a single moment captured many times. It makes sense to navigate it on a different axis than time — because it isn't time moving forward, it's the same instant repeating. Keeping bursts off the horizontal axis means you never accidentally swipe past 40 nearly-identical frames to get to the next photo."
+          subtext="The photos peeking in from the left and right tell you you're in the timeline. The photo visible below tells you there's a burst here. The whole layout speaks before you touch anything."
+        ></page-explainer>
 
         <div class="burst-details">
           <div class="burst-detail-item">
@@ -115,7 +103,9 @@
     <raza-footer></raza-footer>
     <script src="components/footer.js"></script>
     <script src="components/info-card.js"></script>
-    <script src="components/info-card-grid.js"></script>
+    <script src="components/concept-pair.js"></script>
+    <script src="components/feature-image.js"></script>
+    <script src="components/explainer.js"></script>
     <script src="components/hero-section.js"></script>
   </body>
 </html>

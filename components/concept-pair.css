@@ -1,0 +1,24 @@
+concept-pair {
+    display: block;
+    margin-bottom: 48px;
+}
+
+.pair-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+concept-pair info-card { --card-padding: 28px; }
+
+concept-pair .card-icon {
+    color: var(--blue);
+    font-weight: 300;
+    font-size: 28px;
+}
+
+concept-pair .card-description { line-height: 1.7; }
+
+@media (max-width: 768px) {
+    .pair-grid { grid-template-columns: 1fr; }
+}

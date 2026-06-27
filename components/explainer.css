@@ -2,6 +2,11 @@ page-explainer {
     display: block;
 }
 
+page-explainer[accent] {
+    border-left: 4px solid var(--blue);
+    padding: 4px 0 4px 24px;
+}
+
 .section { margin-bottom: 52px; }
 
 .section h2 {
