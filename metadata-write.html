@@ -145,7 +145,7 @@
 
         <info-card variant="dark" class="highlight-box" style="--card-padding: 32px 36px" heading="How it works technically">
           <p>
-            Metadata writes use Apple's <code>CGImageDestinationCopyImageSource()</code> function, which operates exclusively on the metadata sections of an
+            Metadata writes use Apple's CoreGraphics API, which operates exclusively on the metadata sections of an
             image file. The compressed image data is streamed directly from the source file without being decoded.
           </p>
           <p>
