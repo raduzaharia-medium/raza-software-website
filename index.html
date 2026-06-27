@@ -31,11 +31,16 @@
     <link rel="stylesheet" href="components/nav.css" />
     <link rel="stylesheet" href="components/footer.css" />
     <link rel="stylesheet" href="components/feature-image.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="components/step-card.css" />
+    <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/info-card-grid.css" />
   
     <script src="components/nav.js" defer></script>
     <script src="components/footer.js" defer></script>
     <script src="components/feature-image.js" defer></script>
+    <script src="components/step-card.js" defer></script>
+    <script src="components/info-card.js" defer></script>
+    <script src="components/info-card-grid.js" defer></script>
   </head>
   <body>
     <raza-nav></raza-nav>
@@ -72,33 +77,27 @@
         <div class="section-label">How it works</div>
         <h2 class="section-title">Three steps.<br />Then you're done forever.</h2>
         <p class="section-sub">No maintenance, no updates to a server, no VPN to configure. Set it up once and forget about it.</p>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Import on Mac</h3>
+        <step-cards>
+          <step-card number="1" heading="Import on Mac">
             <p>
               Point Raza Photos at your photo folders. It indexes the metadata and leaves every file exactly where it is — nothing moves, nothing is copied.
               <a href="formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Supported formats →</a>
             </p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Your Mac advertises itself</h3>
+          </step-card>
+          <step-card number="2" heading="Your Mac advertises itself">
             <p>
               Using Bonjour, your Mac quietly announces the library on your local network. No ports to open. No router settings. Nothing to configure.
               <a href="discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How does that work? →</a>
             </p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Open and browse</h3>
+          </step-card>
+          <step-card number="3" heading="Open and browse">
             <p>
               On any iPhone, iPad, or other Mac in the house, open Raza Photos. The library is just there. If you have multiple Macs, all libraries appear
               merged into one.
               <a href="security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Who can see it? →</a>
             </p>
-          </div>
-        </div>
+          </step-card>
+        </step-cards>
       </div>
     </section>
 
@@ -107,78 +106,60 @@
         <div class="section-label">Features</div>
         <h2 class="section-title">Everything you'd expect.<br />None of what you don't.</h2>
         <p class="section-sub">Built from scratch in Swift 6 for the latest Apple platforms — native, fast, and designed to fit right in.</p>
-        <div class="features-grid">
-          <div class="feature">
-            <span class="feature-icon">📅</span>
-            <h3>Browse by date, place, people, albums &amp; events</h3>
+        <info-card-grid class="tile">
+          <info-card icon="📅" heading="Browse by date, place, people, albums &amp; events">
             <p>
               Your library organized the way you think about it — filter by year, location, faces, custom albums, or travel events. All from the sidebar.
               <a href="browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
             </p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">🗺</span>
-            <h3>Map view</h3>
+          </info-card>
+          <info-card icon="🗺" heading="Map view">
             <p>
               See where every photo was taken on a map. Add or correct countries and cities from your iPhone using reverse geocoding — all processed locally
               on-device.
               <a href="browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
             </p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">👤</span>
-            <h3>Local face detection</h3>
+          </info-card>
+          <info-card icon="👤" heading="Local face detection">
             <p>Faces are detected and grouped entirely on your device. No photo ever leaves your home network for recognition — not even for a moment.</p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">📸</span>
-            <h3>Burst photos with natural navigation</h3>
+          </info-card>
+          <info-card icon="📸" heading="Burst photos with natural navigation">
             <p>
               Burst sequences are grouped automatically. Scroll vertically to move through the burst frame by frame. Scroll horizontally to continue through
               your timeline.
               <a href="burst.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How it works →</a>
             </p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">✨</span>
-            <h3>HDR &amp; Live Photos</h3>
+          </info-card>
+          <info-card icon="✨" heading="HDR &amp; Live Photos">
             <p>
               Full HDR rendering with gain map support, and Live Photos that play just as they would in Photos.app — because this is a native app, not a
               browser.
               <a href="formats.html#hdr" style="color: var(--blue); text-decoration: none; font-weight: 500">How it works →</a>
             </p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">✏️</span>
-            <h3>Edit metadata from your iPhone</h3>
+          </info-card>
+          <info-card icon="✏️" heading="Edit metadata from your iPhone">
             <p>
               Fix a date, assign a location, tag a person — from the couch, on your phone. Changes write back to the original files as XMP/EXIF without touching
               a single pixel.
               <a href="editing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
             </p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">🖥</span>
-            <h3>Multiple libraries, one view</h3>
+          </info-card>
+          <info-card icon="🖥" heading="Multiple libraries, one view">
             <p>Got photos on two Macs? Both are discovered automatically and shown as a single unified, deduplicated library. No merging, no copying.</p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">🔒</span>
-            <h3>Server on demand</h3>
+          </info-card>
+          <info-card icon="🔒" heading="Server on demand">
             <p>
               Start or stop sharing your library whenever you want. When the server is off, the app works as a local viewer on your Mac alone.
               <a href="sharing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
             </p>
-          </div>
-          <div class="feature">
-            <span class="feature-icon">📦</span>
-            <h3>Your files, your format</h3>
+          </info-card>
+          <info-card icon="📦" heading="Your files, your format">
             <p>
               Supports JPEG, HEIC, PNG, TIFF, PSD, and AVIF. Metadata exports to open standards so you can move your library to any other app, anytime.
               <a href="formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Supported formats →</a>
             </p>
-          </div>
-        </div>
+          </info-card>
+        </info-card-grid>
       </div>
     </section>
 
@@ -193,7 +174,7 @@
         <div class="metadata-cols">
           <div class="metadata-card">
             <h3>What Raza Photos reads</h3>
-            <ul class="metadata-list">
+            <ul class="check-list">
               <li>Date taken with full timezone and format support</li>
               <li>GPS coordinates, country and city</li>
               <li>Titles from IPTC, XMP, or filename fallback</li>
@@ -214,7 +195,7 @@
           </div>
           <div class="metadata-card">
             <h3>What Raza Photos writes</h3>
-            <ul class="metadata-list">
+            <ul class="check-list">
               <li>Dates back to EXIF and TIFF standards</li>
               <li>GPS coordinates to EXIF GPS dictionary</li>
               <li>Titles to IPTC and XMP</li>
@@ -373,7 +354,7 @@
         <div class="price-card">
           <div class="price-amount"><sup>$</sup>20</div>
           <div class="price-label">One-time purchase &mdash; currently free during early release</div>
-          <ul class="price-features">
+          <ul class="check-list" style="--check-list-gap: 12px; margin-bottom: 36px">
             <li>Mac, iPhone, and iPad</li>
             <li>All current features included</li>
             <li>Free updates during early release</li>

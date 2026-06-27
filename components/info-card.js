@@ -1,5 +1,7 @@
 class InfoCard extends HTMLElement {
   connectedCallback() {
+    if (this.dataset.rendered) return;
+    this.dataset.rendered = "1";
     const icon = this.getAttribute("icon");
     const label = this.getAttribute("label");
     const heading = this.getAttribute("heading");
