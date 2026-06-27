@@ -1,19 +1,4 @@
 
-/* ── Hero format cards (2-up) ── */
-.fmt-hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 12px;
-}
-
-/* ── Secondary format grid ── */
-.fmt-secondary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 8px;
-}
-
 .fmt-also-label {
     font-size: 11px;
     font-weight: 700;
@@ -22,40 +7,6 @@
     color: var(--text-secondary);
     margin: 36px 0 12px;
 }
-
-/* ── Format card ── */
-.fmt-hero-grid info-card,
-.fmt-secondary-grid info-card {
-    --card-radius: 14px;
-    --card-padding: 18px 20px;
-}
-
-.fmt-hero-grid info-card[variant="blue"] {
-    --card-padding: 24px;
-}
-
-.fmt-hero-grid info-card[variant="blue"] .card-heading { font-size: 17px; }
-
-.fmt-hero-grid info-card .card-label,
-.fmt-secondary-grid info-card .card-label {
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    text-transform: none;
-    letter-spacing: 0.04em;
-}
-
-.codec-grid info-card {
-    --card-radius: 10px;
-    --card-padding: 14px 16px;
-}
-
-.codec-grid .card-heading {
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    font-size: 13px;
-    letter-spacing: 0.01em;
-}
-
-.codec-grid .card-description { font-size: 12px; }
-
 
 /* ── Codec section ── */
 .codec-section {
@@ -71,13 +22,6 @@
     color: var(--text-secondary);
     margin-bottom: 10px;
 }
-
-.codec-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 8px;
-}
-
 
 
 /* ── HDR explainer ── */
@@ -184,7 +128,6 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-    .fmt-hero-grid { grid-template-columns: 1fr; }
     .hdr-explainer { grid-template-columns: 1fr; }
     .hdr-explainer-diagram { flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: unset; }
     .hdr-layer { min-width: 120px; }

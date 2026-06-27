@@ -122,6 +122,23 @@ info-card[variant="dark"] .card-description {
   letter-spacing: 0.02em;
 }
 
+/* ── Highlight box modifier ── */
+
+info-card.highlight-box {
+  --card-padding: 36px 40px;
+  margin: 24px 0;
+}
+
+info-card.highlight-box .card-body p {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  info-card.highlight-box { --card-padding: 24px; }
+}
+
 /* ── Link card ── */
 
 .card-link {

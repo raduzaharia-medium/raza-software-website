@@ -32,11 +32,11 @@
     <link rel="stylesheet" href="components/nav.css" />
     <link rel="stylesheet" href="components/link-card.css" />
     <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/info-card-grid.css" />
     <link rel="stylesheet" href="components/callout-box.css" />
     <link rel="stylesheet" href="components/flow-step.css" />
     <link rel="stylesheet" href="components/footer.css" />
 <link rel="stylesheet" href="components/hero-section.css" />
-    <link rel="stylesheet" href="discovery.css" />
   </head>
   <body>
     <raza-nav></raza-nav>
@@ -62,12 +62,12 @@
             the work.
           </p>
 
-          <div class="familiar-grid">
+          <info-card-grid class="familiar">
             <info-card variant="alt" icon="📡" heading="AirDrop" description="Finds nearby Apple devices automatically"></info-card>
             <info-card variant="alt" icon="📺" heading="AirPlay" description="Discovers Apple TV and HomePod on your network"></info-card>
             <info-card variant="alt" icon="🖨" heading="Printers" description="Mac finds network printers without driver setup"></info-card>
             <info-card variant="alt" icon="📸" heading="Raza Photos" description="Finds your photo library the same way"></info-card>
-          </div>
+          </info-card-grid>
 
           <p>Raza Photos does exactly the same thing as AirPlay — except instead of discovering a speaker, your iPhone discovers a photo library.</p>
         </div>
@@ -191,6 +191,7 @@
     <script src="components/footer.js"></script>
     <script src="components/link-card.js"></script>
     <script src="components/info-card.js"></script>
+    <script src="components/info-card-grid.js"></script>
     <script src="components/callout-box.js"></script>
 <script src="components/flow-step.js"></script>
     <script src="components/hero-section.js"></script>

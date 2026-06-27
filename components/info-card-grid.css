@@ -1,0 +1,77 @@
+info-card-grid { display: block; }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-width, 180px), 1fr));
+    gap: var(--grid-gap, 12px);
+}
+
+info-card-grid[columns="2"] .card-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+    info-card-grid[columns="2"] .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Modifiers ── */
+
+info-card-grid.familiar {
+    margin: 20px 0;
+    text-align: center;
+    --grid-min-width: 160px;
+}
+
+info-card-grid.familiar info-card {
+    --card-radius: 12px;
+    --card-padding: 18px 16px;
+}
+
+info-card-grid.featured {
+    margin-bottom: 12px;
+}
+
+info-card-grid.featured info-card {
+    --card-radius: 14px;
+    --card-padding: 18px 20px;
+}
+
+info-card-grid.featured info-card[variant="blue"] {
+    --card-padding: 24px;
+}
+
+info-card-grid.featured info-card[variant="blue"] .card-heading { font-size: 17px; }
+
+info-card-grid.secondary {
+    --grid-gap: 8px;
+}
+
+info-card-grid.secondary info-card {
+    --card-radius: 14px;
+    --card-padding: 18px 20px;
+}
+
+info-card-grid.label-mono info-card .card-label {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    text-transform: none;
+    letter-spacing: 0.04em;
+}
+
+info-card-grid.mono {
+    --grid-gap: 8px;
+}
+
+info-card-grid.mono info-card {
+    --card-radius: 10px;
+    --card-padding: 14px 16px;
+}
+
+info-card-grid.mono .card-heading {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+}
+
+info-card-grid.mono .card-description { font-size: 12px; }

@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="components/nav.css" />
     <link rel="stylesheet" href="components/link-card.css" />
     <link rel="stylesheet" href="components/info-card.css" />
+    <link rel="stylesheet" href="components/info-card-grid.css" />
     <link rel="stylesheet" href="components/callout-box.css" />
     <link rel="stylesheet" href="components/flow-step.css" />
     <link rel="stylesheet" href="components/footer.css" />
@@ -56,7 +57,7 @@
             Your iPhone shoots HEIC. Your archive is probably JPEG. Both are first-class citizens. For everything else, if Photos.app can open it, so can we.
           </p>
 
-          <div class="fmt-hero-grid">
+          <info-card-grid columns="2" class="featured label-mono">
             <info-card
               variant="blue"
               label=".heic · .heif"
@@ -71,10 +72,10 @@
               badge="Universal"
               description="The format that will outlive us all. Every camera ever made, every decade of photos, every platform on earth."
             ></info-card>
-          </div>
+          </info-card-grid>
 
           <div class="fmt-also-label">Also fully supported</div>
-          <div class="fmt-secondary-grid">
+          <info-card-grid class="secondary label-mono">
             <info-card
               variant="alt"
               label=".png"
@@ -101,7 +102,7 @@
             ></info-card>
             <info-card variant="alt" label=".webp" heading="WebP" description="Google's format, supported on macOS Ventura and iOS 14 and later."></info-card>
             <info-card variant="alt" label=".gif" heading="GIF" description="Shown as a still frame. Animated GIFs do not loop in the viewer."></info-card>
-          </div>
+          </info-card-grid>
 
           <callout-box heading="What about RAW?">
             <p>
@@ -120,7 +121,7 @@
             player.
           </p>
 
-          <div class="fmt-hero-grid">
+          <info-card-grid columns="2" class="featured label-mono">
             <info-card
               variant="blue"
               label=".mov"
@@ -135,15 +136,15 @@
               badge="Universal"
               description="The universal video container. The same codecs as MOV in a more portable wrapper. Works everywhere Apple's framework runs."
             ></info-card>
-          </div>
+          </info-card-grid>
 
           <div class="codec-section">
             <span class="codec-label">Codecs inside those containers</span>
-            <div class="codec-grid">
+            <info-card-grid class="mono">
               <info-card variant="alt" heading="HEVC / H.265" description="4K, HDR, and Dolby Vision. Used on all modern iPhones."></info-card>
               <info-card variant="alt" heading="H.264" description="The workhorse. Compatible with everything, including older recordings."></info-card>
               <info-card variant="alt" heading="ProRes" description="Professional lossless quality. iPhone 13 Pro and later."></info-card>
-            </div>
+            </info-card-grid>
           </div>
 
           <callout-box variant="orange" heading="Not a movie player">
@@ -303,6 +304,7 @@
     <script src="components/footer.js"></script>
     <script src="components/link-card.js"></script>
     <script src="components/info-card.js"></script>
+    <script src="components/info-card-grid.js"></script>
     <script src="components/callout-box.js"></script>
     <script src="components/flow-step.js"></script>
     <script src="components/hero-section.js"></script>

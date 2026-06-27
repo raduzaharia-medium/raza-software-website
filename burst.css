@@ -54,24 +54,21 @@
 }
 
 /* ── Axis cards ── */
-.axis-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+info-card-grid.axis {
     margin-bottom: 48px;
 }
 
-.axis-grid info-card {
+info-card-grid.axis info-card {
     --card-padding: 28px;
 }
 
-.axis-grid .card-icon {
+info-card-grid.axis .card-icon {
     color: var(--blue);
     font-weight: 300;
     font-size: 28px;
 }
 
-.axis-grid .card-description {
+info-card-grid.axis .card-description {
     line-height: 1.7;
 }
 
@@ -133,5 +130,4 @@
     .burst-label-right { display: none; }
     .burst-label-bottom { position: static; transform: none; margin-top: 16px; flex-direction: row; }
     .burst-visual-inner { flex-direction: column; }
-    .axis-grid { grid-template-columns: 1fr; }
 }
