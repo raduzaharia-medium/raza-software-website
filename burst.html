@@ -34,8 +34,8 @@
     <link rel="stylesheet" href="components/feature-image.css" />
     <link rel="stylesheet" href="components/footer.css" />
     <link rel="stylesheet" href="components/explainer.css" />
+    <link rel="stylesheet" href="components/detail-list.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
-    <link rel="stylesheet" href="burst.css" />
   </head>
   <body>
     <raza-nav></raza-nav>
@@ -77,26 +77,11 @@
           subtext="The photos peeking in from the left and right tell you you're in the timeline. The photo visible below tells you there's a burst here. The whole layout speaks before you touch anything."
         ></page-explainer>
 
-        <div class="burst-details">
-          <div class="burst-detail-item">
-            <h4>Automatic grouping</h4>
-            <p>
-              Bursts are detected and grouped automatically when you import a folder. No tagging, no manual work. The app reads the burst identifier from the
-              photo metadata and groups the frames silently.
-            </p>
-          </div>
-          <div class="burst-detail-item">
-            <h4>One photo in the grid</h4>
-            <p>
-              In the photo grid, a burst appears as a single thumbnail — the first frame, with a small indicator. You won't see 40 copies of the same shot side
-              by side.
-            </p>
-          </div>
-          <div class="burst-detail-item">
-            <h4>Frame counter</h4>
-            <p>While navigating a burst, the current frame number and total frame count are shown so you always know where you are inside the sequence.</p>
-          </div>
-        </div>
+        <detail-list card>
+          <detail-item heading="Automatic grouping">Bursts are detected and grouped automatically when you import a folder. No tagging, no manual work. The app reads the burst identifier from the photo metadata and groups the frames silently.</detail-item>
+          <detail-item heading="One photo in the grid">In the photo grid, a burst appears as a single thumbnail — the first frame, with a small indicator. You won't see 40 copies of the same shot side by side.</detail-item>
+          <detail-item heading="Frame counter">While navigating a burst, the current frame number and total frame count are shown so you always know where you are inside the sequence.</detail-item>
+        </detail-list>
       </div>
     </div>
 
@@ -106,6 +91,8 @@
     <script src="components/concept-pair.js"></script>
     <script src="components/feature-image.js"></script>
     <script src="components/explainer.js"></script>
+    <script src="components/detail-list.js"></script>
+    <script src="components/detail-item.js"></script>
     <script src="components/hero-section.js"></script>
   </body>
 </html>

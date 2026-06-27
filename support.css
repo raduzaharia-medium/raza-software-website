@@ -45,21 +45,6 @@
     margin-bottom: 28px;
 }
 
-.faq-group {
-    margin-bottom: 40px;
-}
-
-.faq-group h3 {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-}
-
 /* ── Bottom note ── */
 .support-footer-note {
     margin-top: 48px;

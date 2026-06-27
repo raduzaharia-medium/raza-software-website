@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="components/nav.css" />
     <link rel="stylesheet" href="components/footer.css" />
-    <link rel="stylesheet" href="components/faq-item.css" />
+    <link rel="stylesheet" href="components/detail-list.css" />
     <link rel="stylesheet" href="components/hero-section.css" />
     <link rel="stylesheet" href="support.css" />
   </head>
@@ -51,103 +51,29 @@
         <div class="faq-section">
           <h2>Common questions</h2>
 
-          <div class="faq-group">
-            <h3>Connecting</h3>
+          <detail-list label="Connecting">
+            <detail-item heading="I don't see my photo library on my iPhone or iPad">Both your Mac and your iPhone need to be on the same Wi-Fi network. Check that your Mac is awake and that Raza Photos is running on it — the library is only available while the Mac app is open. Also make sure your iPhone is not on a guest network, which is isolated from the main network by design.</detail-item>
+            <detail-item heading="I left the house and my photos disappeared">This is expected. Raza Photos works entirely on your local home network — there is no cloud, no relay, and no remote access. When you leave your home Wi-Fi, there is nothing to connect to. Your photos are still safe on your Mac; they will reappear the moment you get back on your home network.</detail-item>
+            <detail-item heading="My Mac is on but the library still doesn't appear">Try quitting and reopening Raza Photos on the Mac. Bonjour discovery occasionally needs a nudge after the Mac wakes from sleep. If the problem persists, check that your router does not have AP isolation or multicast filtering enabled — these block Bonjour from working across devices.</detail-item>
+            <detail-item heading="I have multiple Macs — can I see all of them?">Yes. Every Mac running Raza Photos on the same network advertises its library independently. On iPhone and iPad, all available libraries appear merged into a single unified view.</detail-item>
+            <detail-item heading="Why does iOS ask for local network permission?">Apple requires apps to ask your permission before they can listen for Bonjour announcements or connect to devices on your local network. This is a privacy protection — it prevents apps from silently scanning your network in the background. When Raza Photos asks for local network access, it is asking for exactly the permission it needs to find your Mac, and nothing more.</detail-item>
+            <detail-item heading="What if my Mac and iPhone are on different Wi-Fi bands?">Modern routers broadcast on both 2.4GHz and 5GHz simultaneously but keep them on the same network segment. Devices on different bands can still find each other via Bonjour — band is a radio frequency choice, not a network boundary. The exception is if your router has "band steering" or "AP isolation" enabled, which some routers do incorrectly — if discovery fails, checking those settings is a good first step.</detail-item>
+            <detail-item heading="What about Ethernet? Does it still work?">Yes. If your Mac is connected via Ethernet and your iPhone is on Wi-Fi, Bonjour still works — they are on the same local network regardless of how they connect to the router. A wired Mac will actually serve photos faster since it has a more stable, higher-bandwidth connection to the router.</detail-item>
+            <detail-item heading="Why can't guests on my guest network find the library?">Guest networks are a separate network segment from your main network. Bonjour announcements from your Mac do not cross that boundary — they stay within the main network. A device on the guest network simply never hears the announcement, so it never knows the library exists. This is not a setting — it is a structural property of how your router separates the networks.</detail-item>
+            <detail-item heading="Does the Mac need to be awake?">Yes. The Bonjour announcement is sent by the Raza Photos app running on your Mac. If the Mac is asleep or the app is not running, there is nothing to announce and nothing to connect to. You can configure your Mac to not sleep when charging, or simply start the app when you know you want to browse from your phone.</detail-item>
+            <detail-item heading="How fast does discovery happen?">Typically within one to two seconds of opening the app on your iPhone or iPad. Bonjour announcements are sent frequently and the iOS side begins listening immediately on launch. On a well-functioning home network, the library appears almost instantly.</detail-item>
+          </detail-list>
 
-            <faq-item question="I don't see my photo library on my iPhone or iPad"
-              >Both your Mac and your iPhone need to be on the same Wi-Fi network. Check that your Mac is awake and that Raza Photos is running on it — the
-              library is only available while the Mac app is open. Also make sure your iPhone is not on a guest network, which is isolated from the main network
-              by design.</faq-item
-            >
+          <detail-list label="Photos and video">
+            <detail-item heading="My Live Photos play as still images">The MOV companion file is probably missing. This happens when you export from Apple Photos without using <strong>File → Export Unmodified Originals</strong>. A standard export gives only the still image; the motion clip stays behind. Re-export using Unmodified Originals and import the folder again — the pairing will happen automatically.</detail-item>
+            <detail-item heading="Some of my videos won't play">Raza Photos plays videos using Apple's native framework, so it supports the same formats your iPhone records — MOV, MP4, HEVC, H.264, and ProRes. It does not support MKV, AVI, WMV, or other formats associated with downloaded movies. If a video from your camera roll won't play, please get in touch.</detail-item>
+            <detail-item heading="My HDR photos don't look any different">HDR requires a compatible display — iPhone 12 or later, MacBook Pro with Liquid Retina XDR, or Pro Display XDR. On a standard display the SDR version of the photo is shown, which is correct behaviour. If you are on a supported display and HDR still looks flat, please send us a note.</detail-item>
+          </detail-list>
 
-            <faq-item question="I left the house and my photos disappeared"
-              >This is expected. Raza Photos works entirely on your local home network — there is no cloud, no relay, and no remote access. When you leave your
-              home Wi-Fi, there is nothing to connect to. Your photos are still safe on your Mac; they will reappear the moment you get back on your home
-              network.</faq-item
-            >
-
-            <faq-item question="My Mac is on but the library still doesn't appear"
-              >Try quitting and reopening Raza Photos on the Mac. Bonjour discovery occasionally needs a nudge after the Mac wakes from sleep. If the problem
-              persists, check that your router does not have AP isolation or multicast filtering enabled — these block Bonjour from working across
-              devices.</faq-item
-            >
-
-            <faq-item question="I have multiple Macs — can I see all of them?"
-              >Yes. Every Mac running Raza Photos on the same network advertises its library independently. On iPhone and iPad, all available libraries appear
-              merged into a single unified view.</faq-item
-            >
-
-            <faq-item question="Why does iOS ask for local network permission?"
-              >Apple requires apps to ask your permission before they can listen for Bonjour announcements or connect to devices on your local network. This is a
-              privacy protection — it prevents apps from silently scanning your network in the background. When Raza Photos asks for local network access, it is
-              asking for exactly the permission it needs to find your Mac, and nothing more.</faq-item
-            >
-
-            <faq-item question="What if my Mac and iPhone are on different Wi-Fi bands?"
-              >Modern routers broadcast on both 2.4GHz and 5GHz simultaneously but keep them on the same network segment. Devices on different bands can still
-              find each other via Bonjour — band is a radio frequency choice, not a network boundary. The exception is if your router has "band steering" or "AP
-              isolation" enabled, which some routers do incorrectly — if discovery fails, checking those settings is a good first step.</faq-item
-            >
-
-            <faq-item question="What about Ethernet? Does it still work?"
-              >Yes. If your Mac is connected via Ethernet and your iPhone is on Wi-Fi, Bonjour still works — they are on the same local network regardless of
-              how they connect to the router. A wired Mac will actually serve photos faster since it has a more stable, higher-bandwidth connection to the
-              router.</faq-item
-            >
-
-            <faq-item question="Why can't guests on my guest network find the library?"
-              >Guest networks are a separate network segment from your main network. Bonjour announcements from your Mac do not cross that boundary — they stay
-              within the main network. A device on the guest network simply never hears the announcement, so it never knows the library exists. This is not a
-              setting — it is a structural property of how your router separates the networks.</faq-item
-            >
-
-            <faq-item question="Does the Mac need to be awake?"
-              >Yes. The Bonjour announcement is sent by the Raza Photos app running on your Mac. If the Mac is asleep or the app is not running, there is
-              nothing to announce and nothing to connect to. You can configure your Mac to not sleep when charging, or simply start the app when you know you
-              want to browse from your phone.</faq-item
-            >
-
-            <faq-item question="How fast does discovery happen?"
-              >Typically within one to two seconds of opening the app on your iPhone or iPad. Bonjour announcements are sent frequently and the iOS side begins
-              listening immediately on launch. On a well-functioning home network, the library appears almost instantly.</faq-item
-            >
-          </div>
-
-          <div class="faq-group">
-            <h3>Photos and video</h3>
-
-            <faq-item question="My Live Photos play as still images"
-              >The MOV companion file is probably missing. This happens when you export from Apple Photos without using
-              <strong>File → Export Unmodified Originals</strong>. A standard export gives only the still image; the motion clip stays behind. Re-export using
-              Unmodified Originals and import the folder again — the pairing will happen automatically.</faq-item
-            >
-
-            <faq-item question="Some of my videos won't play"
-              >Raza Photos plays videos using Apple's native framework, so it supports the same formats your iPhone records — MOV, MP4, HEVC, H.264, and ProRes.
-              It does not support MKV, AVI, WMV, or other formats associated with downloaded movies. If a video from your camera roll won't play, please get in
-              touch.</faq-item
-            >
-
-            <faq-item question="My HDR photos don't look any different"
-              >HDR requires a compatible display — iPhone 12 or later, MacBook Pro with Liquid Retina XDR, or Pro Display XDR. On a standard display the SDR
-              version of the photo is shown, which is correct behaviour. If you are on a supported display and HDR still looks flat, please send us a
-              note.</faq-item
-            >
-          </div>
-
-          <div class="faq-group">
-            <h3>Editing and metadata</h3>
-
-            <faq-item question="I can't edit anything from my iPhone"
-              >The Mac server may be set to read-only mode, or your iPhone may have its own read-only setting enabled. Check Settings on the Mac first — there
-              is an option to block remote edits. If the Mac allows edits, check the Settings screen on your iPhone as well.</faq-item
-            >
-
-            <faq-item question="I changed a date or location — where is it saved?"
-              >Changes are held in the library database until you explicitly save them. To write changes back to the original file, use the Save action in the
-              app. Raza Photos only touches the metadata sections of the file — your image pixels are never re-encoded.</faq-item
-            >
-          </div>
+          <detail-list label="Editing and metadata">
+            <detail-item heading="I can't edit anything from my iPhone">The Mac server may be set to read-only mode, or your iPhone may have its own read-only setting enabled. Check Settings on the Mac first — there is an option to block remote edits. If the Mac allows edits, check the Settings screen on your iPhone as well.</detail-item>
+            <detail-item heading="I changed a date or location — where is it saved?">Changes are held in the library database until you explicitly save them. To write changes back to the original file, use the Save action in the app. Raza Photos only touches the metadata sections of the file — your image pixels are never re-encoded.</detail-item>
+          </detail-list>
         </div>
 
         <div class="support-footer-note">
@@ -161,7 +87,8 @@
 
     <raza-footer></raza-footer>
     <script src="components/footer.js"></script>
-    <script src="components/faq-item.js"></script>
+    <script src="components/detail-list.js"></script>
+    <script src="components/detail-item.js"></script>
     <script src="components/hero-section.js"></script>
   </body>
 </html>
