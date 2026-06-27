@@ -35,8 +35,7 @@
     <link rel="stylesheet" href="components/callout-box.css" />
     <link rel="stylesheet" href="components/flow-step.css" />
     <link rel="stylesheet" href="components/footer.css" />
-    <link rel="stylesheet" href="components/faq-item.css" />
-    <link rel="stylesheet" href="components/hero-section.css" />
+<link rel="stylesheet" href="components/hero-section.css" />
     <link rel="stylesheet" href="discovery.css" />
   </head>
   <body>
@@ -174,44 +173,6 @@
           </callout-box>
         </div>
 
-        <hr />
-
-        <div class="section">
-          <h2>Common questions</h2>
-
-          <div class="qa">
-            <faq-item question="Why does iOS ask for local network permission?"
-              >Apple requires apps to ask your permission before they can listen for Bonjour announcements or connect to devices on your local network. This is
-              a privacy protection — it prevents apps from silently scanning your network in the background. When Raza Photos asks for local network access, it
-              is asking for exactly the permission it needs to find your Mac, and nothing more.</faq-item
-            >
-            <faq-item question="What if my Mac and iPhone are on different Wi-Fi bands?"
-              >Modern routers broadcast on both 2.4GHz and 5GHz simultaneously but keep them on the same network segment. Devices on different bands can still
-              find each other via Bonjour — band is a radio frequency choice, not a network boundary. The exception is if your router has "band steering" or "AP
-              isolation" enabled, which some routers do incorrectly — if discovery fails, checking those settings is a good first step.</faq-item
-            >
-            <faq-item question="What about Ethernet? Does it still work?"
-              >Yes. If your Mac is connected via Ethernet and your iPhone is on Wi-Fi, Bonjour still works — they are on the same local network regardless of
-              how they connect to the router. A wired Mac will actually serve photos faster since it has a more stable, higher-bandwidth connection to the
-              router.</faq-item
-            >
-            <faq-item question="Why can't guests on my guest network find the library?"
-              >Guest networks are a separate network segment from your main network. Bonjour announcements from your Mac do not cross that boundary — they stay
-              within the main network. A device on the guest network simply never hears the announcement, so it never knows the library exists. This is not a
-              setting — it is a structural property of how your router separates the networks.</faq-item
-            >
-            <faq-item question="Does the Mac need to be awake?"
-              >Yes. The Bonjour announcement is sent by the Raza Photos app running on your Mac. If the Mac is asleep or the app is not running, there is
-              nothing to announce and nothing to connect to. You can configure your Mac to not sleep when charging, or simply start the app when you know you
-              want to browse from your phone.</faq-item
-            >
-            <faq-item question="How fast does discovery happen?"
-              >Typically within one to two seconds of opening the app on your iPhone or iPad. Bonjour announcements are sent frequently and the iOS side begins
-              listening immediately on launch. On a well-functioning home network, the library appears almost instantly.</faq-item
-            >
-          </div>
-        </div>
-
         <div class="other-links">
           <link-card href="security.html" label="Security" heading="Security model" description="Who can access your library and how to control it"></link-card>
           <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="Nothing collected, nothing transmitted"></link-card>
@@ -221,6 +182,7 @@
             heading="Why local-first matters"
             description="No infrastructure means no infrastructure to breach"
           ></link-card>
+          <link-card href="support.html" label="Support" heading="Common questions" description="More on how discovery and networking works"></link-card>
         </div>
       </div>
     </div>
@@ -230,8 +192,7 @@
     <script src="components/link-card.js"></script>
     <script src="components/info-card.js"></script>
     <script src="components/callout-box.js"></script>
-    <script src="components/faq-item.js"></script>
-    <script src="components/flow-step.js"></script>
+<script src="components/flow-step.js"></script>
     <script src="components/hero-section.js"></script>
   </body>
 </html>

@@ -76,6 +76,41 @@
               >Yes. Every Mac running Raza Photos on the same network advertises its library independently. On iPhone and iPad, all available libraries appear
               merged into a single unified view.</faq-item
             >
+
+            <faq-item question="Why does iOS ask for local network permission?"
+              >Apple requires apps to ask your permission before they can listen for Bonjour announcements or connect to devices on your local network. This is a
+              privacy protection — it prevents apps from silently scanning your network in the background. When Raza Photos asks for local network access, it is
+              asking for exactly the permission it needs to find your Mac, and nothing more.</faq-item
+            >
+
+            <faq-item question="What if my Mac and iPhone are on different Wi-Fi bands?"
+              >Modern routers broadcast on both 2.4GHz and 5GHz simultaneously but keep them on the same network segment. Devices on different bands can still
+              find each other via Bonjour — band is a radio frequency choice, not a network boundary. The exception is if your router has "band steering" or "AP
+              isolation" enabled, which some routers do incorrectly — if discovery fails, checking those settings is a good first step.</faq-item
+            >
+
+            <faq-item question="What about Ethernet? Does it still work?"
+              >Yes. If your Mac is connected via Ethernet and your iPhone is on Wi-Fi, Bonjour still works — they are on the same local network regardless of
+              how they connect to the router. A wired Mac will actually serve photos faster since it has a more stable, higher-bandwidth connection to the
+              router.</faq-item
+            >
+
+            <faq-item question="Why can't guests on my guest network find the library?"
+              >Guest networks are a separate network segment from your main network. Bonjour announcements from your Mac do not cross that boundary — they stay
+              within the main network. A device on the guest network simply never hears the announcement, so it never knows the library exists. This is not a
+              setting — it is a structural property of how your router separates the networks.</faq-item
+            >
+
+            <faq-item question="Does the Mac need to be awake?"
+              >Yes. The Bonjour announcement is sent by the Raza Photos app running on your Mac. If the Mac is asleep or the app is not running, there is
+              nothing to announce and nothing to connect to. You can configure your Mac to not sleep when charging, or simply start the app when you know you
+              want to browse from your phone.</faq-item
+            >
+
+            <faq-item question="How fast does discovery happen?"
+              >Typically within one to two seconds of opening the app on your iPhone or iPad. Bonjour announcements are sent frequently and the iOS side begins
+              listening immediately on launch. On a well-functioning home network, the library appears almost instantly.</faq-item
+            >
           </div>
 
           <div class="faq-group">
