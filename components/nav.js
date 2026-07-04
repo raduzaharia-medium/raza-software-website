@@ -8,6 +8,7 @@ class RazaNav extends HTMLElement {
       <ul class="nav-links">
         <li><a href="index.html#features">Features</a></li>
         <li><a href="browse.html">See it in action</a></li>
+        <li><a href="transfer.html">Transfer</a></li>
         <li><a href="index.html#metadata">Metadata</a></li>
         <li><a href="formats.html">Formats</a></li>
         <li><a href="discovery.html">Discovery</a></li>

@@ -34,13 +34,17 @@
     <link rel="stylesheet" href="components/step-card.css" />
     <link rel="stylesheet" href="components/info-card.css" />
     <link rel="stylesheet" href="components/info-card-grid.css" />
-  
+    <link rel="stylesheet" href="components/showcase-item.css" />
+    <link rel="stylesheet" href="components/platform-screenshot.css" />
+
     <script src="components/nav.js" defer></script>
     <script src="components/footer.js" defer></script>
     <script src="components/feature-image.js" defer></script>
     <script src="components/step-card.js" defer></script>
     <script src="components/info-card.js" defer></script>
     <script src="components/info-card-grid.js" defer></script>
+    <script src="components/showcase-item.js" defer></script>
+    <script src="components/platform-screenshot.js" defer></script>
   </head>
   <body>
     <raza-nav></raza-nav>
@@ -70,6 +74,33 @@
         alt="Raza Photos running on Mac, iPad, and iPhone"
         style="--image-max-width: 1000px; --image-padding: 0; --image-radius: var(--radius); --image-shadow: drop-shadow(0 30px 60px rgba(0,0,0,0.15))"
       ></feature-image>
+    </section>
+
+    <section id="transfer">
+      <div class="section-inner">
+        <div class="showcase-section" style="padding-bottom: 0">
+          <showcase-item
+            reverse
+            label="New in v2.0"
+            heading="Send photos from your phone. Skip iCloud entirely."
+            iphone="assets/iphone-transfer-sheet.webp"
+            ipad="assets/ipad-transfer-sheet.webp"
+            alt="Transferring photos from an iPhone to a Mac library in Raza Photos"
+          >
+            <p>
+              Point your iPhone or iPad at a Mac library on your home network and send photos and videos directly to it — over Wi-Fi, with no cable and no
+              cloud in between. Turn on auto-transfer and your camera roll clears itself out as you shoot.
+            </p>
+            <ul>
+              <li>Direct Wi-Fi transfer, no cloud in between</li>
+              <li>Auto-transfer clears your camera roll as new photos arrive</li>
+              <li>Choose exactly which Mac library receives them</li>
+              <li>Optionally delete originals from the device once transferred</li>
+            </ul>
+            <a href="transfer.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See how it works →</a>
+          </showcase-item>
+        </div>
+      </div>
     </section>
 
     <section class="how" id="how">

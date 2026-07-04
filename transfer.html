@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Send photos and videos straight from your iPhone or iPad to a Mac library over Wi-Fi. No iCloud, no cable, no import step — with auto-transfer for a hands-free camera roll."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/transfer.html" />
+    <meta property="og:title" content="Transfer — Raza Photos" />
+    <meta
+      property="og:description"
+      content="Send photos and videos straight from your iPhone or iPad to a Mac library over Wi-Fi. No iCloud, no cable, no import step."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Transfer — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="Send photos and videos straight from your iPhone or iPad to a Mac library over Wi-Fi. No iCloud, no cable, no import step."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
+    <title>Transfer — Raza Photos</title>
+
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/platform-screenshot.css" />
+    <link rel="stylesheet" href="components/showcase-item.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+
+    <script src="components/nav.js" defer></script>
+    <script src="components/footer.js" defer></script>
+    <script src="components/link-card.js" defer></script>
+    <script src="components/platform-screenshot.js" defer></script>
+    <script src="components/showcase-item.js" defer></script>
+    <script src="components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+
+    <hero-section
+      eyebrow="New in v2.0"
+      heading="Send photos from your phone. Skip iCloud entirely."
+      description="Point your iPhone or iPad at a Mac library on your home network and send photos and videos directly to it — over Wi-Fi, with no cable and no cloud in between."
+    ></hero-section>
+
+    <div class="content-wide">
+      <div class="showcase-section">
+        <showcase-item
+          label="iOS permissions"
+          heading="Two toggles decide everything."
+          iphone="assets/iphone-transfer-settings.webp"
+          ipad="assets/ipad-transfer-settings.webp"
+          alt="Raza Photos permissions settings on iPhone and iPad"
+        >
+          <p>
+            Transfer is off by default. Grant Raza Photos access to your photo library, then flip on <strong>Allow photo transfer</strong> in Permissions —
+            the same screen where you control read-only mode for the device.
+          </p>
+          <ul>
+            <li>Photo library access requested once, up front</li>
+            <li>Allow photo transfer gates sending from this device entirely</li>
+            <li>Read-only mode and transfer permission are independent switches</li>
+          </ul>
+        </showcase-item>
+
+        <showcase-item
+          reverse
+          label="Sending photos"
+          heading="Pick a library. Everything else is automatic."
+          iphone="assets/iphone-transfer-sheet.webp"
+          ipad="assets/ipad-transfer-sheet.webp"
+          alt="Transfer sheet showing pending photos and a destination library on iPhone and iPad"
+        >
+          <p>
+            Select photos in the grid and tap the transfer icon to open the Transfer sheet. Every Mac on your network with incoming transfers enabled shows
+            up automatically — the same Bonjour discovery that powers browsing.
+            <a href="discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How discovery works →</a>
+          </p>
+          <ul>
+            <li>Destination list is discovered on your network, no addresses to enter</li>
+            <li>Auto-transfer sends new camera roll shots the moment the app is open</li>
+            <li>Optionally delete originals from the device once a transfer completes</li>
+          </ul>
+        </showcase-item>
+
+        <showcase-item
+          label="Mac settings"
+          heading="Choose exactly where files land."
+          image="assets/mac-transfer-settings.webp"
+          alt="Raza Photos Transfer settings on Mac"
+        >
+          <p>
+            On the Mac, Transfer settings control the receiving side: a single toggle to allow incoming transfers, a destination folder, and how incoming
+            files are organized once they arrive.
+          </p>
+          <ul>
+            <li>Allow incoming transfers is off until you turn it on</li>
+            <li>Pick any folder as the destination — it becomes part of your library like any other</li>
+            <li>Automatic year / month subfolders keep incoming photos organized</li>
+            <li>Original filenames are always preserved</li>
+          </ul>
+        </showcase-item>
+      </div>
+
+      <div class="other-links" style="max-width: 1040px; margin: 0 auto">
+        <link-card
+          href="sharing.html"
+          label="Sharing"
+          heading="Server settings"
+          description="How the Mac server is turned on, off, and made read-only"
+        ></link-card>
+        <link-card
+          href="discovery.html"
+          label="How it works"
+          heading="How discovery works"
+          description="How Macs and iPhones find each other automatically"
+        ></link-card>
+        <link-card href="security.html" label="Security" heading="Security model" description="What the network boundary means in practice"></link-card>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

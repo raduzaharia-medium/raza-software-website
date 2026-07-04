@@ -15,6 +15,7 @@ class RazaFooter extends HTMLElement {
               <li><a href="burst.html">Burst navigation</a></li>
               <li><a href="editing.html">Editing</a></li>
               <li><a href="sharing.html">Sharing</a></li>
+              <li><a href="transfer.html">Transfer</a></li>
             </ul>
           </div>
           <div class="footer-group">
