@@ -54,25 +54,6 @@
     <div class="content-wide">
       <div class="showcase-section">
         <showcase-item
-          label="iOS permissions"
-          heading="Two toggles decide everything."
-          iphone="assets/iphone-transfer-settings.webp"
-          ipad="assets/ipad-transfer-settings.webp"
-          alt="Raza Photos permissions settings on iPhone and iPad"
-        >
-          <p>
-            Transfer is off by default. Grant Raza Photos access to your photo library, then flip on <strong>Allow photo transfer</strong> in Permissions —
-            the same screen where you control read-only mode for the device.
-          </p>
-          <ul>
-            <li>Photo library access requested once, up front</li>
-            <li>Allow photo transfer gates sending from this device entirely</li>
-            <li>Read-only mode and transfer permission are independent switches</li>
-          </ul>
-        </showcase-item>
-
-        <showcase-item
-          reverse
           label="Sending photos"
           heading="Pick a library. Everything else is automatic."
           iphone="assets/iphone-transfer-sheet.webp"
@@ -80,15 +61,38 @@
           alt="Transfer sheet showing pending photos and a destination library on iPhone and iPad"
         >
           <p>
-            Select photos in the grid and tap the transfer icon to open the Transfer sheet. Every Mac on your network with incoming transfers enabled shows
-            up automatically — the same Bonjour discovery that powers browsing.
-            <a href="discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How discovery works →</a>
+            Open the Transfer sheet and pick a destination. Every Mac on your network with incoming transfers enabled shows up automatically, using the same
+            Bonjour discovery that powers browsing. From then on, just browsing your library is enough — every photo and video that hasn't made it to the
+            destination yet quietly sends while you scroll through your memories, no extra step required.
           </p>
           <ul>
             <li>Destination list is discovered on your network, no addresses to enter</li>
-            <li>Auto-transfer sends new camera roll shots the moment the app is open</li>
+            <li>Every not-yet-sent photo and video goes automatically, including new camera roll shots the moment the app is open</li>
+            <li>iOS only lets transfers run while the app is open, so keep it in the foreground while browsing to let it catch up</li>
             <li>Optionally delete originals from the device once a transfer completes</li>
           </ul>
+        </showcase-item>
+
+        <showcase-item
+          reverse
+          label="iOS permissions"
+          heading="Block a device from reaching the home library."
+          iphone="assets/iphone-transfer-settings.webp"
+          ipad="assets/ipad-transfer-settings.webp"
+          alt="Raza Photos permissions settings on iPhone and iPad"
+        >
+          <p>
+            <strong>Allow photo transfer</strong> in Permissions is on by default, so any device can send to a library. Turn it off on a device you don't want
+            feeding the home library, and it's cut off entirely — no destination selection can override it.
+          </p>
+          <ul>
+            <li>Allow photo transfer gates sending from this device entirely, regardless of what's picked as a destination</li>
+            <li>Off by choice, not by default — you decide which devices are allowed in</li>
+          </ul>
+          <p>
+            This is really a parenting control first. A kid's phone or tablet takes pictures all day long, and you don't want every one of them landing in the
+            home library. Turn off Allow photo transfer on that device and nothing it captures can be sent over, no matter what the child does in the app.
+          </p>
         </showcase-item>
 
         <showcase-item
@@ -98,8 +102,8 @@
           alt="Raza Photos Transfer settings on Mac"
         >
           <p>
-            On the Mac, Transfer settings control the receiving side: a single toggle to allow incoming transfers, a destination folder, and how incoming
-            files are organized once they arrive.
+            On the Mac, Transfer settings control the receiving side: a single toggle to allow incoming transfers, a destination folder, and how incoming files
+            are organized once they arrive.
           </p>
           <ul>
             <li>Allow incoming transfers is off until you turn it on</li>
