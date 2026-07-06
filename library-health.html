@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find photos missing albums, events, place data, or GPS coordinates — then fix the GPS gaps directly from your Mac. Library maintenance for the completionists."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/library-health.html" />
+    <meta property="og:title" content="Library Health — Raza Photos" />
+    <meta
+      property="og:description"
+      content="Find photos missing albums, events, place data, or GPS coordinates — then fix the GPS gaps directly from your Mac."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Library Health — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="Find photos missing albums, events, place data, or GPS coordinates — then fix the GPS gaps directly from your Mac."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
+    <title>Library Health — Raza Photos</title>
+
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/platform-screenshot.css" />
+    <link rel="stylesheet" href="components/showcase-item.css" />
+    <link rel="stylesheet" href="components/callout-box.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+
+    <script src="components/nav.js" defer></script>
+    <script src="components/footer.js" defer></script>
+    <script src="components/link-card.js" defer></script>
+    <script src="components/platform-screenshot.js" defer></script>
+    <script src="components/showcase-item.js" defer></script>
+    <script src="components/callout-box.js" defer></script>
+    <script src="components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+
+    <hero-section
+      eyebrow="Library Health"
+      heading="The photos nobody thinks to look for."
+      description="Missing albums, missing events, missing place data, missing GPS — every library accumulates a few thousand photos nobody got around to organizing. Library Health finds them, and lets you fix the GPS gaps without leaving your Mac."
+    ></hero-section>
+
+    <div class="content-wide">
+      <div class="showcase-section">
+        <showcase-item
+          label="Find the gaps"
+          heading="Four filters for the things you'd never think to search for."
+          mac="assets/mac-library-health.webp"
+          ipad="assets/ipad-library-health.webp"
+          alt="Raza Photos Library Health menu showing Photos Without Albums, GPS, Place Data, and Events"
+        >
+          <p>
+            Tucked under the Library menu, Library Health isn't something you'll stumble on by accident — it's there for when you want to close the gaps in an
+            otherwise well-organized library. Four filters, each one instantly showing the grid filtered to just those photos:
+          </p>
+          <ul>
+            <li><span><strong>Photos Without Albums</strong> — never filed anywhere</span></li>
+            <li><span><strong>Photos Without GPS</strong> — no coordinates at all</span></li>
+            <li><span><strong>Photos Without Place Data</strong> — no country or city</span></li>
+            <li><span><strong>Photos Without Events</strong> — not part of a trip or occasion</span></li>
+          </ul>
+        </showcase-item>
+
+        <showcase-item
+          reverse
+          label="Fix the GPS gap"
+          heading="Two directions, because the gap can go either way."
+          mac="assets/mac-fix-location.webp"
+          alt="Raza Photos Library menu showing Fix Location from GPS and Add GPS from Location"
+        >
+          <p>
+            The trickiest gap is GPS. Plenty of photos get a place name typed in by hand — "Sydney, Australia" — without ever having real coordinates on file.
+            Others have accurate GPS but no readable place name attached. Once you've filtered down to the photos in question, two menu commands close the gap
+            from either side:
+          </p>
+          <ul>
+            <li><span><strong>Add GPS from Location</strong> — reads the place name already on the photo and adds GPS coordinates at that location's center</span></li>
+            <li><span><strong>Fix Location from GPS</strong> — reads existing GPS coordinates and derives the place name from them</span></li>
+          </ul>
+          <p>Both run as a batch across your whole selection, so a folder of a hundred untagged vacation photos takes one command, not a hundred taps.</p>
+        </showcase-item>
+      </div>
+
+      <div style="max-width: 1040px; margin: 0 auto 24px">
+        <callout-box variant="blue" heading="Don't forget to select the photos you want to fix">
+          <p>
+            A Library Health filter just narrows the grid to the photos with the gap — it doesn't select them. Select the photos you want to fix first —
+            click one, then shift-click to select the rest of the region — and the two commands appear in the Library menu.
+          </p>
+        </callout-box>
+      </div>
+
+      <div style="max-width: 1040px; margin: 0 auto 64px">
+        <callout-box variant="blue" heading="iPad shows the gaps, Mac closes them">
+          <p>
+            All four Library Health filters are available on both Mac and iPad — you can see exactly which photos are missing albums, GPS, place data, or
+            events from either device. The two fix commands, <strong>Add GPS from Location</strong> and <strong>Fix Location from GPS</strong>, are Mac-only:
+            iPad is read-only here, so you can spot the gap on the couch and close it later at your Mac.
+          </p>
+        </callout-box>
+      </div>
+
+      <div class="other-links" style="max-width: 1040px; margin: 0 auto">
+        <link-card
+          href="editing.html"
+          label="Editing"
+          heading="Fix one photo at a time"
+          description="Drag a pin to correct a single photo's location, from any device"
+        ></link-card>
+        <link-card
+          href="metadata-write.html"
+          label="Technical details"
+          heading="How metadata writing works"
+          description="Pixel-safe, atomic writes using open standards"
+        ></link-card>
+        <link-card href="browse.html" label="Browsing" heading="See your library" description="Grid, map, and full-screen viewer"></link-card>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>
