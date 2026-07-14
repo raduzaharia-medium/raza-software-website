@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="A Home Screen widget that surfaces a memory from your library — small, medium, or large, on iPhone, iPad, and Mac, with a tap to browse back through time."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/widget.html" />
+    <meta property="og:title" content="Widget — Raza Photos" />
+    <meta
+      property="og:description"
+      content="A Home Screen widget that surfaces a memory from your library — small, medium, or large, on iPhone, iPad, and Mac."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Widget — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="A Home Screen widget that surfaces a memory from your library — small, medium, or large, on iPhone, iPad, and Mac."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+
+    <title>Widget — Raza Photos</title>
+
+    <link rel="icon" type="image/png" href="assets/icon_web.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="components/nav.css" />
+    <link rel="stylesheet" href="components/link-card.css" />
+    <link rel="stylesheet" href="components/platform-screenshot.css" />
+    <link rel="stylesheet" href="components/showcase-item.css" />
+    <link rel="stylesheet" href="components/callout-box.css" />
+    <link rel="stylesheet" href="components/hero-section.css" />
+    <link rel="stylesheet" href="components/footer.css" />
+
+    <script src="components/nav.js" defer></script>
+    <script src="components/footer.js" defer></script>
+    <script src="components/link-card.js" defer></script>
+    <script src="components/platform-screenshot.js" defer></script>
+    <script src="components/showcase-item.js" defer></script>
+    <script src="components/callout-box.js" defer></script>
+    <script src="components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav></raza-nav>
+
+    <hero-section
+      eyebrow="Widget"
+      heading="A memory on your desktop and Home Screen, every day."
+      description="A Raza Photos widget picks one photo at random from across all your connected libraries and puts it on your Mac, iPhone, or iPad — a new one every day. Tap next or previous to step through the photos taken around it, so a single random pick becomes a way into the moment itself."
+    ></hero-section>
+
+    <div class="content-wide">
+      <div class="showcase-section">
+        <showcase-item
+          label="Small"
+          heading="A photo, tucked in next to your apps."
+          mac="assets/mac-widget-small.webp"
+          iphone="assets/iphone-widget-small.webp"
+          ipad="assets/ipad-widget-small.webp"
+          alt="Raza Photos small memory widget on the Mac, iPhone, and iPad desktop and Home Screen"
+        >
+          <p>
+            The small widget is just the photo, cropped to a square and sitting right in the grid with your other icons — a new random photo from across
+            all your libraries, chosen once a day, no arrows, no overlay.
+          </p>
+        </showcase-item>
+
+        <showcase-item
+          reverse
+          label="Medium"
+          heading="Room for arrows, so you can browse in place."
+          mac="assets/mac-widget-medium.webp"
+          iphone="assets/iphone-widget-medium.webp"
+          ipad="assets/ipad-widget-medium.webp"
+          alt="Raza Photos medium memory widget showing previous and next arrows over a photo"
+        >
+          <p>
+            The medium widget widens out and adds a previous and next arrow right over the photo. Tap either one and you don't get another random pick —
+            you step to the photo taken just before or after it, so you can browse the moments surrounding the day's selection without unlocking your
+            device or opening the app.
+          </p>
+        </showcase-item>
+
+        <showcase-item
+          label="Large"
+          heading="A tile with a date and place attached."
+          mac="assets/mac-widget-large.webp"
+          iphone="assets/iphone-widget-large.webp"
+          ipad="assets/ipad-widget-large.webp"
+          alt="Raza Photos large memory widget showing a date overlaid on a photo"
+        >
+          <p>
+            The large widget gives the photo real space to breathe, with the same next and previous browsing as medium plus the date and place overlaid at
+            the bottom, when available. A glance tells you not just what you're looking at, but when and where, as you step through the photos around it.
+          </p>
+        </showcase-item>
+      </div>
+
+      <div style="max-width: 1040px; margin: 0 auto 24px">
+        <callout-box variant="blue" heading="One random photo, from every library you've connected">
+          <p>
+            By default, the photo is picked at random from across all the libraries Raza Photos knows about, and swapped out for a new one once a day. Got
+            two Macs feeding the same library? Both are in the pool.
+          </p>
+        </callout-box>
+      </div>
+
+      <div style="max-width: 1040px; margin: 0 auto 24px">
+        <callout-box variant="blue" heading="Or narrow it down with the same filters as the sidebar">
+          <p>
+            Each widget can be configured with its own filters — albums, events, dates, places, and people, selected the same way you'd filter the sidebar
+            in Raza Photos. Combine multiple filters, and multiple selections within each one, to keep a widget focused on just the vacation album, just
+            last summer, or just the kids.
+          </p>
+          <p>
+            Once a filter is set, the daily random pick comes from that filtered set instead of your whole library — filter down to just you or your
+            family, for instance, and you get a new random photo of them every day. Next and previous still step through the photos around that
+            selection, honoring the same filter, so you stay within the people, place, or dates you chose.
+          </p>
+        </callout-box>
+      </div>
+
+      <div style="max-width: 1040px; margin: 0 auto 64px">
+        <callout-box variant="blue" heading="Available on Mac, iPhone, and iPad">
+          <p>
+            On iPhone and iPad, touch and hold an empty area of the Home Screen, tap the <strong>+</strong> button, and search for
+            <strong>Raza Photos</strong>. On Mac, right-click the desktop, choose <strong>Edit Widgets</strong>, and search the same way. All three sizes
+            work identically across Mac, iPhone, and iPad.
+          </p>
+        </callout-box>
+      </div>
+
+      <div class="other-links" style="max-width: 1040px; margin: 0 auto">
+        <link-card href="browse.html" label="Browsing" heading="See your library" description="Grid, map, and full-screen viewer"></link-card>
+        <link-card
+          href="library-health.html"
+          label="Library Health"
+          heading="Find the gaps"
+          description="Missing albums, GPS, place data, and events"
+        ></link-card>
+        <link-card href="sharing.html" label="Sharing" heading="Server on demand" description="Start or stop sharing your library, anytime"></link-card>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>
