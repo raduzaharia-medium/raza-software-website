@@ -6,55 +6,55 @@
     <meta name="theme-color" content="#1a8fff" />
     <meta
       name="description"
-      content="Raza Photos is designed for trusted home networks. No internet exposure, guest network isolation via Bonjour, and a setting to protect your library from remote changes."
+      content="Raza Photos and Raza Music are designed for trusted home networks. No internet exposure, guest network isolation via Bonjour, and a setting to protect your library from remote changes."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:site_name" content="Raza Software" />
     <meta property="og:url" content="https://razasoftware.eu/security.html" />
-    <meta property="og:title" content="Security — Raza Photos" />
+    <meta property="og:title" content="Security — Raza Software" />
     <meta
       property="og:description"
       content="Designed for trusted home networks. Not reachable from the internet, guest networks fully isolated, and a setting to block remote metadata changes."
     />
-    <meta property="og:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Security — Raza Photos" />
+    <meta name="twitter:title" content="Security — Raza Software" />
     <meta
       name="twitter:description"
       content="Designed for trusted home networks. Not reachable from the internet, guest networks fully isolated, and a setting to block remote metadata changes."
     />
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/all-devices.webp" />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
 
-    <title>Security — Raza Photos</title>
+    <title>Security — Raza Software</title>
 
-    <link rel="icon" type="image/png" href="assets/icon_web.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="components/explainer.css" />
-    <link rel="stylesheet" href="components/nav.css" />
-    <link rel="stylesheet" href="components/link-card.css" />
-    <link rel="stylesheet" href="components/footer.css" />
-    <link rel="stylesheet" href="components/summary-card.css" />
-    <link rel="stylesheet" href="components/info-card.css" />
-    <link rel="stylesheet" href="components/callout-box.css" />
-    <link rel="stylesheet" href="components/hero-section.css" />
-    <link rel="stylesheet" href="components/network-diagram.css" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icon_web.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/summary-card.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/network-diagram.css" />
   
-    <script src="components/nav.js" defer></script>
-    <script src="components/footer.js" defer></script>
-    <script src="components/link-card.js" defer></script>
-    <script src="components/summary-card.js" defer></script>
-    <script src="components/callout-box.js" defer></script>
-    <script src="components/info-card.js" defer></script>
-    <script src="components/hero-section.js" defer></script>
-    <script src="components/network-diagram.js" defer></script>
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/summary-card.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+    <script src="/components/network-diagram.js" defer></script>
   </head>
   <body>
-    <raza-nav></raza-nav>
+    <raza-nav app="shared"></raza-nav>
 
     <hero-section
       eyebrow="Security"
       heading="Designed for trusted home networks"
-      description="Raza Photos makes a deliberate tradeoff: zero configuration over authentication. This page explains exactly what that means, what it protects you from, and what it doesn't."
+      description="Raza Photos and Raza Music make a deliberate tradeoff: zero configuration over authentication. This page explains exactly what that means, what it protects you from, and what it doesn't."
     ></hero-section>
 
     <div class="summary">
@@ -70,11 +70,11 @@
       <div class="content-body">
         <div class="section">
           <h2>No authentication — and why</h2>
-          <p>Raza Photos does not require a password or login to browse the photo library. This is a conscious design decision, not an oversight.</p>
+          <p>Neither Raza Photos nor Raza Music requires a password or login to browse your library. This is a conscious design decision, not an oversight.</p>
           <p>
-            The goal of the app is to make your photo library feel like it is simply there — on your iPhone, on your iPad, in the house — the same way your
-            music plays on every HomePod without you logging in. Introducing a password would add friction for every family member, every time, on every device.
-            For most households, that tradeoff is not worth it.
+            The goal is to make your library feel like it is simply there — on your iPhone, on your iPad, in the house — the same way music plays on every
+            HomePod without you logging in. Introducing a password would add friction for every family member, every time, on every device. For most
+            households, that tradeoff is not worth it.
           </p>
           <p>
             Instead, the network itself is the boundary. Access to your library requires physical access to your home Wi-Fi network. That is the same boundary
@@ -82,7 +82,7 @@
           </p>
 
           <callout-box variant="green" heading="The design principle" style="margin-top: 20px">
-            <p>Your home network is already a trusted perimeter. Raza Photos treats it as one, rather than adding a second perimeter on top of it.</p>
+            <p>Your home network is already a trusted perimeter. Our apps treat it as one, rather than adding a second perimeter on top of it.</p>
           </callout-box>
         </div>
 
@@ -91,7 +91,7 @@
         <div class="section">
           <h2>Not reachable from the internet</h2>
           <p>
-            The library is only discoverable and accessible within your local network. Raza Photos uses Bonjour for discovery — a local network protocol that
+            The library is only discoverable and accessible within your local network. Both apps use Bonjour for discovery — a local network protocol that
             does not traverse the internet and cannot be accessed from outside your router.
           </p>
           <p>
@@ -101,7 +101,7 @@
 
           <callout-box variant="green" heading="What this means">
             <p>
-              Your photo library has no internet-facing attack surface. It cannot be accessed remotely, cannot be found by scanners, and cannot be breached from
+              Your library has no internet-facing attack surface. It cannot be accessed remotely, cannot be found by scanners, and cannot be breached from
               outside your home.
             </p>
           </callout-box>
@@ -116,7 +116,7 @@
             reach the internet but cannot talk to your Mac, your NAS, your printer, or anything else on your home network.
           </p>
           <p>
-            Bonjour discovery only works within a single network segment. A device on your guest network cannot discover or connect to a Raza Photos server on
+            Bonjour discovery only works within a single network segment. A device on your guest network cannot discover or connect to a library server on
             your main network. This is not a feature we built — it is how network segmentation works at the router level.
           </p>
 
@@ -130,10 +130,10 @@
         <hr />
 
         <div class="section">
-          <h2>The honest caveat: anyone on your main network can see your photos</h2>
+          <h2>The honest caveat: anyone on your main network can see your library</h2>
           <p>
-            We said the home network is the boundary, and that cuts both ways. Anyone who connects to your main Wi-Fi and installs Raza Photos will
-            automatically discover the library and be able to browse it — with no further step required.
+            We said the home network is the boundary, and that cuts both ways. Anyone who connects to your main Wi-Fi and installs the app will automatically
+            discover the library and be able to browse it — with no further step required.
           </p>
           <p>
             For most families, this is exactly what they want. For others — households with flatmates, frequent guests given the main password, or simply
@@ -142,7 +142,7 @@
 
           <callout-box variant="orange" heading="Practical advice">
             <p>
-              If you share your main Wi-Fi password with people you would not want browsing your photo library, consider using your router's guest network for
+              If you share your main Wi-Fi password with people you would not want browsing your library, consider using your router's guest network for
               visitors instead. Guest network isolation will do the rest.
             </p>
           </callout-box>
@@ -153,8 +153,8 @@
         <div class="section">
           <h2>Family controls — three levels of access</h2>
           <p>
-            Browsing is one thing. Editing metadata — changing dates, assigning locations, tagging people — is another. Raza Photos gives you three distinct
-            controls over what remote devices can do, without passwords, accounts, or per-user setup.
+            Browsing is one thing. Editing metadata is another. Both Raza Photos and Raza Music give you three distinct controls over what remote devices can
+            do, without passwords, accounts, or per-user setup.
           </p>
 
           <info-card variant="dark" class="highlight-box" style="margin-top: 24px" label="Level 1 — Server setting" heading="Read-only server">
@@ -194,16 +194,16 @@
         <div class="section">
           <h2>Summary</h2>
           <p>
-            Raza Photos is secure against external threats — the internet, guest networks, remote attackers. It is open within your trusted home network, by
-            design. If everyone on your main Wi-Fi is someone you trust with your photos, you need to do nothing. If not, guest network isolation and the
-            read-only setting give you the tools to draw that boundary yourself.
+            Raza Photos and Raza Music are secure against external threats — the internet, guest networks, remote attackers. They are open within your trusted
+            home network, by design. If everyone on your main Wi-Fi is someone you trust with your library, you need to do nothing. If not, guest network
+            isolation and the read-only setting give you the tools to draw that boundary yourself.
           </p>
         </div>
 
         <div class="other-links">
-          <link-card href="privacy.html" label="Privacy" heading="Privacy policy" description="What we collect — which is nothing"></link-card>
+          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="What we collect — which is nothing"></link-card>
           <link-card
-            href="local-first.html"
+            href="/local-first.html"
             label="Local-first"
             heading="Why local-first matters"
             description="No infrastructure means no infrastructure to breach"

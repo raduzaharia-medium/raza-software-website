@@ -3,38 +3,40 @@ class RazaFooter extends HTMLElement {
     this.innerHTML = `<footer>
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/icon_web.png" alt="Raza Photos" />
-          <span>Raza Photos</span>
+          <img src="/assets/icon_web.svg" alt="Raza Software" />
+          <span>Raza Software</span>
         </div>
         <div class="footer-nav">
           <div class="footer-group">
-            <span class="footer-group-label">Features</span>
+            <span class="footer-group-label">Raza Photos</span>
             <ul>
-              <li><a href="browse.html">Browsing</a></li>
-              <li><a href="formats.html">Supported formats</a></li>
-              <li><a href="burst.html">Burst navigation</a></li>
-              <li><a href="editing.html">Editing</a></li>
-              <li><a href="library-health.html">Library Health</a></li>
-              <li><a href="widget.html">Widget</a></li>
-              <li><a href="sharing.html">Sharing</a></li>
-              <li><a href="transfer.html">Transfer</a></li>
+              <li><a href="/photos/index.html">Overview</a></li>
+              <li><a href="/photos/browse.html">Browsing</a></li>
+              <li><a href="/photos/formats.html">Supported formats</a></li>
+              <li><a href="/photos/burst.html">Burst navigation</a></li>
+              <li><a href="/photos/editing.html">Editing</a></li>
+              <li><a href="/photos/library-health.html">Library Health</a></li>
+              <li><a href="/photos/widget.html">Widget</a></li>
+              <li><a href="/photos/sharing.html">Sharing</a></li>
+              <li><a href="/photos/transfer.html">Transfer</a></li>
+              <li><a href="/photos/discovery.html">How discovery works</a></li>
+              <li><a href="/photos/metadata-read.html">Metadata reading</a></li>
+              <li><a href="/photos/metadata-write.html">Metadata writing</a></li>
             </ul>
           </div>
           <div class="footer-group">
-            <span class="footer-group-label">How it works</span>
+            <span class="footer-group-label">Raza Music</span>
             <ul>
-              <li><a href="discovery.html">How discovery works</a></li>
-              <li><a href="local-first.html">Local-first</a></li>
-              <li><a href="security.html">Security</a></li>
-              <li><a href="metadata-read.html">Metadata reading</a></li>
-              <li><a href="metadata-write.html">Metadata writing</a></li>
+              <li><a href="/music/index.html">Overview</a></li>
             </ul>
           </div>
           <div class="footer-group">
             <span class="footer-group-label">Help</span>
             <ul>
-              <li><a href="support.html">Support</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="/support.html">Support</a></li>
+              <li><a href="/privacy.html">Privacy Policy</a></li>
+              <li><a href="/security.html">Security</a></li>
+              <li><a href="/local-first.html">Local-first</a></li>
             </ul>
           </div>
         </div>
