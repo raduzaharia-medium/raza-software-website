@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="Fix a title, artist, album, or genre — from your iPhone, on the couch. Changes write back to the original files, batched across your whole selection."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Music" />
+    <meta property="og:url" content="https://razasoftware.eu/music/editing.html" />
+    <meta property="og:title" content="Editing — Raza Music" />
+    <meta
+      property="og:description"
+      content="Fix a title, artist, album, or genre — from your iPhone, on the couch. Changes write back to the original files, batched across your whole selection."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Editing — Raza Music" />
+    <meta
+      name="twitter:description"
+      content="Fix a title, artist, album, or genre — from your iPhone, on the couch. Changes write back to the original files, batched across your whole selection."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+
+    <title>Editing — Raza Music</title>
+
+    <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/showcase-item.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+    <script src="/components/showcase-item.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="music"></raza-nav>
+
+    <hero-section
+      eyebrow="Editing"
+      heading="Fix it from the couch. Save it to the file."
+      description="Change a title, artist, album, genre, release year, or album art — from your iPhone, without touching the Mac. Changes are written back to the original file's own tags, compatible with any other player."
+    ></hero-section>
+
+    <div class="content-wide">
+      <div class="showcase-section">
+        <showcase-item
+          label="Organize"
+          heading="Edit tags across your whole selection at once."
+          mac="/assets/music/mac-organize.webp"
+          ipad="/assets/music/ipad-organize.webp"
+          iphone="/assets/music/iphone-organize.webp"
+          alt="Raza Music batch editing menu showing Set Title, Set Album, Set Artist, Set Genre, Set Release Year, and Set Album Art"
+        >
+          <p>Select one track or a hundred, then change their tags in a single action. The edit menu appears in context — no separate screen, no wizard.</p>
+          <ul>
+            <li>Set title, album, artist, genre, or release year</li>
+            <li>Set album art</li>
+            <li>Batch editing across any selection</li>
+            <li>Delete from library or from disk</li>
+          </ul>
+        </showcase-item>
+
+        <showcase-item
+          reverse
+          label="Organizing"
+          heading="Build a new album without leaving the grid."
+          mac="/assets/music/mac-new-album.webp"
+          ipad="/assets/music/ipad-new-album.webp"
+          iphone="/assets/music/iphone-new-album.webp"
+          alt="Raza Music New Album dialog"
+        >
+          <p>Name a new album and it's ready to receive tracks — from the same selection you were already browsing, on any device.</p>
+          <ul>
+            <li>Create albums from your iPhone, iPad, or Mac</li>
+            <li>Changes queued until you're ready to save</li>
+            <li>Writes back to the file's own tags</li>
+          </ul>
+        </showcase-item>
+
+        <showcase-item
+          label="Permissions"
+          heading="Hand a device to a kid or guest without worrying."
+          ipad="/assets/music/ipad-family.webp"
+          iphone="/assets/music/iphone-family.webp"
+          alt="Raza Music Permissions screen showing a Read-only mode toggle"
+        >
+          <p>
+            Set a specific iPhone or iPad to read-only mode on the device itself. That device becomes a pure listener — no editing controls, regardless of
+            what the Mac allows.
+          </p>
+          <ul>
+            <li>Per-device Read-only mode, set on the device itself</li>
+            <li>Prevents all edits — no changes can be made from that device</li>
+            <li>Browsing and playback stay completely unrestricted</li>
+          </ul>
+        </showcase-item>
+      </div>
+
+      <div class="other-links" style="max-width: 1040px; margin: 0 auto">
+        <link-card href="/music/metadata-write.html" label="Technical details" heading="How metadata writing works" description="Tag-safe, atomic writes using each format's own tags"></link-card>
+        <link-card href="/music/metadata-read.html" label="Reading" heading="What Raza Music reads" description="Tags across MP3, MP4, M4A, and M4B"></link-card>
+        <link-card href="/music/browse.html" label="Browsing" heading="See your library" description="Grid and list, both native and fast"></link-card>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

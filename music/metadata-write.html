@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="Raza Music writes metadata back to your original audio files without touching the audio data. Non-destructive, atomic, and compatible with any other player."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Music" />
+    <meta property="og:url" content="https://razasoftware.eu/music/metadata-write.html" />
+    <meta property="og:title" content="What Raza Music Writes — Metadata" />
+    <meta
+      property="og:description"
+      content="Raza Music writes metadata back to your original audio files without touching the audio data. Non-destructive, atomic, and compatible with any other player."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What Raza Music Writes — Metadata" />
+    <meta
+      name="twitter:description"
+      content="Raza Music writes metadata back to your original audio files without touching the audio data. Non-destructive, atomic, and compatible with any other player."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+
+    <title>Metadata Writing — Raza Music</title>
+
+    <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/info-card-grid.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/info-card-grid.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="music"></raza-nav>
+
+    <hero-section
+      eyebrow="Metadata"
+      heading="What Raza Music writes back to your files"
+      description="When you fix a title, artist, or album in Raza Music, that change can be saved back into the original file's own tags — ID3 for MP3, iTunes-style atoms for MP4, M4A, and M4B — without touching the audio itself."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <info-card variant="green" class="highlight-box" style="--card-padding: 32px 36px; margin-bottom: 40px" heading="Your audio is never touched">
+          <p>
+            An audio file has two distinct areas: the compressed audio stream and the tag data. Raza Music operates exclusively on the tags. The audio
+            itself is never decoded, processed, or re-encoded during a metadata save.
+          </p>
+          <p>This means there is no generation loss, no recompression, and no risk of corrupting the sound quality of the track.</p>
+        </info-card>
+
+        <div class="section">
+          <h2>How saving works</h2>
+          <p class="desc">
+            Changes you make in Raza Music are queued in memory as you work. They are not written to disk automatically. To save, choose
+            <strong>Save Metadata</strong> from the Library menu on Mac. You can cancel at any time, and tracks without pending changes are never touched.
+          </p>
+          <ul class="steps-list">
+            <li><span class="step-num">1</span>You make changes — fix a title, correct an artist, tag an album</li>
+            <li><span class="step-num">2</span>Changes are held in the local database until you are ready</li>
+            <li><span class="step-num">3</span>You choose Save Metadata from the Library menu</li>
+            <li><span class="step-num">4</span>Raza Music reads the existing tags, merges your changes, and writes the updated file atomically to disk</li>
+            <li><span class="step-num">5</span>Only files with pending changes are modified — everything else is untouched</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What gets written</h2>
+          <p class="desc">Raza Music writes to the tag format native to each file, so the result stays compatible with any other music app.</p>
+          <info-card-grid columns="2" class="featured">
+            <info-card variant="alt" heading="Title, artist &amp; album" description="Written to the file's own tag fields"></info-card>
+            <info-card variant="alt" heading="Genre &amp; year" description="Written alongside the core fields"></info-card>
+            <info-card variant="alt" heading="Track &amp; disc number" description="Preserved and editable in the same save"></info-card>
+            <info-card variant="alt" heading="Artwork" description="Embedded directly in the file, same as it was read"></info-card>
+          </info-card-grid>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What is never changed</h2>
+          <p class="desc">
+            Raza Music uses merge semantics — it reads all existing tag data first, then only updates the specific fields you changed. Everything else is
+            preserved exactly as it was.
+          </p>
+          <ul class="protected-list">
+            <li>The compressed audio stream itself</li>
+            <li>Chapter and bookmark data in M4B audiobooks</li>
+            <li>File timestamps (creation and modification dates on disk)</li>
+            <li>All tag fields not managed by Raza Music</li>
+          </ul>
+        </div>
+
+        <div class="other-links">
+          <link-card href="/music/metadata-read.html" label="See also" heading="Reading metadata" description="What Raza Music reads from your files"></link-card>
+          <link-card href="/music/editing.html" label="Editing" heading="Fix it from the couch" description="Batch-edit tags right from your iPhone"></link-card>
+          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="No data leaves your home network, ever"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

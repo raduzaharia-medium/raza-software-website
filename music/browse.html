@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="Browse your music library as album art in a grid, or scan it fast as a list. Same library, two views, both native and instant over Wi-Fi."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Music" />
+    <meta property="og:url" content="https://razasoftware.eu/music/browse.html" />
+    <meta property="og:title" content="Browsing — Raza Music" />
+    <meta
+      property="og:description"
+      content="Browse your music library as album art in a grid, or scan it fast as a list. Same library, two views, both native and instant over Wi-Fi."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Browsing — Raza Music" />
+    <meta
+      name="twitter:description"
+      content="Browse your music library as album art in a grid, or scan it fast as a list. Same library, two views, both native and instant over Wi-Fi."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+
+    <title>Browsing — Raza Music</title>
+
+    <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/showcase-item.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/detail-list.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+    <script src="/components/showcase-item.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/detail-list.js" defer></script>
+    <script src="/components/detail-item.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/explainer.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="music"></raza-nav>
+
+    <hero-section
+      eyebrow="Browsing"
+      heading="Every song. However you like to see it."
+      description="Grid or list, both native and both fast, pulling from the same library your Mac already indexed. No loading spinner. No browser. No compromise."
+    ></hero-section>
+
+    <div class="content-wide">
+      <div class="showcase-section">
+        <showcase-item
+          label="Grid view"
+          heading="Album art, front and center."
+          mac="/assets/music/mac-grid.webp"
+          ipad="/assets/music/ipad-grid.webp"
+          iphone="/assets/music/iphone-grid.webp"
+          alt="Raza Music grid view"
+        >
+          <p>
+            Every track shown as its own album art, with the title and artist underneath and the running length in the corner. Scroll through your library
+            the way a record shelf works — by cover, not by text.
+          </p>
+          <ul>
+            <li>Instant thumbnail loading over Wi-Fi</li>
+            <li>Filter and search across the full library</li>
+            <li>Tap any track to jump into Now Playing</li>
+            <li>Switch to list anytime, same library underneath</li>
+          </ul>
+        </showcase-item>
+
+        <showcase-item
+          reverse
+          label="List view"
+          heading="Built for scanning."
+          mac="/assets/music/mac-list.webp"
+          ipad="/assets/music/ipad-list.webp"
+          iphone="/assets/music/iphone-list.webp"
+          alt="Raza Music list view"
+        >
+          <p>
+            Switch to list and the same library becomes rows — title, artist, and length in a compact line. When you already know what you're looking for,
+            list gets you there faster than artwork ever could.
+          </p>
+          <ul>
+            <li>Compact rows: title, artist, and length</li>
+            <li>Same filters and search as grid</li>
+            <li>Same tap-to-play behavior</li>
+            <li>Multiple libraries appear merged into one</li>
+          </ul>
+        </showcase-item>
+      </div>
+
+      <div class="other-links" style="max-width: 1040px; margin: 0 auto">
+        <link-card href="/music/playing.html" label="Now Playing" heading="The immersive player" description="Full-window album art, queue, and transport controls"></link-card>
+        <link-card href="/music/editing.html" label="Editing" heading="Organize from your iPhone" description="Fix a title, artist, or album — right from the grid"></link-card>
+        <link-card href="/support.html" label="Support" heading="Common questions" description="Get help with Raza Photos or Raza Music"></link-card>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

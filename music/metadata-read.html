@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="Raza Music reads the standard tags embedded in your MP3, MP4, M4A, and M4B files — title, artist, album, genre, track number, and artwork."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Music" />
+    <meta property="og:url" content="https://razasoftware.eu/music/metadata-read.html" />
+    <meta property="og:title" content="What Raza Music Reads — Metadata" />
+    <meta
+      property="og:description"
+      content="Raza Music reads the standard tags embedded in your MP3, MP4, M4A, and M4B files — title, artist, album, genre, track number, and artwork."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What Raza Music Reads — Metadata" />
+    <meta
+      name="twitter:description"
+      content="Raza Music reads the standard tags embedded in your MP3, MP4, M4A, and M4B files — title, artist, album, genre, track number, and artwork."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+
+    <title>Metadata Reading — Raza Music</title>
+
+    <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/standards-section.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="music"></raza-nav>
+
+    <hero-section
+      eyebrow="Metadata"
+      heading="What Raza Music reads from your files"
+      description="Raza Music reads the tags already embedded in your audio files by whatever ripped, purchased, or organized them. Different formats store tags differently, and Raza Music understands both."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="standards-section">
+          <h2>Tag formats, by file type</h2>
+          <div class="standards-grid">
+            <info-card heading="ID3" description="Used by MP3 files — the tag format nearly every ripper and editor writes"></info-card>
+            <info-card heading="iTunes-style atoms" description="Used by MP4, M4A, and M4B — the tag format Apple's own tools write"></info-card>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>What's read</h2>
+          <p class="desc">Across both tag formats, Raza Music reads the same set of fields into a unified view:</p>
+          <ul class="check-list">
+            <li>Title</li>
+            <li>Artist</li>
+            <li>Album</li>
+            <li>Genre</li>
+            <li>Track and disc number</li>
+            <li>Year</li>
+            <li>Embedded artwork</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Audiobooks (M4B)</h2>
+          <p class="desc">
+            M4B files carry the same tag fields as M4A, plus chapter markers built into the container. Raza Music reads those alongside the standard tags, so
+            an audiobook shows up as itself — not just a very long song.
+          </p>
+        </div>
+
+        <div class="other-links">
+          <link-card href="/music/metadata-write.html" label="Next" heading="Writing metadata" description="What Raza Music saves back to your files and how"></link-card>
+          <link-card href="/music/editing.html" label="Editing" heading="Fix it from the couch" description="Batch-edit tags right from your iPhone"></link-card>
+          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="No data leaves your home network, ever"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

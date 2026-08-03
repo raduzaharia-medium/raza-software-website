@@ -6,62 +6,226 @@
     <meta name="theme-color" content="#1a8fff" />
     <meta
       name="description"
-      content="Raza Music will bring your Mac music library to every iPhone and iPad in the house. No cloud, no server, no setup. Coming soon."
+      content="Browse your Mac music library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raza Music" />
     <meta property="og:url" content="https://razasoftware.eu/music/index.html" />
-    <meta property="og:title" content="Raza Music — Coming soon" />
+    <meta property="og:title" content="Raza Music — Your music library, on every Apple device at home" />
     <meta
       property="og:description"
-      content="Raza Music will bring your Mac music library to every iPhone and iPad in the house. No cloud, no server, no setup. Coming soon."
+      content="Browse your Mac music library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry."
     />
-    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Raza Music — Coming soon" />
+    <meta name="twitter:title" content="Raza Music — Your music library, on every Apple device at home" />
     <meta
       name="twitter:description"
-      content="Raza Music will bring your Mac music library to every iPhone and iPad in the house. No cloud, no server, no setup. Coming soon."
+      content="Browse your Mac music library on any iPhone, iPad, or Mac in your home. No cloud, no server, no setup. Built in the EU with zero telemetry."
     />
-    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
 
-    <title>Raza Music — Coming soon</title>
+    <title>Raza Music — Your music library, on every Apple device at home</title>
 
     <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/components/nav.css" />
     <link rel="stylesheet" href="/components/footer.css" />
     <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/step-card.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/info-card-grid.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
 
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
     <script src="/components/hero-section.js" defer></script>
+    <script src="/components/step-card.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/info-card-grid.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
   </head>
   <body>
     <raza-nav app="music"></raza-nav>
 
-    <hero-section
-      eyebrow="Coming soon"
-      heading="Your music library, on every Apple device at home."
-      description="Raza Music is the same idea as Raza Photos, built for your music instead: point a Mac app at your music folders, and every iPhone and iPad in the house finds the library automatically over Wi-Fi. No cloud, no server, no setup."
-    ></hero-section>
+    <section class="hero">
+      <span class="hero-eyebrow">For Mac, iPhone &amp; iPad</span>
+      <h1>
+        Your music, on every Apple device at home.
+        <span>No cloud required.</span>
+      </h1>
+      <p>
+        Import your music folders on Mac. Open Raza Music on any iPhone or iPad in the house. Your library is just there — no IP address, no account, no
+        setup.
+      </p>
+      <div class="hero-actions">
+        <span class="btn btn-primary" style="opacity: 0.55; cursor: default">iPhone &amp; iPad — coming soon</span>
+        <a href="#features" class="btn btn-outline">See features</a>
+      </div>
+      <p style="margin-top: 20px; font-size: 13px; color: rgba(255, 255, 255, 0.7)">
+        The Mac app has been approved on the App Store. The iPhone and iPad companion is on its way —
+        <a href="mailto:razamusic@outlook.com" style="color: #7cc8ff; text-decoration: none; font-weight: 500">get in touch</a>
+        with questions or to be notified when it's ready.
+      </p>
+      <div style="max-width: 1000px; margin: 40px auto 0; text-align: center">
+        <platform-screenshot
+          mac="/assets/music/mac-grid.webp"
+          ipad="/assets/music/ipad-grid.webp"
+          iphone="/assets/music/iphone-grid.webp"
+          alt="Raza Music running on Mac, iPad, and iPhone"
+        ></platform-screenshot>
+      </div>
+    </section>
 
-    <div class="content">
-      <div class="content-body">
-        <div style="max-width: 640px; margin: 0 auto; text-align: center">
-          <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 32px">
-            The Mac app has been approved on the App Store, and the iPhone and iPad companion is on its way. In the meantime, if you have questions or want to
-            be notified when it's ready, get in touch.
-          </p>
-          <a href="mailto:razamusic@outlook.com" class="btn btn-primary">Email razamusic@outlook.com</a>
+    <section class="how" id="how">
+      <div class="section-inner">
+        <div class="section-label">How it works</div>
+        <h2 class="section-title">Three steps.<br />Then you're done forever.</h2>
+        <p class="section-sub">
+          No maintenance, no server to update, no VPN to configure — the same local-first approach as Raza Photos, our Mac and iPhone photo app, just built
+          for your music library instead.
+        </p>
+        <step-cards>
+          <step-card number="1" heading="Import on Mac">
+            <p>Point Raza Music at your music folders. It indexes the metadata and leaves every file exactly where it is — nothing moves, nothing is copied.</p>
+          </step-card>
+          <step-card number="2" heading="Your Mac advertises itself">
+            <p>
+              Using Bonjour, your Mac quietly announces the library on your local network. No ports to open. No router settings. Nothing to configure.
+              <a href="/discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How does that work? →</a>
+            </p>
+          </step-card>
+          <step-card number="3" heading="Open and listen">
+            <p>On any iPhone, iPad, or other Mac in the house, open Raza Music. The library is just there. If you have multiple Macs, all libraries appear merged into one.</p>
+          </step-card>
+        </step-cards>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="section-inner">
+        <div class="section-label">Features</div>
+        <h2 class="section-title">Everything you'd expect.<br />None of what you don't.</h2>
+        <p class="section-sub">Native, fast, and designed to fit right in — the same principles, just applied to your music.</p>
+        <info-card-grid class="tile">
+          <info-card icon="▦" heading="Grid view">
+            <p>
+              Every track shown as its own album art, with the title and artist underneath and the running length in the corner.
+              <a href="/music/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+            </p>
+          </info-card>
+          <info-card icon="☰" heading="List view">
+            <p>
+              The same library as a scannable list — title, artist, and length in a compact row, for when you already know what you want.
+              <a href="/music/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+            </p>
+          </info-card>
+          <info-card icon="🖼" heading="Immersive Now Playing">
+            <p>
+              Full-window album art, a queue in the sidebar, transport controls, and song information — all in one immersive view.
+              <a href="/music/playing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+            </p>
+          </info-card>
+          <info-card icon="✨" heading="A daily welcome screen">
+            <p>
+              Nothing playing? An Artist, Album, and Song of the Day, plus a ten-song daily selection, greet you instead of an empty state.
+              <a href="/music/playing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+            </p>
+          </info-card>
+          <info-card icon="✏️" heading="Edit metadata from your iPhone">
+            <p>
+              Fix a title, artist, or album — from the couch, on your phone. Changes write back to the original file's own tags.
+              <a href="/music/editing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See how it works →</a>
+            </p>
+          </info-card>
+          <info-card icon="🖥" heading="Multiple libraries, one view">
+            <p>Got music on two Macs? Both are discovered automatically and shown as a single unified, deduplicated library. No merging, no copying.</p>
+          </info-card>
+          <info-card icon="📦" heading="Your files, your format">
+            <p>
+              Supports MP3, MP4, M4A, and M4B — including audiobooks with chapters.
+              <a href="/music/formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Supported formats →</a>
+            </p>
+          </info-card>
+          <div class="card-filler" aria-hidden="true"></div>
+          <div class="card-filler" aria-hidden="true"></div>
+        </info-card-grid>
+      </div>
+    </section>
+
+    <section class="privacy" id="privacy">
+      <div class="section-inner">
+        <div class="section-label">Privacy</div>
+        <h2 class="section-title">Your music never leaves your home.</h2>
+        <p class="section-sub">Not to our servers. Not to anyone's servers. Raza Music has no servers.</p>
+        <div class="privacy-grid">
+          <div class="privacy-item">
+            <span class="icon">🚫</span>
+            <h3>No internet connection</h3>
+            <p>The app never makes an outbound network request. Ever.</p>
+          </div>
+          <div class="privacy-item">
+            <span class="icon">📊</span>
+            <h3>No telemetry</h3>
+            <p>No analytics, no crash reporting sent anywhere, no usage data.</p>
+          </div>
+          <div class="privacy-item">
+            <span class="icon">👤</span>
+            <h3>No account</h3>
+            <p>No sign-up, no email, no profile. Nothing to create, nothing to delete.</p>
+          </div>
+          <div class="privacy-item">
+            <span class="icon">🏠</span>
+            <h3>Local network only</h3>
+            <p>All communication stays within your home Wi-Fi. Nothing is routed externally.</p>
+          </div>
         </div>
-
-        <div style="text-align: center; margin-top: 56px; font-size: 14px; color: var(--text-secondary)">
-          Curious how it works under the hood?
-          <a href="/local-first.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Why local-first matters →</a>
+        <div style="margin-top: 40px; text-align: center">
+          <a
+            href="/local-first.html"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              color: #63c5ff;
+              font-size: 15px;
+              font-weight: 500;
+              text-decoration: none;
+              border: 1px solid rgba(99, 197, 255, 0.3);
+              padding: 10px 22px;
+              border-radius: 980px;
+            "
+          >
+            Why local-first matters →
+          </a>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="section-inner">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">Simple pricing.<br />Pay once.</h2>
+        <div class="price-card">
+          <div class="price-amount"><sup>$</sup>20</div>
+          <div class="price-label">One-time purchase &mdash; currently free during early release</div>
+          <ul class="check-list" style="--check-list-gap: 12px; margin-bottom: 36px">
+            <li>Mac, iPhone, and iPad</li>
+            <li>All current features included</li>
+            <li>Free updates during early release</li>
+            <li>No subscription, ever</li>
+            <li>No account required</li>
+          </ul>
+          <span class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 16px; padding: 14px; opacity: 0.55; cursor: default">
+            iPhone &amp; iPad — coming soon
+          </span>
+          <p class="price-note">
+            <a href="mailto:razamusic@outlook.com" style="color: var(--blue); text-decoration: none; font-weight: 500">Get in touch</a>
+            to be notified when it's ready. Requires macOS 26 and iOS 26 or later.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <raza-footer></raza-footer>
   </body>

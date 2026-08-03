@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="An immersive Now Playing view with full-window album art, a queue in the sidebar, and transport controls. Nothing playing? A daily welcome screen picks an artist, album, and song of the day."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Music" />
+    <meta property="og:url" content="https://razasoftware.eu/music/playing.html" />
+    <meta property="og:title" content="Now Playing — Raza Music" />
+    <meta
+      property="og:description"
+      content="An immersive Now Playing view with full-window album art, a queue in the sidebar, and transport controls. Nothing playing? A daily welcome screen picks an artist, album, and song of the day."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Now Playing — Raza Music" />
+    <meta
+      name="twitter:description"
+      content="An immersive Now Playing view with full-window album art, a queue in the sidebar, and transport controls. Nothing playing? A daily welcome screen picks an artist, album, and song of the day."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+
+    <title>Now Playing — Raza Music</title>
+
+    <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/info-card-grid.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/showcase-item.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/info-card-grid.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/explainer.js" defer></script>
+    <script src="/components/showcase-item.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="music"></raza-nav>
+
+    <hero-section
+      eyebrow="Now Playing"
+      heading="The album art fills the screen. Everything else gets out of the way."
+      description="Tap a song and Raza Music switches to an immersive Now Playing view — full-window album art, a queue in the sidebar, transport controls, and the track information."
+    ></hero-section>
+
+    <div class="content-wide">
+      <div class="showcase-section" style="padding-bottom: 0">
+        <showcase-item
+          label="Now Playing"
+          heading="The artwork fills the window."
+          mac="/assets/music/mac-playing.webp"
+          ipad="/assets/music/ipad-playing.webp"
+          iphone="/assets/music/iphone-playing.webp"
+          alt="Raza Music Now Playing view with full-window album art and transport controls"
+        >
+          <p>
+            The album art takes over the screen — immersive and distraction-free. Title, artist, and format details stay on screen along with the transport
+            controls.
+          </p>
+          <ul>
+            <li>Full-window album art</li>
+            <li>Queue in the sidebar</li>
+            <li>Play, pause, skip, and scrub</li>
+            <li>Title, artist, and file details at a glance</li>
+          </ul>
+        </showcase-item>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>Nothing playing? Here's today's picks.</h2>
+          <p class="desc">
+            When you're not listening to anything, the Now Playing tab becomes a daily welcome screen instead of an empty state — a way into your library
+            when you don't already know what you want to hear.
+          </p>
+
+          <info-card-grid columns="2" class="featured">
+            <info-card variant="alt" icon="🎤" heading="Artist of the Day"></info-card>
+            <info-card variant="alt" icon="💿" heading="Album of the Day"></info-card>
+            <info-card variant="alt" icon="🎵" heading="Song of the Day"></info-card>
+            <info-card variant="alt" icon="🔟" heading="Today's 10 — a ten-song daily selection"></info-card>
+          </info-card-grid>
+
+          <callout-box variant="blue" heading="New picks every day" style="margin-top: 20px">
+            <p>Come back tomorrow and the picks are different — drawn fresh from across every library Raza Music can see on your home network.</p>
+          </callout-box>
+        </div>
+
+        <div class="other-links" style="max-width: 1040px; margin: 0 auto">
+          <link-card href="/music/browse.html" label="Browsing" heading="Grid and list" description="See your whole library, by cover or by row"></link-card>
+          <link-card href="/music/index.html" label="Raza Music" heading="Overview" description="Back to the Raza Music home page"></link-card>
+          <link-card href="/support.html" label="Support" heading="Common questions" description="Get help with Raza Photos or Raza Music"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

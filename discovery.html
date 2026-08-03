@@ -6,28 +6,28 @@
     <meta name="theme-color" content="#1a8fff" />
     <meta
       name="description"
-      content="How Raza Photos finds your library instantly, on every device, with no IP address and no configuration. The technology behind the magic."
+      content="How Raza Photos and Raza Music find your library instantly, on every device, with no IP address and no configuration. The technology behind the magic."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Raza Photos" />
-    <meta property="og:url" content="https://razasoftware.eu/photos/discovery.html" />
-    <meta property="og:title" content="How Discovery Works — Raza Photos" />
+    <meta property="og:site_name" content="Raza Software" />
+    <meta property="og:url" content="https://razasoftware.eu/discovery.html" />
+    <meta property="og:title" content="How Discovery Works — Raza Software" />
     <meta
       property="og:description"
-      content="Raza Photos uses Bonjour to find your Mac on the local network automatically. No IP address, no port forwarding, no configuration required."
+      content="Both apps use Bonjour to find your Mac on the local network automatically. No IP address, no port forwarding, no configuration required."
     />
     <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="How Discovery Works — Raza Photos" />
+    <meta name="twitter:title" content="How Discovery Works — Raza Software" />
     <meta
       name="twitter:description"
-      content="Raza Photos uses Bonjour to find your Mac on the local network automatically. No IP address, no port forwarding, no configuration required."
+      content="Both apps use Bonjour to find your Mac on the local network automatically. No IP address, no port forwarding, no configuration required."
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
 
-    <title>How discovery works — Raza Photos</title>
+    <title>How discovery works — Raza Software</title>
 
-    <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icon_web.svg" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/components/explainer.css" />
     <link rel="stylesheet" href="/components/nav.css" />
@@ -49,12 +49,12 @@
     <script src="/components/hero-section.js" defer></script>
   </head>
   <body>
-    <raza-nav app="photos"></raza-nav>
+    <raza-nav app="shared"></raza-nav>
 
     <hero-section
       eyebrow="How discovery works"
       heading="Your library appears on your iPhone. Here's why that isn't magic."
-      description="Raza Photos uses a technology called Bonjour to find devices on your network automatically. No IP addresses. No configuration. This page explains how it works — for the curious."
+      description="Raza Photos and Raza Music both use a technology called Bonjour to find devices on your network automatically. No IP addresses. No configuration. This page explains how it works — for the curious."
     ></hero-section>
 
     <div class="content">
@@ -75,10 +75,10 @@
             <info-card variant="alt" icon="📡" heading="AirDrop" description="Finds nearby Apple devices automatically"></info-card>
             <info-card variant="alt" icon="📺" heading="AirPlay" description="Discovers Apple TV and HomePod on your network"></info-card>
             <info-card variant="alt" icon="🖨" heading="Printers" description="Mac finds network printers without driver setup"></info-card>
-            <info-card variant="alt" icon="📸" heading="Raza Photos" description="Finds your photo library the same way"></info-card>
+            <info-card variant="alt" icon="📸" heading="Raza Photos &amp; Raza Music" description="Find your library the same way"></info-card>
           </info-card-grid>
 
-          <p>Raza Photos does exactly the same thing as AirPlay — except instead of discovering a speaker, your iPhone discovers a photo library.</p>
+          <p>Our apps do exactly the same thing as AirPlay — except instead of discovering a speaker, your iPhone discovers your library.</p>
         </div>
 
         <hr />
@@ -89,13 +89,13 @@
           <step-flow>
             <flow-step icon="🖥" heading="The Mac announces itself">
               <p>
-                When Raza Photos is running on your Mac and sharing is enabled, it broadcasts a Bonjour announcement on the local network. Think of it as the
-                Mac quietly saying "I'm here, and I have a photo library" — once per second, to anyone listening on the same network.
+                When the app is running on your Mac and sharing is enabled, it broadcasts a Bonjour announcement on the local network. Think of it as the
+                Mac quietly saying "I'm here, and I have a library" — once per second, to anyone listening on the same network.
               </p>
             </flow-step>
             <flow-step icon="📱" heading="The iPhone listens">
               <p>
-                When you open Raza Photos on your iPhone or iPad, it starts listening for those Bonjour announcements. Within a second or two, it hears the Mac
+                When you open the app on your iPhone or iPad, it starts listening for those Bonjour announcements. Within a second or two, it hears the Mac
                 — and immediately knows its name, its address on the local network, and the port to connect to. No typing required.
               </p>
             </flow-step>
@@ -107,8 +107,9 @@
             </flow-step>
             <flow-step icon="🖼" heading="Your library appears">
               <p>
-                Photos, filters, albums, faces, map data — all served directly from the Mac. The iPhone renders them natively. The whole exchange happens over
-                Wi-Fi at whatever speed your router supports, typically fast enough to load a full-resolution photo in under a second.
+                Your photos or music — filters, albums, artwork, metadata — all served directly from the Mac. The iPhone renders them natively. The whole
+                exchange happens over Wi-Fi at whatever speed your router supports, typically fast enough to load a full-resolution photo or start a track in
+                under a second.
               </p>
             </flow-step>
           </step-flow>
@@ -119,13 +120,13 @@
         <div class="section">
           <h2>Multiple Macs, one library</h2>
           <p>
-            If you have photos on two Macs — say, a desktop with the main family archive and a laptop with recent travel shots — both can run Raza Photos
-            simultaneously. Your iPhone hears both Bonjour announcements, connects to both, and presents the combined contents as a single unified library, with
-            deduplication handled automatically.
+            If you have your library split across two Macs — say, a desktop with the main archive and a laptop with recent additions — both can run the app
+            simultaneously. Your iPhone hears both Bonjour announcements, connects to both, and presents the combined contents as a single unified library,
+            with deduplication handled automatically.
           </p>
           <p>
-            There is no merging, no copying, no syncing between the Macs. Each Mac serves its own photos. Your iPhone simply asks both of them and assembles the
-            result. From your perspective, it is one library.
+            There is no merging, no copying, no syncing between the Macs. Each Mac serves its own files. Your iPhone simply asks both of them and assembles
+            the result. From your perspective, it is one library.
           </p>
 
           <callout-box variant="blue" heading="Analogy">

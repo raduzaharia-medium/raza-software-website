@@ -12,9 +12,10 @@ footer {
     margin: 0 auto 40px;
 }
 
-.footer-brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.footer-brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; color: inherit; }
 .footer-brand img { width: 24px; height: 24px; border-radius: 6px; }
 .footer-brand span { font-size: 14px; font-weight: 600; }
+.footer-brand:hover span { color: var(--blue); }
 
 .footer-nav { display: flex; gap: 48px; align-items: start; }
 
