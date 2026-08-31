@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="How to rip your CDs to a real, permanent music library on your Mac — the tools, the format to pick, and how to tag the results so they're actually organized."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Music" />
+    <meta property="og:url" content="https://razasoftware.eu/music/ripping-cds.html" />
+    <meta property="og:title" content="How to Rip Your CDs to a Real Music Library" />
+    <meta
+      property="og:description"
+      content="The tools, the format to pick, and how to tag the results so your ripped CDs end up as an organized library, not a folder of mystery files."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Rip Your CDs to a Real Music Library" />
+    <meta
+      name="twitter:description"
+      content="The tools, the format to pick, and how to tag the results so your ripped CDs end up as an organized library, not a folder of mystery files."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+
+    <title>How to Rip Your CDs to a Real Music Library</title>
+
+    <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
+    <link rel="stylesheet" href="/components/page-callout.css" />
+    <link rel="stylesheet" href="/components/detail-list.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
+    <script src="/components/page-callout.js" defer></script>
+    <script src="/components/detail-list.js" defer></script>
+    <script src="/components/detail-item.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="music"></raza-nav>
+
+    <hero-section
+      eyebrow="Guide"
+      heading="How to rip your CDs to a real music library"
+      description="A CD you own outlasts any streaming catalog change. Ripping it once, properly, turns it into a permanent file you'll never lose access to — here's how to do it right."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>What you'll need</h2>
+          <ul class="check-list">
+            <li>An external USB CD/DVD drive — most current Macs don't have a built-in one</li>
+            <li>Ripping software (a few good options below)</li>
+            <li>A bit of patience for a large collection — figure a few minutes per disc</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Pick your ripping software</h2>
+          <p class="desc">All of these read the disc and pull metadata (artist, album, track names) automatically from an online database, so you don't have to type it in by hand. Pick one.</p>
+          <detail-list card>
+            <detail-item heading="Music.app">Already on your Mac. Insert the CD, and an Import CD option appears. Simple, and fine for most people.</detail-item>
+            <detail-item heading="XLD (X Lossless Decoder)">Free, and the standard choice if you want a bit-perfect lossless rip with error correction against scratches.</detail-item>
+            <detail-item heading="dBpoweramp">Paid, but includes AccurateRip verification, which checks your rip against other people's rips of the same disc to confirm it's byte-for-byte correct.</detail-item>
+          </detail-list>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Choosing a format</h2>
+          <p class="desc">This is the one decision that's hard to undo later, since re-ripping means finding the disc again.</p>
+          <div class="metadata-cols" style="margin-top: 24px">
+            <div class="metadata-card">
+              <h3 style="margin-bottom: 10px">Lossless (ALAC or FLAC)</h3>
+              <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6">
+                An exact copy of the CD audio, just compressed without losing any data. Takes more space (roughly 300–400MB per album) but means you'll
+                never need to rip the disc again for a better copy. ALAC plays natively in Apple's ecosystem; FLAC is the more universal choice if you use
+                other software too.
+              </p>
+            </div>
+            <div class="metadata-card">
+              <h3 style="margin-bottom: 10px">AAC 256kbps</h3>
+              <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6">
+                Indistinguishable from the original for most people and most listening situations, at a fraction of the file size. The reasonable choice if
+                storage space matters more than having a bit-perfect archival copy.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Get the tags right</h2>
+          <p class="desc">
+            A rip without correct metadata is just an unorganized pile of audio files. Whichever tool you use, confirm before you rip that it found the
+            right album — album art, track titles, artist, and release year all come from an online lookup (usually Gracenote or MusicBrainz), and it can
+            occasionally match the wrong pressing or a compilation instead of the studio album. A minute spent checking now saves a library full of
+            mislabeled tracks later.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Now make it a library, not a folder</h2>
+          <p class="desc">
+            Once you've got a folder of properly tagged files, point Raza Music at it. It indexes the tags, leaves the files exactly where they are, and
+            makes the whole collection browsable — by artist, album, genre, language, or release year — from your Mac, iPhone, and iPad at home.
+          </p>
+          <div style="text-align: center; margin-top: 24px">
+            <platform-screenshot
+              mac="/assets/music/mac-grid.webp"
+              ipad="/assets/music/ipad-grid.webp"
+              iphone="/assets/music/iphone-grid.webp"
+              alt="Raza Music grid view on Mac, iPad, and iPhone"
+            ></platform-screenshot>
+          </div>
+        </div>
+
+        <page-callout text="Turn a folder of ripped CDs into a real, browsable library.">
+          <a href="https://apps.apple.com/ro/app/raza-music/id6771887252" class="btn btn-primary">Get Raza Music on the App Store</a>
+        </page-callout>
+
+        <div class="other-links">
+          <link-card href="/music/formats.html" label="Formats" heading="What Raza Music reads" description="MP3, MP4, M4A, and M4B, including audiobook chapters"></link-card>
+          <link-card
+            href="/music/iphone-without-subscription.html"
+            label="Guide"
+            heading="Play it on your iPhone"
+            description="No subscription, no upload, just your home Wi-Fi"
+          ></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

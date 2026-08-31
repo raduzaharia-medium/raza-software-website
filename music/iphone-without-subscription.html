@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="How to play your Mac's music library on your iPhone without a streaming subscription — your own files, over your own Wi-Fi, for a one-time purchase."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Music" />
+    <meta property="og:url" content="https://razasoftware.eu/music/iphone-without-subscription.html" />
+    <meta property="og:title" content="How to Play Your Mac's Music on iPhone Without a Subscription" />
+    <meta
+      property="og:description"
+      content="Your own files, over your own Wi-Fi, for a one-time purchase — no monthly fee, no catalog you don't actually own."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Play Your Mac's Music on iPhone Without a Subscription" />
+    <meta
+      name="twitter:description"
+      content="Your own files, over your own Wi-Fi, for a one-time purchase — no monthly fee, no catalog you don't actually own."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+
+    <title>How to Play Your Mac's Music on iPhone Without a Subscription</title>
+
+    <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
+    <link rel="stylesheet" href="/components/page-callout.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
+    <script src="/components/page-callout.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="music"></raza-nav>
+
+    <hero-section
+      eyebrow="Guide"
+      heading="How to play your Mac's music on iPhone without a subscription"
+      description="If your music already lives in files on your Mac — ripped CDs, downloads, whatever you've collected over the years — you don't need a streaming account to hear it on your phone. You need something that can serve it over your own Wi-Fi."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>How to set it up</h2>
+          <ul class="steps-list">
+            <li><span class="step-num">1</span>Install Raza Music on your Mac and point it at your music folders</li>
+            <li><span class="step-num">2</span>It indexes the tags already on your files — title, artist, album, genre — and leaves everything exactly where it is</li>
+            <li><span class="step-num">3</span>Start the server so it's discoverable on your home network</li>
+            <li><span class="step-num">4</span>Install Raza Music on your iPhone or iPad and open it</li>
+            <li><span class="step-num">5</span>Your library appears automatically — no login, no IP address, no manual sync</li>
+          </ul>
+          <div style="text-align: center; margin-top: 24px">
+            <platform-screenshot
+              mac="/assets/music/mac-grid.webp"
+              ipad="/assets/music/ipad-grid.webp"
+              iphone="/assets/music/iphone-grid.webp"
+              alt="Raza Music grid view on Mac, iPad, and iPhone"
+            ></platform-screenshot>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What you get instead of a subscription</h2>
+          <ul class="check-list">
+            <li>One-time purchase — nothing recurring, nothing that stops working if you cancel</li>
+            <li>Your own files, not a catalog that can lose licensing for an album overnight</li>
+            <li>Grid or list browsing, filtered by artist, album, genre, language, or release year</li>
+            <li>An immersive Now Playing view, and a daily welcome screen when nothing's playing</li>
+            <li>Playlists shared with everyone in the house, not locked to one phone</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Don't have your music in files yet?</h2>
+          <p class="desc">
+            If your collection is still on CDs, or scattered across old downloads, it's worth turning into an actual library first — properly tagged files
+            are what make browsing by artist or album possible at all.
+          </p>
+          <link-card
+            href="/music/ripping-cds.html"
+            label="Guide"
+            heading="How to rip your CDs to a real music library"
+            description="The tools, the format to pick, and how to tag the results"
+          ></link-card>
+        </div>
+
+        <page-callout text="Your music, on your phone, without the monthly bill.">
+          <a href="https://apps.apple.com/ro/app/raza-music/id6771887252" class="btn btn-primary">Get Raza Music on the App Store</a>
+        </page-callout>
+
+        <div class="other-links">
+          <link-card href="/discovery.html" label="Discovery" heading="How Bonjour discovery works" description="No IP address, no login, no configuration"></link-card>
+          <link-card href="/music/formats.html" label="Formats" heading="What Raza Music reads" description="MP3, MP4, M4A, and M4B, including audiobook chapters"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

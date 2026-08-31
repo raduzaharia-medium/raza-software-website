@@ -21,6 +21,8 @@ class RazaFooter extends HTMLElement {
               <li><a href="/photos/transfer.html">Transfer</a></li>
               <li><a href="/photos/metadata-read.html">Metadata reading</a></li>
               <li><a href="/photos/metadata-write.html">Metadata writing</a></li>
+              <li><a href="/photos/leaving-icloud.html">Leaving iCloud</a></li>
+              <li><a href="/photos/iphone-without-icloud.html">iPhone without iCloud</a></li>
             </ul>
           </div>
           <div class="footer-group">
@@ -34,6 +36,8 @@ class RazaFooter extends HTMLElement {
               <li><a href="/music/library-health.html">Library Health</a></li>
               <li><a href="/music/metadata-read.html">Metadata reading</a></li>
               <li><a href="/music/metadata-write.html">Metadata writing</a></li>
+              <li><a href="/music/ripping-cds.html">Ripping CDs</a></li>
+              <li><a href="/music/iphone-without-subscription.html">iPhone without a subscription</a></li>
             </ul>
           </div>
           <div class="footer-group">

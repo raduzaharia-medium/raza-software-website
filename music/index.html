@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="/components/info-card.css" />
     <link rel="stylesheet" href="/components/info-card-grid.css" />
     <link rel="stylesheet" href="/components/platform-screenshot.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
 
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
@@ -44,6 +45,7 @@
     <script src="/components/info-card.js" defer></script>
     <script src="/components/info-card-grid.js" defer></script>
     <script src="/components/platform-screenshot.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
   </head>
   <body>
     <raza-nav app="music"></raza-nav>
@@ -208,6 +210,28 @@
           >
             Why local-first matters →
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="guides">
+      <div class="section-inner">
+        <div class="section-label">Guides</div>
+        <h2 class="section-title">Building a real music library?</h2>
+        <p class="section-sub">Two guides for turning your own files into a library you can hear on your phone — no subscription required.</p>
+        <div class="other-links" style="margin-top: 40px">
+          <link-card
+            href="/music/ripping-cds.html"
+            label="Guide"
+            heading="Rip your CDs to a real library"
+            description="The tools, the format to pick, and how to tag the results"
+          ></link-card>
+          <link-card
+            href="/music/iphone-without-subscription.html"
+            label="Guide"
+            heading="Play it on your iPhone"
+            description="No subscription, no upload — just your home Wi-Fi"
+          ></link-card>
         </div>
       </div>
     </section>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="How to browse your Mac's photo library on your iPhone without iCloud — no sync, no subscription, no uploading a single photo anywhere."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/photos/iphone-without-icloud.html" />
+    <meta property="og:title" content="How to Browse Your Mac's Photos on iPhone Without iCloud" />
+    <meta
+      property="og:description"
+      content="Your Mac already has the photos. Here's how to see them on your iPhone without turning on iCloud or uploading anything."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Browse Your Mac's Photos on iPhone Without iCloud" />
+    <meta
+      name="twitter:description"
+      content="Your Mac already has the photos. Here's how to see them on your iPhone without turning on iCloud or uploading anything."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <title>How to Browse Your Mac's Photos on iPhone Without iCloud</title>
+
+    <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
+    <link rel="stylesheet" href="/components/page-callout.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
+    <script src="/components/page-callout.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="photos"></raza-nav>
+
+    <hero-section
+      eyebrow="Guide"
+      heading="How to browse your Mac's photos on iPhone without iCloud"
+      description="Your photos already live on your Mac. You don't need to upload them anywhere to see them on your phone — you just need something that can serve them over your own Wi-Fi."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>Why this is possible without iCloud</h2>
+          <p class="desc">
+            iCloud Photos solves a problem you don't actually have if your iPhone and your Mac are usually on the same Wi-Fi network: getting a photo from
+            one device to another. Instead of uploading every photo to a server and downloading it back down, your iPhone can just ask your Mac directly —
+            over the network you're already on, in your own house.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>How to set it up</h2>
+          <ul class="steps-list">
+            <li><span class="step-num">1</span>Install Raza Photos on your Mac and point it at the folder your photos are already in</li>
+            <li><span class="step-num">2</span>It indexes the metadata — dates, locations, people, albums — without moving or copying a single file</li>
+            <li><span class="step-num">3</span>Start the server from the app, so it can be found on your home network</li>
+            <li><span class="step-num">4</span>Install Raza Photos on your iPhone or iPad and open it</li>
+            <li><span class="step-num">5</span>Your Mac's library shows up automatically, discovered over Bonjour — no IP address, no login, no setup</li>
+          </ul>
+          <div style="text-align: center; margin-top: 24px">
+            <platform-screenshot
+              mac="/assets/photos/mac-grid.webp"
+              ipad="/assets/photos/ipad-grid.webp"
+              iphone="/assets/photos/iphone-grid.webp"
+              alt="Raza Photos grid view on Mac, iPad, and iPhone"
+            ></platform-screenshot>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What you get</h2>
+          <ul class="check-list">
+            <li>Browse by date, location, people, albums, and events — from your sidebar</li>
+            <li>Map view, full-screen viewer, HDR and Live Photos rendered natively</li>
+            <li>Works entirely over your home Wi-Fi — no internet connection needed</li>
+            <li>Multiple Macs on the network merge automatically into one library</li>
+            <li>Nothing is ever uploaded anywhere, at any point</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>One thing to know</h2>
+          <p class="desc">
+            This only works while your iPhone is on the same network as your Mac — or connected to it directly, without an intervening cloud. Away from
+            home, there's nothing to connect to, which is a deliberate tradeoff for having no server outside your house at all. If your Mac is usually
+            asleep, turning on Wake for network access in Energy settings keeps it reachable.
+          </p>
+        </div>
+
+        <page-callout text="See your photos everywhere at home — nowhere else.">
+          <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn btn-primary">Get Raza Photos on the App Store</a>
+        </page-callout>
+
+        <div class="other-links">
+          <link-card href="/discovery.html" label="Discovery" heading="How Bonjour discovery works" description="No IP address, no login, no configuration"></link-card>
+          <link-card
+            href="/photos/leaving-icloud.html"
+            label="Guide"
+            heading="Leaving iCloud entirely"
+            description="Export your originals and turn off iCloud Photos for good"
+          ></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

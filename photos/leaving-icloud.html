@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="How to get your photos out of iCloud and onto your own Mac for good — export your originals, turn off iCloud Photos, then browse and keep receiving new photos with Raza Photos."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/photos/leaving-icloud.html" />
+    <meta property="og:title" content="How to Get Your Photos Out of iCloud — Raza Photos" />
+    <meta
+      property="og:description"
+      content="Export your originals, turn off iCloud Photos, then browse and keep receiving new photos on your own Mac — no subscription, no cloud."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Get Your Photos Out of iCloud — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="Export your originals, turn off iCloud Photos, then browse and keep receiving new photos on your own Mac — no subscription, no cloud."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <title>How to Get Your Photos Out of iCloud — Raza Photos</title>
+
+    <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/showcase-item.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
+    <link rel="stylesheet" href="/components/page-callout.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/showcase-item.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
+    <script src="/components/page-callout.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="photos"></raza-nav>
+
+    <hero-section
+      eyebrow="Guide"
+      heading="How to get your photos out of iCloud for good"
+      description="If iCloud's storage bill keeps climbing, or you just don't want your photos living on someone else's servers, here's the actual sequence: get everything onto your own Mac, turn iCloud Photos off, and keep browsing and receiving new photos without it."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>1. Make sure everything is downloaded locally first</h2>
+          <p class="desc">
+            Before you touch the iCloud switch, confirm your Mac actually has full-resolution copies of every photo — not just space-saving thumbnails. In
+            Photos on your Mac, open <strong>Settings → iCloud</strong> and make sure <strong>Download Originals to this Mac</strong> is selected, not
+            "Optimize Mac Storage." Give it time to finish downloading — for a large library this can take hours, and you can watch progress at the bottom
+            of the sidebar.
+          </p>
+          <ul class="steps-list">
+            <li><span class="step-num">1</span>Open Photos on your Mac, go to Settings → iCloud</li>
+            <li><span class="step-num">2</span>Choose "Download Originals to this Mac"</li>
+            <li><span class="step-num">3</span>Wait for the download to finish before proceeding — don't skip this part</li>
+          </ul>
+
+          <div style="margin-top: 24px">
+            <callout-box variant="blue" heading="A shortcut: let Raza Photos pull them straight from your iPhone">
+              <p>
+                If you'd rather skip the download-and-wait dance in Photos.app, install Raza Photos on your iPhone instead and set up Transfer pointed at
+                your Mac. It reads directly from your device's photo library and sends everything — your full history, not just new shots — to the Mac
+                server you configure, over Wi-Fi. Either path gets your photos onto your Mac; use whichever is less hassle for your library size.
+              </p>
+            </callout-box>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>2. Turn off iCloud Photos</h2>
+          <p class="desc">
+            Once everything is downloaded, turn off iCloud Photos syncing on every device — Mac, iPhone, and iPad. On each device, this lives under
+            <strong>Settings → [your name] → iCloud → Photos</strong>. Your photos stay exactly where they already are on each device; only the syncing
+            between them stops.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>3. Point Raza Photos at the folder</h2>
+          <p class="desc">
+            Photos exported from Photos.app live in your Pictures library on disk. Open Raza Photos on your Mac and import that folder — it indexes the
+            metadata (dates, locations, people, albums) and leaves every file exactly where it is. Nothing is copied, converted, or moved a second time.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>4. Browse from your iPhone and iPad — no iCloud required</h2>
+          <p class="desc">
+            With iCloud Photos off, your iPhone's camera roll and your Mac's library are two separate things again. Raza Photos bridges that gap over your
+            home Wi-Fi: open the app on any iPhone, iPad, or other Mac in the house, and it finds your library automatically using Bonjour — no IP address,
+            no account, no setup.
+          </p>
+          <div style="text-align: center; margin-top: 24px">
+            <platform-screenshot
+              mac="/assets/photos/mac-grid.webp"
+              ipad="/assets/photos/ipad-grid.webp"
+              iphone="/assets/photos/iphone-grid.webp"
+              alt="Raza Photos grid view on Mac, iPad, and iPhone"
+            ></platform-screenshot>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>5. Keep new iPhone photos flowing in, without iCloud</h2>
+          <p class="desc">
+            The one thing iCloud Photos used to handle automatically was getting new photos off your iPhone. Raza Photos' Transfer feature replaces that:
+            open the Transfer sheet on your iPhone, pick your Mac library, and every new photo and video sends over Wi-Fi as you browse — no cable, no
+            cloud, no import step.
+          </p>
+          <showcase-item
+            label="Sending photos"
+            heading="Pick a library. Everything else is automatic."
+            iphone="/assets/photos/iphone-transfer-sheet.webp"
+            ipad="/assets/photos/ipad-transfer-sheet.webp"
+            alt="Raza Photos Transfer sheet showing pending photos and a destination library"
+          >
+            <p>Every Mac on your network with incoming transfers enabled shows up automatically. From then on, just browsing is enough — photos send quietly in the background.</p>
+          </showcase-item>
+        </div>
+
+        <page-callout text="Your photos, back on your own hardware.">
+          <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" class="btn btn-primary">Get Raza Photos on the App Store</a>
+        </page-callout>
+
+        <div class="other-links">
+          <link-card href="/photos/transfer.html" label="Transfer" heading="How sending photos works" description="Wi-Fi transfer with auto-send while you browse"></link-card>
+          <link-card href="/local-first.html" label="Why local-first" heading="No cloud means no subscription" description="What you actually own when your library lives on your own drive"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

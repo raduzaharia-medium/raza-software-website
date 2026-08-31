@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="/components/info-card-grid.css" />
     <link rel="stylesheet" href="/components/showcase-item.css" />
     <link rel="stylesheet" href="/components/platform-screenshot.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
 
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
@@ -46,6 +47,7 @@
     <script src="/components/info-card-grid.js" defer></script>
     <script src="/components/showcase-item.js" defer></script>
     <script src="/components/platform-screenshot.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
   </head>
   <body>
     <raza-nav app="photos"></raza-nav>
@@ -389,6 +391,28 @@
           No accounts, no passwords, no parental control apps. Just a toggle.
           <a href="/security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more about security →</a>
         </p>
+      </div>
+    </section>
+
+    <section class="guides">
+      <div class="section-inner">
+        <div class="section-label">Guides</div>
+        <h2 class="section-title">Coming from iCloud?</h2>
+        <p class="section-sub">Two guides for getting your photos onto your own Mac and off someone else's servers.</p>
+        <div class="other-links" style="margin-top: 40px">
+          <link-card
+            href="/photos/leaving-icloud.html"
+            label="Guide"
+            heading="Get your photos out of iCloud"
+            description="Export your originals, turn off iCloud Photos, and keep browsing everywhere"
+          ></link-card>
+          <link-card
+            href="/photos/iphone-without-icloud.html"
+            label="Guide"
+            heading="Browse your Mac's photos on iPhone"
+            description="No iCloud, no upload — just your home Wi-Fi"
+          ></link-card>
+        </div>
       </div>
     </section>
 
