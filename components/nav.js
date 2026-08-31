@@ -29,7 +29,7 @@ const NAV_CONFIGS = {
       ["/music/index.html#pricing", "Pricing"],
       ["/support.html", "Support"],
     ],
-    cta: { href: "/music/index.html", label: "Coming Soon" },
+    cta: { href: "https://apps.apple.com/ro/app/raza-music/id6771887252", label: "Download Free" },
   },
   hub: {
     icon: "/assets/icon_web.svg",

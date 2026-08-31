@@ -35,8 +35,8 @@
     <link rel="stylesheet" href="/components/showcase-item.css" />
     <link rel="stylesheet" href="/components/platform-screenshot.css" />
     <link rel="stylesheet" href="/components/info-card.css" />
-    <link rel="stylesheet" href="/components/detail-list.css" />
     <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
     <link rel="stylesheet" href="/components/explainer.css" />
 
     <script src="/components/nav.js" defer></script>
@@ -45,9 +45,8 @@
     <script src="/components/showcase-item.js" defer></script>
     <script src="/components/platform-screenshot.js" defer></script>
     <script src="/components/info-card.js" defer></script>
-    <script src="/components/detail-list.js" defer></script>
-    <script src="/components/detail-item.js" defer></script>
     <script src="/components/link-card.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
     <script src="/components/explainer.js" defer></script>
   </head>
   <body>
@@ -56,7 +55,7 @@
     <hero-section
       eyebrow="Browsing"
       heading="Every song. However you like to see it."
-      description="Grid or list, both native and both fast, pulling from the same library your Mac already indexed. No loading spinner. No browser. No compromise."
+      description="Grid or list, both native and both fast, pulling from the same library your Mac already indexed. Filter by artist, album, genre, language, or release year from the sidebar — no loading spinner, no browser, no compromise."
     ></hero-section>
 
     <div class="content-wide">
@@ -75,9 +74,9 @@
           </p>
           <ul>
             <li>Instant thumbnail loading over Wi-Fi</li>
-            <li>Filter and search across the full library</li>
+            <li>Filter by artist, album, genre, language, or release year from the sidebar — each choice narrows the others</li>
             <li>Tap any track to jump into Now Playing</li>
-            <li>Switch to list anytime, same library underneath</li>
+            <li>Switch to list anytime, same library and filters underneath</li>
           </ul>
         </showcase-item>
 
@@ -99,14 +98,30 @@
             <li>Same filters and search as grid</li>
             <li>Same tap-to-play behavior</li>
             <li>Multiple libraries appear merged into one</li>
+            <li>Build playlists with drag-and-drop ordering — shared with everyone in the house, not just tied to your device</li>
           </ul>
         </showcase-item>
+      </div>
+
+      <div style="max-width: 1040px; margin: 0 auto 24px">
+        <callout-box variant="blue" heading="What happens when a Mac goes offline">
+          <p>
+            A playlist is compiled from whichever Macs are on the network at the time — each contributes the songs it has, in order. If one Mac is asleep or
+            off the network, its songs are simply skipped rather than breaking the playlist; the rest plays in the order you set. Bring that Mac back online
+            and its tracks slot back in automatically.
+          </p>
+        </callout-box>
       </div>
 
       <div class="other-links" style="max-width: 1040px; margin: 0 auto">
         <link-card href="/music/playing.html" label="Now Playing" heading="The immersive player" description="Full-window album art, queue, and transport controls"></link-card>
         <link-card href="/music/editing.html" label="Editing" heading="Organize from your iPhone" description="Fix a title, artist, or album — right from the grid"></link-card>
-        <link-card href="/support.html" label="Support" heading="Common questions" description="Get help with Raza Photos or Raza Music"></link-card>
+        <link-card
+          href="/music/library-health.html"
+          label="Library Health"
+          heading="Find what's missing"
+          description="Filter songs without albums, genres, artists, languages, or release years"
+        ></link-card>
       </div>
     </div>
 

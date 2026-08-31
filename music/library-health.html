@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="Find songs missing an album, genre, artist, language, or release year — filtered straight from the sidebar. Library maintenance for the completionists."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Music" />
+    <meta property="og:url" content="https://razasoftware.eu/music/library-health.html" />
+    <meta property="og:title" content="Library Health — Raza Music" />
+    <meta
+      property="og:description"
+      content="Find songs missing an album, genre, artist, language, or release year — filtered straight from the sidebar."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Library Health — Raza Music" />
+    <meta
+      name="twitter:description"
+      content="Find songs missing an album, genre, artist, language, or release year — filtered straight from the sidebar."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
+
+    <title>Library Health — Raza Music</title>
+
+    <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/detail-list.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+    <script src="/components/detail-list.js" defer></script>
+    <script src="/components/detail-item.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="music"></raza-nav>
+
+    <hero-section
+      eyebrow="Library Health"
+      heading="The songs nobody thinks to look for."
+      description="Missing genres, missing languages, missing release years — every library accumulates tracks nobody got around to tagging. Library Health filters them out from the sidebar, right alongside your regular browsing."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <detail-list card>
+          <detail-item heading="Songs Without Albums">Tracks that were imported but never assigned to an album.</detail-item>
+          <detail-item heading="Songs Without Genres">Tracks with no genre tag at all.</detail-item>
+          <detail-item heading="Songs Without Artists">Tracks missing an artist credit.</detail-item>
+          <detail-item heading="Songs Without Languages">Tracks with no language tag set.</detail-item>
+          <detail-item heading="Songs Without Release Years">Tracks with no release year on file.</detail-item>
+        </detail-list>
+
+        <div style="max-width: 1040px; margin: 40px auto 0">
+          <callout-box variant="blue" heading="Filters, not fixes">
+            <p>
+              Library Health only narrows the grid or list to the tracks with a gap — it doesn't change anything on its own. Once you've found the tracks
+              missing a tag, fix them the same way you'd fix any other track:
+              <a href="/music/editing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">batch-edit the selection</a>
+              from any device.
+            </p>
+          </callout-box>
+        </div>
+
+        <div class="other-links" style="max-width: 1040px; margin: 40px auto 0">
+          <link-card
+            href="/music/editing.html"
+            label="Editing"
+            heading="Close the gaps"
+            description="Batch-edit title, album, artist, genre, or release year across a selection"
+          ></link-card>
+          <link-card href="/music/browse.html" label="Browsing" heading="See your library" description="Grid, list, and sidebar filters"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

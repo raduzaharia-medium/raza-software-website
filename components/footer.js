@@ -28,9 +28,10 @@ class RazaFooter extends HTMLElement {
             <ul>
               <li><a href="/music/index.html">Overview</a></li>
               <li><a href="/music/browse.html">Browsing</a></li>
+              <li><a href="/music/formats.html">Supported formats</a></li>
               <li><a href="/music/playing.html">Now Playing</a></li>
               <li><a href="/music/editing.html">Editing</a></li>
-              <li><a href="/music/formats.html">Supported formats</a></li>
+              <li><a href="/music/library-health.html">Library Health</a></li>
               <li><a href="/music/metadata-read.html">Metadata reading</a></li>
               <li><a href="/music/metadata-write.html">Metadata writing</a></li>
             </ul>
