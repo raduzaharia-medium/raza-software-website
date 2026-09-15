@@ -26,7 +26,7 @@ class RazaFooter extends HTMLElement {
             </ul>
           </div>
           <div class="footer-group">
-            <span class="footer-group-label">Raza Music</span>
+            <span class="footer-group-label">Raza Songs</span>
             <ul>
               <li><a href="/music/index.html">Overview</a></li>
               <li><a href="/music/browse.html">Browsing</a></li>

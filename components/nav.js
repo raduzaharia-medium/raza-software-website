@@ -17,7 +17,7 @@ const NAV_CONFIGS = {
   },
   music: {
     icon: "/assets/music/icon_web.png",
-    name: "Raza Music",
+    name: "Raza Songs",
     home: "/music/index.html",
     links: [
       ["/music/index.html#features", "Features"],
@@ -29,7 +29,7 @@ const NAV_CONFIGS = {
       ["/music/index.html#pricing", "Pricing"],
       ["/support.html", "Support"],
     ],
-    cta: { href: "https://apps.apple.com/ro/app/raza-music/id6771887252", label: "Download Free" },
+    cta: { href: "https://apps.apple.com/ro/app/raza-songs/id6771887252", label: "Download Free" },
   },
   hub: {
     icon: "/assets/icon_web.svg",
@@ -37,7 +37,7 @@ const NAV_CONFIGS = {
     home: "/",
     links: [
       ["/photos/index.html", "Raza Photos"],
-      ["/music/index.html", "Raza Music"],
+      ["/music/index.html", "Raza Songs"],
       ["/support.html", "Support"],
     ],
     cta: null,
@@ -48,7 +48,7 @@ const NAV_CONFIGS = {
     home: "/",
     links: [
       ["/photos/index.html", "Raza Photos"],
-      ["/music/index.html", "Raza Music"],
+      ["/music/index.html", "Raza Songs"],
       ["/support.html", "Support"],
       ["/privacy.html", "Privacy"],
     ],
