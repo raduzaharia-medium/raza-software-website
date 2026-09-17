@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="An optional way to reach your library outside your home network, built on Tailscale. Off by default, private, and still only reachable by devices your home network already recognizes."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Software" />
+    <meta property="og:url" content="https://razasoftware.eu/remote-access.html" />
+    <link rel="canonical" href="https://razasoftware.eu/remote-access.html" />
+    <meta property="og:title" content="Remote Access — Raza Software" />
+    <meta
+      property="og:description"
+      content="An optional way to reach your library outside your home network, built on Tailscale. Off by default, private, and invite-only."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Remote Access — Raza Software" />
+    <meta
+      name="twitter:description"
+      content="An optional way to reach your library outside your home network, built on Tailscale. Off by default, private, and invite-only."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <title>Remote Access — Raza Software</title>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/icon_web.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/info-card-grid.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/flow-step.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/platform-screenshot.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/info-card-grid.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/flow-step.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+    <script src="/components/platform-screenshot.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="shared"></raza-nav>
+
+    <hero-section
+      eyebrow="Remote Access"
+      heading="Take your home network with you."
+      description="Turn on one setting, and your library stops stopping at your front door. Off by default. This page explains how it works, and why it's still only your house."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>An extension of your house, not a door into it</h2>
+          <p>
+            Think of it less like "remote access" and more like stretching your home network across the planet. Tailscale is software that quietly connects
+            your own devices — and only your own devices — into one private network, no matter where they physically are. Your Mac at home and your iPhone
+            across town end up feeling like they're on the same Wi-Fi, because as far as the connection is concerned, they are.
+          </p>
+          <p>
+            Everything that passes between them is encrypted end to end. Nothing routes through us, or through anyone else. It's the same home network,
+            simply reaching further.
+          </p>
+
+          <callout-box variant="blue" heading="The idea in one line">
+            <p>Your library still lives in your house. This just makes the house bigger.</p>
+          </callout-box>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>How Raza uses it</h2>
+          <p>
+            Raza Photos and Raza Songs don't create this network or manage it. All either app does is notice, during your normal at-home connection, that
+            your Mac also has a Tailscale address — and quietly remember it for later.
+          </p>
+
+          <step-flow>
+            <flow-step icon="🏠" heading="You connect at home, as usual">
+              <p>Your iPhone finds your Mac over Bonjour, exactly like it always has. Nothing about this part changes.</p>
+            </flow-step>
+            <flow-step icon="🤝" heading="The Mac shares one extra detail">
+              <p>
+                If Tailscale is turned on for both devices, the Mac passes along its Tailscale address during that same handshake — nothing more than an
+                address, learned in passing, the way a neighbor might mention their back-door key is under the mat.
+              </p>
+            </flow-step>
+            <flow-step icon="🌍" heading="Away from home, it tries that address">
+              <p>
+                Once your iPhone leaves your home Wi-Fi, it can no longer hear Bonjour — so it tries the Tailscale address it already learned. If both
+                devices are still on the same Tailscale network, they reconnect, privately and directly.
+              </p>
+            </flow-step>
+            <flow-step icon="📸" heading="Your library appears, same as always">
+              <p>Browsing, editing, playback — all identical to being home. The app doesn't distinguish between the two; it just connects.</p>
+            </flow-step>
+          </step-flow>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Why this is still safe</h2>
+          <p>Two things have to be true before any of this works, and neither one is something Raza controls or can bypass:</p>
+
+          <info-card-grid columns="2">
+            <info-card icon="🔑" heading="The network is already vetted">
+              <p>Joining a Tailscale network happens entirely inside Tailscale, by invitation. If a device is on your network, you already decided it belongs there.</p>
+            </info-card>
+            <info-card icon="🚪" heading="The address is never typed in">
+              <p>
+                There is no field anywhere in Raza to enter an IP address or connect to somewhere new. Your iPhone only ever learns your Mac's address by
+                being home with it first.
+              </p>
+            </info-card>
+          </info-card-grid>
+
+          <info-card variant="dark" class="highlight-box" style="margin-top: 24px">
+            <p>
+              <strong>This isn't "the library is now on the internet."</strong> It's the library recognizing a key it was handed at home — one that happens
+              to still work from anywhere.
+            </p>
+          </info-card>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Turning it on</h2>
+          <p>
+            It's a single toggle in Settings on your Mac, shown only once Tailscale is detected. Nothing changes for anyone until you turn it on — Bonjour
+            and your home network keep working exactly as before either way.
+          </p>
+
+          <div style="max-width: 640px; margin: 24px auto 0; text-align: center">
+            <platform-screenshot mac="/assets/mac-tailscale-settings.webp" alt="Share over Tailscale toggle in Raza settings on Mac"></platform-screenshot>
+          </div>
+
+          <p style="margin-top: 20px">
+            Tailscale itself is separate, independent software with its own setup and its own support. Raza doesn't manage it — it just recognizes an
+            address when it sees one.
+          </p>
+        </div>
+
+        <div class="other-links">
+          <link-card href="/discovery.html" label="Discovery" heading="How discovery works" description="The Bonjour mechanism this builds on"></link-card>
+          <link-card href="/security.html" label="Security" heading="Security model" description="Who can access your library and how to control it"></link-card>
+          <link-card
+            href="/local-first.html"
+            label="Local-first"
+            heading="Why local-first matters"
+            description="No infrastructure means no infrastructure to breach"
+          ></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

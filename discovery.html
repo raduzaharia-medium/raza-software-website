@@ -169,22 +169,29 @@
           <h2>What happens when you leave the house</h2>
           <p>
             When your iPhone leaves your home network — the moment you step outside and your phone switches from Wi-Fi to cellular — it can no longer hear the
-            Bonjour announcements from your Mac. The library becomes unreachable, and the app will show no connected library.
+            Bonjour announcements from your Mac. By default, the library becomes unreachable, and the app will show no connected library.
           </p>
           <p>
-            This is intentional. Remote access would require either a relay server (which we deliberately do not have) or opening a port on your router (which
-            we deliberately do not ask you to do). The tradeoff is that your library is available everywhere in the house and nowhere outside it.
+            This is intentional. Bonjour itself never leaves the house — there is no relay server and no open port. The tradeoff, by default, is that your
+            library is available everywhere in the house and nowhere outside it.
           </p>
 
-          <callout-box variant="blue" heading="Why this is the right tradeoff">
+          <callout-box variant="blue" heading="Why this is the right default">
             <p>
               A library that is only accessible inside your home is a library that cannot be accessed by anyone outside your home. The limitation and the
               security guarantee are the same thing.
             </p>
           </callout-box>
+
+          <p style="margin-top: 20px">
+            If you'd like your library to follow you outside the house, both apps also support an optional extension of this same home network using
+            Tailscale — off by default, and still built on the idea that nothing gets in unless it already belongs.
+            <a href="/remote-access.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How that works →</a>
+          </p>
         </div>
 
         <div class="other-links">
+          <link-card href="/remote-access.html" label="Remote access" heading="Take it with you" description="An optional, private extension of your home network"></link-card>
           <link-card href="/security.html" label="Security" heading="Security model" description="Who can access your library and how to control it"></link-card>
           <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="Nothing collected, nothing transmitted"></link-card>
           <link-card
@@ -193,7 +200,6 @@
             heading="Why local-first matters"
             description="No infrastructure means no infrastructure to breach"
           ></link-card>
-          <link-card href="/support.html" label="Support" heading="Common questions" description="More on how discovery and networking works"></link-card>
         </div>
       </div>
     </div>
