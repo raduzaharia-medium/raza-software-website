@@ -44,6 +44,7 @@ class RazaFooter extends HTMLElement {
             <span class="footer-group-label">Help</span>
             <ul>
               <li><a href="/discovery.html">How discovery works</a></li>
+              <li><a href="/remote-access.html">Remote access</a></li>
               <li><a href="/support.html">Support</a></li>
               <li><a href="/privacy.html">Privacy Policy</a></li>
               <li><a href="/security.html">Security</a></li>
