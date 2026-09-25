@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#1a8fff" />
     <meta
       name="description"
-      content="Raza Software builds apps that live entirely on your home network. Raza Photos and Raza Songs are both available now."
+      content="Raza Photos and Raza Songs turn your Mac's photo and music folders into a library every iPhone and iPad at home can browse. No cloud, no account."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raza Software" />
@@ -15,16 +15,51 @@
     <meta property="og:title" content="Raza Software — Apps for your home network" />
     <meta
       property="og:description"
-      content="Raza Software builds apps that live entirely on your home network. Raza Photos and Raza Songs are both available now."
+      content="Raza Photos and Raza Songs turn your Mac's photo and music folders into a library every iPhone and iPad at home can browse. No cloud, no account."
     />
     <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Raza Software — Apps for your home network" />
     <meta
       name="twitter:description"
-      content="Raza Software builds apps that live entirely on your home network. Raza Photos and Raza Songs are both available now."
+      content="Raza Photos and Raza Songs turn your Mac's photo and music folders into a library every iPhone and iPad at home can browse. No cloud, no account."
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://razasoftware.eu/#organization",
+            "name": "Raza Software",
+            "url": "https://razasoftware.eu/",
+            "description": "Raza Software builds apps that live entirely on your home network, with no cloud, no account and no telemetry."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Raza Photos",
+            "url": "https://razasoftware.eu/photos/index.html",
+            "downloadUrl": "https://apps.apple.com/ro/app/raza-photos/id6766848491",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
+            "publisher": { "@id": "https://razasoftware.eu/#organization" },
+            "description": "Turns the photo folders on your Mac into a library every iPhone and iPad in your house can browse. No cloud, no account, no subscription. Native Swift with HDR, Live Photos and on-device face recognition. Edits from your phone write back into the original files as open XMP/EXIF."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Raza Songs",
+            "url": "https://razasoftware.eu/music/index.html",
+            "downloadUrl": "https://apps.apple.com/ro/app/raza-songs/id6771887252",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
+            "publisher": { "@id": "https://razasoftware.eu/#organization" },
+            "description": "Turns the music folders on your Mac into a library every iPhone and iPad in your house can play. No cloud, no account, no subscription. Native Swift with gapless audio, CarPlay and AirPlay. Edits from your phone write back into the original audio tags."
+          }
+        ]
+      }
+    </script>
 
     <title>Raza Software — Apps for your home network</title>
 
@@ -73,6 +108,22 @@
               <a href="https://apps.apple.com/ro/app/raza-songs/id6771887252" class="btn btn-outline">Download Free</a>
             </div>
           </div>
+        </div>
+
+        <div style="max-width: 720px; margin: 72px auto 0">
+          <h2 style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 20px">Your Mac is the server. That's the whole idea.</h2>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px">
+            Raza Photos and Raza Songs turn the photo and music folders on your Mac into a library that every iPhone and iPad in your house can browse and play. No cloud, no account, no subscription. Your devices find the Mac automatically over Bonjour, and your files never move.
+          </p>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px">
+            Privacy is architectural, not a promise. The apps make no outbound requests and have no telemetry, so there is no server for your data to reach.
+          </p>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px">
+            Both are native Swift apps, with HDR, Live Photos, on-device face recognition, gapless audio, CarPlay and AirPlay. Edits you make from your phone write back into the original files as open XMP/EXIF and audio tags, so nothing is locked in and you can leave any time.
+          </p>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">
+            Have more than one Mac? Their libraries merge into one. Access is controlled per device with read-only toggles, and remote access is optional, through encrypted, invite-only Tailscale.
+          </p>
         </div>
 
         <div style="text-align: center; margin-top: 56px; font-size: 14px; color: var(--text-secondary)">
