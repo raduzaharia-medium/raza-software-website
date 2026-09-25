@@ -67,7 +67,7 @@
 
           <detail-list label="Connecting (Raza Photos &amp; Raza Songs)">
             <detail-item heading="I don't see my library on my iPhone or iPad">Both your Mac and your iPhone need to be on the same Wi-Fi network. Check that your Mac is awake and that the app is running on it — the library is only available while the Mac app is open. Also make sure your iPhone is not on a guest network, which is isolated from the main network by design.</detail-item>
-            <detail-item heading="I left the house and my library disappeared">This is expected. Both Raza Photos and Raza Songs work entirely on your local home network — there is no cloud, no relay, and no remote access. When you leave your home Wi-Fi, there is nothing to connect to. Your library is still safe on your Mac; it will reappear the moment you get back on your home network.</detail-item>
+            <detail-item heading="I left the house and my library disappeared">This is expected. Both Raza Photos and Raza Songs work entirely on your local home network — there is no cloud and no relay, and remote access is optional and off by default. Unless you have turned on <a href="/remote-access.html">optional remote access through Tailscale</a>, there is nothing to connect to when you leave your home Wi-Fi. Your library is still safe on your Mac; it will reappear the moment you get back on your home network.</detail-item>
             <detail-item heading="My Mac is on but the library still doesn't appear">Try quitting and reopening the app on the Mac. Bonjour discovery occasionally needs a nudge after the Mac wakes from sleep. If the problem persists, check that your router does not have AP isolation or multicast filtering enabled — these block Bonjour from working across devices.</detail-item>
             <detail-item heading="I have multiple Macs — can I see all of them?">Yes. Every Mac running the app on the same network advertises its library independently. On iPhone and iPad, all available libraries appear merged into a single unified view.</detail-item>
             <detail-item heading="Why does iOS ask for local network permission?">Apple requires apps to ask your permission before they can listen for Bonjour announcements or connect to devices on your local network. This is a privacy protection — it prevents apps from silently scanning your network in the background. When the app asks for local network access, it is asking for exactly the permission it needs to find your Mac, and nothing more.</detail-item>
@@ -85,7 +85,7 @@
           </detail-list>
 
           <detail-list label="Playback (Raza Songs)">
-            <detail-item heading="Some of my songs won't play">Raza Songs plays audio using Apple's native framework, so it supports common formats such as MP3, AAC, ALAC, and WAV. If a track in your library won't play, please get in touch so we can look into the specific format.</detail-item>
+            <detail-item heading="Some of my songs won't play">Raza Songs plays audio using Apple's native framework, so it supports MP3, MP4, M4A, and M4B files. If a track in your library won't play, please get in touch so we can look into the specific format.</detail-item>
           </detail-list>
 
           <detail-list label="Editing and metadata (Raza Photos &amp; Raza Songs)">

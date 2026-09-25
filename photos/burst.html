@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="/components/explainer.css" />
     <link rel="stylesheet" href="/components/detail-list.css" />
     <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
   
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
@@ -48,6 +49,7 @@
     <script src="/components/detail-list.js" defer></script>
     <script src="/components/detail-item.js" defer></script>
     <script src="/components/hero-section.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
   </head>
   <body>
     <raza-nav app="photos"></raza-nav>
@@ -93,6 +95,27 @@
           <detail-item heading="One photo in the grid">In the photo grid, a burst appears as a single thumbnail — the first frame, with a small indicator. You won't see 40 copies of the same shot side by side.</detail-item>
           <detail-item heading="Frame counter">While navigating a burst, the current frame number and total frame count are shown so you always know where you are inside the sequence.</detail-item>
         </detail-list>
+      </div>
+
+      <div class="other-links" style="max-width: 1040px; margin: 0 auto">
+        <link-card
+          href="/photos/browse.html"
+          label="Browsing"
+          heading="Browse by date, place, people and albums"
+          description="Grid, map and full-screen views on your home network"
+        ></link-card>
+        <link-card
+          href="/photos/formats.html"
+          label="Formats"
+          heading="HDR, Live Photos and supported formats"
+          description="Everything Apple's frameworks recognise"
+        ></link-card>
+        <link-card
+          href="/photos/editing.html"
+          label="Editing"
+          heading="Edit metadata from your iPhone"
+          description="Fix dates, places and people without touching pixels"
+        ></link-card>
       </div>
     </div>
 

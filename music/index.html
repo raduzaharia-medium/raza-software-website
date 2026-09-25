@@ -26,6 +26,123 @@
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/music/icon_web.png" />
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Raza Songs",
+            "url": "https://razasoftware.eu/music/index.html",
+            "downloadUrl": "https://apps.apple.com/ro/app/raza-songs/id6771887252",
+            "image": "https://razasoftware.eu/assets/music/icon_web.png",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
+            "featureList": [
+              "Browse by artist, album, genre, language and year",
+              "Grid and list views",
+              "Immersive Now Playing view",
+              "Gapless playback, AirPlay and CarPlay",
+              "Edit tags from iPhone",
+              "Multiple Macs merged into one library",
+              "MP3, MP4, M4A and M4B including audiobooks"
+            ],
+            "description": "Turns the music folders on your Mac into a library every iPhone and iPad in your house can play. No cloud, no account, no subscription. Native Swift with gapless audio, AirPlay and CarPlay. Edits from your phone write back into the original audio tags.",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Raza Software",
+              "url": "https://razasoftware.eu/"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need a subscription or an account to use Raza Songs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. There is no account, no sign-up and no subscription. Your Mac serves your music over your home Wi-Fi, and your iPhone or iPad finds it automatically."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Raza Songs upload or move my music?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It indexes the metadata and leaves every file exactly where it is. The app never makes an outbound network request and has no telemetry."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens when my Mac is off?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Your Mac is the server, so your music is available only while the Mac app is running. When the Mac is off there is nothing to connect to, and the library reappears as soon as it is back on your home network."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I play my music away from home?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Optionally. Remote access is an extension of your home network built on Tailscale. It is off by default, encrypted end to end, invite-only, and only reachable by devices already on your Tailscale network. Tailscale is separate software with its own setup."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which audio formats does Raza Songs support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MP3, MP4, M4A and M4B, including audiobooks with chapters."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I fix song tags from my iPhone?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. You can change a title, artist, album or genre from your phone, in batches across a whole selection. Changes are written back to the original file's own tags, and the audio data is never touched."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What does playback include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Shuffle and repeat, gapless transitions, AirPlay, playback that survives a phone call, and full lock screen and CarPlay controls."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use more than one Mac?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Every Mac running the app is discovered automatically, and their libraries appear on your iPhone or iPad as one merged, deduplicated library."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I build a library from my own CDs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Rip them to a supported format, tag them, and point Raza Songs at the folder. The site has a guide to the tools, the format to pick, and how to tag the results."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What do I need to run Raza Songs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Mac, iPhone or iPad running macOS 26 or iOS 26 or later."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
     <title>Raza Songs — Play Your Mac Music Library on iPhone &amp; iPad</title>
 
     <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
@@ -95,7 +212,7 @@
           <step-card number="2" heading="Your Mac advertises itself">
             <p>
               Using Bonjour, your Mac quietly announces the library on your local network. No ports to open. No router settings. Nothing to configure.
-              <a href="/discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How does that work? →</a>
+              <a href="/discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How does discovery work? →</a>
             </p>
           </step-card>
           <step-card number="3" heading="Open and listen">
@@ -114,43 +231,43 @@
           <info-card icon="📅" heading="Browse by artist, album, genre, language &amp; release year">
             <p>
               Your library organized the way you think about it — pick an artist and the genres, languages, and years narrow to match. All from the sidebar.
-              <a href="/music/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+              <a href="/music/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See how browsing works →</a>
             </p>
           </info-card>
           <info-card icon="▦" heading="Grid view">
             <p>
               Every track shown as its own album art, with the title and artist underneath and the running length in the corner.
-              <a href="/music/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+              <a href="/music/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See the grid view →</a>
             </p>
           </info-card>
           <info-card icon="☰" heading="List view">
             <p>
               The same library as a scannable list — title, artist, and length in a compact row, for when you already know what you want.
-              <a href="/music/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+              <a href="/music/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See the list view →</a>
             </p>
           </info-card>
           <info-card icon="🖼" heading="Immersive Now Playing">
             <p>
               Full-window album art, a queue in the sidebar, transport controls, and song information — all in one immersive view.
-              <a href="/music/playing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+              <a href="/music/playing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See the Now Playing view →</a>
             </p>
           </info-card>
           <info-card icon="✨" heading="A daily welcome screen">
             <p>
               Nothing playing? An Artist, Album, and Song of the Day, plus a ten-song daily selection, greet you instead of an empty state.
-              <a href="/music/playing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+              <a href="/music/playing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See the daily welcome screen →</a>
             </p>
           </info-card>
           <info-card icon="🔊" heading="Playback that just works">
             <p>
               Shuffle and repeat, gapless transitions, AirPlay, and playback that survives a phone call — with full lock screen and CarPlay controls.
-              <a href="/music/playing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+              <a href="/music/playing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See playback features →</a>
             </p>
           </info-card>
           <info-card icon="✏️" heading="Edit metadata from your iPhone">
             <p>
               Fix a title, artist, or album — from the couch, on your phone. Changes write back to the original file's own tags.
-              <a href="/music/editing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See how it works →</a>
+              <a href="/music/editing.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See how tag editing works →</a>
             </p>
           </info-card>
           <info-card icon="🖥" heading="Multiple libraries, one view">
@@ -165,13 +282,13 @@
           <info-card icon="🩺" heading="Library Health">
             <p>
               Filter for songs missing an album, genre, artist, language, or release year — right from the sidebar.
-              <a href="/music/library-health.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See it →</a>
+              <a href="/music/library-health.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See Library Health →</a>
             </p>
           </info-card>
           <info-card icon="🏠" heading="Take your library with you">
             <p>
               An optional, off-by-default extension of your home network using Tailscale — still only reachable by devices your house already recognizes.
-              <a href="/remote-access.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How it works →</a>
+              <a href="/remote-access.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How remote access works →</a>
             </p>
           </info-card>
         </info-card-grid>
@@ -245,6 +362,55 @@
             heading="Play it on your iPhone"
             description="No subscription, no upload — just your home Wi-Fi"
           ></link-card>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="section-inner">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Common questions.</h2>
+        <div style="max-width: 720px; margin-top: 40px">
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Do I need a subscription or an account to use Raza Songs?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. There is no account, no sign-up and no subscription. Your Mac serves your music over your home Wi-Fi, and your iPhone or iPad finds it automatically.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Does Raza Songs upload or move my music?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. It indexes the metadata and leaves every file exactly where it is. The app never makes an outbound network request and has no telemetry.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">What happens when my Mac is off?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Your Mac is the server, so your music is available only while the Mac app is running. When the Mac is off there is nothing to connect to, and the library reappears as soon as it is back on your home network.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I play my music away from home?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Optionally. Remote access is an extension of your home network built on Tailscale. It is off by default, encrypted end to end, invite-only, and only reachable by devices already on your Tailscale network. Tailscale is separate software with its own setup.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Which audio formats does Raza Songs support?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">MP3, MP4, M4A and M4B, including audiobooks with chapters.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I fix song tags from my iPhone?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Yes. You can change a title, artist, album or genre from your phone, in batches across a whole selection. Changes are written back to the original file's own tags, and the audio data is never touched.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">What does playback include?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Shuffle and repeat, gapless transitions, AirPlay, playback that survives a phone call, and full lock screen and CarPlay controls.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I use more than one Mac?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Yes. Every Mac running the app is discovered automatically, and their libraries appear on your iPhone or iPad as one merged, deduplicated library.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I build a library from my own CDs?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Yes. Rip them to a supported format, tag them, and point Raza Songs at the folder. The site has a guide to the tools, the format to pick, and how to tag the results.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">What do I need to run Raza Songs?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">A Mac, iPhone or iPad running macOS 26 or iOS 26 or later.</p>
+          </div>
         </div>
       </div>
     </section>
