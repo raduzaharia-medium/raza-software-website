@@ -2,122 +2,152 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://razasoftware.eu/</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/index.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/index.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/browse.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/playing.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/editing.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/formats.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/metadata-read.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/metadata-write.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/library-health.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/ripping-cds.html</loc>
+        <lastmod>2026-09-15</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/music/iphone-without-subscription.html</loc>
+        <lastmod>2026-09-15</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/support.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/formats.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/metadata-read.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/metadata-write.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/discovery.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/remote-access.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/browse.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/editing.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/burst.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/library-health.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/sharing.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/transfer.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/widget.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/leaving-icloud.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/photos/iphone-without-icloud.html</loc>
+        <lastmod>2026-09-15</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/security.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/local-first.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://razasoftware.eu/privacy.html</loc>
+        <lastmod>2026-09-25</lastmod>
         <priority>0.6</priority>
     </url>
 </urlset>
