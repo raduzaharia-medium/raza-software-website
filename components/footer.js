@@ -17,7 +17,6 @@ class RazaFooter extends HTMLElement {
               <li><a href="/photos/editing.html">Editing</a></li>
               <li><a href="/photos/library-health.html">Library Health</a></li>
               <li><a href="/photos/widget.html">Widget</a></li>
-              <li><a href="/photos/sharing.html">Sharing</a></li>
               <li><a href="/photos/transfer.html">Transfer</a></li>
               <li><a href="/photos/metadata-read.html">Metadata reading</a></li>
               <li><a href="/photos/metadata-write.html">Metadata writing</a></li>
@@ -44,6 +43,7 @@ class RazaFooter extends HTMLElement {
             <span class="footer-group-label">Help</span>
             <ul>
               <li><a href="/discovery.html">How discovery works</a></li>
+              <li><a href="/sharing.html">Sharing</a></li>
               <li><a href="/remote-access.html">Remote access</a></li>
               <li><a href="/support.html">Support</a></li>
               <li><a href="/privacy.html">Privacy Policy</a></li>

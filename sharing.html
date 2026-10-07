@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="How sharing works in Raza Photos and Raza Songs: turn the Mac server on or off, and what to check if your iPhone or iPad can't see your library."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Software" />
+    <meta property="og:url" content="https://razasoftware.eu/sharing.html" />
+    <link rel="canonical" href="https://razasoftware.eu/sharing.html" />
+    <meta property="og:title" content="Share Your Photo &amp; Music Library at Home — Raza Software" />
+    <meta
+      property="og:description"
+      content="How sharing works in Raza Photos and Raza Songs: turn the Mac server on or off, and what to check if your iPhone or iPad can't see your library."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Share Your Photo &amp; Music Library at Home — Raza Software" />
+    <meta
+      name="twitter:description"
+      content="How sharing works in Raza Photos and Raza Songs: turn the Mac server on or off, and what to check if your iPhone or iPad can't see your library."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <title>Share Your Photo &amp; Music Library at Home — Raza Software</title>
+
+    <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/showcase-item.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+  
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/showcase-item.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="shared"></raza-nav>
+
+    <hero-section
+      eyebrow="Sharing"
+      heading="Your library. On your terms."
+      description="Sharing means your Mac makes your library available to your own devices at home. Turn it on, and every iPhone and iPad on your Wi-Fi can find it. Turn it off, and the app is a viewer on your Mac alone."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>What sharing means</h2>
+          <p class="desc">
+            Your Mac is the server. While sharing is on, Raza Photos or Raza Songs announces your library on your home network and serves it to the iPhones,
+            iPads, and other Macs that ask for it. While sharing is off, nothing is announced and the app works as a local viewer on your Mac. Either way,
+            nothing is uploaded anywhere.
+          </p>
+          <p class="desc">
+            In Raza Photos, receiving photos <em>from</em> an iPhone is a separate switch, <strong>Allow incoming transfers</strong>, which stays off until you
+            turn it on.
+            <a href="/photos/transfer.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How Transfer works →</a>
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Turning it on and off</h2>
+          <p class="desc">
+            Sharing runs while the app is running on your Mac. Once it's on, closing the app's window doesn't stop it: the app keeps running in the menu bar,
+            so the library stays available while the window is out of the way.
+          </p>
+          <showcase-item label="Sharing settings" heading="One switch." image="/assets/photos/mac-sharing.webp" alt="The Sharing tab in the Mac settings of Raza Photos, with a switch to publish the library to your home network and a library name and icon. Raza Songs has the same panel.">
+            <p>
+              <strong>Publish this library to your home network</strong> is the whole thing. Turn it on and any device on your home network can browse your
+              library. Turn it off and the app is a local viewer on your Mac. Shown here in Raza Photos; Raza Songs has the same panel.
+            </p>
+            <ul>
+              <li>One switch starts and stops sharing</li>
+              <li>Give the library a name and an icon. Connected devices show the icon next to it, which helps when you share from more than one Mac. Changes take effect after restarting the app</li>
+              <li>Launch at login keeps the library always available for the family</li>
+              <li>The server can be set to read-only, so remote devices can browse but not edit</li>
+            </ul>
+          </showcase-item>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What has to be true for your iPhone to see your library</h2>
+          <p class="desc">
+            Discovery is automatic and usually takes a second or two after you open the app. If your library doesn't appear, one of these is almost always the
+            reason:
+          </p>
+          <ul class="steps-list">
+            <li><span class="step-num">1</span>The Mac is awake, the app is running (with its window closed it keeps running in the menu bar), and sharing is on</li>
+            <li><span class="step-num">2</span>Your iPhone or iPad is on the same Wi-Fi network as the Mac. A Mac connected by Ethernet works too</li>
+            <li><span class="step-num">3</span>The iPhone isn't on a guest network. Guest networks are isolated from your main network by design</li>
+            <li><span class="step-num">4</span>You allowed Local Network access when iOS asked. Apple requires it before an app can look for devices on your network, and the app uses it only to find your Mac</li>
+            <li><span class="step-num">5</span>Your router isn't blocking device-to-device traffic. Settings called AP isolation or multicast filtering stop discovery from working</li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>If it still doesn't show up</h2>
+          <p class="desc">
+            Quit and reopen the app on the Mac. Discovery sometimes needs a nudge after the Mac wakes from sleep. If your Mac is usually asleep, turning on
+            <strong>Wake for network access</strong> in Energy settings keeps it reachable, or you can set it not to sleep while it's charging.
+            If the problem persists, check your router for AP isolation or multicast filtering.
+          </p>
+          <div style="margin-top: 24px">
+            <callout-box variant="blue" heading="Left the house, and the library disappeared?">
+              <p>
+                That's expected. By default your library is available everywhere in the house and nowhere outside it. If you want it to follow you, there's an
+                optional, off-by-default way to do that.
+                <a href="/remote-access.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How remote access works →</a>
+              </p>
+            </callout-box>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Who can see your library</h2>
+          <p class="desc">
+            Anyone on your main Wi-Fi who installs the app will find your library automatically. If that includes people you'd rather not share with, put
+            visitors on your guest network, or set the server to read-only so they can browse but not change anything.
+            <a href="/security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">The full security model →</a>
+          </p>
+        </div>
+
+        <div class="other-links">
+          <link-card href="/support.html" label="Support" heading="Common questions" description="Connection, Wi-Fi bands, Ethernet, and more"></link-card>
+          <link-card href="/discovery.html" label="How it works" heading="How discovery works" description="How iPhones and iPads find your Mac automatically"></link-card>
+          <link-card href="/security.html" label="Security" heading="Security model" description="What the network boundary means in practice"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>
