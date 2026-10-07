@@ -97,14 +97,13 @@
             does not traverse the internet and cannot be accessed from outside your router.
           </p>
           <p>
-            There is no port forwarding required, no dynamic DNS, no VPN endpoint, no relay server. There is simply nothing listening for incoming connections
+            With remote access off, which is the default, there is no port forwarding required, no dynamic DNS, no VPN endpoint, no relay server of ours. There is simply nothing listening for incoming connections
             from the outside world. An attacker on the internet cannot reach your library because there is no route to it.
           </p>
 
           <callout-box variant="green" heading="What this means">
             <p>
-              Your library has no internet-facing attack surface. It cannot be accessed remotely, cannot be found by scanners, and cannot be breached from
-              outside your home.
+              Your library has no internet-facing attack surface. By default it cannot be accessed from outside your home and cannot be found by scanners. If you choose to turn on optional remote access, it works over your own private Tailscale network, which only devices you have invited can join.
             </p>
           </callout-box>
         </div>
@@ -172,7 +171,7 @@
               Remote devices can browse freely — filtering, searching, viewing photos on the map, opening bursts — but metadata editing is disabled. No changing
               dates, locations, albums, or people tags from iOS. The Mac can still edit locally.
             </p>
-            <p>Best for: households that want full browsing from anywhere in the house but want to keep library organisation tidy.</p>
+            <p>Best for: households that want full browsing from anywhere in the house but want to keep library organization tidy.</p>
           </info-card>
 
           <info-card variant="dark" class="highlight-box" style="margin-top: 12px" label="Level 3 — Client setting" heading="Read-only client">
@@ -185,7 +184,7 @@
 
           <callout-box variant="green" heading="In practice" style="margin-top: 24px">
             <p>
-              A family can run a read-only server for day-to-day browsing, and temporarily disable it when the parent wants to do an organisation session from
+              A family can run a read-only server for day-to-day browsing, and temporarily disable it when the parent wants to do an organization session from
               their iPhone on the couch. One toggle, no reconfiguration.
             </p>
           </callout-box>

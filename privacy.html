@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1a8fff" />
-    <meta name="description" content="Raza Photos and Raza Songs collect nothing, record nothing, and transmit nothing. Your library never leaves your home network." />
+    <meta name="description" content="Raza Photos and Raza Songs collect nothing, record nothing, and transmit nothing. Your library is only ever shared with your own devices." />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raza Software" />
     <meta property="og:url" content="https://razasoftware.eu/privacy.html" />
@@ -12,14 +12,14 @@
     <meta property="og:title" content="Privacy Policy, No Data Collected — Raza Software" />
     <meta
       property="og:description"
-      content="Raza Photos and Raza Songs collect nothing, record nothing, and transmit nothing. Your library never leaves your home network."
+      content="Raza Photos and Raza Songs collect nothing, record nothing, and transmit nothing. Your library is only ever shared with your own devices."
     />
     <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Privacy Policy, No Data Collected — Raza Software" />
     <meta
       name="twitter:description"
-      content="Raza Photos and Raza Songs collect nothing, record nothing, and transmit nothing. Your library never leaves your home network."
+      content="Raza Photos and Raza Songs collect nothing, record nothing, and transmit nothing. Your library is only ever shared with your own devices."
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
 
@@ -60,8 +60,8 @@
     <div class="summary">
       <div class="summary-inner">
         <summary-card icon="🚫" heading="No data collected" description="Not your name, not your email, not your usage patterns"></summary-card>
-        <summary-card icon="📡" heading="No internet access" description="The app never makes an outbound connection"></summary-card>
-        <summary-card icon="🏠" heading="Local network only" description="Your photos stay within your home Wi-Fi"></summary-card>
+        <summary-card icon="📡" heading="No servers of ours" description="Nothing about your library is ever sent to us or anyone else"></summary-card>
+        <summary-card icon="🏠" heading="Your devices only" description="Your library is served only to devices you own"></summary-card>
         <summary-card icon="👤" heading="No account needed" description="No sign-up, no profile, no password"></summary-card>
         <summary-card icon="📊" heading="No telemetry" description="No analytics, no crash reports, no usage statistics"></summary-card>
       </div>
@@ -71,13 +71,13 @@
       <div class="content-body">
         <statement-box variant="green" style="--statement-font-size: 19px; --statement-font-weight: 500; --statement-color: var(--text); margin-bottom: 56px">
           <p>
-            Raza Photos and Raza Songs are designed to work entirely offline and within your home network. Your photos, your music, your metadata, your
+            Raza Photos and Raza Songs are designed to work entirely within your home network, with no internet connection required. Your photos, your music, your metadata, your
             browsing habits, and your device information are never seen by us — because they are never sent anywhere.
           </p>
         </statement-box>
 
         <explainer-list variant="negative" heading="What our apps do not do" description="To be as explicit as possible:">
-          <li>Does not connect to the internet</li>
+          <li>Does not connect to any server of ours. Songs talks only to your own devices. In Photos, the only outside request is Apple Maps fetching map tiles for the map view</li>
           <li>Does not send your photos or music to any server</li>
           <li>Does not collect analytics or usage data</li>
           <li>Does not send crash reports to us or any third party</li>
@@ -95,6 +95,7 @@
           <detail-list>
             <detail-item heading="Your photo or music folders (Mac).">You explicitly choose which folders to import. The app reads your files and indexes their metadata. It does not copy, move, or modify your files unless you explicitly trigger a metadata save.</detail-item>
             <detail-item heading="Local network (all devices).">The Mac uses Bonjour to advertise the library on your local network. iOS and iPadOS devices use Bonjour to discover it. All traffic stays within your home Wi-Fi — nothing is routed through any external server.</detail-item>
+            <detail-item heading="Maps (Photos only).">The Photos map view uses Apple Maps, so the map tiles for the area you are looking at are fetched from Apple, under Apple's own privacy policy. Your photos and their metadata are not sent.</detail-item>
             <detail-item heading="On-device processing.">Features such as face detection and reverse geocoding (turning GPS coordinates into city and country names) in Raza Photos run entirely on the device. No photo, coordinate, or audio file is sent to an external service.</detail-item>
           </detail-list>
         </div>
@@ -102,8 +103,15 @@
         <hr />
 
         <page-explainer
-          heading="Your library never leaves your home"
-          description="When you browse your library on an iPhone or iPad, your photos or music are served directly from the Mac on your local network — the same Wi-Fi your devices share at home. There is no relay server, no cloud intermediary, no proxy. If your Mac is off, or you are not on your home network, there is nothing to connect to. The apps do not route traffic through our infrastructure because we have no infrastructure."
+          heading="Your library only goes to your own devices"
+          description="When you browse your library on an iPhone or iPad, your photos or music are served directly from the Mac on your local network — the same Wi-Fi your devices share at home. There is no relay server, no cloud intermediary, no proxy. If your Mac is off, or you are not on your home network, there is nothing to connect to, unless you have turned on optional remote access (below). The apps do not route traffic through our infrastructure because we have no infrastructure."
+        ></page-explainer>
+
+        <hr />
+
+        <page-explainer
+          heading="Remote access (optional)"
+          description="Remote access is off by default. If you turn it on, the first time your iPhone or iPad connects to your Mac over Bonjour at home, the Mac also shares its Tailscale address with it. Away from home, when Bonjour finds nothing, the iPhone tries that address and connects straight to your Mac, device to device, over your own encrypted Tailscale network. Only devices you have invited to that network can take part. The traffic is between your own devices; none of it goes through us. Tailscale is separate software that you set up yourself. <a href='/remote-access.html'>How remote access works →</a>"
         ></page-explainer>
 
         <hr />
@@ -111,6 +119,13 @@
         <page-explainer
           heading="Metadata"
           description="When you edit metadata in Raza Photos or Raza Songs — correcting a date, assigning a location, tagging a person, or updating a song's title, artist, or album — those changes are stored in a local database on your Mac. When you choose to save, they are written back into the original files on your Mac using standard formats (XMP, EXIF, and IPTC for photos; embedded tags for music). None of this information is transmitted anywhere. It stays in your files, on your machine."
+        ></page-explainer>
+
+        <hr />
+
+        <page-explainer
+          heading="This website"
+          description="This website uses no cookies, no analytics, no tracking, and no third-party scripts, fonts, or embeds. It is hosted on GitHub Pages. As with any web host, GitHub may keep standard server logs, such as IP addresses, under its own privacy statement. We do not receive those logs and do not use them."
         ></page-explainer>
 
         <hr />
@@ -124,7 +139,7 @@
 
         <page-explainer
           heading="Can you verify this?"
-          description="Yes. You can run a network proxy such as Charles Proxy or Little Snitch on your Mac while using Raza Photos or Raza Songs and observe that the app makes no outbound connections beyond your local network. We encourage this. Both apps also work entirely without an internet connection. Disconnect your router and use them — they will behave identically."
+          description="Yes. You can run a network proxy such as Charles Proxy or Little Snitch on your Mac while using Raza Photos or Raza Songs and observe that the apps connect to nothing beyond your own devices: your local network, and your own Tailscale devices if you turned on optional remote access. The one exception is the Photos map view, which fetches map tiles from Apple Maps. We encourage this. Both apps also work entirely without an internet connection. Disconnect your router and use them — they will behave identically."
         ></page-explainer>
 
         <hr />
