@@ -192,6 +192,8 @@ Spelling: **US English** (e.g. "organization", "organize", "color"). Note: curre
 | stream | How clients get files | "sync", "download", "copy" | "Your iPhone streams from your Mac." |
 | source of truth | The server holds the one real library | "master copy", "primary replica" | "The Mac is the source of truth." |
 | library | The user's collection | "content", "assets" | "Browse your library on any iPhone." |
+| library sharing | The server feature: the Mac makes the library available to your own devices at home (the app's switch says "Publish this library to your home network"). Never plain "sharing" | "sharing" alone, "sync" | "Library sharing is off, so the app is a viewer on your Mac." |
+| sending photos to other people | The Raza Photos share-sheet feature (up to 50 photos at a time, original files, on macOS and iOS; Photos only, no song sharing). Keep it separate from library sharing | "sharing" alone | "Select a photo and send it to WhatsApp with the share sheet." |
 | local-first | Principle name | "offline-only" | "Local-first isn't a limitation. It's the point." |
 | open formats (XMP/EXIF/IPTC, audio tags) | Portability claim | "standard metadata" alone | "We deliberately use open metadata standards." |
 
