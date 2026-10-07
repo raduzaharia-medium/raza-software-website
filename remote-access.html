@@ -70,8 +70,8 @@
             across town end up feeling like they're on the same Wi-Fi, because as far as the connection is concerned, they are.
           </p>
           <p>
-            Everything that passes between them is encrypted end to end. Nothing routes through us, or through anyone else. It's the same home network,
-            simply reaching further.
+            Everything that passes between them is encrypted end to end. Nothing routes through us. If a direct path isn't possible, Tailscale may relay
+            the encrypted traffic, which it can't read. It's the same home network, simply reaching further.
           </p>
 
           <callout-box variant="blue" heading="The idea in one line">
@@ -95,7 +95,7 @@
             <flow-step icon="🤝" heading="The Mac shares one extra detail">
               <p>
                 If Tailscale is turned on for both devices, the Mac passes along its Tailscale address during that same handshake — nothing more than an
-                address, learned in passing, the way a neighbor might mention their back-door key is under the mat.
+                address, learned in passing, like a friend giving you their phone number while you're visiting, so you can reach them later.
               </p>
             </flow-step>
             <flow-step icon="🌍" heading="Away from home, it tries that address">
