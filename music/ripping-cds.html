@@ -98,7 +98,7 @@
           <p class="desc">All of these read the disc and pull metadata (artist, album, track names) automatically from an online database, so you don't have to type it in by hand. Pick one.</p>
           <detail-list card>
             <detail-item heading="Music.app">Already on your Mac. Insert the CD, and an Import CD option appears. Simple, and fine for most people.</detail-item>
-            <detail-item heading="XLD (X Lossless Decoder)">Free, and the standard choice if you want a bit-perfect lossless rip with error correction against scratches.</detail-item>
+            <detail-item heading="XLD (X Lossless Decoder)">Free, with error correction against scratched discs and a wide choice of output formats, including MP3.</detail-item>
             <detail-item heading="dBpoweramp">Paid, but includes AccurateRip verification, which checks your rip against other people's rips of the same disc to confirm it's byte-for-byte correct.</detail-item>
           </detail-list>
         </div>
@@ -107,21 +107,20 @@
 
         <div class="section">
           <h2>Choosing a format</h2>
-          <p class="desc">This is the one decision that's hard to undo later, since re-ripping means finding the disc again.</p>
+          <p class="desc">This is the one decision that's hard to undo later, since re-ripping means finding the disc again. For a library you'll play on your phone, MP3 at 320 kbps is the simple choice.</p>
           <div class="metadata-cols" style="margin-top: 24px">
             <div class="metadata-card">
-              <h3 style="margin-bottom: 10px">Lossless (ALAC or FLAC)</h3>
+              <h3 style="margin-bottom: 10px">MP3, 320 kbps</h3>
               <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6">
-                An exact copy of the CD audio, just compressed without losing any data. Takes more space (roughly 300–400MB per album) but means you'll
-                never need to rip the disc again for a better copy. ALAC plays natively in Apple's ecosystem; FLAC is the more universal choice if you use
-                other software too.
+                The highest-quality setting MP3 offers. Indistinguishable from the CD for most people in most listening situations, at roughly 100MB per
+                album, and it plays on every device and in every player, including Raza Songs, which reads MP3, M4A, and M4B.
               </p>
             </div>
             <div class="metadata-card">
-              <h3 style="margin-bottom: 10px">AAC 256kbps</h3>
+              <h3 style="margin-bottom: 10px">How to set it</h3>
               <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6">
-                Indistinguishable from the original for most people and most listening situations, at a fraction of the file size. The reasonable choice if
-                storage space matters more than having a bit-perfect archival copy.
+                In Music.app, open Settings → Files → Import Settings, choose MP3 Encoder, then Custom and set the stereo bit rate to 320 kbps. In XLD or
+                dBpoweramp, choose MP3 (LAME) at 320 kbps.
               </p>
             </div>
           </div>

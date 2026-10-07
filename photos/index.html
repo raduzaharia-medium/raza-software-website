@@ -72,7 +72,7 @@
                 "name": "Does Raza Photos upload or move my photos?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No. It indexes the metadata and leaves every file exactly where it is. The app never sends your library to any server, ours or anyone else's, and it has no telemetry. The map view loads its map tiles from Apple Maps."
+                  "text": "No. It indexes the metadata and leaves every file exactly where it is. The app never sends your library to any server, ours or anyone else's, and it has no telemetry. Maps and place-name lookups go through Apple Maps."
                 }
               },
               {
@@ -269,8 +269,8 @@
           </info-card>
           <info-card icon="🗺" heading="Map view">
             <p>
-              See where every photo was taken on a map. Add or correct countries and cities from your iPhone using reverse geocoding — all processed locally
-              on-device.
+              See where every photo was taken on a map. Add or correct countries and cities from your iPhone with place names looked up through
+              Apple Maps.
               <a href="/photos/browse.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See the map view →</a>
             </p>
           </info-card>
@@ -397,7 +397,7 @@
           <div class="privacy-item">
             <span class="icon">🚫</span>
             <h3>No servers</h3>
-            <p>Your library never goes to any server, ours or anyone else's. The only outside request is the map view fetching Apple Maps tiles.</p>
+            <p>Your library never goes to any server, ours or anyone else's. The only outside requests go to Apple Maps, for map tiles and place-name lookups.</p>
           </div>
           <div class="privacy-item">
             <span class="icon">📊</span>
@@ -411,9 +411,9 @@
           </div>
           <div class="privacy-item">
             <span class="icon">🏠</span>
-            <h3>Local network only</h3>
+            <h3>Home network first</h3>
             <p>
-              All communication stays within your home Wi-Fi. Nothing is routed externally.
+              At home, everything stays on your Wi-Fi. Remote access is optional and off by default.
               <a href="/discovery.html" style="color: #63c5ff; text-decoration: none; font-weight: 500">How? →</a>
             </p>
           </div>
@@ -555,7 +555,7 @@
           </div>
           <div style="margin-bottom: 32px">
             <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Does Raza Photos upload or move my photos?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. It indexes the metadata and leaves every file exactly where it is. The app never sends your library to any server, ours or anyone else's, and it has no telemetry. The map view loads its map tiles from Apple Maps.</p>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. It indexes the metadata and leaves every file exactly where it is. The app never sends your library to any server, ours or anyone else's, and it has no telemetry. Maps and place-name lookups go through Apple Maps.</p>
           </div>
           <div style="margin-bottom: 32px">
             <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">What happens when my Mac is off?</h3>

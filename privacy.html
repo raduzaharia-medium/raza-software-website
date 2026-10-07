@@ -77,7 +77,7 @@
         </statement-box>
 
         <explainer-list variant="negative" heading="What our apps do not do" description="To be as explicit as possible:">
-          <li>Does not connect to any server of ours. Songs talks only to your own devices. In Photos, the only outside request is Apple Maps fetching map tiles for the map view</li>
+          <li>Does not connect to any server of ours. Songs talks only to your own devices. In Photos, the only outside requests go to Apple Maps, for map tiles and place-name lookups</li>
           <li>Does not send your photos or music to any server</li>
           <li>Does not collect analytics or usage data</li>
           <li>Does not send crash reports to us or any third party</li>
@@ -94,9 +94,9 @@
           <p>Raza Photos and Raza Songs need access to certain things on your device to function. Here is exactly what, and why:</p>
           <detail-list>
             <detail-item heading="Your photo or music folders (Mac).">You explicitly choose which folders to import. The app reads your files and indexes their metadata. It does not copy, move, or modify your files unless you explicitly trigger a metadata save.</detail-item>
-            <detail-item heading="Local network (all devices).">The Mac uses Bonjour to advertise the library on your local network. iOS and iPadOS devices use Bonjour to discover it. All traffic stays within your home Wi-Fi — nothing is routed through any external server.</detail-item>
-            <detail-item heading="Maps (Photos only).">The Photos map view uses Apple Maps, so the map tiles for the area you are looking at are fetched from Apple, under Apple's own privacy policy. Your photos and their metadata are not sent.</detail-item>
-            <detail-item heading="On-device processing.">Features such as face detection and reverse geocoding (turning GPS coordinates into city and country names) in Raza Photos run entirely on the device. No photo, coordinate, or audio file is sent to an external service.</detail-item>
+            <detail-item heading="Local network (all devices).">The Mac uses Bonjour to advertise the library on your local network. iOS and iPadOS devices use Bonjour to discover it. At home, all traffic stays within your home Wi-Fi — nothing is routed through any external server. If you turn on optional remote access, your devices connect to each other directly over your own Tailscale network instead.</detail-item>
+            <detail-item heading="Maps (Photos only).">The Photos map view and place-name lookups use Apple Maps (MapKit). The map tiles for the area you are looking at are fetched from Apple, and so are the lookups that turn GPS coordinates into city and country names, so those coordinates go to Apple, under Apple's own privacy policy. Your photos and the rest of their metadata are not sent.</detail-item>
+            <detail-item heading="On-device processing.">Face detection in Raza Photos runs entirely on the device. No photo or audio file is sent to an external service.</detail-item>
           </detail-list>
         </div>
 
@@ -139,7 +139,7 @@
 
         <page-explainer
           heading="Can you verify this?"
-          description="Yes. You can run a network proxy such as Charles Proxy or Little Snitch on your Mac while using Raza Photos or Raza Songs and observe that the apps connect to nothing beyond your own devices: your local network, and your own Tailscale devices if you turned on optional remote access. The one exception is the Photos map view, which fetches map tiles from Apple Maps. We encourage this. Both apps also work entirely without an internet connection. Disconnect your router and use them — they will behave identically."
+          description="Yes. You can run a network proxy such as Charles Proxy or Little Snitch on your Mac while using Raza Photos or Raza Songs and observe that the apps connect to nothing beyond your own devices: your local network, and your own Tailscale devices if you turned on optional remote access. The one exception is Photos' use of Apple Maps for map tiles and place-name lookups. We encourage this. Both apps also work entirely without an internet connection. Disconnect your router and use them — they will behave identically."
         ></page-explainer>
 
         <hr />
@@ -149,7 +149,7 @@
           description="If you have any questions about privacy in Raza Photos, reach us at razaphotos@outlook.com. For Raza Songs, reach us at razamusic@outlook.com. Raza Software is based in the European Union."
         ></page-explainer>
 
-        <p class="updated">Last updated: July 2026</p>
+        <p class="updated">Last updated: October 2026</p>
       </div>
     </div>
 

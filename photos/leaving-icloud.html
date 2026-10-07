@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#1a8fff" />
     <meta
       name="description"
-      content="How to get your photos out of iCloud and onto your own Mac: export your originals, turn off iCloud Photos, and keep receiving new photos with Raza Photos."
+      content="How to get your photos out of iCloud and onto your own Mac: copy your whole library from your iPhone with Raza Photos, back it up, then turn iCloud Photos off."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raza Photos" />
@@ -15,14 +15,14 @@
     <meta property="og:title" content="How to Get Your Photos Out of iCloud — Raza Photos" />
     <meta
       property="og:description"
-      content="How to get your photos out of iCloud and onto your own Mac: export your originals, turn off iCloud Photos, and keep receiving new photos with Raza Photos."
+      content="How to get your photos out of iCloud and onto your own Mac: copy your whole library from your iPhone with Raza Photos, back it up, then turn iCloud Photos off."
     />
     <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="How to Get Your Photos Out of iCloud — Raza Photos" />
     <meta
       name="twitter:description"
-      content="How to get your photos out of iCloud and onto your own Mac: export your originals, turn off iCloud Photos, and keep receiving new photos with Raza Photos."
+      content="How to get your photos out of iCloud and onto your own Mac: copy your whole library from your iPhone with Raza Photos, back it up, then turn iCloud Photos off."
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
 
@@ -31,10 +31,10 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "How to Get Your Photos Out of iCloud — Raza Photos",
-        "description": "How to get your photos out of iCloud and onto your own Mac: export your originals, turn off iCloud Photos, and keep receiving new photos with Raza Photos.",
+        "description": "How to get your photos out of iCloud and onto your own Mac: copy your whole library from your iPhone with Raza Photos, back it up, then turn iCloud Photos off.",
         "image": "https://razasoftware.eu/assets/photos/all-devices.webp",
         "datePublished": "2026-08-31",
-        "dateModified": "2026-09-25",
+        "dateModified": "2026-10-07",
         "mainEntityOfPage": "https://razasoftware.eu/photos/leaving-icloud.html",
         "author": {
           "@type": "Organization",
@@ -80,42 +80,66 @@
     <hero-section
       eyebrow="Guide"
       heading="How to get your photos out of iCloud for good"
-      description="If iCloud's storage bill keeps climbing, or you just don't want your photos living on someone else's servers, here's the actual sequence: get everything onto your own Mac, turn iCloud Photos off, and keep browsing and receiving new photos without it."
+      description="If iCloud's storage bill keeps climbing, or you just don't want your photos living on someone else's servers, here's the actual sequence: copy your whole library from your iPhone to your Mac with Raza Photos, back it up, turn iCloud Photos off, and keep new photos flowing in without it."
     ></hero-section>
 
     <div class="content">
       <div class="content-body">
         <div class="section">
-          <h2>1. Make sure everything is downloaded locally first</h2>
+          <h2>1. Get Raza Photos ready on your Mac</h2>
           <p class="desc">
-            Before you touch the iCloud switch, confirm your Mac actually has full-resolution copies of every photo — not just space-saving thumbnails. In
-            Photos on your Mac, open <strong>Settings → iCloud</strong> and make sure <strong>Download Originals to this Mac</strong> is selected, not
-            "Optimize Mac Storage." Give it time to finish downloading — for a large library this can take hours, and you can watch progress at the bottom
-            of the sidebar.
+            Install Raza Photos on your Mac and turn on sharing so your iPhone can find it. Then open the Transfer settings on the Mac, switch on
+            <strong>Allow incoming transfers</strong> (it's off until you do), and pick the folder where your photos should land. Your originals keep their
+            filenames, and photos are sorted into year and month subfolders automatically.
           </p>
-          <ul class="steps-list">
-            <li><span class="step-num">1</span>Open Photos on your Mac, go to Settings → iCloud</li>
-            <li><span class="step-num">2</span>Choose "Download Originals to this Mac"</li>
-            <li><span class="step-num">3</span>Wait for the download to finish before proceeding — don't skip this part</li>
-          </ul>
-
-          <div style="margin-top: 24px">
-            <callout-box variant="blue" heading="A shortcut: let Raza Photos pull them straight from your iPhone">
-              <p>
-                If you'd rather skip the download-and-wait dance in Photos.app, install Raza Photos on your iPhone instead and set up Transfer pointed at
-                your Mac. It reads directly from your device's photo library and sends everything — your full history, not just new shots — to the Mac
-                server you configure, over Wi-Fi. Either path gets your photos onto your Mac; use whichever is less hassle for your library size.
-              </p>
-            </callout-box>
-          </div>
         </div>
 
         <hr />
 
         <div class="section">
-          <h2>2. Turn off iCloud Photos</h2>
+          <h2>2. Send your whole library from the iPhone</h2>
           <p class="desc">
-            Once everything is downloaded, turn off iCloud Photos syncing on every device — Mac, iPhone, and iPad. On each device, this lives under
+            Install Raza Photos on your iPhone and open the Transfer sheet. Your Mac appears in the list automatically; pick it. Raza Photos reads your
+            photo library on the phone, including the photos that live in iCloud, and sends your full history, not just new shots, to your Mac over your
+            home Wi-Fi. No cable, no export, no manual download.
+          </p>
+          <ul class="steps-list">
+            <li><span class="step-num">1</span>Open Raza Photos on the iPhone and open the Transfer sheet</li>
+            <li><span class="step-num">2</span>Pick your Mac as the destination</li>
+            <li><span class="step-num">3</span>Keep the app open while it catches up. iOS only lets transfers run while the app is in the foreground</li>
+            <li><span class="step-num">4</span>Leave "delete originals from this device" off for now. You can decide after step 3</li>
+          </ul>
+          <showcase-item
+            label="Sending photos"
+            heading="Pick a library. Everything else is automatic."
+            iphone="/assets/photos/iphone-transfer-sheet.webp"
+            ipad="/assets/photos/ipad-transfer-sheet.webp"
+            alt="Raza Photos Transfer sheet showing pending photos and a destination library"
+          >
+            <p>Every Mac on your network with incoming transfers enabled shows up automatically. From then on, just browsing is enough — photos send quietly in the background.</p>
+          </showcase-item>
+          <p class="desc" style="margin-top: 24px">
+            When nothing is left to send, your photos are on the Mac. Browse them in Raza Photos on any device in the house to see that everything arrived.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>3. Back up the Mac before you turn iCloud off</h2>
+          <p class="desc">
+            This is the honest tradeoff of leaving the cloud: once iCloud Photos is off, your Mac may hold the only full copy of your library. Back it up first.
+            Time Machine to an external drive takes minutes to set up, and a second drive kept somewhere else covers you against fire and theft.
+            <a href="/local-first.html" style="color: var(--blue); text-decoration: none; font-weight: 500">More on backups →</a>
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>4. Turn off iCloud Photos</h2>
+          <p class="desc">
+            With your library on the Mac and backed up, turn off iCloud Photos on every device — Mac, iPhone, and iPad. On each device, this lives under
             <strong>Settings → [your name] → iCloud → Photos</strong>. Your photos stay exactly where they already are on each device; only the syncing
             between them stops.
           </p>
@@ -124,17 +148,7 @@
         <hr />
 
         <div class="section">
-          <h2>3. Point Raza Photos at the folder</h2>
-          <p class="desc">
-            Photos exported from Photos.app live in your Pictures library on disk. Open Raza Photos on your Mac and import that folder — it indexes the
-            metadata (dates, locations, people, albums) and leaves every file exactly where it is. Nothing is copied, converted, or moved a second time.
-          </p>
-        </div>
-
-        <hr />
-
-        <div class="section">
-          <h2>4. Browse from your iPhone and iPad — no iCloud required</h2>
+          <h2>5. Browse from your iPhone and iPad — no iCloud required</h2>
           <p class="desc">
             With iCloud Photos off, your iPhone's camera roll and your Mac's library are two separate things again. Raza Photos bridges that gap over your
             home Wi-Fi: open the app on any iPhone, iPad, or other Mac in the house, and it finds your library automatically using Bonjour — no IP address,
@@ -153,21 +167,13 @@
         <hr />
 
         <div class="section">
-          <h2>5. Keep new iPhone photos flowing in, without iCloud</h2>
+          <h2>6. Keep new iPhone photos flowing in, without iCloud</h2>
           <p class="desc">
-            The one thing iCloud Photos used to handle automatically was getting new photos off your iPhone. Raza Photos' Transfer feature replaces that:
-            open the Transfer sheet on your iPhone, pick your Mac library, and every new photo and video sends over Wi-Fi as you browse — no cable, no
-            cloud, no import step.
+            The one thing iCloud Photos used to handle automatically was getting new photos off your iPhone. The same Transfer feature replaces it: new
+            photos and videos send to your Mac over Wi-Fi as you browse. When you're happy that everything arrives safely, you can switch on the option to
+            clear originals from the phone once they're transferred.
+            <a href="/photos/transfer.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How Transfer works →</a>
           </p>
-          <showcase-item
-            label="Sending photos"
-            heading="Pick a library. Everything else is automatic."
-            iphone="/assets/photos/iphone-transfer-sheet.webp"
-            ipad="/assets/photos/ipad-transfer-sheet.webp"
-            alt="Raza Photos Transfer sheet showing pending photos and a destination library"
-          >
-            <p>Every Mac on your network with incoming transfers enabled shows up automatically. From then on, just browsing is enough — photos send quietly in the background.</p>
-          </showcase-item>
         </div>
 
         <page-callout text="Your photos, back on your own hardware.">

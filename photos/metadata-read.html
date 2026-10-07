@@ -124,10 +124,10 @@
           <h2>GPS coordinates</h2>
           <p class="desc">
             Latitude and longitude are read from the EXIF GPS dictionary, capturing directional references. If coordinates are present, Raza Photos can
-            reverse-geocode them on-device to derive the city and country.
+            look up the city and country through Apple Maps.
           </p>
           <div class="note">
-            <strong>On-device only.</strong> Reverse geocoding is performed using Apple's on-device framework. No coordinates are sent to an external service.
+            <strong>Via Apple Maps.</strong> Place names are looked up with Apple's MapKit, so the coordinates being looked up go to Apple, under Apple's own privacy policy. Nothing goes to us.
           </div>
         </div>
 
@@ -166,7 +166,7 @@
               <tr>
                 <td><span class="rank">4</span></td>
                 <td>Reverse geocoding from GPS</td>
-                <td>On-device (Apple Maps)</td>
+                <td>Apple Maps (MapKit)</td>
               </tr>
             </tbody>
           </table>
@@ -295,7 +295,7 @@
             heading="Writing metadata"
             description="What Raza Photos saves back to your files and how"
           ></link-card>
-          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="No data leaves your home network, ever"></link-card>
+          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="Nothing collected, nothing transmitted"></link-card>
         </div>
       </div>
     </div>
