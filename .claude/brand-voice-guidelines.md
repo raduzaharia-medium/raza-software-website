@@ -149,6 +149,13 @@ Variations observed:
 - **Home page H1 (2026-10-08):** "Your photos and music, on every Apple device at home. Nothing to set up." Household language first; "a server without the server work" is the explanation one scroll down.
 - **Avoid absolutes:** "Three steps. Then you're done." (not "forever"). Don't use "no server" for the product; say "no server to run", since the Mac is the server.
 
+### Discoverability pages (added 2026-10-08)
+- **Why these pages:** search results for the household questions ("view Mac photos on iPhone without iCloud", "can't play a song I own without Apple Music", "stop paying for iCloud storage") are mostly forum threads. A well-made guide can win them. People also type "sync" in these queries, so guide titles and sections name the thing we replace even though the apps don't sync.
+- **Pages:** `getting-started`, `iphone-cant-find-mac`, `backup-your-library`, `finder-sync-vs-streaming`, `verify-privacy`, `press`, `photos/cancel-icloud-storage`, `photos/vs-icloud-photos`, `music/vs-apple-music`, plus a reworked `music/iphone-without-subscription` ("Play Songs You Own on Your iPhone Without Apple Music").
+- **Comparison-page rule:** say plainly where the other product wins (offsite backup and anywhere-access for iCloud Photos; discovery and a catalog for Apple Music). Honest comparisons are the brand, and they are what readers trust.
+- **Claims about Apple's products** come from Apple's own support pages (iCloud+ downgrade steps, Finder photo sync, App Privacy Report). Re-check them when Apple ships a new OS, because menu paths change.
+- **Still to do:** What's new (needs release history), Who we are (needs a disclosure decision), translations (the app has five languages, the site has one), App Store listing copy.
+
 ### Competitive Positioning
 - vs. cloud photo/music services (iCloud, Google Photos, Spotify): one library on your own hardware, no ongoing dependency, and no tenant relationship to your own memories (`local-first.html`).
 - vs. sync-based approaches: we don't maintain per-device copies. One source of truth, no duplicated storage, nothing to reconcile.

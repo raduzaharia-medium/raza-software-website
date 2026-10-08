@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta name="description" content="Three ways to check what Raza Photos and Raza Songs send over the network: iPhone&#x27;s App Privacy Report, a Mac network monitor, or a packet capture." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Software" />
+    <meta property="og:url" content="https://razasoftware.eu/verify-privacy.html" />
+    <link rel="canonical" href="https://razasoftware.eu/verify-privacy.html" />
+    <meta property="og:title" content="How to Verify an App Isn&#x27;t Sending Your Data Anywhere" />
+    <meta property="og:description" content="Three ways to check what Raza Photos and Raza Songs send over the network: iPhone&#x27;s App Privacy Report, a Mac network monitor, or a packet capture." />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Verify an App Isn&#x27;t Sending Your Data Anywhere" />
+    <meta name="twitter:description" content="Three ways to check what Raza Photos and Raza Songs send over the network: iPhone&#x27;s App Privacy Report, a Mac network monitor, or a packet capture." />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Verify an App Isn't Sending Your Data Anywhere",
+  "description": "Three ways to check what Raza Photos and Raza Songs send over the network: iPhone's App Privacy Report, a Mac network monitor, or a packet capture.",
+  "image": "https://razasoftware.eu/assets/photos/all-devices.webp",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "mainEntityOfPage": "https://razasoftware.eu/verify-privacy.html",
+  "author": {
+    "@type": "Organization",
+    "name": "Raza Software",
+    "url": "https://razasoftware.eu/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Raza Software",
+    "url": "https://razasoftware.eu/"
+  }
+}
+    </script>
+
+    <title>How to Verify an App Isn't Sending Your Data Anywhere</title>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/icon_web.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/page-callout.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/page-callout.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="shared"></raza-nav>
+
+    <hero-section
+      eyebrow="Verify it yourself"
+      heading="Don&#x27;t take our word for it. Check."
+      description="The privacy claims on this site are things you can test. Here is how, from a five-minute check to a packet capture."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>What you should see</h2>
+          <p class="desc">
+            Raza Songs should connect only to your own devices: your Mac and iPhone on the local network, and your own Tailscale devices if you've turned on remote access. Raza Photos should do the same, plus requests to Apple Maps for map tiles and place-name lookups. Nothing should go to Raza Software, and nothing should go to an analytics or advertising domain, because there is no telemetry. When the App Store installs or updates an app, that traffic is the App Store's, not the app's.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>Check 1, on your iPhone: App Privacy Report (five minutes)</h2>
+          <p class="desc">
+            On iOS 15.2 or later, open <strong>Settings → Privacy &amp; Security → App Privacy Report</strong> and turn it on. Use the apps for a while, then open <strong>App Network Activity</strong> and find Raza Photos or Raza Songs. Apple documents that the report lists the web domains an app contacted over the past seven days. You should see none that belong to us. Raza Photos may list Apple's map domains, because of the map view. <a href="https://support.apple.com/102188" style="color: var(--blue); text-decoration: none; font-weight: 500">Apple: About App Privacy Report →</a>
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>Check 2, on your Mac: a network monitor</h2>
+          <p class="desc">
+            Install a network monitor such as Little Snitch, or the free, open-source LuLu, and launch the app. Each outgoing connection asks you to allow or deny it. Deny everything outside your local network and use the apps normally: browsing, playing, editing and saving metadata all work. You'll be asked about Apple Maps in Raza Photos, and that's the only exception.
+          </p>
+        </div>
+          <div style="margin-top: 24px">
+            <callout-box variant="blue" heading="A simple extra test">
+              <p>
+                Disconnect the router from the internet and use the apps at home. Browsing and playing work the same, with one difference: Raza Photos can't load map tiles or place names without a connection.
+              </p>
+            </callout-box>
+          </div>
+        <hr />
+
+        <div class="section">
+          <h2>Check 3, for the technical: capture the traffic</h2>
+          <p class="desc">
+            If you'd rather see the packets, capture on the Mac's network interface or on a mirrored port of your router, using Wireshark or tcpdump, and look at the destinations. You should see mDNS announcements (UDP port 5353 to 224.0.0.251 and ff02::fb), connections to the other devices on your local network, and for Raza Photos, Apple Maps. There should be no connections to any domain of ours, because we don't have any servers to receive them.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>What these checks can't prove</h2>
+          <p class="desc">
+            They show where data goes. They can't show what the code does with it locally, because the apps aren't open source. If where it goes is the question you care about, these checks answer it. If you need to inspect the code itself, that is a fair line to draw, and we'd rather say so than pretend otherwise.
+          </p>
+        </div>
+        <div class="section">
+          <h2>Found something unexpected?</h2>
+          <p class="desc">
+            Please email us with what you saw: razaphotos@outlook.com or razamusic@outlook.com. We'd rather hear about it than have you wonder.
+          </p>
+        </div>
+        <div class="other-links">
+          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="What we collect, which is nothing"></link-card>
+          <link-card href="/security.html" label="Security" heading="The security model" description="Who can reach your library, and how to control it"></link-card>
+          <link-card href="/local-first.html" label="Why local-first" heading="No cloud, no infrastructure" description="What it means that we have no servers"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

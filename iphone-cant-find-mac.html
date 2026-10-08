@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta name="description" content="iPhone or iPad can&#x27;t see your Mac&#x27;s library? Check these in order: sleep, Wi-Fi, Local Network permission, guest network, subnets, router isolation, VPN." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Software" />
+    <meta property="og:url" content="https://razasoftware.eu/iphone-cant-find-mac.html" />
+    <link rel="canonical" href="https://razasoftware.eu/iphone-cant-find-mac.html" />
+    <meta property="og:title" content="iPhone Can&#x27;t Find Your Mac? Fix Local Network Discovery" />
+    <meta property="og:description" content="iPhone or iPad can&#x27;t see your Mac&#x27;s library? Check these in order: sleep, Wi-Fi, Local Network permission, guest network, subnets, router isolation, VPN." />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="iPhone Can&#x27;t Find Your Mac? Fix Local Network Discovery" />
+    <meta name="twitter:description" content="iPhone or iPad can&#x27;t see your Mac&#x27;s library? Check these in order: sleep, Wi-Fi, Local Network permission, guest network, subnets, router isolation, VPN." />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "iPhone Can't Find Your Mac? Fix Local Network Discovery",
+  "description": "iPhone or iPad can't see your Mac's library? Check these in order: sleep, Wi-Fi, Local Network permission, guest network, subnets, router isolation, VPN.",
+  "image": "https://razasoftware.eu/assets/photos/all-devices.webp",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "mainEntityOfPage": "https://razasoftware.eu/iphone-cant-find-mac.html",
+  "author": {
+    "@type": "Organization",
+    "name": "Raza Software",
+    "url": "https://razasoftware.eu/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Raza Software",
+    "url": "https://razasoftware.eu/"
+  }
+}
+    </script>
+
+    <title>iPhone Can't Find Your Mac? Fix Local Network Discovery</title>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/icon_web.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/page-callout.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/page-callout.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="shared"></raza-nav>
+
+    <hero-section
+      eyebrow="Troubleshooting"
+      heading="Your iPhone can&#x27;t find your Mac. Check these, in this order."
+      description="Almost every case comes down to one of seven things. They&#x27;re listed from most to least likely, and each takes under a minute to check."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <h2>1. The Mac is awake, the app is running, and library sharing is on</h2>
+          <p class="desc">
+            The library only exists while the app is running on an awake Mac. A closed window is fine: with library sharing on, the app keeps running in the menu bar. Check that it's there, and that the switch in the Sharing tab is on. If the Mac sleeps a lot, turning on <strong>Wake for network access</strong> in Energy settings keeps it reachable, or you can stop it sleeping while it's charging. Quitting and reopening the app also clears most post-sleep hiccups.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>2. Both devices are on the same network</h2>
+          <p class="desc">
+            Look at the Wi-Fi name on the iPhone and make sure the Mac is on the same network. A Mac connected by Ethernet is fine, as long as it's plugged into the same router. If the iPhone is on cellular or its Wi-Fi is off, there is nothing for it to find.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>3. The iPhone allowed Local Network access</h2>
+          <p class="desc">
+            iOS asks the first time an app wants to look for devices on your network, and Raza Photos and Raza Songs use it only to find your Mac. If you tapped Don't Allow, go to <strong>Settings → Privacy &amp; Security → Local Network</strong> and switch the app back on.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>4. The iPhone isn't on a guest network</h2>
+          <p class="desc">
+            Guest networks are separated from your main network on purpose, so a device on one can't see your Mac. That is the router doing its job, and it's also why visitors on guest Wi-Fi can't browse your library.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>5. Both devices are on the same subnet</h2>
+          <p class="desc">
+            A second router, a mesh system or an extender running in router mode, or a powerline adapter can put devices on separate networks even though they share a Wi-Fi name. Compare the two IP addresses: on the iPhone, open <strong>Settings → Wi-Fi</strong> and tap the (i) next to your network; on the Mac, open <strong>System Settings → Network</strong>, choose your connection and open <strong>Details → TCP/IP</strong>. On most home networks the first three numbers match (for example 192.168.1.x). If they don't, the devices are on different networks and Bonjour can't cross between them.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>6. The router isn't blocking device-to-device traffic</h2>
+          <p class="desc">
+            Look in your router's Wi-Fi settings for <strong>AP isolation</strong>, <strong>client isolation</strong> or <strong>wireless isolation</strong>, and turn it off for your main network. Some routers and mesh systems also filter or throttle multicast traffic, which is what Bonjour uses to announce your library. If discovery works on some devices and not others, or only on one Wi-Fi band, this is the usual reason.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>7. A VPN or filter on the iPhone isn't in the way</h2>
+          <p class="desc">
+            Some VPN and content-filter apps send all of the phone's traffic through a tunnel, which can stop it reaching devices on your local network. Switch it off for a moment and reopen the app. If that fixes it, look for a setting in the VPN app that allows local network access.
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>For the technical: VLANs and multicast</h2>
+          <p class="desc">
+            Bonjour is multicast DNS (mDNS, RFC 6762), which is link-local by definition: routers don't forward it between networks. If your home uses VLANs, for example a separate one for smart-home devices, the announcement won't cross between them unless your router or a reflector relays mDNS. That isn't something the apps can change, and it's why we describe the network boundary as a property of the protocol and not of a setting. <a href="/discovery.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How discovery works →</a>
+          </p>
+        </div>
+        <hr />
+
+        <div class="section">
+          <h2>It works at home but not away from home</h2>
+          <p class="desc">
+            That's the default. Your library is available everywhere in the house and nowhere outside it. If you want it to follow you, there's an optional, off-by-default way to do that. <a href="/remote-access.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How remote access works →</a>
+          </p>
+        </div>
+        <div class="section">
+          <h2>Still stuck?</h2>
+          <p class="desc">
+            Email the developer. You'll hear back from a person, not a queue: razaphotos@outlook.com for Raza Photos, razamusic@outlook.com for Raza Songs. Tell us your macOS and iOS versions and which of the steps above you've already tried, and we can usually narrow it down quickly.
+          </p>
+        </div>
+        <div class="other-links">
+          <link-card href="/sharing.html" label="Library sharing" heading="What has to be true" description="How sharing works and what your iPhone needs"></link-card>
+          <link-card href="/support.html" label="Support" heading="Common questions" description="Wi-Fi bands, Ethernet, guest networks, and more"></link-card>
+          <link-card href="/getting-started.html" label="Guide" heading="Getting started" description="From install to your library on your iPhone"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>
