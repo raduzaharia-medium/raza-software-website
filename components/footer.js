@@ -46,6 +46,7 @@ class RazaFooter extends HTMLElement {
             <span class="footer-group-label">Help &amp; guides</span>
             <ul>
               <li><a href="/getting-started.html">Getting started</a></li>
+              <li><a href="/faq.html">FAQ</a></li>
               <li><a href="/iphone-cant-find-mac.html">iPhone can't find your Mac</a></li>
               <li><a href="/backup-your-library.html">Back up your library</a></li>
               <li><a href="/finder-sync-vs-streaming.html">Sync vs streaming</a></li>

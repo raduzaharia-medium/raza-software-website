@@ -27,146 +27,37 @@
     <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "SoftwareApplication",
-            "name": "Raza Photos",
-            "url": "https://razasoftware.eu/photos/index.html",
-            "downloadUrl": "https://apps.apple.com/ro/app/raza-photos/id6766848491",
-            "image": "https://razasoftware.eu/assets/photos/icon_web.png",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
-            "featureList": [
-              "Browse by date, place, people, albums and events",
-              "Map view",
-              "On-device face detection",
-              "Burst navigation",
-              "HDR and Live Photos",
-              "Edit metadata from iPhone",
-              "Send photos from iPhone to Mac over Wi-Fi",
-              "Multiple Macs merged into one library",
-              "Per-device read-only access controls"
-            ],
-            "description": "Turns the photo folders on your Mac into a library every iPhone and iPad in your house can browse. No cloud, no account, no subscription. Native Swift with HDR, Live Photos and on-device face recognition. Edits from your phone write back into the original files as open XMP/EXIF.",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Raza Software",
-              "url": "https://razasoftware.eu/"
-            }
-          },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Do I need iCloud or an account to use Raza Photos?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. There is no account, no sign-up and no iCloud. Your Mac serves the library over your home Wi-Fi, and your iPhone or iPad finds it automatically."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Does Raza Photos upload or move my photos?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. It indexes the metadata and leaves every file exactly where it is. The app never sends your library to any server, ours or anyone else's, and it has no telemetry. Maps and place-name lookups go through Apple Maps."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What happens when my Mac is off?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Your Mac is the server, so the library is available only while the Mac app is running. When the Mac is off there is nothing to connect to, and the library reappears as soon as it is back on your home network."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I browse my photos away from home?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Optionally. Remote access is an extension of your home network built on Tailscale. It is off by default, encrypted end to end, invite-only, and only reachable by devices already on your Tailscale network. Tailscale is separate software with its own setup."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Will editing on my iPhone change my original photos?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Only the metadata. Dates, locations, titles, people and albums are written back to the original files as XMP and EXIF. Image pixels are never decoded or re-encoded."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I stop other people in the house from changing my library?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. You can make the Mac server read-only, block remote edits while still allowing browsing, or set a single iPhone or iPad to read-only. There are no accounts or passwords, just a toggle."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Which photo formats does Raza Photos support?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "JPEG, HEIC, PNG, TIFF, PSD and AVIF, plus the video formats Apple's frameworks support, with HDR gain maps and Live Photos."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I use more than one Mac?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. Every Mac running the app is discovered automatically, and their libraries appear on your iPhone or iPad as one merged, deduplicated library."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I share photos with other people?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. Select up to 50 photos and send them with the standard share sheet on iPhone, iPad, or Mac, to WhatsApp, Messages, Mail, or any app that appears there. It sends the original file, so any location stored in the photo goes with it. This is separate from library sharing, which makes your library available to your own devices at home."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I move my library to another app later?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. Your files stay in your own folders, and organization such as albums, places and people is stored in open standards like EXIF, IPTC and XMP, which tools such as Lightroom read."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Is Raza Photos open source?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. Raza Photos is a closed-source app for Mac, iPhone and iPad, sold as a one-time purchase. You don't have to take its privacy claims on trust: it has no servers of its own to send anything to, and you can confirm that with a network monitor such as Little Snitch. Your photos stay in open formats, so you are never locked in."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Does Raza Photos run on Linux, Windows, or a NAS?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. Your Mac is the server, so Raza Photos runs on a Mac, and your iPhone and iPad browse it. It is built for households that don't want to run a Linux box, containers or a server of their own. If you would rather run your own stack, an open-source project built for that is a better fit."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What do I need to run Raza Photos?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "A Mac running macOS 26 or later, and an iPhone or iPad running iOS 26 or iPadOS 26 or later. Raza Photos is built on APIs that Apple only made available in those versions, so it can't run on older ones. That's recent, and we know it rules out some devices; we'd rather tell you here than at the App Store. To check your version: on a Mac, choose Apple menu \u2192 About This Mac; on an iPhone or iPad, open Settings \u2192 General \u2192 About."
-                }
-              }
-            ]
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Raza Photos",
+      "url": "https://razasoftware.eu/photos/index.html",
+      "downloadUrl": "https://apps.apple.com/ro/app/raza-photos/id6766848491",
+      "image": "https://razasoftware.eu/assets/photos/icon_web.png",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
+      "featureList": [
+        "Browse by date, place, people, albums and events",
+        "Map view",
+        "On-device face detection",
+        "Burst navigation",
+        "HDR and Live Photos",
+        "Edit metadata from iPhone",
+        "Send photos from iPhone to Mac over Wi-Fi",
+        "Multiple Macs merged into one library",
+        "Per-device read-only access controls"
+      ],
+      "description": "Turns the photo folders on your Mac into a library every iPhone and iPad in your house can browse. No cloud, no account, no subscription. Native Swift with HDR, Live Photos and on-device face recognition. Edits from your phone write back into the original files as open XMP/EXIF.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Raza Software",
+        "url": "https://razasoftware.eu/"
       }
+    }
+  ]
+}
     </script>
 
     <title>Raza Photos — Browse Your Mac Photo Library on iPhone &amp; iPad</title>
@@ -217,7 +108,7 @@
         <a href="#features" class="btn btn-outline">See features</a>
       </div>
         <p style="font-size: 13px; opacity: 0.75; margin-top: 16px">
-          Requires macOS 26 and iOS 26 or later. <a href="#requirements" style="color: inherit; text-decoration: underline">Why?</a>
+          Requires macOS 26 and iOS 26 or later. <a href="/faq.html#requirements" style="color: inherit; text-decoration: underline">Why?</a>
         </p>
       <feature-image
         src="/assets/photos/all-devices.webp"
@@ -231,7 +122,7 @@
         <div class="showcase-section" style="padding-bottom: 0">
           <showcase-item
             reverse
-            label="New in v2.0"
+            label="Transfer"
             heading="Send photos from your phone. Skip iCloud entirely."
             iphone="/assets/photos/iphone-transfer-sheet.webp"
             ipad="/assets/photos/ipad-transfer-sheet.webp"
@@ -587,60 +478,16 @@
       <div class="section-inner">
         <div class="section-label">FAQ</div>
         <h2 class="section-title">Common questions.</h2>
-        <div style="max-width: 720px; margin-top: 40px">
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Do I need iCloud or an account to use Raza Photos?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. There is no account, no sign-up and no iCloud. Your Mac serves the library over your home Wi-Fi, and your iPhone or iPad finds it automatically.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Does Raza Photos upload or move my photos?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. It indexes the metadata and leaves every file exactly where it is. The app never sends your library to any server, ours or anyone else's, and it has no telemetry. Maps and place-name lookups go through Apple Maps.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">What happens when my Mac is off?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Your Mac is the server, so the library is available only while the Mac app is running. When the Mac is off there is nothing to connect to, and the library reappears as soon as it is back on your home network.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I browse my photos away from home?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Optionally. Remote access is an extension of your home network built on Tailscale. It is off by default, encrypted end to end, invite-only, and only reachable by devices already on your Tailscale network. Tailscale is separate software with its own setup.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Will editing on my iPhone change my original photos?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Only the metadata. Dates, locations, titles, people and albums are written back to the original files as XMP and EXIF. Image pixels are never decoded or re-encoded.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I stop other people in the house from changing my library?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Yes. You can make the Mac server read-only, block remote edits while still allowing browsing, or set a single iPhone or iPad to read-only. There are no accounts or passwords, just a toggle.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Which photo formats does Raza Photos support?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">JPEG, HEIC, PNG, TIFF, PSD and AVIF, plus the video formats Apple's frameworks support, with HDR gain maps and Live Photos.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I use more than one Mac?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Yes. Every Mac running the app is discovered automatically, and their libraries appear on your iPhone or iPad as one merged, deduplicated library.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I share photos with other people?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Yes. Select up to 50 photos and send them with the standard share sheet on iPhone, iPad, or Mac, to WhatsApp, Messages, Mail, or any app that appears there. It sends the original file, so any location stored in the photo goes with it. This is separate from library sharing, which makes your library available to your own devices at home.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Can I move my library to another app later?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Yes. Your files stay in your own folders, and organization such as albums, places and people is stored in open standards like EXIF, IPTC and XMP, which tools such as Lightroom read.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Is Raza Photos open source?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. Raza Photos is a closed-source app for Mac, iPhone and iPad, sold as a one-time purchase. You don't have to take its privacy claims on trust: it has no servers of its own to send anything to, and you can confirm that with a network monitor such as Little Snitch. Your photos stay in open formats, so you are never locked in.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Does Raza Photos run on Linux, Windows, or a NAS?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. Your Mac is the server, so Raza Photos runs on a Mac, and your iPhone and iPad browse it. It is built for households that don't want to run a Linux box, containers or a server of their own. If you would rather run your own stack, an open-source project built for that is a better fit.</p>
-          </div>
-          <div style="margin-bottom: 32px">
-            <h3 id="requirements" style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">What do I need to run Raza Photos?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">A Mac running macOS 26 or later, and an iPhone or iPad running iOS 26 or iPadOS 26 or later. Raza Photos is built on APIs that Apple only made available in those versions, so it can't run on older ones. That's recent, and we know it rules out some devices; we'd rather tell you here than at the App Store. To check your version: on a Mac, choose Apple menu → About This Mac; on an iPhone or iPad, open Settings → General → About.</p>
-          </div>
-        </div>
+        <ul style="max-width: 720px; margin-top: 32px; padding-left: 20px; font-size: 17px; line-height: 2">
+            <li><a href="/faq.html#account" style="color: var(--blue); text-decoration: none; font-weight: 500">Do I need iCloud or an account to use Raza Photos?</a></li>
+            <li><a href="/faq.html#uploads" style="color: var(--blue); text-decoration: none; font-weight: 500">Does Raza Photos upload or move my photos?</a></li>
+            <li><a href="/faq.html#mac-off" style="color: var(--blue); text-decoration: none; font-weight: 500">What happens when my Mac is off?</a></li>
+            <li><a href="/faq.html#requirements" style="color: var(--blue); text-decoration: none; font-weight: 500">What do I need to run Raza Photos?</a></li>
+            <li><a href="/faq.html#open-source" style="color: var(--blue); text-decoration: none; font-weight: 500">Is Raza Photos open source?</a></li>
+        </ul>
+        <p style="margin-top: 24px; font-size: 16px">
+          <a href="/faq.html" style="color: var(--blue); text-decoration: none; font-weight: 500">See all questions →</a>
+        </p>
       </div>
     </section>
 

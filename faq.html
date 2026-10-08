@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta name="description" content="Answers about Raza Photos and Raza Songs: privacy, requirements, what happens when your Mac is off, formats, editing, remote access, and more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Software" />
+    <meta property="og:url" content="https://razasoftware.eu/faq.html" />
+    <link rel="canonical" href="https://razasoftware.eu/faq.html" />
+    <meta property="og:title" content="FAQ: Raza Photos &amp; Raza Songs Common Questions" />
+    <meta property="og:description" content="Answers about Raza Photos and Raza Songs: privacy, requirements, what happens when your Mac is off, formats, editing, remote access, and more." />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FAQ: Raza Photos &amp; Raza Songs Common Questions" />
+    <meta name="twitter:description" content="Answers about Raza Photos and Raza Songs: privacy, requirements, what happens when your Mac is off, formats, editing, remote access, and more." />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need an account, iCloud, or a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no account, no sign-up, no iCloud and no subscription. Your Mac serves your photos and music over your home Wi-Fi, and your iPhone or iPad finds them automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need to run them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Mac running macOS 26 or later, and an iPhone or iPad running iOS 26 or iPadOS 26 or later. Raza Photos and Raza Songs are built on APIs that Apple only made available in those versions, so they can't run on older ones. That's recent, and we know it rules out some devices; we'd rather tell you here than at the App Store. To check your version: on a Mac, choose Apple menu → About This Mac; on an iPhone or iPad, open Settings → General → About."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do they upload or move my files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They index the metadata and leave every file exactly where it is. The apps never send your library to any server, ours or anyone else's, and they have no telemetry. In Raza Photos, the map view and place-name lookups go through Apple Maps. How to check this yourself →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when my Mac is off?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your Mac is the server, so the library is available only while the app is running on the Mac. When the Mac is off there is nothing to connect to, and the library reappears as soon as it is back on your home network. Closing the app's window doesn't stop sharing: the app keeps running in the menu bar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my library away from home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Optionally. Remote access is an extension of your home network built on Tailscale. It is off by default, encrypted end to end, invite-only, and only reachable by devices already on your Tailscale network. Tailscale is separate software with its own setup. How remote access works →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use more than one Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every Mac running the app is discovered automatically, and their libraries appear on your iPhone or iPad as one merged, deduplicated library."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I stop other people in the house from changing my library?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can make the Mac server read-only, block remote edits while still allowing browsing, or set a single iPhone or iPad to read-only. There are no accounts or passwords, just a toggle. The security model →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I move my library to another app later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your files stay in your own folders. Raza Photos stores albums, places and people in open standards like EXIF, IPTC and XMP, which tools such as Lightroom read, and Raza Songs writes changes into each file's own tags, so any other player can read them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are they open source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Raza Photos and Raza Songs are closed-source apps for Mac, iPhone and iPad, sold as a one-time purchase. You don't have to take their privacy claims on trust: they have no servers of their own to send anything to, and you can confirm that with a network monitor such as Little Snitch. Your files stay in open formats, so you are never locked in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do they run on Linux, Windows, or a NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your Mac is the server, so they run on a Mac, and your iPhone and iPad browse them. They are built for households that don't want to run a Linux box, containers or a server of their own. If you would rather run your own stack, an open-source project built for that is a better fit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will editing on my iPhone change my original photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only the metadata. Dates, locations, titles, people and albums are written back to the original files as XMP and EXIF. Image pixels are never decoded or re-encoded. How saving works →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which photo formats does Raza Photos support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JPEG, HEIC, PNG, TIFF, PSD and AVIF, plus the video formats Apple's frameworks support, with HDR gain maps and Live Photos. Supported formats →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I share photos with other people?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Select up to 50 photos and send them with the standard share sheet on iPhone, iPad, or Mac, to WhatsApp, Messages, Mail, or any app that appears there. It sends the original file, so any location stored in the photo goes with it. This is separate from library sharing, which makes your library available to your own devices at home."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which audio formats does Raza Songs support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MP3, MP4, M4A and M4B, including audiobooks with chapters. FLAC, WAV and OGG are not supported. Supported formats →"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I fix song tags from my iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can change a title, artist, album or genre from your phone, in batches across a whole selection. Changes are written back to the original file's own tags, and the audio data is never touched."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does playback include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shuffle and repeat, gapless transitions, AirPlay, playback that survives a phone call, and full lock screen and CarPlay controls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I build a library from my own CDs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Rip them to a supported format, tag them, and point Raza Songs at the folder. Our guide covers the tools, the format to pick, and how to tag the results →"
+      }
+    }
+  ]
+}
+    </script>
+
+    <title>FAQ: Raza Photos &amp; Raza Songs Common Questions</title>
+
+    <link rel="icon" type="image/svg+xml" href="/assets/icon_web.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/page-callout.css" />
+    <link rel="stylesheet" href="/components/detail-list.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/detail-list.js" defer></script>
+    <script src="/components/detail-item.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/page-callout.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="shared"></raza-nav>
+
+    <hero-section
+      eyebrow="FAQ"
+      heading="Common questions."
+      description="Short, plain answers about Raza Photos and Raza Songs. Looking for a fix instead? Start with the support page."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <detail-list label="Both apps">
+            <detail-item id="account" heading="Do I need an account, iCloud, or a subscription?">No. There is no account, no sign-up, no iCloud and no subscription. Your Mac serves your photos and music over your home Wi-Fi, and your iPhone or iPad finds them automatically.</detail-item>
+            <detail-item id="requirements" heading="What do I need to run them?">A Mac running macOS 26 or later, and an iPhone or iPad running iOS 26 or iPadOS 26 or later. Raza Photos and Raza Songs are built on APIs that Apple only made available in those versions, so they can't run on older ones. That's recent, and we know it rules out some devices; we'd rather tell you here than at the App Store. To check your version: on a Mac, choose Apple menu → About This Mac; on an iPhone or iPad, open Settings → General → About.</detail-item>
+            <detail-item id="uploads" heading="Do they upload or move my files?">No. They index the metadata and leave every file exactly where it is. The apps never send your library to any server, ours or anyone else's, and they have no telemetry. In Raza Photos, the map view and place-name lookups go through Apple Maps. <a href="/verify-privacy.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How to check this yourself →</a></detail-item>
+            <detail-item id="mac-off" heading="What happens when my Mac is off?">Your Mac is the server, so the library is available only while the app is running on the Mac. When the Mac is off there is nothing to connect to, and the library reappears as soon as it is back on your home network. Closing the app's window doesn't stop sharing: the app keeps running in the menu bar.</detail-item>
+            <detail-item id="away-from-home" heading="Can I use my library away from home?">Optionally. Remote access is an extension of your home network built on Tailscale. It is off by default, encrypted end to end, invite-only, and only reachable by devices already on your Tailscale network. Tailscale is separate software with its own setup. <a href="/remote-access.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How remote access works →</a></detail-item>
+            <detail-item id="more-than-one-mac" heading="Can I use more than one Mac?">Yes. Every Mac running the app is discovered automatically, and their libraries appear on your iPhone or iPad as one merged, deduplicated library.</detail-item>
+            <detail-item id="family-controls" heading="Can I stop other people in the house from changing my library?">Yes. You can make the Mac server read-only, block remote edits while still allowing browsing, or set a single iPhone or iPad to read-only. There are no accounts or passwords, just a toggle. <a href="/security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">The security model →</a></detail-item>
+            <detail-item id="moving-away" heading="Can I move my library to another app later?">Yes. Your files stay in your own folders. Raza Photos stores albums, places and people in open standards like EXIF, IPTC and XMP, which tools such as Lightroom read, and Raza Songs writes changes into each file's own tags, so any other player can read them.</detail-item>
+            <detail-item id="open-source" heading="Are they open source?">No. Raza Photos and Raza Songs are closed-source apps for Mac, iPhone and iPad, sold as a one-time purchase. You don't have to take their privacy claims on trust: they have no servers of their own to send anything to, and you can confirm that with a network monitor such as Little Snitch. Your files stay in open formats, so you are never locked in.</detail-item>
+            <detail-item id="linux-windows-nas" heading="Do they run on Linux, Windows, or a NAS?">No. Your Mac is the server, so they run on a Mac, and your iPhone and iPad browse them. They are built for households that don't want to run a Linux box, containers or a server of their own. If you would rather run your own stack, an open-source project built for that is a better fit.</detail-item>
+          </detail-list>
+        </div>
+
+        <div class="section">
+          <detail-list label="Raza Photos">
+            <detail-item id="photos-editing" heading="Will editing on my iPhone change my original photos?">Only the metadata. Dates, locations, titles, people and albums are written back to the original files as XMP and EXIF. Image pixels are never decoded or re-encoded. <a href="/photos/metadata-write.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How saving works →</a></detail-item>
+            <detail-item id="photos-formats" heading="Which photo formats does Raza Photos support?">JPEG, HEIC, PNG, TIFF, PSD and AVIF, plus the video formats Apple's frameworks support, with HDR gain maps and Live Photos. <a href="/photos/formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Supported formats →</a></detail-item>
+            <detail-item id="photos-sharing" heading="Can I share photos with other people?">Yes. Select up to 50 photos and send them with the standard share sheet on iPhone, iPad, or Mac, to WhatsApp, Messages, Mail, or any app that appears there. It sends the original file, so any location stored in the photo goes with it. This is separate from library sharing, which makes your library available to your own devices at home.</detail-item>
+          </detail-list>
+        </div>
+
+        <div class="section">
+          <detail-list label="Raza Songs">
+            <detail-item id="songs-formats" heading="Which audio formats does Raza Songs support?">MP3, MP4, M4A and M4B, including audiobooks with chapters. FLAC, WAV and OGG are not supported. <a href="/music/formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Supported formats →</a></detail-item>
+            <detail-item id="songs-tags" heading="Can I fix song tags from my iPhone?">Yes. You can change a title, artist, album or genre from your phone, in batches across a whole selection. Changes are written back to the original file's own tags, and the audio data is never touched.</detail-item>
+            <detail-item id="songs-playback" heading="What does playback include?">Shuffle and repeat, gapless transitions, AirPlay, playback that survives a phone call, and full lock screen and CarPlay controls.</detail-item>
+            <detail-item id="songs-cds" heading="Can I build a library from my own CDs?">Yes. Rip them to a supported format, tag them, and point Raza Songs at the folder. <a href="/music/ripping-cds.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Our guide covers the tools, the format to pick, and how to tag the results →</a></detail-item>
+          </detail-list>
+        </div>
+
+        <div class="section">
+          <h2>Not here?</h2>
+          <p class="desc">
+            Troubleshooting questions, such as a library that won't appear, are on the <a href="/support.html" style="color: var(--blue); text-decoration: none; font-weight: 500">support page</a>. For anything else, email the developer and you'll hear back from a person, not a queue.
+          </p>
+        </div>
+        <div class="other-links">
+          <link-card href="/getting-started.html" label="Guide" heading="Getting started" description="From install to your library on your iPhone"></link-card>
+          <link-card href="/support.html" label="Support" heading="Common problems" description="Connection, Wi-Fi bands, Ethernet, and more"></link-card>
+          <link-card href="/verify-privacy.html" label="Verify it yourself" heading="Check our privacy claims" description="Three ways to see what the apps send over your network"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>
