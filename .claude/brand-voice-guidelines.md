@@ -122,8 +122,8 @@ Voice is constant across all content.
 - **Public message:** "Free. If that ever changes, it will be a one-time purchase, never a subscription." The no-subscription promise stays, as a statement about the form any future price would take.
 - **"Raza Software"** is the name published under, and the name a future company would use. The Who we are page says so plainly: "there is no company behind it today. If the apps ever grow enough to need one, that is what it will be called."
 - **Never:** state a price (the old "$20" is gone), a date, or the 1,000-user figure; say "free for now", "later", "pay once" or "limited time"; imply a company exists; promise that a price is coming. Don't say "sold as" or "buy".
-- **Where it appears:** the Pricing section on both app pages ("Free. No account, no subscription."), the FAQ ("Are they open source?"), the press kit, the Who we are page ("Why it's free"), and the Cost rows in the comparison tables.
-- **When this changes** (a company is formed and a price is set): update the Pricing sections, the "Download Free" buttons, the FAQ, the press kit, the comparison rows, the Who we are page, and the App Store listing together.
+- **Where it appears:** the Pricing section on both app pages ("Free. No account, no subscription."), the FAQ ("Are they open source?"), the Who we are page ("Why it's free"), and the Cost rows in the comparison tables.
+- **When this changes** (a company is formed and a price is set): update the Pricing sections, the "Download Free" buttons, the FAQ, the comparison rows, the Who we are page, and the App Store listing together.
 
 ## Security and privacy wording
 - Connections between devices are **always** encrypted with **TLS 1.3** (founder-confirmed, not a setting). Always pair the claim with its limit: **encrypted in transit, but not password-protected.** Encryption stops people watching the network from reading the traffic; it does not decide who may connect, because anyone on the main Wi-Fi with the app can still browse (the security page's honest caveat).
@@ -262,7 +262,7 @@ Why it fails: "sync" is wrong, "seamless" has no proof, "secure" and "enterprise
 # Part 5. Working notes and what is open
 
 ## What the site has (added 2026-10-08)
-Pages built for discoverability, because search results for the household questions are mostly forum threads and a well-made guide can win them: `getting-started`, `faq` (one page for both apps), `iphone-cant-find-mac`, `backup-your-library`, `finder-sync-vs-streaming` (Finder sync, iCloud and streaming), `verify-privacy`, `press`, `photos/cancel-icloud-storage`, `photos/vs-icloud-photos`, `music/vs-apple-music`, `music/play-onedrive-music-on-iphone`, a reworked `music/iphone-without-subscription`, and `photos/whats-new` and `music/whats-new`. People type "sync" in their searches, so titles name the thing we replace even though the apps don't sync.
+Pages built for discoverability, because search results for the household questions are mostly forum threads and a well-made guide can win them: `getting-started`, `faq` (one page for both apps), `iphone-cant-find-mac`, `backup-your-library`, `finder-sync-vs-streaming` (Finder sync, iCloud and streaming), `verify-privacy`, `photos/cancel-icloud-storage`, `photos/vs-icloud-photos`, `music/vs-apple-music`, `music/play-onedrive-music-on-iphone`, a reworked `music/iphone-without-subscription`, and `photos/whats-new` and `music/whats-new`. People type "sync" in their searches, so titles name the thing we replace even though the apps don't sync.
 
 **Rules for the OneDrive guide:** short and honest. The point is that the folder imports on the Mac and plays on the iPhone. OneDrive's own setup is Microsoft's part (link to their page, don't re-explain it).
 
@@ -274,7 +274,6 @@ Pages built for discoverability, because search results for the household questi
 - **Search Console:** export Queries and Pages once the new pages have had a week or two, to find the position-16 query and compare it with what the new pages target.
 - **Translations:** the apps have five languages and the site has one. German first, then French.
 - **App Store listing copy:** draft after the site wording settles, and check that price and wording match the site.
-- **Raza Songs languages:** not yet confirmed (the press kit lists Photos only).
 - **Pricing:** settled (2026-10-08). See Pricing language.
 - **Inferred contexts:** App Store text, social posts and outreach drafts would replace the inferred tone rows with evidence.
 - **Not covered:** customer conversations (support emails, reviews) and visual identity.

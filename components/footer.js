@@ -62,7 +62,6 @@ class RazaFooter extends HTMLElement {
               <li><a href="/security.html">Security</a></li>
               <li><a href="/local-first.html">Local-first</a></li>
               <li><a href="/who-we-are.html">Who we are</a></li>
-              <li><a href="/press.html">Press kit</a></li>
             </ul>
           </div>
         </div>
