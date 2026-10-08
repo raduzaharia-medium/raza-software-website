@@ -103,6 +103,9 @@ Variations observed:
 - "Your library doesn't go through our infrastructure. Because we have none." (`local-first.html`)
 - "We collect nothing. We record nothing. We transmit nothing." (`privacy.html`)
 - "Designed for trusted home networks" (`security.html`)
+- **Home page headline (founder-approved direction, 2026-10-08): "A server without the server work."** It sells the outcome (the library-server convenience people want, minus Linux, containers, setup, accounts, subscriptions) and stays true because it admits a server exists. Rejected: "Your Mac is the server. That's the whole idea." (describes the mechanism, not the benefit) and "Your home network is enough." (the founder's belief, but a plain home network isn't enough in 2026; the app does the heavy lifting).
+- **Where the philosophy lives:** "the home network should be enough" is argued on `local-first.html`, not on the home page. The home page sells security, convenience and no subscription.
+- **Don't claim "everything the cloud does".** The cloud also provides offsite backup and anywhere-access by default, which the apps don't. Say "the conveniences you'd expect from a cloud service, without the cloud, the account or the monthly bill", and keep the honest tradeoff line (the Mac must be on; backups are yours).
 
 ### Key Message Pillars
 
@@ -131,11 +134,26 @@ Variations observed:
    - When to use: Feature pages, support, family content, always attached to the specific mechanism.
    - Example phrasing: "Open the app on your iPhone and your library is there within a second or two. Nothing to set up."
 
+### Audience and stance (founder, 2026-10-08)
+- **Who it's for:** ordinary households. People who bought a Mac mini, put their photo albums and songs on it, and just want to see and play them on every device at home, without making it their job. Mothers, fathers, families at the dinner table.
+- **Who it's not for, on purpose:** self-hosters and tinkerers who want a Linux box, containers, config files, or open source. The apps are closed source, Apple-only (Mac, iPhone, iPad) and don't run on Linux or Windows. Say so plainly, once, so those readers self-select out.
+- **How to say it:** calm and unapologetic, never sneering. "There are excellent open-source projects made for exactly that, and they're a better fit." No "script kiddie", no ideology, no jabs at the self-hosting community. Naming a specific project (e.g. Immich) is optional; the default is to describe the category.
+- **The "No Linux box" line is a signature.** Build on it: "No Linux box, no containers, no config files, no terminal, no accounts, no subscription."
+- **Why Apple's own ecosystem isn't the answer:** it's tied to iCloud and, if you stretch it, a paid subscription. Say this as a fact, not an accusation.
+
+### Technical households, and how to write for both audiences (founder, 2026-10-08)
+- **Two readers, one site.** Ordinary households, and technical households: parents who are engineers, such as a cybersecurity engineer who wants privacy and no cloud but leaves the Linux box at work. The second group is the precise market, not a side audience. They search for exactly what is read from and written to photo metadata.
+- **Layer, don't dilute.** Every technical page opens with a plain "In short" box (two sentences, no cute analogies), with the full technical detail intact beneath it. Never remove the technical detail, and never condescend: technical readers see through dumbed-down copy. Plain voice, but precise.
+- **Where the altitude lives:** home page and guides are plain; metadata, formats, discovery, security and remote-access pages carry the detail (EXIF/IPTC/XMP, MakerNote, priority orders, API names).
+- **Version requirements are said up front.** The apps need macOS 26 and iOS 26 or later because they use APIs Apple only made available in those versions. Say it near download buttons, explain why once, plainly, and tell people how to check their version. Never hide it until the App Store.
+- **Home page H1 (2026-10-08):** "Your photos and music, on every Apple device at home. Nothing to set up." Household language first; "a server without the server work" is the explanation one scroll down.
+- **Avoid absolutes:** "Three steps. Then you're done." (not "forever"). Don't use "no server" for the product; say "no server to run", since the Mac is the server.
+
 ### Competitive Positioning
 - vs. cloud photo/music services (iCloud, Google Photos, Spotify): one library on your own hardware, no ongoing dependency, and no tenant relationship to your own memories (`local-first.html`).
 - vs. sync-based approaches: we don't maintain per-device copies. One source of truth, no duplicated storage, nothing to reconcile.
 - vs. Status Quo: files in open formats, always yours.
-- Self-hosted alternatives (e.g. Plex/Jellyfin): not addressed in sources. Open question below.
+- vs. self-hosted server apps (open-source or container-based): different audience, deliberately. We don't compete for tinkerers; we say what we are and point them elsewhere. See "Audience and stance".
 
 ---
 
@@ -186,7 +204,7 @@ Spelling: **US English** (e.g. "organization", "organize", "color"). Note: curre
 ### Must-Use Terms
 | Term | Usage | Instead Of | Example |
 |------|-------|------------|---------|
-| Raza Photos / Raza Songs | Official product names | "the app", "Raza Music" in public copy | "Raza Songs plays audio using Apple's native framework." |
+| Raza Photos / Raza Songs | Official product names. Always spell them out. Never "Raza" on its own (it reads oddly, and the family may grow). "Raza Software" is the company. If more apps arrive, revisit, e.g. "Raza apps" | "Raza" alone, "Raza Music", "the Raza app" | "Raza Songs plays audio using Apple's native framework." |
 | home network | Where the library lives and is served | "the cloud", "our servers" | "Apps that live on your home network." |
 | your Mac is the server | Core mental model | "host", "backend" | "Your Mac is the server. That's the whole idea." |
 | stream | How clients get files | "sync", "download", "copy" | "Your iPhone streams from your Mac." |

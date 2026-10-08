@@ -31,6 +31,7 @@
     <link rel="icon" type="image/png" href="/assets/music/icon_web.png" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
     <link rel="stylesheet" href="/components/footer.css" />
     <link rel="stylesheet" href="/components/hero-section.css" />
     <link rel="stylesheet" href="/components/info-card.css" />
@@ -39,6 +40,7 @@
 
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
     <script src="/components/hero-section.js" defer></script>
     <script src="/components/info-card.js" defer></script>
     <script src="/components/info-card-grid.js" defer></script>
@@ -55,6 +57,12 @@
 
     <div class="content">
       <div class="content-body">
+        <div style="margin-bottom: 40px">
+          <callout-box variant="blue" heading="In short">
+            <p>When you fix a title, artist or album, Raza Songs writes the change into the file's own tags without touching the audio. Edits are queued until you save, and any other player can read them.</p>
+          </callout-box>
+        </div>
+
         <info-card variant="green" class="highlight-box" style="--card-padding: 32px 36px; margin-bottom: 40px" heading="Your audio is never touched">
           <p>
             An audio file has two distinct areas: the compressed audio stream and the tag data. Raza Songs operates exclusively on the tags. The audio

@@ -131,10 +131,26 @@
               },
               {
                 "@type": "Question",
+                "name": "Is Raza Songs open source?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Raza Songs is a closed-source app for Mac, iPhone and iPad, sold as a one-time purchase. You don't have to take its privacy claims on trust: it has no servers of its own to send anything to, and you can confirm that with a network monitor such as Little Snitch. Your music files stay in open formats, so you are never locked in."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Raza Songs run on Linux, Windows, or a NAS?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Your Mac is the server, so Raza Songs runs on a Mac, and your iPhone and iPad browse it. It is built for households that don't want to run a Linux box, containers or a server of their own. If you would rather run your own stack, an open-source project built for that is a better fit."
+                }
+              },
+              {
+                "@type": "Question",
                 "name": "What do I need to run Raza Songs?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A Mac, iPhone or iPad running macOS 26 or iOS 26 or later."
+                  "text": "A Mac running macOS 26 or later, and an iPhone or iPad running iOS 26 or iPadOS 26 or later. Raza Songs is built on APIs that Apple only made available in those versions, so it can't run on older ones. That's recent, and we know it rules out some devices; we'd rather tell you here than at the App Store. To check your version: on a Mac, choose Apple menu \u2192 About This Mac; on an iPhone or iPad, open Settings \u2192 General \u2192 About."
                 }
               }
             ]
@@ -182,6 +198,9 @@
         <a href="https://apps.apple.com/ro/app/raza-songs/id6771887252" class="btn btn-primary">Download on the App Store</a>
         <a href="#features" class="btn btn-outline">See features</a>
       </div>
+        <p style="font-size: 13px; opacity: 0.75; margin-top: 16px">
+          Requires macOS 26 and iOS 26 or later. <a href="#requirements" style="color: inherit; text-decoration: underline">Why?</a>
+        </p>
       <p style="margin-top: 20px; font-size: 13px; color: rgba(255, 255, 255, 0.7)">
         Available now for Mac, iPhone, and iPad.
         <a href="mailto:razamusic@outlook.com" style="color: #7cc8ff; text-decoration: none; font-weight: 500">Get in touch</a>
@@ -200,7 +219,7 @@
     <section class="how" id="how">
       <div class="section-inner">
         <div class="section-label">How it works</div>
-        <h2 class="section-title">Three steps.<br />Then you're done forever.</h2>
+        <h2 class="section-title">Three steps.<br />Then you're done.</h2>
         <p class="section-sub">
           No maintenance, no server to update, no VPN to configure — the same local-first approach as Raza Photos, our Mac and iPhone photo app, just built
           for your music library instead.
@@ -414,8 +433,16 @@
             <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">Yes. Rip them to a supported format, tag them, and point Raza Songs at the folder. The site has a guide to the tools, the format to pick, and how to tag the results.</p>
           </div>
           <div style="margin-bottom: 32px">
-            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">What do I need to run Raza Songs?</h3>
-            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">A Mac, iPhone or iPad running macOS 26 or iOS 26 or later.</p>
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Is Raza Songs open source?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. Raza Songs is a closed-source app for Mac, iPhone and iPad, sold as a one-time purchase. You don't have to take its privacy claims on trust: it has no servers of its own to send anything to, and you can confirm that with a network monitor such as Little Snitch. Your music files stay in open formats, so you are never locked in.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">Does Raza Songs run on Linux, Windows, or a NAS?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">No. Your Mac is the server, so Raza Songs runs on a Mac, and your iPhone and iPad browse it. It is built for households that don't want to run a Linux box, containers or a server of their own. If you would rather run your own stack, an open-source project built for that is a better fit.</p>
+          </div>
+          <div style="margin-bottom: 32px">
+            <h3 id="requirements" style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px">What do I need to run Raza Songs?</h3>
+            <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">A Mac running macOS 26 or later, and an iPhone or iPad running iOS 26 or iPadOS 26 or later. Raza Songs is built on APIs that Apple only made available in those versions, so it can't run on older ones. That's recent, and we know it rules out some devices; we'd rather tell you here than at the App Store. To check your version: on a Mac, choose Apple menu → About This Mac; on an iPhone or iPad, open Settings → General → About.</p>
           </div>
         </div>
       </div>

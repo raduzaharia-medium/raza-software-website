@@ -34,12 +34,14 @@
     <link rel="stylesheet" href="/components/nav.css" />
     <link rel="stylesheet" href="/components/link-card.css" />
     <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
     <link rel="stylesheet" href="/components/footer.css" />
     <link rel="stylesheet" href="/components/hero-section.css" />
     <link rel="stylesheet" href="/components/info-card-grid.css" />
   
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
     <script src="/components/link-card.js" defer></script>
     <script src="/components/info-card.js" defer></script>
     <script src="/components/info-card-grid.js" defer></script>
@@ -56,6 +58,12 @@
 
     <div class="content">
       <div class="content-body">
+        <div style="margin-bottom: 40px">
+          <callout-box variant="blue" heading="In short">
+            <p>When you fix a date, place or tag, Raza Photos writes the change into the original file's metadata, in open standards, without decoding or re-encoding the image. Edits are queued until you save, and other apps, Lightroom included, can read them.</p>
+          </callout-box>
+        </div>
+
         <info-card variant="green" class="highlight-box" style="--card-padding: 32px 36px; margin-bottom: 40px" heading="Your pixels are never touched">
           <p>
             A photo file has two distinct areas: the compressed image (your actual pixels) and the metadata (everything else). Raza Photos operates exclusively
