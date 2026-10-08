@@ -97,8 +97,8 @@
             does not traverse the internet and cannot be accessed from outside your router.
           </p>
           <p>
-            With remote access off, which is the default, there is no port forwarding required, no dynamic DNS, no VPN endpoint, no relay server of ours. There is simply nothing listening for incoming connections
-            from the outside world. An attacker on the internet cannot reach your library because there is no route to it.
+            No port forwarding is ever required, with or without remote access, and there is no dynamic DNS and no relay server of ours. Nothing is listening for incoming connections
+            from the internet. Remote access, if you turn it on, goes over your private Tailscale network instead, never through an open port. An attacker on the internet cannot reach your library because there is no route to it.
           </p>
 
           <callout-box variant="green" heading="What this means">

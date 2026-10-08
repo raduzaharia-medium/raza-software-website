@@ -153,8 +153,9 @@
             device outside your home, even one that knows your IP address, cannot receive these announcements and cannot initiate a connection to your library.
           </p>
           <p>
-            This is not a firewall rule you have to configure. It is simply how local network broadcasts work. The announcements are addressed to every device
-            on your network, but "your network" ends at the router.
+            This is not a firewall rule you have to configure, and it is not a setting of ours. It comes from the protocol itself: Bonjour is built on multicast DNS
+            (mDNS, RFC 6762), which is defined as link-local, so routers don't forward it by default. The announcements are addressed to every device on your
+            network, but "your network" ends at the router.
           </p>
 
           <info-card variant="dark" class="highlight-box">
