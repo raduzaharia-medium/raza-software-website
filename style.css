@@ -172,16 +172,17 @@ hr { border: none; border-top: 1px solid var(--border); }
 }
 
 .steps-list li {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 14px;
-    align-items: start;
+    position: relative;
+    padding-left: 40px;
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.6;
 }
 
 .step-num {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 26px;
     height: 26px;
     border-radius: 50%;
@@ -192,7 +193,6 @@ hr { border: none; border-top: 1px solid var(--border); }
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1px;
 }
 
 /* ── Protected list ── */
