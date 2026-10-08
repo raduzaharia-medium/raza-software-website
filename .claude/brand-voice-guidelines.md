@@ -156,6 +156,19 @@ Variations observed:
 - **Claims about Apple's products** come from Apple's own support pages (iCloud+ downgrade steps, Finder photo sync, App Privacy Report). Re-check them when Apple ships a new OS, because menu paths change.
 - **Still to do:** What's new (needs release history), Who we are (needs a disclosure decision), translations (the app has five languages, the site has one), App Store listing copy.
 
+### Release notes (What's new pages, 2026-10-08)
+- **Source and rewrite:** the founder keeps developer notes tied to commit tags. Those are never published as written. Each entry is rewritten for users: plain sentences, no internal terms ("peer", "push channel", "identity"), and the same terminology as the rest of the site (no "sync", "send photos" not "share photos", "away from home" not "from anywhere", "library sharing").
+- **What stays:** real fixes, stated plainly, including repeated attempts ("a first attempt at fixing…", "another fix for…"). That honesty is the brand.
+- **What never appears:** experiments and reverted features. The trust-on-first-use pairing experiment ("do you trust this peer?") was removed from the product and must not be mentioned anywhere. Don't describe device pairing as a feature.
+- **Obvious features get a line, not a page.** Slideshow, metadata inspector and photo rotation exist, but they are table stakes in a photo app, so they appear in the notes and nowhere else.
+- **Facts confirmed by the founder:** the Photo of the Day widget exists on Mac, iPhone and iPad; the Songs daily selection is 20 songs (it was 10 until version 1.4); Raza Songs was called Raza Music until 2.1.
+- **Maintenance on each release:** add the entry to `photos/whats-new.html` or `music/whats-new.html`, update `softwareVersion` in the app page's structured data, and update the "current version" line in the page's hero. Release dates live in the App Store's version history, not on the site.
+
+### Encryption wording (founder-confirmed 2026-10-08)
+- Connections between devices are **always** encrypted with **TLS 1.3** (founder-confirmed: it is always on, not a setting). Always pair the claim with its limit: **encrypted in transit, but not password-protected.** Encryption stops people watching the network from reading the traffic; it does not decide who may connect, because anyone on the main Wi-Fi with the app can still browse (the security page's honest caveat).
+- Don't describe it as authentication, pairing, or device trust. The "trust this peer?" prompt was an experiment that was removed.
+- Where it appears: security page (summary card and its own section), FAQ ("Is the traffic between my devices encrypted?"), the verification guide (a capture shows who talks to whom, not the contents), the press kit facts, and the release notes (Photos 2.6).
+
 ### Competitive Positioning
 - vs. cloud photo/music services (iCloud, Google Photos, Spotify): one library on your own hardware, no ongoing dependency, and no tenant relationship to your own memories (`local-first.html`).
 - vs. sync-based approaches: we don't maintain per-device copies. One source of truth, no duplicated storage, nothing to reconcile.

@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta name="description" content="Release notes for every version of Raza Photos, from 1.0 to 3.4: remote access, Face ID lock, the widget, photo transfer, and what each release fixed." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/photos/whats-new.html" />
+    <link rel="canonical" href="https://razasoftware.eu/photos/whats-new.html" />
+    <meta property="og:title" content="What&#x27;s New in Raza Photos: Release Notes" />
+    <meta property="og:description" content="Release notes for every version of Raza Photos, from 1.0 to 3.4: remote access, Face ID lock, the widget, photo transfer, and what each release fixed." />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What&#x27;s New in Raza Photos: Release Notes" />
+    <meta name="twitter:description" content="Release notes for every version of Raza Photos, from 1.0 to 3.4: remote access, Face ID lock, the widget, photo transfer, and what each release fixed." />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "headline": "What's New in Raza Photos: Release Notes",
+  "description": "Release notes for every version of Raza Photos, from 1.0 to 3.4: remote access, Face ID lock, the widget, photo transfer, and what each release fixed.",
+  "image": "https://razasoftware.eu/assets/photos/all-devices.webp",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "mainEntityOfPage": "https://razasoftware.eu/photos/whats-new.html",
+  "author": {
+    "@type": "Organization",
+    "name": "Raza Software",
+    "url": "https://razasoftware.eu/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Raza Software",
+    "url": "https://razasoftware.eu/"
+  }
+}
+    </script>
+
+    <title>What's New in Raza Photos: Release Notes</title>
+
+    <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/page-callout.css" />
+    <link rel="stylesheet" href="/components/release-notes.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/page-callout.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="photos"></raza-nav>
+
+    <hero-section
+      eyebrow="What&#x27;s new"
+      heading="What&#x27;s new in Raza Photos."
+      description="The current version is 3.4. Every release since 1.0 is below, with the big moments first."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div class="section">
+          <p class="desc">
+            Written in plain language. We list fixes as plainly as features, including the ones that took more than one attempt. Release dates are in the <a href="https://apps.apple.com/ro/app/raza-photos/id6766848491" style="color: var(--blue); text-decoration: none; font-weight: 500">App Store version history</a>.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Milestones</h2>
+          <ul class="milestones">
+            <li><strong>3.0</strong> Remote access with Tailscale, optional and off by default · <a href="#v3-0" style="color: var(--blue); text-decoration: none; font-weight: 500">Release notes</a> · <a href="/remote-access.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more</a></li>
+            <li><strong>3.1</strong> Face ID app lock to keep your library private · <a href="#v3-1" style="color: var(--blue); text-decoration: none; font-weight: 500">Release notes</a> · <a href="/security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more</a></li>
+            <li><strong>2.5</strong> The Photo of the Day widget · <a href="#v2-5" style="color: var(--blue); text-decoration: none; font-weight: 500">Release notes</a> · <a href="/photos/widget.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more</a></li>
+            <li><strong>2.0</strong> Photo transfer between devices · <a href="#v2-0" style="color: var(--blue); text-decoration: none; font-weight: 500">Release notes</a> · <a href="/photos/transfer.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more</a></li>
+            <li><strong>1.9</strong> French, German, Spanish and Italian · <a href="#v1-9" style="color: var(--blue); text-decoration: none; font-weight: 500">Release notes</a></li>
+            <li><strong>1.4</strong> Video and Live Photo support · <a href="#v1-4" style="color: var(--blue); text-decoration: none; font-weight: 500">Release notes</a> · <a href="/photos/formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more</a></li>
+            <li><strong>1.3</strong> Burst photo support · <a href="#v1-3" style="color: var(--blue); text-decoration: none; font-weight: 500">Release notes</a> · <a href="/photos/burst.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more</a></li>
+            <li><strong>1.2</strong> HDR photo rendering · <a href="#v1-2" style="color: var(--blue); text-decoration: none; font-weight: 500">Release notes</a> · <a href="/photos/formats.html#hdr" style="color: var(--blue); text-decoration: none; font-weight: 500">Learn more</a></li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Version 3</h2>
+          <div class="release" id="v3-4">
+            <h3>3.4</h3>
+            <ul>
+              <li>Reconnects reliably when you return to the app from the background.</li>
+              <li>Smoother, steadier connections between your devices.</li>
+              <li>Tidier sidebar spacing.</li>
+            </ul>
+          </div>
+          <div class="release" id="v3-3">
+            <h3>3.3</h3>
+            <ul>
+              <li>Fixed photo swiping after zooming in, and a flickering connections list.</li>
+              <li>Switching between connections is more dependable.</li>
+              <li>Photos look sharper when enlarged, thanks to better upscaling.</li>
+            </ul>
+          </div>
+          <div class="release" id="v3-2">
+            <h3>3.2</h3>
+            <ul>
+              <li>Images and thumbnails load faster and more smoothly.</li>
+              <li>Place names are more accurate, using Apple Maps location data.</li>
+              <li>Deleted items now go to the Trash instead of being removed permanently.</li>
+              <li>Stability and import fixes.</li>
+            </ul>
+          </div>
+          <div class="release" id="v3-1">
+            <h3>3.1</h3>
+            <ul>
+              <li><strong>Face ID app lock</strong> keeps your library private.</li>
+              <li>Simpler, easier video player controls.</li>
+              <li>Fixed duplicate people, places and other entries that differed only by upper or lower case.</li>
+            </ul>
+          </div>
+          <div class="release" id="v3-0">
+            <h3>3.0</h3>
+            <ul>
+              <li><strong>Remote access with Tailscale:</strong> reach your library away from home with "Share over Tailscale". It is optional, and off by default.</li>
+              <li>Faster, more reliable connections to your library.</li>
+              <li>Better translations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Version 2</h2>
+          <div class="release" id="v2-18">
+            <h3>2.18</h3>
+            <ul>
+              <li>Cast videos to AirPlay devices.</li>
+              <li>Renaming an album, event or person now merges it with an existing one of the same name.</li>
+              <li>Localization fixes.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-17">
+            <h3>2.17</h3>
+            <ul>
+              <li>Send up to 50 photos at once to other people.</li>
+              <li>Fixed sending photos on iPhone and iPad.</li>
+              <li>The sidebar search now clears when you change filters.</li>
+              <li>Fixed a missing sidebar on launch.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-16">
+            <h3>2.16</h3>
+            <ul>
+              <li>Improved sidebar in the photo navigator.</li>
+              <li>Faster, more reliable updates between your devices.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-15">
+            <h3>2.15</h3>
+            <ul>
+              <li>Search within the sidebar filters.</li>
+              <li>Cleaner search sheet on iPhone.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-14">
+            <h3>2.14</h3>
+            <ul>
+              <li>Fixed burst photo navigation.</li>
+              <li>Another fix for black images in the Photo of the Day widget.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-13">
+            <h3>2.13</h3>
+            <ul>
+              <li>Fixed the same photo appearing twice when it belongs to two selected albums.</li>
+              <li>Consistent album icon.</li>
+              <li>A first attempt at fixing black images in the Photo of the Day widget.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-12">
+            <h3>2.12</h3>
+            <ul>
+              <li>The navigator loads more photos as they become available.</li>
+              <li>You can mark all photos as already transferred to your Mac.</li>
+              <li>Lower memory use.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-11">
+            <h3>2.11</h3>
+            <ul>
+              <li>Faster, smoother lists and grids on iPhone, iPad and Mac.</li>
+              <li>Sidebar sections can collapse, with selected items shown first.</li>
+              <li>Better tap behavior and sorting in the Photo of the Day widget.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-10">
+            <h3>2.10</h3>
+            <ul>
+              <li>Fixed resetting the library.</li>
+              <li>Fixed an animation glitch when selecting burst photos.</li>
+              <li>Photo of the Day is now the same on every device connected to your Mac.</li>
+              <li>Renamed items now merge cleanly into existing ones.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-9">
+            <h3>2.9</h3>
+            <ul>
+              <li>Faster, more flexible connections between devices.</li>
+              <li>The Mac app no longer launches at login by default.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-8">
+            <h3>2.8</h3>
+            <ul>
+              <li>Clearer device names in the device list.</li>
+              <li>Fixed the widget creating duplicate device identities, and the Mac widget failing to connect to the app.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-7">
+            <h3>2.7</h3>
+            <ul>
+              <li>A new server list on iPhone.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-6">
+            <h3>2.6</h3>
+            <ul>
+              <li>Stronger connection security: TLS 1.3 encryption, and access limited to the local network.</li>
+              <li>Incompatible app versions are now detected and refused cleanly.</li>
+              <li>Fixed the Photo of the Day widget failing on very large images.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-5">
+            <h3>2.5</h3>
+            <ul>
+              <li><strong>Photo of the Day widget,</strong> with previous and next buttons and filter selection.</li>
+              <li>Added privacy information.</li>
+              <li>Fixed the widget opening multiple connections, and some selection issues on iOS.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-4">
+            <h3>2.4</h3>
+            <ul>
+              <li>Optional encrypted connections.</li>
+              <li>Requests now time out properly instead of hanging.</li>
+              <li>Fixed flaky thumbnails.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-3">
+            <h3>2.3</h3>
+            <ul>
+              <li>Better handling of burst photos and Live Photos.</li>
+              <li>Smoother fade from the thumbnail to the full-quality HDR photo.</li>
+              <li>Fixed reopening the same photo, grid paging problems, and an editing bug when changing a group of photos.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-2">
+            <h3>2.2</h3>
+            <ul>
+              <li>Filter chips, including on the map.</li>
+              <li>Smoother reconnection after the Mac app updates.</li>
+              <li>New tips for photo transfer and device icons.</li>
+              <li>Fixed the library health filters and map filtering.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-1">
+            <h3>2.1</h3>
+            <ul>
+              <li>Place names can now be looked up for more photos.</li>
+              <li>Fixed the sidebar not updating after a transfer.</li>
+              <li>More robust reading of photo files.</li>
+            </ul>
+          </div>
+          <div class="release" id="v2-0">
+            <h3>2.0</h3>
+            <ul>
+              <li><strong>Photo transfer:</strong> send photos and videos from your iPhone or iPad to your Mac over Wi-Fi, including Live Photos, with handling for when the Mac is offline.</li>
+              <li>New transfer settings.</li>
+              <li>Fixed empty grid cells after transfers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Version 1</h2>
+          <div class="release" id="v1-14">
+            <h3>1.14</h3>
+            <ul>
+              <li>Events and people are now categories you can edit, saved into your photo metadata.</li>
+              <li>Dates and places are organized more clearly.</li>
+              <li>Limits on thumbnail storage.</li>
+              <li>Reorganized settings, and translation fixes.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-13">
+            <h3>1.13</h3>
+            <ul>
+              <li>Faster map clustering.</li>
+              <li>Fixed location clustering on iPhone.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-12">
+            <h3>1.12</h3>
+            <ul>
+              <li>Better map clustering and burst handling.</li>
+              <li>Fixed burst navigation on iPhone, iPad and Mac.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-11">
+            <h3>1.11</h3>
+            <ul>
+              <li>Smoother video streaming.</li>
+              <li>Fixed video progress resetting.</li>
+              <li>Improved saving of metadata.</li>
+              <li>More slideshow fixes.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-10">
+            <h3>1.10</h3>
+            <ul>
+              <li><strong>Slideshow.</strong></li>
+              <li>An option to clear the thumbnail cache.</li>
+              <li>Fixed burst and slideshow issues, and a missing location chip.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-9">
+            <h3>1.9</h3>
+            <ul>
+              <li><strong>French, German, Spanish and Italian translations,</strong> with a language setting on the Mac.</li>
+              <li>Redesigned settings.</li>
+              <li>Fixed duplicate toolbars in the navigator.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-8">
+            <h3>1.8</h3>
+            <ul>
+              <li>Photo rotation.</li>
+              <li>Editable device name and icon.</li>
+              <li>A new custom video player.</li>
+              <li>Fixed iOS gestures and burst grid updates.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-7">
+            <h3>1.7</h3>
+            <ul>
+              <li>Library health filters.</li>
+              <li>A metadata inspector.</li>
+              <li>Fixed video playback on Mac.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-6">
+            <h3>1.6</h3>
+            <ul>
+              <li>Delete photos from disk.</li>
+              <li>Smart map clustering.</li>
+              <li>Smoother transition from thumbnail to full resolution, and an animated sidebar.</li>
+              <li>Fixed several navigation and burst scrolling bugs.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-5">
+            <h3>1.5</h3>
+            <ul>
+              <li>Full video support: playback, thumbnails and duration badges.</li>
+              <li>Read-only mode.</li>
+              <li>Tools to fix locations.</li>
+              <li>Selection is limited to 200 photos to keep things fast.</li>
+              <li>Better error handling.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-4">
+            <h3>1.4</h3>
+            <ul>
+              <li><strong>Video and Live Photo support.</strong></li>
+              <li>Faster, more stable networking.</li>
+              <li>Fixed photo flicker, library reset problems, and extra network traffic after creating an album.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-3">
+            <h3>1.3</h3>
+            <ul>
+              <li><strong>Burst photo support:</strong> group, navigate, add and remove.</li>
+              <li>Range selection, plus new filter and date pills in the navigator.</li>
+              <li>Keyboard shortcuts for photo navigation.</li>
+              <li>Smoother scrolling and faster loading.</li>
+              <li>Fixed several connection and burst bugs.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-2">
+            <h3>1.2</h3>
+            <ul>
+              <li><strong>HDR photo rendering.</strong></li>
+              <li>Faster thumbnails, with a disk cache and instant photo counts.</li>
+              <li>HEIC and HEIF are now supported when exporting metadata.</li>
+              <li>Fixed the toolbar and share button layout.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-1">
+            <h3>1.1</h3>
+            <ul>
+              <li>Dark and light appearance switching.</li>
+              <li>Onboarding tips.</li>
+              <li>Better photo grid margins.</li>
+              <li>Fixed the Mac photo navigator and suggestion selection, an endless refresh loop, and the window title bar.</li>
+            </ul>
+          </div>
+          <div class="release" id="v1-0">
+            <h3>1.0</h3>
+            <ul>
+              <li>First release.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="other-links">
+          <link-card href="/music/whats-new.html" label="What&#x27;s new" heading="Release notes for the other app" description="Every release, in plain language"></link-card>
+          <link-card href="/getting-started.html" label="Guide" heading="Getting started" description="From install to your library on your iPhone"></link-card>
+          <link-card href="/faq.html" label="FAQ" heading="Common questions" description="Privacy, requirements, formats, and more"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

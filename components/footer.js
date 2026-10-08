@@ -11,6 +11,7 @@ class RazaFooter extends HTMLElement {
             <span class="footer-group-label">Raza Photos</span>
             <ul>
               <li><a href="/photos/index.html">Overview</a></li>
+              <li><a href="/photos/whats-new.html">What's new</a></li>
               <li><a href="/photos/browse.html">Browsing</a></li>
               <li><a href="/photos/formats.html">Supported formats</a></li>
               <li><a href="/photos/burst.html">Burst navigation</a></li>
@@ -30,6 +31,7 @@ class RazaFooter extends HTMLElement {
             <span class="footer-group-label">Raza Songs</span>
             <ul>
               <li><a href="/music/index.html">Overview</a></li>
+              <li><a href="/music/whats-new.html">What's new</a></li>
               <li><a href="/music/browse.html">Browsing</a></li>
               <li><a href="/music/formats.html">Supported formats</a></li>
               <li><a href="/music/playing.html">Now Playing</a></li>

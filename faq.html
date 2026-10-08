@@ -48,6 +48,14 @@
     },
     {
       "@type": "Question",
+      "name": "Is the traffic between my devices encrypted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Connections between your devices are always encrypted with TLS 1.3, so anyone watching the network can see that your devices are talking but not what they say. It is not a password, though: anyone on your main Wi-Fi who installs the app can still browse the library. The security model →"
+      }
+    },
+    {
+      "@type": "Question",
       "name": "What happens when my Mac is off?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -200,6 +208,7 @@
             <detail-item id="account" heading="Do I need an account, iCloud, or a subscription?">No. There is no account, no sign-up, no iCloud and no subscription. Your Mac serves your photos and music over your home Wi-Fi, and your iPhone or iPad finds them automatically.</detail-item>
             <detail-item id="requirements" heading="What do I need to run them?">A Mac running macOS 26 or later, and an iPhone or iPad running iOS 26 or iPadOS 26 or later. Raza Photos and Raza Songs are built on APIs that Apple only made available in those versions, so they can't run on older ones. That's recent, and we know it rules out some devices; we'd rather tell you here than at the App Store. To check your version: on a Mac, choose Apple menu → About This Mac; on an iPhone or iPad, open Settings → General → About.</detail-item>
             <detail-item id="uploads" heading="Do they upload or move my files?">No. They index the metadata and leave every file exactly where it is. The apps never send your library to any server, ours or anyone else's, and they have no telemetry. In Raza Photos, the map view and place-name lookups go through Apple Maps. <a href="/verify-privacy.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How to check this yourself →</a></detail-item>
+            <detail-item id="encryption" heading="Is the traffic between my devices encrypted?">Yes. Connections between your devices are always encrypted with TLS 1.3, so anyone watching the network can see that your devices are talking but not what they say. It is not a password, though: anyone on your main Wi-Fi who installs the app can still browse the library. <a href="/security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">The security model →</a></detail-item>
             <detail-item id="mac-off" heading="What happens when my Mac is off?">Your Mac is the server, so the library is available only while the app is running on the Mac. When the Mac is off there is nothing to connect to, and the library reappears as soon as it is back on your home network. Closing the app's window doesn't stop sharing: the app keeps running in the menu bar.</detail-item>
             <detail-item id="away-from-home" heading="Can I use my library away from home?">Optionally. Remote access is an extension of your home network built on Tailscale. It is off by default, encrypted end to end, invite-only, and only reachable by devices already on your Tailscale network. Tailscale is separate software with its own setup. <a href="/remote-access.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How remote access works →</a></detail-item>
             <detail-item id="more-than-one-mac" heading="Can I use more than one Mac?">Yes. Every Mac running the app is discovered automatically, and their libraries appear on your iPhone or iPad as one merged, deduplicated library.</detail-item>
