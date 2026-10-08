@@ -41,7 +41,7 @@ Honesty is not enough on its own. If readers don't understand or connect with th
 
 **How to say it:** calm and unapologetic, never sneering. "There are excellent open-source projects made for exactly that, and they're a better fit." No "script kiddie", no ideology, no jabs at the self-hosting community. Naming a specific project (e.g. Immich) is optional; the default is to describe the category.
 
-**Why neither end works for households (founder's experience):** the founder tried the cloud, and it kept frustrating in small ways. The founder also tried self-hosting, and found it more trouble than the cloud. The product is the version in between: a server without the server work. This is the real reason behind "No Linux box". If it is ever stated on the site, say it in the plural "we" voice and without disparaging either option, for example: "We tried the cloud, and we tried running our own server. Neither was simple." It belongs with the "Who we are" decision (see Part 5).
+**Why neither end works for households (founder's experience):** the founder tried the cloud, and it kept frustrating in small ways. The founder also tried self-hosting, and found it more trouble than the cloud. The product is the version in between: a server without the server work. This is the real reason behind "No Linux box". If it is ever stated on the site, say it in the plural "we" voice and without disparaging either option, for example: "We tried the cloud, and we tried running our own server. Neither was simple." It is told in full, in first person, on `who-we-are.html`.
 
 **Layer, don't dilute.** Every technical page opens with a plain "In short" box (two sentences, no cute analogies), with the full detail intact beneath it. Home page and guides are plain; metadata, formats, discovery, security and remote-access pages carry the detail (EXIF/IPTC/XMP, MakerNote, priority orders, API names). Never condescend: technical readers see through dumbed-down copy.
 
@@ -69,7 +69,7 @@ Voice is constant across all content.
 
 **Respectful of ownership.** The user owns the library; the app is a window onto it. "Your files, in open formats, always." Tenant vs owner framing. The server is the source of truth and clients stream from it; edits write back to the original files in open standards.
 
-**Credible and human.** "We" in marketing, privacy and explainer copy gives an editorial tone. Support replies come from the developer directly. Never "our team of experts" or anything that overstates scale. If a sentence would be false with one person behind it, rewrite it.
+**Credible and human.** "We" in marketing, privacy and explainer copy gives an editorial tone. Support replies come from the developer directly. Never "our team of experts" or anything that overstates scale. If a sentence would be false with one person behind it, rewrite it. **Pronoun rule (2026-10-08):** "I" is for `who-we-are.html` and for support replies. "We" is the editorial voice everywhere else, and the Who we are page declares it openly: "That's me, writing the way a publication does. There is no team and no company."
 
 **Calm, confident, persuasive.** Concrete contrasts (✗/✓), dated facts ("In 2011… In 2020…"), a curiosity hook up front ("Because we have none."). Lead with the benefit; end pages with a clear next step. No fear appeals, no exclamation marks, no naming competitors without a factual basis.
 
@@ -81,7 +81,7 @@ Voice is constant across all content.
 - **Archetype:** The Honest Maker, with a streak of curiosity. A competent engineer-neighbour who built it for their own household, explains it plainly including where it falls short, and occasionally teases an idea to make you lean in.
 - **If our brand were a person:** quietly confident, a bit dry, allergic to hype, glad to explain, and aware that nobody cares about a good explanation they never read.
 - **Values expressed in voice:** earned trust, privacy by architecture, user ownership, open formats, thin clients and a single source of truth, no wasted disk space, honest tradeoffs, simplicity.
-- **Origin (publish only after the "Who we are" decision):** the apps exist because the founder was tired of the same small frustrations everyone has (photos that fill a phone, music the Music app won't play from a folder, files in OneDrive the iPhone can't use) and had tried both the cloud and self-hosting. A strong, true story that can be told without naming a person.
+- **Origin (now told on `who-we-are.html`):** the apps exist because the founder was tired of the same small frustrations everyone has (photos that fill a phone, music the Music app won't play from a folder, files in OneDrive the iPhone can't use) and had tried both the cloud and self-hosting. It is told in first person on the Who we are page, and in the plural "we" elsewhere.
 - The voice is not claimed as a market advantage.
 
 ---
@@ -118,10 +118,12 @@ Voice is constant across all content.
 - vs. self-hosted server apps: a different audience, deliberately. We say what we are and point tinkerers elsewhere.
 
 ## Pricing language
-- **Internal (do not publish):** free until about 1,000 users. The threshold and plan stay internal.
-- **Public message:** it will be a **one-time purchase**, and **for now it's free**. The price is shown as $20; the free period lives on the button ("Download on the App Store, free for now"). Updates are included for everyone, including people who download while it's free.
-- **Approved phrasing:** "Free for now. It will be a one-time purchase, never a subscription." / "Currently free while we build our user base; later a one-time purchase."
-- **Never:** state the 1,000-user figure, promise "free forever", hint at a subscription, or use "limited time" (the free period ends at a user count, not a date, and the brand avoids pressure language).
+- **The facts (founder, 2026-10-08):** the apps are free. There is **no price and no company**. The founder is a private individual. The idea of creating a company and charging once the apps gain real traction (around 1,000 users) is an internal possibility, not a commitment, and it may never happen. It would be irresponsible to build a business around a product that hasn't earned one.
+- **Public message:** "Free. If that ever changes, it will be a one-time purchase, never a subscription." The no-subscription promise stays, as a statement about the form any future price would take.
+- **"Raza Software"** is the name published under, and the name a future company would use. The Who we are page says so plainly: "there is no company behind it today. If the apps ever grow enough to need one, that is what it will be called."
+- **Never:** state a price (the old "$20" is gone), a date, or the 1,000-user figure; say "free for now", "later", "pay once" or "limited time"; imply a company exists; promise that a price is coming. Don't say "sold as" or "buy".
+- **Where it appears:** the Pricing section on both app pages ("Free. No account, no subscription."), the FAQ ("Are they open source?"), the press kit, the Who we are page ("Why it's free"), and the Cost rows in the comparison tables.
+- **When this changes** (a company is formed and a price is set): update the Pricing sections, the "Download Free" buttons, the FAQ, the press kit, the comparison rows, the Who we are page, and the App Store listing together.
 
 ## Security and privacy wording
 - Connections between devices are **always** encrypted with **TLS 1.3** (founder-confirmed, not a setting). Always pair the claim with its limit: **encrypted in transit, but not password-protected.** Encryption stops people watching the network from reading the traffic; it does not decide who may connect, because anyone on the main Wi-Fi with the app can still browse (the security page's honest caveat).
@@ -154,6 +156,13 @@ The apps need macOS 26 and iOS 26 or later, because they use APIs Apple only mad
 - **Photo of the Day widget:** Mac, iPhone and iPad. **Songs daily selection:** 20 songs (it was 10 until Songs 1.4). Raza Photos is available in five languages (English, French, German, Spanish, Italian); Raza Songs' languages are not yet confirmed.
 - **Privacy details:** the Photos map view and place-name lookups use Apple Maps (MapKit), so those coordinates go to Apple under Apple's policy. Face detection runs on the device. The website uses no cookies, analytics or third-party scripts; it is hosted on GitHub Pages, which may keep standard server logs that we don't receive or use.
 - **Remote access:** Tailscale, optional and off by default, appears in the apps as "Share over Tailscale". No open port, no port forwarding.
+
+## About the maker (founder-confirmed 2026-10-08)
+- Raza Software is one person: **Radu Zaharia**, a private individual and solo developer in the EU. There is **no company or commercial entity, and no price**: the apps are free. "Raza Software" is the name published under, and the name a future company would use if one is ever formed.
+- **App Store alignment (founder-confirmed 2026-10-08):** both apps are listed on the App Store directly under Radu Zaharia's own name, as free, with no mention of trading, prices or companies. The website's "Raza Software" name exists so a move to a paid company model, if it ever happens, is easy. The site must therefore always match the listing: free, no company, the individual named.
+- Public record: the technical blog at https://blog.raduzaharia.com (writing about leaving the cloud and running your own infrastructure, plus self-hosting journeys) and GitHub at https://github.com/raduzaharia-medium, whose README says it hosts the examples from the blog. Both are under the founder's own name, so linking them discloses it.
+- Automated tools can't read the blog or its Medium address (they return 403). Don't describe specific posts on the site until the founder supplies titles and URLs.
+- Structured data on the home page and Who we are page names the founder with links to both profiles, which also helps separate "Raza Software" from the many unrelated uses of "Raza".
 
 ## About Apple and Microsoft (verified from their own pages, re-check after each OS release)
 - **iCloud Photos:** a device keeps full-resolution originals (Download Originals) or smaller versions with originals fetched from iCloud when needed (Optimize Storage), optimizing only when space runs low, starting with the least-used photos. We make no claim about which setting is the default.
@@ -209,7 +218,7 @@ Spelling: **US English** ("organization", "color"). Applied across the site.
 | open formats (XMP/EXIF/IPTC, audio tags) | Portability claim | "standard metadata" alone |
 
 ### Preferred
-thin client (technical contexts; elsewhere "your iPhone doesn't keep a copy") · Bonjour (name the mechanism when explaining) · the triplet "no account, no subscription, no telemetry" · read-only (family controls) · Tailscale (only for remote access, always optional and invite-only) · "currently free" (see Pricing).
+thin client (technical contexts; elsewhere "your iPhone doesn't keep a copy") · Bonjour (name the mechanism when explaining) · the triplet "no account, no subscription, no telemetry" · read-only (family controls) · Tailscale (only for remote access, always optional and invite-only) · "free today" (see Pricing; never "free for now" or "currently free", which imply a price is coming).
 **Seamless rule:** "seamless" is welcome only when the next sentence shows what makes it so.
 
 ### Avoid
@@ -258,13 +267,15 @@ Pages built for discoverability, because search results for the household questi
 **Rules for the OneDrive guide:** short and honest. The point is that the folder imports on the Mac and plays on the iPhone. OneDrive's own setup is Microsoft's part (link to their page, don't re-explain it).
 
 ## Open items
-- **Who we are:** needs a disclosure decision (what is public and what stays private). The origin story and the "we tried both" line belong here. Draft three disclosure levels on request.
-- **An optional line for `local-first.html`'s "Why this exists":** "We tried the cloud, and we tried running our own server. Neither was simple." Pending the decision above.
+- **Who we are:** built (2026-10-08), full name and links. Waiting on the founder's review.
+- **Legal identification:** an earlier note assumed the apps are sold. They are free and there is no business, so the founder may be a non-trader, and Apple's EU trader declaration may not apply. That changes the legal picture, so confirm with an accountant what, if anything, must be published (a name and contact are already on the Who we are page). Not legal advice. Also decide whether the footer's "© 2026 Raza Software" should read as the individual instead.
+- **Blog cross-links:** link the best two or three posts on leaving the cloud from the matching guides (leaving iCloud, cancel iCloud storage, finder sync vs streaming), once the founder supplies titles and URLs. The blog could link back to the apps, with the relationship disclosed.
+- **An optional line for `local-first.html`'s "Why this exists":** "We tried the cloud, and we tried running our own server. Neither was simple." Now consistent with the Who we are page; add on the founder's approval.
 - **Search Console:** export Queries and Pages once the new pages have had a week or two, to find the position-16 query and compare it with what the new pages target.
 - **Translations:** the apps have five languages and the site has one. German first, then French.
 - **App Store listing copy:** draft after the site wording settles, and check that price and wording match the site.
 - **Raza Songs languages:** not yet confirmed (the press kit lists Photos only).
-- **Pricing nuance:** whether to state that people who download while it's free keep it for good (not yet decided).
+- **Pricing:** settled (2026-10-08). See Pricing language.
 - **Inferred contexts:** App Store text, social posts and outreach drafts would replace the inferred tone rows with evidence.
 - **Not covered:** customer conversations (support emails, reviews) and visual identity.
 

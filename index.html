@@ -27,38 +27,50 @@
     <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "https://razasoftware.eu/#organization",
-            "name": "Raza Software",
-            "url": "https://razasoftware.eu/",
-            "description": "Raza Software builds apps that live entirely on your home network, with no cloud, no account and no telemetry."
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "Raza Photos",
-            "url": "https://razasoftware.eu/photos/index.html",
-            "downloadUrl": "https://apps.apple.com/ro/app/raza-photos/id6766848491",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
-            "publisher": { "@id": "https://razasoftware.eu/#organization" },
-            "description": "Turns the photo folders on your Mac into a library every iPhone and iPad in your house can browse. No cloud, no account, no subscription. Native Swift with HDR, Live Photos and on-device face recognition. Edits from your phone write back into the original files as open XMP/EXIF."
-          },
-          {
-            "@type": "SoftwareApplication",
-            "name": "Raza Songs",
-            "url": "https://razasoftware.eu/music/index.html",
-            "downloadUrl": "https://apps.apple.com/ro/app/raza-songs/id6771887252",
-            "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
-            "publisher": { "@id": "https://razasoftware.eu/#organization" },
-            "description": "Turns the music folders on your Mac into a library every iPhone and iPad in your house can play. No cloud, no account, no subscription. Native Swift with gapless audio, CarPlay and AirPlay. Edits from your phone write back into the original audio tags."
-          }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://razasoftware.eu/#organization",
+      "name": "Raza Software",
+      "url": "https://razasoftware.eu/",
+      "description": "Raza Software builds apps that live entirely on your home network, with no cloud, no account and no telemetry.",
+      "founder": {
+        "@type": "Person",
+        "name": "Radu Zaharia",
+        "sameAs": [
+          "https://blog.raduzaharia.com",
+          "https://github.com/raduzaharia-medium"
         ]
       }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Raza Photos",
+      "url": "https://razasoftware.eu/photos/index.html",
+      "downloadUrl": "https://apps.apple.com/ro/app/raza-photos/id6766848491",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
+      "publisher": {
+        "@id": "https://razasoftware.eu/#organization"
+      },
+      "description": "Turns the photo folders on your Mac into a library every iPhone and iPad in your house can browse. No cloud, no account, no subscription. Native Swift with HDR, Live Photos and on-device face recognition. Edits from your phone write back into the original files as open XMP/EXIF."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Raza Songs",
+      "url": "https://razasoftware.eu/music/index.html",
+      "downloadUrl": "https://apps.apple.com/ro/app/raza-songs/id6771887252",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "macOS 26, iOS 26, iPadOS 26",
+      "publisher": {
+        "@id": "https://razasoftware.eu/#organization"
+      },
+      "description": "Turns the music folders on your Mac into a library every iPhone and iPad in your house can play. No cloud, no account, no subscription. Native Swift with gapless audio, CarPlay and AirPlay. Edits from your phone write back into the original audio tags."
+    }
+  ]
+}
     </script>
 
     <title>Raza Software — Apps for Your Home Network: Photos &amp; Music</title>
