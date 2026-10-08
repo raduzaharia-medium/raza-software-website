@@ -171,7 +171,8 @@ hr { border: none; border-top: 1px solid var(--border); }
     gap: 14px;
 }
 
-.steps-list li {
+.section .steps-list li {
+    display: block;
     position: relative;
     padding-left: 40px;
     font-size: 15px;
