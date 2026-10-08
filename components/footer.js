@@ -41,6 +41,7 @@ class RazaFooter extends HTMLElement {
               <li><a href="/music/metadata-write.html">Metadata writing</a></li>
               <li><a href="/music/ripping-cds.html">Ripping CDs</a></li>
               <li><a href="/music/iphone-without-subscription.html">Play your own music</a></li>
+              <li><a href="/music/play-onedrive-music-on-iphone.html">OneDrive music on iPhone</a></li>
               <li><a href="/music/vs-apple-music.html">Raza Songs vs Apple Music</a></li>
             </ul>
           </div>
