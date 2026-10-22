@@ -53,6 +53,7 @@ class RazaFooter extends HTMLElement {
               <li><a href="/iphone-cant-find-mac.html">iPhone can't find your Mac</a></li>
               <li><a href="/backup-your-library.html">Back up your library</a></li>
               <li><a href="/finder-sync-vs-streaming.html">Sync vs streaming</a></li>
+              <li><a href="/how-raza-compares.html">How Raza compares</a></li>
               <li><a href="/not-a-media-server.html">Raza vs a media server</a></li>
               <li><a href="/verify-privacy.html">Verify our privacy claims</a></li>
               <li><a href="/discovery.html">How discovery works</a></li>

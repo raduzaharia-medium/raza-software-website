@@ -1,8 +1,8 @@
 # Raza Software Brand Voice Guidelines
 
 ## Document Info
-- Version: 5 (reorganized by topic on 2026-10-08; no rules removed)
-- Replaces: v4 (`brand-voice-guidelines-2026-10-08-v4.md`). Earlier snapshots: v3 (`...-2026-10-08-v3.md`), v2 (`...-2026-10-07-v2.md`), v1 (`...-2026-10-07.md`)
+- Version: 6 (bolder, more confident voice and named comparisons, 2026-10-22)
+- Replaces: v5 (`brand-voice-guidelines-2026-10-08-v5.md`). Earlier snapshots: v4 (`...-2026-10-08-v4.md`), v3 (`...-2026-10-08-v3.md`), v2 (`...-2026-10-07-v2.md`), v1 (`...-2026-10-07.md`)
 - Sources: the website copy in this repo, and direct founder input throughout October 2026 (intent, audience, architecture, pricing, security behavior, product facts)
 - Overall confidence: High for voice, messaging and facts about the products; Medium-Low for contexts beyond the website (social, outreach, App Store), which are inferred
 
@@ -39,7 +39,7 @@ Honesty is not enough on its own. If readers don't understand or connect with th
 
 **Not for, on purpose:** self-hosters and tinkerers who want a Linux box, containers, config files or open source. The apps are closed source, Apple-only (Mac, iPhone, iPad) and don't run on Linux or Windows. Say so plainly, once, so those readers self-select out.
 
-**How to say it:** calm and unapologetic, never sneering. "There are excellent open-source projects made for exactly that, and they're a better fit." No "script kiddie", no ideology, no jabs at the self-hosting community. Naming a specific project (e.g. Immich) is optional; the default is to describe the category.
+**How to say it (updated 2026-10-22):** direct and unapologetic. "If you enjoy running your own stack, there are projects built for that. This isn't one of them." No concession that sounds like an apology, no "script kiddie", no ideology, no insults. Competitors may be named on the comparison page (see Competitive positioning).
 
 **Why neither end works for households (founder's experience):** the founder tried the cloud, and it kept frustrating in small ways. The founder also tried self-hosting, and found it more trouble than the cloud. The product is the version in between: a server without the server work. This is the real reason behind "No Linux box". If it is ever stated on the site, say it in the plural "we" voice and without disparaging either option, for example: "We tried the cloud, and we tried running our own server. Neither was simple." It is told in full, in first person, on `who-we-are.html`.
 
@@ -56,8 +56,8 @@ Voice is constant across all content.
 | **Provable**: claims rest on architecture the reader can check; trust is earned, not requested | **Pledge-based**: "trust us" or policy language that softens bad news |
 | **Respectful of ownership**: your files, your Mac, your formats | **Extractive**: nudging toward accounts, tiers, or lock-in |
 | **Credible and human**: an article-like "we", backed by a developer who actually answers | **Corporate or inflated**: faceless committee voice, or implying a bigger company than exists |
-| **Calm, confident, and persuasive**: clear benefit, a hook that makes people curious | **Alarmist, preachy, or so understated the benefit is lost** |
-| **Expectation-first**: we start from what a reasonable person expects, then show what actually happens | **Adversarial**: blaming companies, guessing at motives, or venting |
+| **Confident and direct**: says what is true flatly, challenges the reader to try it and time it, lets the other side refute it | **Hedged, humble, apologetic or defensive**: "in our humble opinion", "we'd rather say", "if that's okay" |
+| **Expectation-first**: we start from what a reasonable person expects, then show what actually happens | **Abusive**: insults, guessing at motives, or venting. Comparing on facts is not abuse |
 
 ### Attribute detail
 
@@ -69,20 +69,20 @@ Voice is constant across all content.
 
 **Respectful of ownership.** The user owns the library; the app is a window onto it. "Your files, in open formats, always." Tenant vs owner framing. The server is the source of truth and clients stream from it; edits write back to the original files in open standards.
 
-**Credible and human.** "We" in marketing, privacy and explainer copy gives an editorial tone. Support replies come from the developer directly. Never "our team of experts" or anything that overstates scale. If a sentence would be false with one person behind it, rewrite it. **Pronoun rule (2026-10-08):** "I" is for `who-we-are.html` and for support replies. "We" is the editorial voice everywhere else, and the Who we are page declares it openly: "That's me, writing the way a publication does. There is no team and no company."
+**Credible and human.** "We" in marketing, privacy and explainer copy gives an editorial tone. **Update 2026-10-22:** first person is also used in the home page's "One developer" and "Try it. Time it." sections, where the developer speaks directly. Support replies come from the developer directly. Never "our team of experts" or anything that overstates scale. If a sentence would be false with one person behind it, rewrite it. **Pronoun rule (2026-10-08):** "I" is for `who-we-are.html` and for support replies. "We" is the editorial voice everywhere else, and the Who we are page declares it openly: "That's me, writing the way a publication does. There is no team and no company."
 
-**Calm, confident, persuasive.** Concrete contrasts (✗/✓), dated facts ("In 2011… In 2020…"), a curiosity hook up front ("Because we have none."). Lead with the benefit; end pages with a clear next step. No fear appeals, no exclamation marks, no naming competitors without a factual basis.
+**Confident and direct (updated 2026-10-22).** Short declarative sentences. Concrete contrasts, a hook up front, a dry edge. Lead with the benefit and end every page with a challenge or a next step: try it, time it, check it yourself. Limits are stated flatly, once, with no apology ("Apple devices only. Your Mac has to be on."). No hedging phrases, no fear appeals, no exclamation marks. Competitors may be named when the claims are true and checkable.
 
 **Expectation-first.** Begin with what a reasonable person expects, then say plainly what happens instead. "Cloud storage, which most people expect to mean 'move it off my device', ends up meaning 'keep a copy on every device that has room.'" "Most of us expect files that are on our phone to show up in the app that plays music." The frustration is real and shared, and the page names it without raising its voice.
 
 **Curiosity rule.** It is fine to step over the line occasionally, such as a provocative headline, if (1) the claim is literally true, (2) the page explains it right away, and (3) nothing contradicts the honesty pillar.
 
 ## Personality
-- **Archetype:** The Honest Maker, with a streak of curiosity. A competent engineer-neighbour who built it for their own household, explains it plainly including where it falls short, and occasionally teases an idea to make you lean in.
+- **Archetype (updated 2026-10-22):** The Confident Maker. Software that doesn't pretend anything from you, in the spirit of the MS-DOS era: it does one job, on your own hardware, and asks nothing of you. A competent engineer-neighbour who built it for their own household, knows exactly what's different about it, says so plainly, and invites you to test it.
 - **If our brand were a person:** quietly confident, a bit dry, allergic to hype, glad to explain, and aware that nobody cares about a good explanation they never read.
 - **Values expressed in voice:** earned trust, privacy by architecture, user ownership, open formats, thin clients and a single source of truth, no wasted disk space, honest tradeoffs, simplicity.
 - **Origin (now told on `who-we-are.html`):** the apps exist because the founder was tired of the same small frustrations everyone has (photos that fill a phone, music the Music app won't play from a folder, files in OneDrive the iPhone can't use) and had tried both the cloud and self-hosting. It is told in first person on the Who we are page, and in the plural "we" elsewhere.
-- The voice is not claimed as a market advantage.
+- The voice is a stance, and the stance is the advantage: the founder tried every alternative and is sure of what is different. Confidence lives in the voice. The accuracy of every claim stays non-negotiable.
 
 ---
 
@@ -91,7 +91,7 @@ Voice is constant across all content.
 ## Value proposition and headline
 **Primary value proposition:** Your Mac is the server. Raza Photos and Raza Songs turn the folders on your Mac into a library every iPhone and iPad at home can browse and play. Nothing is copied or synced, and there is no cloud, no account, and no subscription tracking you.
 
-**Home page headline (approved 2026-10-08):** "Your photos and music, on every Apple device at home. Nothing to set up." Household language first. "A server without the server work." is the explanation one scroll down. It sells the outcome and stays true because it admits a server exists.
+**Home page headline (updated 2026-10-22):** "Your photos and music, on every Apple device at home. No server to run. No account. No subscription." Subline: "The usual ways to do this make you run a server, make an account or pay a monthly fee to see files you already own. This doesn't. Download it and see how long it takes." Say "no server to run", never "no server" (the Mac is the server). Earlier headline (2026-10-08): "...Nothing to set up." Household language first. "A server without the server work." is the explanation one scroll down. It sells the outcome and stays true because it admits a server exists.
 - Rejected: "Your Mac is the server. That's the whole idea." (mechanism, not benefit) and "Your home network is enough." (a belief, but a plain home network isn't enough in 2026; the app does the heavy lifting).
 - "The home network should be enough" is argued on `local-first.html`, not on the home page.
 - "No Linux box" is a signature line. Build on it: "No Linux box, no containers, no config files, no terminal, no accounts, no subscription."
@@ -109,13 +109,15 @@ Voice is constant across all content.
 - **The pattern for guides and explainers:** (1) state the expectation, (2) state what actually happens, with a source (Apple's or Microsoft's own page), (3) say what we do instead, (4) say honestly where the other approach is the better tool.
 - **Never:** guess at motives (especially revenue), accuse a company, or turn a personal anecdote into a stated fact. An anecdote is a reason to look something up, not a claim. If Apple or Microsoft documents it, cite that.
 - **Keep it fair:** the cloud's real benefits (offsite backup, access from anywhere with no setup) get named every time we compare. The model line: "None of that is sinister. It's how a cloud business works."
-- **Comparison-page rule:** say plainly where the other product wins (offsite backup and anywhere-access for iCloud Photos; discovery and a catalog for Apple Music).
+- **Comparison-page rule:** say plainly, in one line and without apology, where the other product is the right pick (offsite backup and anywhere-access for iCloud Photos; discovery and a catalog for Apple Music; TVs and Android for Plex).
 
 ## Competitive positioning
 - vs. cloud photo/music services (iCloud, Google Photos, Spotify): one library on your own hardware, no ongoing dependency, no tenant relationship to your own memories.
 - vs. sync-based approaches: no per-device copies. One source of truth, no duplicated storage, nothing to reconcile.
 - vs. status quo: files in open formats, always yours.
-- vs. self-hosted server apps: a different audience, deliberately. We say what we are and point tinkerers elsewhere.
+- vs. named apps (Plex, Emby, Jellyfin, Infuse, Immich; decided 2026-10-22): named on `how-raza-compares.html` and the home page link to it. Pattern per app: "You could choose X" and what it is good at, what it asks of you (the account, the server, the pass, the settings), what Raza does instead, one plain line on who should still pick X, then a challenge to try Raza and keep a clock. Facts only. State our opinions as ours ("we weren't willing to charge a subscription to see media you already own"). No insults (not "trash"), no guessing at motives, no prices, no dates, no source lists, no "according to" attributions. The challenge is on them to refute it.
+- **The sharp true claim:** no other app gives you your own photos and music from a Mac on your iPhone with no server to run, no account and no subscription, in native Swift. Do not say "none of them are native": Infuse is. Do not say "everything else": say "the usual ways".
+- **Raza Videos** is announced as coming soon and built the same way (native, nothing to run, no account). Say "coming soon", never a date.
 
 ## Pricing language
 - **The facts (founder, 2026-10-08):** the apps are free. There is **no price and no company**. The founder is a private individual. The idea of creating a company and charging once the apps gain real traction (around 1,000 users) is an internal possibility, not a commitment, and it may never happen. It would be irresponsible to build a business around a product that hasn't earned one.

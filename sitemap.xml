@@ -166,6 +166,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://razasoftware.eu/how-raza-compares.html</loc>
+        <lastmod>2026-10-22</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://razasoftware.eu/not-a-media-server.html</loc>
         <lastmod>2026-10-22</lastmod>
         <priority>0.8</priority>
