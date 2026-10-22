@@ -6,23 +6,23 @@
     <meta name="theme-color" content="#1a8fff" />
     <meta
       name="description"
-      content="Raza Photos and Raza Songs turn your Mac's photo and music folders into a library every iPhone and iPad at home can browse. No cloud, no account."
+      content="Raza Photos and Raza Songs show the photos and music already on your Mac on every iPhone and iPad at home. No cloud, no account, no subscription, nothing to host."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raza Software" />
     <meta property="og:url" content="https://razasoftware.eu/" />
     <link rel="canonical" href="https://razasoftware.eu/" />
-    <meta property="og:title" content="Raza Software — Apps for Your Home Network: Photos &amp; Music" />
+    <meta property="og:title" content="Raza Software — Your Mac's Photos and Music on Every iPhone and iPad at Home" />
     <meta
       property="og:description"
-      content="Raza Photos and Raza Songs turn your Mac's photo and music folders into a library every iPhone and iPad at home can browse. No cloud, no account."
+      content="Raza Photos and Raza Songs show the photos and music already on your Mac on every iPhone and iPad at home. No cloud, no account, no subscription, nothing to host."
     />
     <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Raza Software — Apps for Your Home Network: Photos &amp; Music" />
+    <meta name="twitter:title" content="Raza Software — Your Mac's Photos and Music on Every iPhone and iPad at Home" />
     <meta
       name="twitter:description"
-      content="Raza Photos and Raza Songs turn your Mac's photo and music folders into a library every iPhone and iPad at home can browse. No cloud, no account."
+      content="Raza Photos and Raza Songs show the photos and music already on your Mac on every iPhone and iPad at home. No cloud, no account, no subscription, nothing to host."
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
 
@@ -73,17 +73,21 @@
 }
     </script>
 
-    <title>Raza Software — Apps for Your Home Network: Photos &amp; Music</title>
+    <title>Raza Software — Your Mac's Photos and Music on Every iPhone and iPad at Home</title>
 
     <link rel="icon" type="image/svg+xml" href="/assets/icon_web.svg" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/components/nav.css" />
     <link rel="stylesheet" href="/components/footer.css" />
     <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/feature-image.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
 
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
     <script src="/components/hero-section.js" defer></script>
+    <script src="/components/feature-image.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
   </head>
   <body>
     <raza-nav app="hub"></raza-nav>
@@ -91,8 +95,14 @@
     <hero-section
       eyebrow="Raza Software"
       heading="Your photos and music, on every Apple device at home. Nothing to set up."
-      description="No cloud, no account, no subscription tracking your usage. Point a Mac app at your files, and every iPhone and iPad at home finds them automatically."
+      description="Your iPhone shows the library that lives on your Mac, so it doesn't fill your phone. No cloud, no account, no subscription."
     ></hero-section>
+
+    <feature-image
+      src="/assets/photos/all-devices.webp"
+      alt="Raza Photos running on Mac, iPad, and iPhone"
+      style="--image-max-width: 1000px; --image-padding: 0 24px; --image-radius: var(--radius); --image-shadow: drop-shadow(0 30px 60px rgba(0,0,0,0.15))"
+    ></feature-image>
 
     <div class="content" style="padding-top: 0">
       <div class="content-body">
@@ -125,23 +135,94 @@
         </div>
 
         <div style="max-width: 720px; margin: 72px auto 0">
-          <h2 style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 20px">A server without the server work.</h2>
-          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px">
-            Your Mac already has your photos and music. Raza Photos and Raza Songs turn those folders into a library that every iPhone and iPad in your house can browse and play. No Linux box, no containers, no config files, no terminal, no accounts, no subscription.
+          <h2 style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 20px">Your phone shows your library. It doesn't keep it.</h2>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px">
+            Syncing and iCloud's Download Originals put a copy of your library on every device, so a library bigger than your phone eventually fills it. Raza Photos and Raza Songs stream from your Mac as you browse or play. The only storage that matters is your Mac's, or an external drive you plug into it, and your phone's space stays yours.
+            <a href="/finder-sync-vs-streaming.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How syncing, iCloud and streaming differ →</a>
           </p>
+          <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 26px" role="img" aria-label="Illustration: a phone holding a full copy of a large library has almost no free storage. The same phone with Raza has most of its storage free.">
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 20px">Illustration, not a real device</div>
+            <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px">A phone holding a copy of the library</div>
+            <div style="display: flex; height: 18px; border-radius: 9px; overflow: hidden; background: var(--bg-alt); border: 1px solid var(--border); margin-bottom: 8px">
+              <div style="width: 28%; background: #9aa5b1"></div>
+              <div style="width: 69%; background: #e5484d"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-secondary); margin-bottom: 26px">
+              <span>Apps and system</span><span>Copy of your library</span><span>Almost nothing free</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px">The same phone with Raza Photos and Raza Songs</div>
+            <div style="display: flex; height: 18px; border-radius: 9px; overflow: hidden; background: var(--bg-alt); border: 1px solid var(--border); margin-bottom: 8px">
+              <div style="width: 28%; background: #9aa5b1"></div>
+              <div style="width: 2%; background: var(--blue)"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-secondary)">
+              <span>Apps and system</span><span>Just what the app is showing</span><span>The rest is yours</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="max-width: 720px; margin: 56px auto 0">
+          <h2 style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 20px">Open the app, and your library is there.</h2>
           <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px">
-            Pick your photo and music folders. That's the setup. Your devices find the Mac automatically over Bonjour, and your files never move.
+            Your Mac already has your photos and music. Raza Photos and Raza Songs announce those folders on your home Wi-Fi, so your iPhone and iPad find the library on their own. There is no address to type, no sign-in and nothing to configure on the phone. Your files never move, and nothing is copied to the phone.
             <a href="/getting-started.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Getting started →</a>
           </p>
-          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px">
-            The simplicity is earned, not skipped. Privacy is architectural, not a promise: your library only ever goes to your own devices, never to our servers or anyone else's, and the apps have no telemetry. Nothing is exposed to the internet by default, access is controlled per device with read-only toggles, and your files stay in open formats so you can leave any time. The work that server software normally makes you do is work we did once, so you don't have to.
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">
+            The tradeoff, said out loud: your Mac does the serving, so it needs to be on, and backups are yours.
+            <a href="/local-first.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Why that's worth it →</a>
           </p>
+        </div>
+
+        <div style="max-width: 960px; margin: 72px auto 0">
+          <h2 style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; max-width: 720px">What you won't be asked to do.</h2>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; max-width: 720px">
+            The usual ways to see a library on your phone ask for one of these. Raza Photos and Raza Songs ask for none of them.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 26px">
+              <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px">Run a server program</h3>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.65">
+                The Mac app is the whole system. There is nothing separate to install, update or keep running, and no containers, databases or config files.
+              </p>
+            </div>
+            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 26px">
+              <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px">Create an account</h3>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.65">
+                No sign-up for you and no logins for the family. Access is a read-only toggle per device, not a user list to maintain.
+              </p>
+            </div>
+            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 26px">
+              <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px">Pay to unlock your own library</h3>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.65">
+                No feature sits behind a plan. Free today, and if that ever changes it will be a one-time purchase, never a subscription.
+              </p>
+            </div>
+            <div style="background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px 26px">
+              <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px">Hand over your organizing work</h3>
+              <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.65">
+                Dates, places, people and albums are written into your own files in open standards. If Raza stopped tomorrow, your library would still be exactly where it is.
+                <a href="/photos/metadata-write.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How saving works →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="max-width: 720px; margin: 72px auto 0">
+          <h2 style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 20px">Two apps, each built for what it holds.</h2>
           <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px">
             Both are native Swift apps, with HDR, Live Photos, on-device face recognition, gapless audio, CarPlay and AirPlay. Edit metadata from your phone, send photos from your iPhone to your Mac, put a memory on your Home Screen, merge several Macs into one library, or reach it away from home through optional, encrypted, invite-only Tailscale. These are the conveniences you'd expect from a cloud service, without the cloud, the account or the monthly bill.
           </p>
           <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">
-            The tradeoff, said out loud: your Mac is the server, so it needs to be on, and backups are yours.
-            <a href="/local-first.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Why that's worth it →</a>
+            Privacy is architectural, not a promise: your library only ever goes to your own devices, never to our servers or anyone else's, and the apps have no telemetry. Nothing is exposed to the internet by default, and you can check all of it yourself.
+            <a href="/verify-privacy.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How to verify it →</a>
+          </p>
+        </div>
+
+        <div style="max-width: 720px; margin: 56px auto 0">
+          <h2 style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 20px">One developer, who answers the email.</h2>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">
+            Raza Software is one developer in the EU, and there is no company behind it today. Support emails go to that person, and you'll hear back from a human, not a queue. If the apps ever stop, your library will be exactly where it is, readable by any app that opens those files.
+            <a href="/who-we-are.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Who we are →</a>
           </p>
         </div>
 
@@ -150,9 +231,15 @@
           <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px">
             Raza Photos and Raza Songs are for the family that wants its photos and music on every device in the house, and doesn't want to make that a hobby. They're built for Mac, iPhone and iPad. They aren't open source, and they don't run on Linux or Windows.
           </p>
-          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7">
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px">
             If you enjoy running your own stack, containers and config files included, there are excellent open-source projects made for exactly that, and they're a better fit. If you'd rather just see the photos from your Mac on your phone at the dinner table, this is for you.
           </p>
+          <link-card
+            href="/not-a-media-server.html"
+            label="Explained"
+            heading="Already looked at media server apps?"
+            description="What they ask of you, what Raza asks instead, and where a media server is the better choice"
+          ></link-card>
         </div>
 
         <div style="text-align: center; margin-top: 56px; font-size: 14px; color: var(--text-secondary)">
