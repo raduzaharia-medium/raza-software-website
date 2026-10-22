@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="How Raza Photos finds and groups faces entirely on your own devices: only in photos you select, using Apple's Vision framework, with no accounts, no uploads and no face database."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/photos/face-detection.html" />
+    <link rel="canonical" href="https://razasoftware.eu/photos/face-detection.html" />
+    <meta property="og:title" content="How Face Detection Works Offline — Raza Photos" />
+    <meta
+      property="og:description"
+      content="How Raza Photos finds and groups faces entirely on your own devices: only in photos you select, using Apple's Vision framework, with no accounts, no uploads and no face database."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Face Detection Works Offline — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="How Raza Photos finds and groups faces entirely on your own devices: only in photos you select, using Apple's Vision framework, with no accounts, no uploads and no face database."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <title>How Face Detection Works Offline — Raza Photos</title>
+
+    <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/info-card-grid.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/flow-step.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/priority-table.css" />
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/info-card-grid.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/flow-step.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="photos"></raza-nav>
+
+    <hero-section
+      eyebrow="People"
+      heading="How Raza Photos finds faces without leaving your devices"
+      description="Face tagging works with no account, no upload and no service to call. This page explains what it looks at, how it decides two faces belong together, and what it keeps."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div style="margin-bottom: 40px">
+          <callout-box variant="blue" heading="In short">
+            <p>
+              You select photos and ask Raza Photos to tag the faces in them. It finds each face, compares it with the others, and shows you groups to name. All of that
+              runs on your own devices, with Apple's Vision framework, and the names and face boxes end up in your files only when you save.
+            </p>
+          </callout-box>
+        </div>
+
+        <info-card variant="green" class="highlight-box" style="--card-padding: 32px 36px; margin-bottom: 40px" heading="Nothing is scanned until you ask">
+          <p>
+            Raza Photos never goes through your library looking at faces in the background. Detection runs only on the photos you select, when you choose to tag
+            faces, and stops when you close the sheet.
+          </p>
+          <p>
+            There is no face index for the whole library, no profile of anyone, and nothing that keeps running. If you never use it, no face in your library is ever analyzed.
+          </p>
+        </info-card>
+
+        <div class="section">
+          <h2>What happens when you tag faces</h2>
+          <p class="desc">Five steps, all on the device you are holding.</p>
+
+          <step-flow>
+            <flow-step icon="🖼" heading="Your selection is loaded at full size">
+              <p>
+                Detection needs more detail than a thumbnail has, so the app loads each selected photo at full size. On a Mac, it reads the file from your folder. On an iPhone or iPad, it
+                fetches the full-size photo from your Mac over your home network, and the iPhone does the detection itself. If a selected photo belongs to a burst, the whole burst
+                is included.
+              </p>
+            </flow-step>
+            <flow-step icon="🔍" heading="Faces are found">
+              <p>
+                Apple's Vision framework looks at each photo and returns a box around every face. This is a model that ships inside iOS and macOS, so it works with no network
+                connection at all.
+              </p>
+            </flow-step>
+            <flow-step icon="🧮" heading="Each face gets a numeric fingerprint">
+              <p>
+                The app crops each face with a little room around it and asks Vision to describe it as 768 numbers. Two crops that look alike produce numbers that are close
+                together. The next section explains what that means.
+              </p>
+            </flow-step>
+            <flow-step icon="🫂" heading="Similar faces are grouped">
+              <p>
+                Faces whose fingerprints are close enough end up in one group. The app only ever compares faces within your selection. Faces that already have a name are never grouped with a face carrying a different name.
+              </p>
+            </flow-step>
+            <flow-step icon="✋" heading="You decide">
+              <p>
+                You see the groups, name them, and expand a group to name its faces one by one. Nothing is final until you confirm, and the names are stored in your library. They go into the
+                photo files themselves when you choose Save Metadata.
+              </p>
+            </flow-step>
+          </step-flow>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What a fingerprint is</h2>
+          <p>
+            Think of how a map describes a city with two numbers, latitude and longitude. Two numbers are enough to place any city on the map, and once every city has its place, you can
+            tell how far apart two of them are just by measuring the distance between their points. You don't need to know anything about the cities.
+          </p>
+          <p>
+            A fingerprint does the same for a picture, with more numbers. Vision looks at a face crop and produces <strong>768 numbers</strong>. Together they are the picture's
+            coordinates in a space with 768 directions instead of two. Pictures that look alike get coordinates that are close together, and pictures that look different land far apart.
+            Comparing two faces becomes a question of arithmetic: how far apart are these two points?
+          </p>
+
+          <div style="max-width: 560px; margin: 28px auto; text-align: center">
+            <svg viewBox="0 0 560 300" role="img" aria-labelledby="space-title space-desc" style="width: 100%; height: auto">
+              <title id="space-title">Faces as points in a space</title>
+              <desc id="space-desc">Eleven dots in three tight clusters. Faces that look alike sit close together, and a dashed circle shows the distance within which faces are grouped.</desc>
+              <rect x="1" y="1" width="558" height="298" rx="12" fill="none" stroke="currentColor" stroke-opacity="0.15" />
+              <g fill="var(--blue)"><circle cx="110" cy="100" r="7" /><circle cx="132" cy="122" r="7" /><circle cx="96" cy="130" r="7" /><circle cx="124" cy="92" r="7" /></g>
+              <g fill="var(--green)"><circle cx="330" cy="190" r="7" /><circle cx="352" cy="170" r="7" /><circle cx="316" cy="214" r="7" /><circle cx="360" cy="206" r="7" /></g>
+              <g fill="var(--orange)"><circle cx="470" cy="70" r="7" /><circle cx="488" cy="96" r="7" /><circle cx="452" cy="90" r="7" /></g>
+              <circle cx="117" cy="111" r="44" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-dasharray="5 5" />
+              <text x="117" y="46" font-size="13" text-anchor="middle" fill="currentColor" fill-opacity="0.75">close enough: same group</text>
+              <line x1="132" y1="122" x2="330" y2="190" stroke="currentColor" stroke-opacity="0.3" stroke-dasharray="2 4" />
+              <text x="215" y="170" font-size="12" fill="currentColor" fill-opacity="0.7">far apart</text>
+            </svg>
+            <p style="font-size: 14px; margin-top: 8px">Simplified to two dimensions. The real space has 768, but the idea is the same: nearby points are faces that look alike.</p>
+          </div>
+
+          <h3>Where the numbers come from</h3>
+          <p>
+            Nobody sat down and decided what each number means. They come from a neural network, and the technique has a name: an <strong>embedding</strong>. An embedding is a way of turning
+            something hard to compare, like a picture, into a point in a space, arranged so that distance in the space reflects similarity in the world.
+          </p>
+          <p>
+            Imagine sorting a huge pile of photos onto a table, with one rule: pictures that look alike go close together, and pictures that look different go far apart. Nobody writes down
+            the categories. You just keep placing photos and adjusting, and groups form by themselves. A neural network is trained in a similar spirit. It is shown a great many example
+            images, and it adjusts itself, over and over, until placing similar pictures near each other and different ones far apart becomes something it does reliably. Once trained,
+            it can place a picture it has never seen, and the spot it picks is the fingerprint.
+          </p>
+          <p>
+            Apple hasn't published the details of the network behind Vision's feature prints, so we can't tell you exactly how it was trained, or on what. What we can say is how embeddings
+            work in general, and what we measured on the one inside your device.
+          </p>
+
+          <h3>Why no single number means anything</h3>
+          <p>
+            It is tempting to think one number must stand for something, perhaps the shape of a nose or the shade of a skin tone. It doesn't work that way. Meaning is spread across all 768 numbers
+            at once, and what matters is the <em>arrangement</em>: which points sit near which.
+          </p>
+          <p>
+            A map helps again. Rotate the grid lines you measure a map against, and every city's coordinates change, but every distance between cities stays exactly the same. The axes were never the
+            point. An embedding is like that, with 768 axes nobody labeled. Single coordinates have no meaning you could read, and the distances between points carry all of it.
+          </p>
+          <p>
+            Language models show the same thing. In a famous result for word embeddings, taking the point for "king", subtracting "man" and adding "woman" lands near "queen". Directions in
+            such a space can carry meaning, even though no individual axis says "royalty" or "gender". Nobody planned that. It emerged from the training.
+          </p>
+
+          <h3>Measuring "close", with a little maths</h3>
+          <p>
+            You already know the formula. On a flat map, the straight-line distance between two points follows from Pythagoras:
+          </p>
+          <div class="note" style="text-align: center; font-size: 17px">
+            distance = √( (x₁ − x₂)² + (y₁ − y₂)² )
+          </div>
+          <p>
+            For three numbers, add a third term. For 768, add 768 terms: take the difference in each coordinate, square it, add them all up, and take the square root. Here is a tiny version with
+            three numbers. Take two points, A = (0.2, 0.9, 0.4) and B = (0.3, 0.8, 0.5). Each coordinate differs by 0.1, so the distance is √(0.01 + 0.01 + 0.01) ≈ 0.17. Vision does exactly
+            this, with 768 coordinates, and it gives the same answer as the formula. We checked.
+          </p>
+          <p>
+            Vision also scales every fingerprint to length 1. Picture each fingerprint as an arrow from the center of the space, and all the arrows the same length, so every point lies on the
+            surface of a sphere. Then distance is just another way of reading the <strong>angle</strong> between two arrows: the closer the arrows point, the smaller the distance. The
+            largest possible distance is 2, for arrows pointing in opposite directions.
+          </p>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Distance</th>
+                <th>Angle between arrows</th>
+                <th>What it looks like</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0.22</td>
+                <td>about 13°</td>
+                <td>Raza Photos puts two faces in one group</td>
+              </tr>
+              <tr>
+                <td>1.16</td>
+                <td>about 71°</td>
+                <td>The middle value for unrelated photos we measured</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>180°</td>
+                <td>The largest it can be</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 20px">
+            We measured pairs of unrelated photos from a real library on a Mac. They came out between 0.76 and 1.38 apart. Raza Photos treats two faces as the same person only when they are
+            within <strong>0.22</strong>, a small fraction of that. It is a strict rule on purpose: the app would rather leave a face ungrouped for you to place than merge two different people.
+          </p>
+          <div class="note">
+            <strong>One caveat.</strong> This fingerprint describes how a picture looks, and it was not built for faces alone. That is why the groups are suggestions, and why you confirm them.
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What is kept, and what isn't</h2>
+          <info-card-grid columns="2" class="featured">
+            <info-card variant="alt" heading="Kept: names and boxes" description="Who is in each photo and where their face is, in your library and, after you save, in the file"></info-card>
+            <info-card variant="alt" heading="Not kept: fingerprints" description="The numbers used to compare faces exist only while the sheet is open"></info-card>
+            <info-card variant="alt" heading="Not kept: face crops" description="The cropped faces you see while naming are discarded afterward"></info-card>
+            <info-card variant="alt" heading="Not built: a face database" description="There is no library-wide index, and nothing to match against later"></info-card>
+          </info-card-grid>
+          <div class="note" style="margin-top: 16px">
+            <strong>Why that matters.</strong> The lasting result of tagging is the same thing you would get by typing names by hand: a person's name and a rectangle on the photo. Any app that reads
+            standard XMP can use it, and deleting Raza Photos takes nothing with it.
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What gets written to your files</h2>
+          <p>
+            When you choose Save Metadata, each tagged person is written into the photo as XMP: the name in <code>PersonInImage</code>, and the face box as a region, in the ACDSee region format as well.
+            Faces already tagged by another app, ACDSee included, are read first and kept as they are. Raza Photos only adds faces that no existing tag already covers.
+          </p>
+          <p>
+            Nothing else about the photo changes, and the pixels are never touched.
+            <a href="/photos/metadata-write.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How saving works →</a>
+            <a href="/photos/metadata-read.html" style="color: var(--blue); text-decoration: none; font-weight: 500">What is read →</a>
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What it won't do for you</h2>
+          <callout-box variant="orange" heading="A helper, not an authority">
+            <p>
+              Grouping is based on how faces look in the photos you selected, so it can put two similar-looking people together or split one person across several groups, especially across
+              years, glasses, angles or very small faces. Like any face detector, it can also miss faces that are tiny, turned away or covered. Check the groups before you save. That is
+              why the last step is yours.
+            </p>
+          </callout-box>
+          <p style="margin-top: 20px">
+            It also doesn't look beyond your selection. It compares only the faces in the photos you picked, including any already tagged in those photos, so it won't recognize someone just
+            because you tagged them elsewhere last month. Selecting more photos of the same person in one go gives it more to group.
+          </p>
+        </div>
+
+        <hr />
+
+        <info-card variant="dark" class="highlight-box" style="--card-padding: 32px 36px" heading="How it works technically">
+          <p>
+            Faces are found with Vision's <code>DetectFaceRectanglesRequest</code>, which returns normalized bounding boxes. Each box is cropped from the full-size image with 15% padding on every
+            edge, and the crop goes through <code>GenerateImageFeaturePrintRequest</code> to produce a feature print: 768 single-precision floating point numbers, normalized to length 1, from Vision's second image feature print revision on current macOS.
+          </p>
+          <p>
+            Two faces match when the distance between their feature prints, which is plain Euclidean distance as reported by Vision, is 0.22 or less. If both faces already carry a name, the names must also be identical. Groups are formed by transitive
+            closure: if A matches B and B matches C, all three are one group, even if A and C wouldn't match directly.
+          </p>
+          <p>
+            Newly detected faces are dropped when they overlap an existing face box by more than 30% (intersection over union), so faces already tagged, in a file or in your library, stay the
+            authoritative ones. Detection and grouping run in a background task. The cropped images and feature prints live in memory for the length of the scan.
+          </p>
+        </info-card>
+
+        <div class="other-links">
+          <link-card
+            href="/photos/metadata-read.html"
+            label="See also"
+            heading="Reading metadata"
+            description="Where names and face boxes already in your files are read from"
+          ></link-card>
+          <link-card
+            href="/photos/metadata-write.html"
+            label="See also"
+            heading="Writing metadata"
+            description="What gets saved into your files, and how"
+          ></link-card>
+          <link-card href="/local-first.html" label="Local-first" heading="Why local-first matters" description="No infrastructure means no infrastructure to breach"></link-card>
+          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="Nothing collected, nothing transmitted"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>
