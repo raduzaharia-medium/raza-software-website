@@ -149,6 +149,16 @@ The apps need macOS 26 and iOS 26 or later, because they use APIs Apple only mad
 # Part 3. Facts register (the single place for what is true)
 
 ## About the products (founder-confirmed)
+
+**Verified against the source code (2026-10-22, app version 3.6):**
+- No analytics or crash SDKs and no URLSession use. The only outside lookup is Apple's MapKit geocoding in Raza Photos.
+- Connections use TLS 1.3 (the TCP transport sets it as the minimum; QUIC mandates it). Production admission is auto-allow: a first-seen device is trusted at once, and a changed certificate is re-trusted silently. So "encrypted but not password-protected" is accurate, and the apps do not stop a determined person already on your Wi-Fi.
+- Metadata write-back is lossless and embedded in the file. Photos: JPEG, PNG, HEIC/HEIF, PSD, TIFF (not AVIF). Video: QuickTime/MP4 atoms. Audio: MP3 (ID3v2.3) and M4A/MP4 atoms. WAV, FLAC, AIFF and raw AAC are skipped. Song language is stored for MP3 only.
+- Playback and photos are streamed. The phone keeps a thumbnail cache (1 GB default, user-adjustable, clearable). Never write "nothing is copied to the phone"; write "no full photos or songs are copied".
+- Faces are detected on the device with Apple's Vision framework.
+- CarPlay: there is no CarPlay app yet (it is a backlog item and needs an Apple entitlement). Playback gives lock screen and Control Center controls. Do not write "CarPlay" as a feature.
+- The stray GPL v3 LICENSE file was deleted from the source repository (2026-10-22). The apps are closed source.
+- Founder-tested: Raza Songs plays through a real car over Bluetooth every day. CarPlay itself is untested and has no app.
 - **Naming:** Raza Songs was called Raza Music until version 2.1. Both apps are at 3.4. Both apps act the same way unless stated.
 - **Library sharing:** the Mac's Sharing tab has a switch, "Publish this library to your home network", plus a library name and icon (changes take effect after a restart). With sharing on, closing the window doesn't stop it: the app keeps running in the menu bar. Launch at login is optional and not the default.
 - **Sending photos to other people:** Raza Photos only, on macOS and iOS, through the standard share sheet, up to 50 photos at a time, original files (so any stored location goes with them). Songs cannot share songs.
