@@ -86,6 +86,11 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://razasoftware.eu/thumbnails.html</loc>
+        <lastmod>2026-10-22</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://razasoftware.eu/remote-access.html</loc>
         <lastmod>2026-10-08</lastmod>
         <priority>0.8</priority>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="How Raza Photos and Raza Songs make thumbnails: small JPEG copies built from your originals, what the cache limit means, how many photos fit, and why clearing it is always safe."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Software" />
+    <meta property="og:url" content="https://razasoftware.eu/thumbnails.html" />
+    <link rel="canonical" href="https://razasoftware.eu/thumbnails.html" />
+    <meta property="og:title" content="How Thumbnails Work: Cache Size and Your Originals — Raza Software" />
+    <meta
+      property="og:description"
+      content="How Raza Photos and Raza Songs make thumbnails: small JPEG copies built from your originals, what the cache limit means, how many photos fit, and why clearing it is always safe."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Thumbnails Work: Cache Size and Your Originals — Raza Software" />
+    <meta
+      name="twitter:description"
+      content="How Raza Photos and Raza Songs make thumbnails: small JPEG copies built from your originals, what the cache limit means, how many photos fit, and why clearing it is always safe."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <title>How Thumbnails Work: Cache Size and Your Originals — Raza Software</title>
+
+    <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/info-card-grid.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/flow-step.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/info-card-grid.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/flow-step.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="shared"></raza-nav>
+
+    <hero-section
+      eyebrow="Thumbnails"
+      heading="What the thumbnail cache is, and what its size limit means"
+      description="Every grid of photos or album covers is made of small copies built from your originals. This page explains how they are made, where they live, and what the size limit in Settings does."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div style="margin-bottom: 40px">
+          <callout-box variant="blue" heading="In short">
+            <p>
+              Raza Photos and Raza Songs build a small JPEG copy of each photo or cover the first time it appears on screen, and keep it so the grid is fast the next time. The limit
+              in Settings decides how many of those copies are kept ready. Your originals are only ever read, and the cache can be cleared at any time.
+            </p>
+          </callout-box>
+        </div>
+
+        <info-card variant="green" class="highlight-box" style="--card-padding: 32px 36px; margin-bottom: 40px" heading="A thumbnail is a copy, never your file">
+          <p>
+            A grid can show thousands of items at once. Decoding thousands of full-size originals every time you scroll would be slow and would keep your Mac and your
+            network busy, so each item gets a small stand-in that is cheap to load.
+          </p>
+          <p>
+            Making that stand-in only reads the original. Nothing is written to your photo or song files, and the thumbnail is not used when you open the full photo.
+          </p>
+        </info-card>
+
+        <div class="section">
+          <h2>How a thumbnail is made</h2>
+          <p class="desc">It happens once per item, the first time you scroll it into view.</p>
+
+          <step-flow>
+            <flow-step icon="👀" heading="An item appears in the grid">
+              <p>The app checks memory first, then the cache folder on disk. If it finds a thumbnail, it uses it and stops there.</p>
+            </flow-step>
+            <flow-step icon="🛠" heading="The Mac builds a smaller version">
+              <p>
+                On a miss, the Mac opens the original and produces a version no larger than 320 pixels on its longest edge. It builds that from the image itself rather than
+                from the tiny preview some cameras embed, and it applies the photo's orientation so portraits come out upright.
+              </p>
+              <p>For a video, the thumbnail is the first frame. For a song, it is the cover art embedded in the file, or the cover you picked and haven't saved yet.</p>
+            </flow-step>
+            <flow-step icon="💾" heading="It is saved as a small JPEG">
+              <p>The result is saved to the cache folder as a JPEG at 60% quality, named after the item's internal ID. The write is atomic, so an interrupted write never leaves a half-finished file.</p>
+            </flow-step>
+            <flow-step icon="⚡" heading="Next time it just loads">
+              <p>
+                The next appearance reads that small file instead of the original. The most recent 200 thumbnails are also kept in memory, so scrolling back and forth over a
+                screenful costs almost nothing.
+              </p>
+            </flow-step>
+          </step-flow>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What one thumbnail costs</h2>
+          <info-card-grid columns="2" class="featured">
+            <info-card variant="alt" heading="320 pixels" description="Longest edge, for photos, video frames and cover art in the grid"></info-card>
+            <info-card variant="alt" heading="JPEG at 60%" description="Small on disk, and sharp enough for a grid cell"></info-card>
+            <info-card variant="alt" heading="About 20 KB" description="A typical photo thumbnail. Simple scenes are smaller, detailed ones larger"></info-card>
+            <info-card variant="alt" heading="200 in memory" description="The most recent ones, released if your Mac needs the memory"></info-card>
+          </info-card-grid>
+          <div class="note" style="margin-top: 16px">
+            <strong>Where the 20 KB comes from.</strong> We generated 320 pixel, 60% quality JPEGs from 300 randomly chosen photos in a real family library. The average was
+            20 KB, and 8 in 10 fell between 13 KB and 29 KB. Your library will differ, so treat the figures below as a guide, not a promise.
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What the limit changes</h2>
+          <p class="desc">
+            Not whether your photos show up. Every photo and cover appears in the grid whatever the limit is, and whatever the size of your library. A thumbnail that isn't in the
+            cache is simply built the moment it is needed, and the oldest ones are removed to make room. The limit only decides how many are kept ready, so scrolling back stays instant.
+          </p>
+          <p class="desc">
+            There is nothing to calculate. For a sense of scale, at about 20 KB each, these are the number of thumbnails each choice keeps ready at once:
+          </p>
+          <info-card-grid class="format">
+            <info-card variant="alt" heading="500 MB" description="About 26,000"></info-card>
+            <info-card variant="alt" heading="1 GB (default)" description="About 54,000"></info-card>
+            <info-card variant="alt" heading="2 GB" description="About 107,000"></info-card>
+            <info-card variant="alt" heading="4 GB" description="About 215,000"></info-card>
+          </info-card-grid>
+          <p style="margin-top: 20px">
+            The default suits nearly everyone. A bigger library doesn't need a bigger limit, and you don't need to count anything. Raise it only if you'd like more of the grid to stay
+            instant, or lower it if you'd rather keep disk space.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What happens when the cache is full</h2>
+          <p>
+            Each time a new thumbnail is saved, the app checks the total. If it is over the limit, it removes the oldest thumbnails, oldest first by the time they were created, until the total is back under the limit. Lowering the limit in Settings triggers the same cleanup straight away.
+          </p>
+          <p>
+            Removing a thumbnail costs nothing but a little time. The next time that item appears, it is built again from the original.
+          </p>
+
+          <callout-box variant="orange" heading="The tradeoff">
+            <p>
+              A thumbnail that was removed is rebuilt when you scroll back to it, so that first view takes a moment longer. Rebuilding needs the original: a photo folder on a disconnected
+              drive has to be back first, and on an iPhone the Mac has to be on and reachable. A larger limit makes this happen less often.
+            </p>
+          </callout-box>
+
+          <p style="margin-top: 20px">
+            The same applies to <strong>Clear thumbnail cache</strong> in Settings. It removes every thumbnail, and they return as you browse. Nothing else is touched. macOS can also
+            empty app cache folders on its own when disk space runs low, with the same result.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>On iPhone and iPad</h2>
+          <p>
+            Your iPhone never has your originals, so it can't build thumbnails itself. When a grid cell needs one, the iPhone asks the Mac, the Mac builds or loads the 320 pixel JPEG and sends
+            it over your home network, and the iPhone keeps its own copy in its own cache folder. The next view comes from the phone, with no round trip.
+          </p>
+          <p>
+            The phone has its own cache limit, with the same four choices, set in the iOS Settings app under Raza Photos or Raza Songs, and its own Clear option. Clearing the phone's cache doesn't touch
+            the Mac's, and the other way around.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Nothing is added to your library folders</h2>
+          <p>
+            The cache lives inside each app's own storage on your Mac, not next to your photos or songs. Some apps can add files of their own to the folders they index, such as artwork, metadata files or
+            thumbnail folders, and those then travel with every copy and backup of your library. Raza Photos and Raza Songs don't create any folders in yours.
+          </p>
+          <p>
+            Two things are written into your library folders, and both are things you asked for: metadata you choose to save into a file, and photos you send from your iPhone into the folder you
+            picked. Thumbnails, the library database, and anything pending are kept elsewhere. If you want nothing but your own files in your library, that is how it stays.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What the thumbnail cache is not</h2>
+          <ul class="protected-list">
+            <li>
+              <strong>The full-size photo.</strong> Opening a photo reads the original from your Mac each time, and the result is not stored on disk. That is what keeps
+              the cache small.
+            </li>
+            <li>
+              <strong>The large artwork in Now Playing.</strong> Raza Songs decodes the cover at up to 1,200 pixels each time you play a track and doesn't keep it.
+            </li>
+            <li>
+              <strong>The Photo of the Day widget.</strong> It keeps its own 640 pixel copy of the current photo, with its own Clear button in Settings.
+            </li>
+            <li>
+              <strong>Your edits.</strong> Pending changes to titles, dates, places or covers live in the library database or a separate folder, never in the thumbnail cache, so clearing it
+              loses nothing. <a href="/photos/metadata-write.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How saving works →</a>
+            </li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <info-card variant="dark" class="highlight-box" style="--card-padding: 32px 36px" heading="How it works technically">
+          <p>
+            Photo and cover thumbnails are created with Image I/O's <code>CGImageSourceCreateThumbnailAtIndex</code>, with <code>kCGImageSourceCreateThumbnailFromImageAlways</code> so the
+            result comes from the image data and not an embedded preview, <code>kCGImageSourceThumbnailMaxPixelSize</code> set to 320, and
+            <code>kCGImageSourceCreateThumbnailWithTransform</code> so EXIF orientation is applied. The size is a bounding box, so portrait and landscape both fit it. Video thumbnails come
+            from <code>AVAssetImageGenerator</code> at time zero with the track transform applied. Cover art is read from the ID3 attached picture or the MP4 <code>covr</code> atom.
+          </p>
+          <p>
+            Each thumbnail is encoded as JPEG at quality 0.6 and written atomically as <code>&lt;UUID&gt;.jpg</code> in a <code>Thumbnails</code> folder inside the app's
+            <code>Caches</code> directory, the one place the system is allowed to reclaim under disk pressure. Eviction sorts the folder by modification date and deletes from the oldest
+            until the total is under the limit. A reader doesn't update that date, so the order is "oldest created", not "least recently viewed". The memory layer is an <code>NSCache</code>
+            with a count limit of 200.
+          </p>
+          <p>
+            The Settings screen shows the folder, its current size and a Clear button. You can open the folder in Finder from there and look at the files yourself.
+          </p>
+        </info-card>
+
+        <div class="other-links">
+          <link-card href="/photos/browse.html" label="Raza Photos" heading="Browsing photos" description="Map, grid and full screen on iPhone and iPad"></link-card>
+          <link-card href="/photos/metadata-write.html" label="Related" heading="How saving works" description="Writing changes to your files without touching pixels"></link-card>
+          <link-card href="/local-first.html" label="Local-first" heading="Why local-first matters" description="No infrastructure means no infrastructure to breach"></link-card>
+          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="Nothing collected, nothing transmitted"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>
