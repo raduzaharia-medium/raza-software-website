@@ -158,11 +158,6 @@
             images, and it adjusts itself, over and over, until placing similar pictures near each other and different ones far apart becomes something it does reliably. Once trained,
             it can place a picture it has never seen, and the spot it picks is the fingerprint.
           </p>
-          <p>
-            Apple hasn't published the details of the network behind Vision's feature prints, so we can't tell you exactly how it was trained, or on what. What we can say is how embeddings
-            work in general, and what we measured on the one inside your device.
-          </p>
-
           <h3>Why no single number means anything</h3>
           <p>
             It is tempting to think one number must stand for something, perhaps the shape of a nose or the shade of a skin tone. It doesn't work that way. Meaning is spread across all 768 numbers
@@ -186,8 +181,8 @@
           </div>
           <p>
             For three numbers, add a third term. For 768, add 768 terms: take the difference in each coordinate, square it, add them all up, and take the square root. Here is a tiny version with
-            three numbers. Take two points, A = (0.2, 0.9, 0.4) and B = (0.3, 0.8, 0.5). Each coordinate differs by 0.1, so the distance is √(0.01 + 0.01 + 0.01) ≈ 0.17. Vision does exactly
-            this, with 768 coordinates, and it gives the same answer as the formula. We checked.
+            three numbers. Take two points, A = (0.2, 0.9, 0.4) and B = (0.3, 0.8, 0.5). Each coordinate differs by 0.1, so the distance is √(0.01 + 0.01 + 0.01) ≈ 0.17. Vision does the same
+            thing with 768 coordinates.
           </p>
           <p>
             Vision also scales every fingerprint to length 1. Picture each fingerprint as an arrow from the center of the space, and all the arrows the same length, so every point lies on the
@@ -211,7 +206,7 @@
               <tr>
                 <td>1.16</td>
                 <td>about 71°</td>
-                <td>The middle value for unrelated photos we measured</td>
+                <td>Typical for two unrelated photos</td>
               </tr>
               <tr>
                 <td>2</td>
@@ -221,7 +216,7 @@
             </tbody>
           </table>
           <p style="margin-top: 20px">
-            We measured pairs of unrelated photos from a real library on a Mac. They came out between 0.76 and 1.38 apart. Raza Photos treats two faces as the same person only when they are
+            Two unrelated photos usually land somewhere between 0.8 and 1.4 apart. Raza Photos treats two faces as the same person only when they are
             within <strong>0.22</strong>, a small fraction of that. It is a strict rule on purpose: the app would rather leave a face ungrouped for you to place than merge two different people.
           </p>
           <div class="note">
