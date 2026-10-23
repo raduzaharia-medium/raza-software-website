@@ -104,6 +104,14 @@
     },
     {
       "@type": "Question",
+      "name": "What happens if I move, rename or delete files in Finder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Raza Photos and Raza Songs remember each file by its location, and they don't watch your folders. After you reorganize, choose Import Folder… from the Library menu again. Files that haven't changed are skipped, new ones are added, and a file you moved or renamed shows up as a new item. The old entry isn't removed on its own, so select it and choose Delete from Library, which removes it from the app only. (Delete from Disk is the one that moves a file to the Trash.) Edits you saved live inside the files, so they follow a file wherever it goes. Choose Save Metadata before you reorganize, so nothing is left waiting for a file that has moved. After a big reshuffle, you can also reset the library in Settings and import again. A reset never deletes your files."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Are they open source?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -152,6 +160,14 @@
     },
     {
       "@type": "Question",
+      "name": "How is the Photo of the Day chosen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once a day, Raza Photos picks one photo from your library, using the date to decide. That means the same photo all day, on every device that asks your Mac, and a new one tomorrow. Bursts count once, and the video half of a Live Photo is never picked, so the choice is always something you'd see as a tile in the grid. You can narrow it down in the widget's settings by album, person, event, year or country. If your library changes, today's pick can change too."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Which audio formats does Raza Songs support?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -180,6 +196,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Shuffle and repeat, gapless transitions, AirPlay, playback that survives a phone call, and full lock screen and Control Center controls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are the daily picks chosen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each day Raza Songs picks a song, an artist, an album and 20 highlight songs for the welcome screen, using the date to decide. They stay the same all day and change tomorrow, and no song appears twice. If you add or remove songs, the picks can shuffle."
       }
     },
     {
@@ -239,6 +263,7 @@
             <detail-item id="more-than-one-mac" heading="Can I use more than one Mac?">Yes. Every Mac running the app is discovered automatically, and their libraries appear on your iPhone or iPad as one merged, deduplicated library.</detail-item>
             <detail-item id="family-controls" heading="Can I stop other people in the house from changing my library?">Yes. You can make the Mac server read-only, block remote edits while still allowing browsing, or set a single iPhone or iPad to read-only. There are no accounts or passwords, just a toggle. <a href="/security.html" style="color: var(--blue); text-decoration: none; font-weight: 500">The security model →</a></detail-item>
             <detail-item id="moving-away" heading="Can I move my library to another app later?">Yes. Your files stay in your own folders. Raza Photos stores albums, places and people in open standards like EXIF, IPTC and XMP, which tools such as Lightroom read, and Raza Songs writes changes into each file's own tags, so any other player can read them.</detail-item>
+            <detail-item id="moving-files" heading="What happens if I move, rename or delete files in Finder?">Raza Photos and Raza Songs remember each file by its location, and they don&#x27;t watch your folders. After you reorganize, choose Import Folder… from the Library menu again. Files that haven&#x27;t changed are skipped, new ones are added, and a file you moved or renamed shows up as a new item. The old entry isn&#x27;t removed on its own, so select it and choose Delete from Library, which removes it from the app only. (Delete from Disk is the one that moves a file to the Trash.) Edits you saved live inside the files, so they follow a file wherever it goes. Choose Save Metadata before you reorganize, so nothing is left waiting for a file that has moved. After a big reshuffle, you can also reset the library in Settings and import again. A reset never deletes your files.</detail-item>
             <detail-item id="open-source" heading="Are they open source?">No. Raza Photos and Raza Songs are closed-source apps for Mac, iPhone and iPad. They are free today, and if that ever changes it will be a one-time purchase, never a subscription. You don't have to take their privacy claims on trust: they have no servers of their own to send anything to, and you can confirm that with a network monitor such as Little Snitch. Your files stay in open formats, so you are never locked in.</detail-item>
             <detail-item id="media-server" heading="How is this different from a media server?">A media server is a program you install on a computer or NAS, with user accounts and its own catalog, built mostly around video. Raza Photos and Raza Songs are one Mac app plus the iPhone and iPad app: no separate server, no accounts, no plan, and your edits are written into your own files. A media server is the better choice for big video collections, TVs, Android and individual profiles. <a href="/not-a-media-server.html" style="color: var(--blue); text-decoration: none; font-weight: 500">The full comparison →</a></detail-item>
             <detail-item id="linux-windows-nas" heading="Do they run on Linux, Windows, or a NAS?">No. Your Mac is the server, so they run on a Mac, and your iPhone and iPad browse them. They are built for households that don't want to run a Linux box, containers or a server of their own. If you want to run your own stack, there are projects built for that. This isn't one of them.</detail-item>
@@ -250,6 +275,7 @@
             <detail-item id="photos-editing" heading="Will editing on my iPhone change my original photos?">Only the metadata. Dates, locations, titles, people and albums are written back to the original files as XMP and EXIF. Image pixels are never decoded or re-encoded. <a href="/photos/metadata-write.html" style="color: var(--blue); text-decoration: none; font-weight: 500">How saving works →</a></detail-item>
             <detail-item id="photos-formats" heading="Which photo formats does Raza Photos support?">JPEG, HEIC, PNG, TIFF, PSD and AVIF, plus the video formats Apple's frameworks support, with HDR gain maps and Live Photos. <a href="/photos/formats.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Supported formats →</a></detail-item>
             <detail-item id="photos-sharing" heading="Can I share photos with other people?">Yes. Select up to 50 photos and send them with the standard share sheet on iPhone, iPad, or Mac, to WhatsApp, Messages, Mail, or any app that appears there. It sends the original file, so any location stored in the photo goes with it. This is separate from library sharing, which makes your library available to your own devices at home.</detail-item>
+            <detail-item id="photos-photo-of-the-day" heading="How is the Photo of the Day chosen?">Once a day, Raza Photos picks one photo from your library, using the date to decide. That means the same photo all day, on every device that asks your Mac, and a new one tomorrow. Bursts count once, and the video half of a Live Photo is never picked, so the choice is always something you&#x27;d see as a tile in the grid. You can narrow it down in the widget&#x27;s settings by album, person, event, year or country. If your library changes, today&#x27;s pick can change too. <a href="/photos/widget.html" style="color: var(--blue); text-decoration: none; font-weight: 500">More about the widget →</a></detail-item>
           </detail-list>
         </div>
 
@@ -259,6 +285,7 @@
             <detail-item id="songs-local-files" heading="Can Raza Songs play music that&#x27;s stored on my iPhone?">No. Raza Songs plays the library on your Mac, and on any other Mac running it. The iPhone and iPad apps have no way to browse or import files stored on the device, so music that lives only on the phone, or inside a cloud app's folder on the phone, won't appear. Put that music in a folder on your Mac and it will. <a href="/music/iphone-without-subscription.html" style="color: var(--blue); text-decoration: none; font-weight: 500">More on getting your own music onto an iPhone →</a></detail-item>
             <detail-item id="songs-tags" heading="Can I fix song tags from my iPhone?">Yes. You can change a title, artist, album or genre from your phone, in batches across a whole selection. Changes are written back to the original file's own tags, and the audio data is never touched.</detail-item>
             <detail-item id="songs-playback" heading="What does playback include?">Shuffle and repeat, gapless transitions, AirPlay, playback that survives a phone call, and full lock screen and Control Center controls.</detail-item>
+            <detail-item id="songs-daily-picks" heading="How are the daily picks chosen?">Each day Raza Songs picks a song, an artist, an album and 20 highlight songs for the welcome screen, using the date to decide. They stay the same all day and change tomorrow, and no song appears twice. If you add or remove songs, the picks can shuffle.</detail-item>
             <detail-item id="songs-cds" heading="Can I build a library from my own CDs?">Yes. Rip them to a supported format, tag them, and point Raza Songs at the folder. <a href="/music/ripping-cds.html" style="color: var(--blue); text-decoration: none; font-weight: 500">Our guide covers the tools, the format to pick, and how to tag the results →</a></detail-item>
           </detail-list>
         </div>
