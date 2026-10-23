@@ -81,7 +81,7 @@
 
         <div class="section">
           <h2>What happens when you tag faces</h2>
-          <p class="desc">Five steps, all on the device you are holding.</p>
+          <p class="desc">Five steps, all on your own devices.</p>
 
           <step-flow>
             <flow-step icon="🖼" heading="Your selection is loaded at full size">
@@ -100,7 +100,7 @@
             <flow-step icon="🧮" heading="Each face gets a numeric fingerprint">
               <p>
                 The app crops each face with a little room around it and asks Vision to describe it as 768 numbers. Two crops that look alike produce numbers that are close
-                together. The next section explains what that means.
+                together. "What a fingerprint is", further down, explains what that means.
               </p>
             </flow-step>
             <flow-step icon="🫂" heading="Similar faces are grouped">
@@ -367,7 +367,7 @@
         <info-card variant="dark" class="highlight-box" style="--card-padding: 32px 36px" heading="How it works technically">
           <p>
             Faces are found with Vision's <code>DetectFaceRectanglesRequest</code>, which returns normalized bounding boxes. Each box is cropped from the full-size image with 15% padding on every
-            edge, and the crop goes through <code>GenerateImageFeaturePrintRequest</code> to produce a feature print: 768 single-precision floating point numbers, normalized to length 1, from Vision's second image feature print revision on current macOS.
+            edge, and the crop goes through <code>GenerateImageFeaturePrintRequest</code> to produce a feature print, the fingerprint described above: 768 single-precision floating point numbers, normalized to length 1, from Vision's second image feature print revision on current macOS.
           </p>
           <p>
             Two faces match when the distance between their feature prints, which is plain Euclidean distance as reported by Vision, is 0.22 or less. If both faces already carry a name, the names must also be identical. Groups are formed by transitive

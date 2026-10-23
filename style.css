@@ -395,3 +395,6 @@ section { padding: 96px 24px; }
 @media (max-width: 640px) {
     .metadata-cols { grid-template-columns: 1fr; }
 }
+
+/* Long identifiers (API names, metadata field names) wrap instead of widening the page on phones. */
+code { overflow-wrap: anywhere; }

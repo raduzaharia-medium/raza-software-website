@@ -12,21 +12,21 @@
     <meta property="og:site_name" content="Raza Software" />
     <meta property="og:url" content="https://razasoftware.eu/thumbnails.html" />
     <link rel="canonical" href="https://razasoftware.eu/thumbnails.html" />
-    <meta property="og:title" content="How Thumbnails Work: Cache Size and Your Originals — Raza Software" />
+    <meta property="og:title" content="How Thumbnails Are Made and Cached — Raza Software" />
     <meta
       property="og:description"
       content="How Raza Photos and Raza Songs make thumbnails: small JPEG copies built from your originals, what the cache limit means, how many photos fit, and why clearing it is always safe."
     />
     <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="How Thumbnails Work: Cache Size and Your Originals — Raza Software" />
+    <meta name="twitter:title" content="How Thumbnails Are Made and Cached — Raza Software" />
     <meta
       name="twitter:description"
       content="How Raza Photos and Raza Songs make thumbnails: small JPEG copies built from your originals, what the cache limit means, how many photos fit, and why clearing it is always safe."
     />
     <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
 
-    <title>How Thumbnails Work: Cache Size and Your Originals — Raza Software</title>
+    <title>How Thumbnails Are Made and Cached — Raza Software</title>
 
     <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
     <link rel="stylesheet" href="/style.css" />
@@ -56,8 +56,8 @@
 
     <hero-section
       eyebrow="Thumbnails"
-      heading="What the thumbnail cache is, and what its size limit means"
-      description="Every grid of photos or album covers is made of small copies built from your originals. This page explains how they are made, where they live, and what the size limit in Settings does."
+      heading="How thumbnails are made, and what the cache limit means"
+      description="Every grid of photos or album covers is made of small copies built from your originals. This page explains how they are made, where they live, and what the cache limit in Settings does."
     ></hero-section>
 
     <div class="content">
@@ -66,7 +66,7 @@
           <callout-box variant="blue" heading="In short">
             <p>
               Raza Photos and Raza Songs build a small JPEG copy of each photo or cover the first time it appears on screen, and keep it so the grid is fast the next time. The limit
-              in Settings decides how many of those copies are kept ready. Your originals are only ever read, and the cache can be cleared at any time.
+              in Settings decides how many of those copies are kept ready. Making them only reads your originals, and the cache can be cleared at any time.
             </p>
           </callout-box>
         </div>
@@ -119,35 +119,7 @@
             <info-card variant="alt" heading="200 in memory" description="The most recent ones, released if your Mac needs the memory"></info-card>
           </info-card-grid>
           <div class="note" style="margin-top: 16px">
-            <strong>Where the 20 KB comes from.</strong> We generated 320 pixel, 60% quality JPEGs from 300 randomly chosen photos in a real family library. The average was
-            20 KB, and 8 in 10 fell between 13 KB and 29 KB. Your library will differ, so treat the figures below as a guide, not a promise.
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="section">
-          <h2>What the limit changes</h2>
-          <p class="desc">
-            Not whether your photos show up. Every photo and cover appears in the grid whatever the limit is, and whatever the size of your library. A thumbnail that isn't in the
-            cache is simply built the moment it is needed, and the oldest ones are removed to make room. The limit only decides how many are kept ready, so scrolling back stays instant.
-          </p>
-          <p class="desc">
-            There is nothing to calculate. For a sense of scale, at about 20 KB each, these are the number of thumbnails each choice keeps ready at once:
-          </p>
-          <info-card-grid class="format">
-            <info-card variant="alt" heading="500 MB" description="About 26,000"></info-card>
-            <info-card variant="alt" heading="1 GB (default)" description="About 54,000"></info-card>
-            <info-card variant="alt" heading="2 GB" description="About 107,000"></info-card>
-            <info-card variant="alt" heading="4 GB" description="About 215,000"></info-card>
-          </info-card-grid>
-          <p style="margin-top: 20px">
-            The default suits nearly everyone. A bigger library doesn't need a bigger limit, and you don't need to count anything. Raise it only if you'd like more of the grid to stay
-            instant, or lower it if you'd rather keep disk space.
-          </p>
-
-          <div style="max-width: 640px; margin: 24px auto 0; text-align: center">
-            <platform-screenshot mac="/assets/thumbnail-settings.webp" alt="The Thumbnails section of Storage settings in Raza Songs on Mac, with the cache limit, the cache folder, its current size and a Clear thumbnail cache button"></platform-screenshot>
+            <strong>About that 20 KB.</strong> Most photo thumbnails land between 13 KB and 29 KB, depending on how much detail the picture has. Your library will differ, so treat the numbers on this page as a guide.
           </div>
         </div>
 
@@ -175,7 +147,7 @@
               </tr>
               <tr>
                 <td>Raw pixel data in memory</td>
-                <td>About 37 MB (3 bytes per pixel)</td>
+                <td>About 49 MB (4 bytes per pixel)</td>
                 <td>About 0.3 MB (4 bytes per pixel)</td>
               </tr>
               <tr>
@@ -250,6 +222,33 @@
             Thumbnails follow the same rule. They are built upright using the file's own orientation, then turned by however many quarter turns your library says are needed on top of that. That is why a
             rotated photo's thumbnail comes out rotated even before anything is saved.
           </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What the limit changes</h2>
+          <p class="desc">
+            Not whether your photos show up. Every photo and cover appears in the grid whatever the limit is, and whatever the size of your library. A thumbnail that isn't in the
+            cache is simply built the moment it is needed, and the oldest ones are removed to make room. The limit only decides how many are kept ready, so scrolling back stays instant.
+          </p>
+          <p class="desc">
+            There is nothing to calculate. For a sense of scale, at about 20 KB each, these are the number of thumbnails each choice keeps ready at once:
+          </p>
+          <info-card-grid class="format">
+            <info-card variant="alt" heading="500 MB" description="About 26,000"></info-card>
+            <info-card variant="alt" heading="1 GB (default)" description="About 54,000"></info-card>
+            <info-card variant="alt" heading="2 GB" description="About 107,000"></info-card>
+            <info-card variant="alt" heading="4 GB" description="About 215,000"></info-card>
+          </info-card-grid>
+          <p style="margin-top: 20px">
+            The default suits nearly everyone. A bigger library doesn't need a bigger limit, and you don't need to count anything. Raise it only if you'd like more of the grid to stay
+            instant, or lower it if you'd rather keep disk space.
+          </p>
+
+          <div style="max-width: 640px; margin: 24px auto 0; text-align: center">
+            <platform-screenshot mac="/assets/thumbnail-settings.webp" alt="The Thumbnails section of Storage settings in Raza Songs on Mac, with the cache limit, the cache folder, its current size and a Clear thumbnail cache button"></platform-screenshot>
+          </div>
         </div>
 
         <hr />
