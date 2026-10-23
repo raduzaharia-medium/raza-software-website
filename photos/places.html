@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a8fff" />
+    <meta
+      name="description"
+      content="How Raza Photos names the place a photo was taken from its GPS coordinates, and finds coordinates from a city name: two numbers out, a place name back, nothing about your photo along for the ride."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Raza Photos" />
+    <meta property="og:url" content="https://razasoftware.eu/photos/places.html" />
+    <link rel="canonical" href="https://razasoftware.eu/photos/places.html" />
+    <meta property="og:title" content="How Photo Places and GPS Are Found — Raza Photos" />
+    <meta
+      property="og:description"
+      content="How Raza Photos names the place a photo was taken from its GPS coordinates, and finds coordinates from a city name: two numbers out, a place name back, nothing about your photo along for the ride."
+    />
+    <meta property="og:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Photo Places and GPS Are Found — Raza Photos" />
+    <meta
+      name="twitter:description"
+      content="How Raza Photos names the place a photo was taken from its GPS coordinates, and finds coordinates from a city name: two numbers out, a place name back, nothing about your photo along for the ride."
+    />
+    <meta name="twitter:image" content="https://razasoftware.eu/assets/photos/all-devices.webp" />
+
+    <title>How Photo Places and GPS Are Found — Raza Photos</title>
+
+    <link rel="icon" type="image/png" href="/assets/photos/icon_web.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/components/explainer.css" />
+    <link rel="stylesheet" href="/components/nav.css" />
+    <link rel="stylesheet" href="/components/link-card.css" />
+    <link rel="stylesheet" href="/components/info-card.css" />
+    <link rel="stylesheet" href="/components/info-card-grid.css" />
+    <link rel="stylesheet" href="/components/callout-box.css" />
+    <link rel="stylesheet" href="/components/flow-step.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/priority-table.css" />
+    <script src="/components/nav.js" defer></script>
+    <script src="/components/footer.js" defer></script>
+    <script src="/components/link-card.js" defer></script>
+    <script src="/components/info-card.js" defer></script>
+    <script src="/components/info-card-grid.js" defer></script>
+    <script src="/components/callout-box.js" defer></script>
+    <script src="/components/flow-step.js" defer></script>
+    <script src="/components/hero-section.js" defer></script>
+  </head>
+  <body>
+    <raza-nav app="photos"></raza-nav>
+
+    <hero-section
+      eyebrow="Places"
+      heading="Two numbers go out. A place name comes back."
+      description="Raza Photos can name where a photo was taken from its GPS coordinates, and can put a photo on the map from the city it's filed under. This page explains how, and what goes along with the request."
+    ></hero-section>
+
+    <div class="content">
+      <div class="content-body">
+        <div style="margin-bottom: 40px">
+          <callout-box variant="blue" heading="In short">
+            <p>
+              Your Mac asks Apple Maps a simple question, such as "what is at these coordinates?" or "where is Vienna?", and gets a place name or a point on the map in return. The
+              only things that leave your Mac are the coordinates, or the city and country, and nothing else about the photo goes with them.
+            </p>
+          </callout-box>
+        </div>
+
+        <info-card variant="green" class="highlight-box" style="--card-padding: 32px 36px; margin-bottom: 40px" heading="The question never mentions your photo">
+          <p>
+            A request is just a pair of coordinates, or a city and country. It has no picture, no file name, no date and no name attached. Apple Maps answers a question about a place, and has no idea
+            there is a photo behind it.
+          </p>
+          <p>It is the same lookup that lets Maps name a spot you tap, built into every Mac and iPhone, so Raza Photos doesn't need an atlas, an account or a service of its own.</p>
+        </info-card>
+
+        <div class="section">
+          <h2>Two tools, one idea</h2>
+          <p class="desc">Both are in the Library menu on the Mac, and both work on the photos you have selected.</p>
+          <info-card-grid columns="2" class="featured">
+            <info-card
+              variant="alt"
+              heading="Fix Location from GPS"
+              description="Your photo has coordinates but no place name, or the wrong one. Raza Photos asks what is at those coordinates and fills in the country and city."
+            ></info-card>
+            <info-card
+              variant="alt"
+              heading="Add GPS from Location"
+              description="Your photo is filed under a city and country but has no coordinates. Raza Photos asks where that city is and places the photo at its center."
+            ></info-card>
+          </info-card-grid>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What goes out, what comes back</h2>
+          <p class="desc">
+            Looking up a place is a lookup in a very large table of the world's places, searched by position or by name. The table is too big to ship inside an app, which is why this one step asks
+            Apple Maps. Here is the whole exchange, in both directions.
+          </p>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>Goes out</th>
+                <th>Comes back</th>
+                <th>Saved to the file as</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fix Location from GPS</td>
+                <td>Latitude and longitude, rounded to three decimals</td>
+                <td>Country and city</td>
+                <td>IPTC Country and City, XMP <code>LocationCreated</code> (CountryName, City), ACDSee place categories</td>
+              </tr>
+              <tr>
+                <td>Add GPS from Location</td>
+                <td>The text "City, Country"</td>
+                <td>Latitude and longitude of the city's center</td>
+                <td>EXIF GPS latitude and longitude, with N/S and E/W references</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 20px">
+            That is the full list. Everything else about a photo, its pixels, file name, date, title, people and albums, takes no part in the exchange. The lookup runs on the coordinates, and works
+            exactly the same whether they came from a holiday photo or a number you typed in.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Rounding to about 100 meters</h2>
+          <p>
+            Before anything is asked, coordinates are rounded to three decimal places. That is a little blurrier than your GPS fix, and more than enough to name a city. It also makes
+            the work smaller, and the maths is pleasant.
+          </p>
+          <p>
+            One degree of latitude is about 111 kilometers on the ground, everywhere on Earth. Three decimal places is a thousandth of a degree, so each step is about <strong>111 meters</strong> north to
+            south. East to west the ground shrinks as you move away from the equator, by a factor of the cosine of the latitude. In Vienna, at 48° north, a thousandth of a degree of longitude is about
+            74 meters.
+          </p>
+          <p>
+            So 48.20849, 16.37208 and 48.20853, 16.37211, two photos taken a few steps apart, both round to 48.208, 16.372 and share one question. That is how a hundred photos from one beach turn into a single
+            lookup.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>How a place name is found</h2>
+          <p class="desc">This is Fix Location from GPS, step by step.</p>
+
+          <step-flow>
+            <flow-step icon="📍" heading="You select photos">
+              <p>Photos without GPS coordinates are skipped, and the dialog tells you how many. Raza Photos shows the rest on a map so you can see what you're about to fix.</p>
+            </flow-step>
+            <flow-step icon="🗺" heading="Photos at the same spot share one question">
+              <p>
+                Coordinates are rounded to about 100 meters, and photos that land in the same spot are grouped. A hundred photos from one beach need one lookup, not a hundred, so even a big
+                selection goes quickly.
+              </p>
+            </flow-step>
+            <flow-step icon="💬" heading="Apple Maps answers">
+              <p>For each spot it returns a country and a city. If it has nothing to say about a spot, such as open sea or somewhere remote, those photos are left exactly as they were.</p>
+            </flow-step>
+            <flow-step icon="📝" heading="The names are saved">
+              <p>
+                The country and city are stored in your library and written into the photo's file, as open metadata other apps can read. Nothing else about the file changes.
+                <a href="/photos/metadata-write.html" style="color: var(--blue); text-decoration: none; font-weight: 500">What gets written →</a>
+              </p>
+            </flow-step>
+          </step-flow>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>How coordinates are found</h2>
+          <p>
+            Add GPS from Location works the other way around. For each different city and country in your selection, Raza Photos asks Apple Maps where it is, and places the photos there. The result is
+            an <strong>approximate</strong> position at the city's center, not the exact spot where the photo was taken. It is enough to put a photo on the map and in the right city, and a real
+            GPS reading, or a pin you place yourself, is always better.
+          </p>
+          <p>
+            Before it starts, Raza Photos tells you how many photos will be placed, and how many already have coordinates that would be replaced. You confirm, or you don't.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What you need</h2>
+          <ul class="protected-list">
+            <li>An internet connection while the tool runs. Apart from the map tiles, everything else in Raza Photos works at home with the router off.</li>
+            <li>A Mac. The two tools are in the Mac's Library menu, and photos fixed there show up on your iPhone and iPad like any other change.</li>
+            <li>Nothing else: no account, no key and no extra app.</li>
+          </ul>
+          <div class="note" style="margin-top: 16px">
+            <strong>On iPhone and iPad,</strong> picking a spot on the map for a photo uses the same lookup to name the place. You see the pin you picked, so there is no mystery about where the name comes from.
+          </div>
+        </div>
+
+        <hr />
+
+        <info-card variant="dark" class="highlight-box" style="--card-padding: 32px 36px" heading="How it works technically">
+          <p>
+            Place names come from MapKit's <code>MKReverseGeocodingRequest</code>, and coordinates from <code>MKGeocodingRequest</code>. A result needs both a country and a city to be used. If either
+            is missing, the photo is left untouched.
+          </p>
+          <p>
+            Before any request, coordinates are rounded to three decimal places (about 111 meters of latitude) and used as a cache key, so each distinct spot is looked up once per run. The forward
+            direction groups photos by their city and country the same way, so each place is asked about once.
+          </p>
+          <p>
+            When a result comes back, the country and city are written to the library database and to the photo file in one step, in the IPTC <code>Country/PrimaryLocationName</code> and <code>City</code> fields, as an <code>Iptc4xmpExt:LocationCreated</code> structure in XMP, and as ACDSee place categories.
+            Coordinates found from a city name are written to the EXIF GPS dictionary as absolute values with <code>N/S</code> and <code>E/W</code> reference letters.
+          </p>
+        </info-card>
+
+        <div class="other-links">
+          <link-card
+            href="/photos/editing.html"
+            label="Editing"
+            heading="Fix one photo at a time"
+            description="Drag a pin to correct a single photo's location, from any device"
+          ></link-card>
+          <link-card
+            href="/photos/library-health.html"
+            label="Library Health"
+            heading="Find what's missing"
+            description="Filter photos without albums, events, place data, or GPS"
+          ></link-card>
+          <link-card href="/photos/metadata-write.html" label="See also" heading="Writing metadata" description="What gets saved into your files, and how"></link-card>
+          <link-card href="/privacy.html" label="Privacy" heading="Privacy policy" description="Nothing collected, nothing transmitted"></link-card>
+        </div>
+      </div>
+    </div>
+
+    <raza-footer></raza-footer>
+  </body>
+</html>

@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/components/flow-step.css" />
     <link rel="stylesheet" href="/components/footer.css" />
     <link rel="stylesheet" href="/components/hero-section.css" />
+    <link rel="stylesheet" href="/components/priority-table.css" />
     <link rel="stylesheet" href="/components/platform-screenshot.css" />
     <script src="/components/nav.js" defer></script>
     <script src="/components/footer.js" defer></script>
@@ -153,6 +154,107 @@
         <hr />
 
         <div class="section">
+          <h2>The maths of shrinking a photo</h2>
+          <p>
+            Making a thumbnail is one of the oldest tricks in graphics: keep far fewer pixels and throw the rest away. A photo from a 12 megapixel camera is 4032 by 3024 pixels, which is
+            12,192,768 of them. Fitted into a 320 pixel box it becomes 320 by 240, which is 76,800. That is about <strong>160 times fewer pixels</strong>.
+          </p>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Original</th>
+                <th>Thumbnail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pixels</td>
+                <td>4032 × 3024 (12.2 million)</td>
+                <td>320 × 240 (76,800)</td>
+              </tr>
+              <tr>
+                <td>Raw pixel data in memory</td>
+                <td>About 37 MB (3 bytes per pixel)</td>
+                <td>About 0.3 MB (4 bytes per pixel)</td>
+              </tr>
+              <tr>
+                <td>File on disk</td>
+                <td>Typically a few MB</td>
+                <td>About 20 KB</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 20px">
+            The memory row explains the 200 in the memory cache: 200 thumbnails of this size come to roughly 60 MB, small enough to keep around and large enough to cover a screenful of scrolling in
+            both directions.
+          </p>
+          <p>
+            Nothing here needs a server. It is a resize and a JPEG encode, work your Mac already does for every picture you see in Finder or Photos. Services that make thumbnails on their own servers
+            do it because they already hold your originals. When the originals stay in your own folders, the shrinking happens right next to them.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>What gets made for each kind of item</h2>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Source</th>
+                <th>Method</th>
+                <th>Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Photo</td>
+                <td>The image data in the original file</td>
+                <td>Image I/O downsampling, with orientation applied</td>
+                <td>320 px longest edge</td>
+              </tr>
+              <tr>
+                <td>Video</td>
+                <td>The first frame</td>
+                <td>AVFoundation image generator, with the track's rotation applied</td>
+                <td>320 px longest edge</td>
+              </tr>
+              <tr>
+                <td>Song</td>
+                <td>Cover art embedded in the file (ID3 attached picture, or MP4 <code>covr</code> atom), or a cover you picked and haven't saved yet</td>
+                <td>Image I/O downsampling</td>
+                <td>320 px in the grid, up to 1,200 px in Now Playing (not cached)</td>
+              </tr>
+              <tr>
+                <td>Photo of the Day widget</td>
+                <td>The current photo</td>
+                <td>Same downsampling, in its own cache</td>
+                <td>640 px longest edge</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Rotating without touching a pixel</h2>
+          <p>
+            A phone doesn't rotate a photo's pixels when you turn the camera. It records the orientation as a small number from 1 to 8 in the file's metadata, and every app is expected to apply it when
+            showing the picture. Raza Photos works the same way. When you rotate a photo, the new orientation is a value in your library that is written to the file's metadata when you save, and the pixels
+            never change.
+          </p>
+          <p>
+            Thumbnails follow the same rule. They are built upright using the file's own orientation, then turned by however many quarter turns your library says are needed on top of that. That is why a
+            rotated photo's thumbnail comes out rotated even before anything is saved.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
           <h2>What happens when the cache is full</h2>
           <p>
             Each time a new thumbnail is saved, the app checks the total. If it is over the limit, it removes the oldest thumbnails, oldest first by the time they were created, until the total is back under the limit. Lowering the limit in Settings triggers the same cleanup straight away.
@@ -237,7 +339,7 @@
             Each thumbnail is encoded as JPEG at quality 0.6 and written atomically as <code>&lt;UUID&gt;.jpg</code> in a <code>Thumbnails</code> folder inside the app's
             <code>Caches</code> directory, the one place the system is allowed to reclaim under disk pressure. Eviction sorts the folder by modification date and deletes from the oldest
             until the total is under the limit. A reader doesn't update that date, so the order is "oldest created", not "least recently viewed". The memory layer is an <code>NSCache</code>
-            with a count limit of 200.
+            with a count limit of 200, which the system may also empty on its own when memory runs short.
           </p>
           <p>
             The Settings screen shows the folder, its current size and a Clear button. You can open the folder in Finder from there and look at the files yourself.

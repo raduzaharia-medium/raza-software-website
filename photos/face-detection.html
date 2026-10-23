@@ -120,6 +120,24 @@
         <hr />
 
         <div class="section">
+          <h2>A face is a rectangle</h2>
+          <p>
+            Vision doesn't draw outlines or name anyone. It returns a rectangle for each face, four numbers: where the rectangle starts, and how wide and tall it is. Each number is a fraction of the photo,
+            from 0 to 1, with the origin in the bottom-left corner. A box that starts at 0.25 across and is 0.1 wide covers the same part of the picture whether the photo is 4,000 pixels wide or 400. That
+            is why the same box can be stored once and used at any size.
+          </p>
+          <p>
+            Other apps draw their boxes differently. ACDSee and the standard metadata region format both measure from the top-left corner and mark a box by its center point. Raza Photos converts in
+            both directions, so a face tagged in another app lands in the right place here, and a face tagged here lands in the right place there.
+          </p>
+          <p>
+            Before a face is compared, it is cropped out of the full-size photo with <strong>15% extra room</strong> on each edge. A snug crop loses the hairline and the chin, and those help tell people apart.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
           <h2>What a fingerprint is</h2>
           <p>
             Think of how a map describes a city with two numbers, latitude and longitude. Two numbers are enough to place any city on the map, and once every city has its place, you can
@@ -227,6 +245,38 @@
         <hr />
 
         <div class="section">
+          <h2>How faces end up in groups</h2>
+          <p>
+            Every face in your selection gets a fingerprint, and then the grouping is a simple walk. Take the first face that isn't in a group yet and start one. Find every face within
+            0.22 of it and add them. Then do the same from each face you just added, and keep going until nothing new turns up.
+          </p>
+          <p>
+            Picture four faces. A and B are 0.15 apart, B and C are 0.20 apart, but A and C are 0.35 apart, too far to match directly. D is 0.9 away from all of them. Starting from A, the walk adds B,
+            then from B it adds C, so A, B and C end up together. D starts a group of its own. This is how one person can be grouped across years: each photo is close to the next, even if the first and last
+            aren't close to each other.
+          </p>
+          <p>
+            One rule keeps it sensible. If both faces in a pair already have names, they must be the same name to match. Two differently named people who happen to look alike will never be merged.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Not doubling up on faces that are already tagged</h2>
+          <p>
+            Many photos arrive with faces already tagged, by another app or by an earlier session. Raza Photos never wants two boxes on the same face, so before it adds a face it measures how much the new
+            box overlaps each existing one. The measure is simple: the area where the two boxes overlap, divided by the area they cover together.
+          </p>
+          <p>
+            Two 100 by 100 boxes that overlap in a 60 by 100 strip share 6,000 units of area, and together cover 14,000. That is 6,000 ÷ 14,000, about 0.43. Anything above 0.3 counts as the same face, and the
+            existing tag wins. A name you or another app wrote stays as the authority, and Raza Photos only adds faces that nothing has tagged yet.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
           <h2>What is kept, and what isn't</h2>
           <info-card-grid columns="2" class="featured">
             <info-card variant="alt" heading="Kept: names and boxes" description="Who is in each photo and where their face is, in your library and, after you save, in the file"></info-card>
@@ -245,8 +295,32 @@
         <div class="section">
           <h2>What gets written to your files</h2>
           <p>
-            When you choose Save Metadata, each tagged person is written into the photo as XMP: the name in <code>PersonInImage</code>, and the face box as a region, in the ACDSee region format as well.
-            Faces already tagged by another app, ACDSee included, are read first and kept as they are. Raza Photos only adds faces that no existing tag already covers.
+            When you choose Save Metadata, each tagged person is written into the photo in the formats other apps already understand:
+          </p>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>What</th>
+                <th>Where it goes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Person names</td>
+                <td>XMP <code>Iptc4xmpExt:PersonInImage</code></td>
+              </tr>
+              <tr>
+                <td>Face boxes and names</td>
+                <td>Standard region metadata (<code>mwg-rs</code>), the format Lightroom and most photo managers read</td>
+              </tr>
+              <tr>
+                <td>Face boxes and names, ACDSee style</td>
+                <td>ACDSee regions, for ACDSee users</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 20px">
+            Faces already tagged by another app, ACDSee included, are read first and kept as they are.
           </p>
           <p>
             Nothing else about the photo changes, and the pixels are never touched.
@@ -269,6 +343,22 @@
           <p style="margin-top: 20px">
             It also doesn't look beyond your selection. It compares only the faces in the photos you picked, including any already tagged in those photos, so it won't recognize someone just
             because you tagged them elsewhere last month. Selecting more photos of the same person in one go gives it more to group.
+          </p>
+        </div>
+
+        <hr />
+
+        <div class="section">
+          <h2>Why none of this needs a cloud</h2>
+          <p>
+            Take the steps apart and look at what each one is. Finding a rectangle is a model running over a picture. Fingerprinting is the same kind of model, producing 768 numbers. Grouping is
+            subtracting numbers and comparing the result to 0.22: 768 subtractions for each pair of faces. The two models are the heavy part, but they are still just arithmetic, the kind your phone's
+            chip is built for, and a phone can do it in the time between two taps.
+          </p>
+          <p>
+            Plenty of services upload your photos for this step, and nothing about the maths asks for that. A bigger model on a bigger machine can be slightly better at it, but the job doesn't depend on one.
+            We're glad Apple builds the models into iOS and macOS, because it makes this simple. Without them, the same job could still be done on your own device, with a small open model shipped inside
+            the app. It would take more work, and it would still never need to leave the room.
           </p>
         </div>
 
