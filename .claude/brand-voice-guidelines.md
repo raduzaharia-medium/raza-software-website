@@ -1,7 +1,7 @@
 # Raza Software Brand Voice Guidelines
 
 ## Document Info
-- Version: 6 (bolder, more confident voice and named comparisons, 2026-10-22)
+- Version: 6 (bolder, more confident voice and named comparisons, 2026-10-22; mechanism-explainer voice added 2026-10-23)
 - Replaces: v5 (`brand-voice-guidelines-2026-10-08-v5.md`). Earlier snapshots: v4 (`...-2026-10-08-v4.md`), v3 (`...-2026-10-08-v3.md`), v2 (`...-2026-10-07-v2.md`), v1 (`...-2026-10-07.md`)
 - Sources: the website copy in this repo, and direct founder input throughout October 2026 (intent, audience, architecture, pricing, security behavior, product facts)
 - Overall confidence: High for voice, messaging and facts about the products; Medium-Low for contexts beyond the website (social, outreach, App Store), which are inferred
@@ -75,6 +75,15 @@ Voice is constant across all content.
 
 **Expectation-first.** Begin with what a reasonable person expects, then say plainly what happens instead. "Cloud storage, which most people expect to mean 'move it off my device', ends up meaning 'keep a copy on every device that has room.'" "Most of us expect files that are on our phone to show up in the app that plays music." The frustration is real and shared, and the page names it without raising its voice.
 
+**Mechanism explainers (added 2026-10-23; the voice of `thumbnails`, `photos/face-detection` and `photos/places`, with the metadata pages as the depth reference).** Pages that explain how a feature is made, so a curious reader sees the trick behind the magic and relaxes. The reader should finish thinking "ah, it's just local maths, nothing needs to go to a cloud."
+- **Show the real mechanism, with the real numbers.** API names, formats, thresholds, worked arithmetic (320 px is about 160 times fewer pixels; 768 numbers per face; 0.22 against about 1.2 for unrelated photos; three decimals is about 111 meters). Tables for formats, fields and what goes where. A small diagram where a picture beats a paragraph.
+- **Explain it for everyone, in two layers.** A plain image first (a map's two coordinates, sorting photos on a table), then the technical detail underneath it, with the maths unafraid and unpacked. Never skip the technical layer to stay friendly, never skip the friendly layer to look rigorous.
+- **Calm, nonchalant confidence.** The tone of someone who finds the trick pleasant, not someone defending a claim. Say what the thing is, how it is made, what it keeps and what it never sends. No fear, no alarm, no apology.
+- **Unmask the cloud default, gently.** Many services do this work on their servers because they already hold your originals. The maths never required it: a resize, a few hundred numbers, a lookup. We are glad when the platform ships the model, and the same job could be done on the device without it. Say this as an observation about the maths, never as an attack on named companies.
+- **Name exactly what leaves the device, and nothing more.** Where something does (a place lookup sends coordinates, or "City, Country", and gets a name back), say what goes out and what comes back in one plain table or sentence. Avoid sentences that only reassure ("your photos stay where they are"), because they raise a question they don't answer.
+- **Don't narrate the checking.** Verify claims in the work (code, measurements, vendor docs), then write confident copy with the result. Never "we checked", "we measured", "Apple hasn't published" or similar audit language in the copy. Numbers stay when they help the reader; their provenance doesn't.
+- **Layout:** "In short" box, a green "what it never touches" card, a numbered flow, tables, a dark "How it works technically" box at the end, and link cards to the related pages. Link each page from the place in the app where the curious reader is: the settings row or dialog that raises the question (info button, default `helpURL`), translated in all app languages.
+
 **Curiosity rule.** It is fine to step over the line occasionally, such as a provocative headline, if (1) the claim is literally true, (2) the page explains it right away, and (3) nothing contradicts the honesty pillar.
 
 ## Personality
@@ -133,6 +142,7 @@ Voice is constant across all content.
 - Don't describe security as authentication, pairing or device trust. The "trust this peer?" prompt was an experiment that was removed. It must not be mentioned anywhere.
 - Never claim "no outbound requests", "works offline" or "cannot be accessed remotely" as absolutes. Optional Tailscale connects your own devices directly, and Photos uses Apple Maps. Use: "Your library never goes to any server, ours or anyone's." / "Songs talks only to your own devices."
 - Always say "secure" with a scope ("Not reachable from the internet").
+- **"Nothing is transmitted" is read in its ordinary sense (2026-10-23):** no telemetry, no photo uploads, no screen capture, no activity or location logging, no library counts. A place lookup sends only coordinates (or a city and country) to Apple Maps and is not treated as an exception to it. State the lookup plainly where it is the topic (privacy, places) and don't bolt it on as a caveat elsewhere.
 
 ## Version requirements
 The apps need macOS 26 and iOS 26 or later, because they use APIs Apple only made available in those versions. Say it near download buttons, explain why once, plainly, and tell people how to check their version. Never leave it for the App Store to reveal.
@@ -156,6 +166,10 @@ The apps need macOS 26 and iOS 26 or later, because they use APIs Apple only mad
 - Metadata write-back is lossless and embedded in the file. Photos: JPEG, PNG, HEIC/HEIF, PSD, TIFF (not AVIF). Video: QuickTime/MP4 atoms. Audio: MP3 (ID3v2.3) and M4A/MP4 atoms. WAV, FLAC, AIFF and raw AAC are skipped. Song language is stored for MP3 only.
 - Playback and photos are streamed. The phone keeps a thumbnail cache (1 GB default, user-adjustable, clearable). The story is "your library never lands on your phone" (a hundred gigabytes on the Mac stays on the Mac). Do not put the thumbnail cache in headlines, heroes or story copy: thumbnails are not the library, and a footnote there kills the claim. Mention the cache only where precision is the topic (settings, technical pages).
 - Faces are detected on the device with Apple's Vision framework.
+- **Mechanisms (verified against the source and measured on macOS 26, 2026-10-23):**
+  - *Thumbnails:* 320 px longest edge, JPEG quality 0.6, about 20 KB for a typical photo, saved as `<UUID>.jpg` in the app's Caches folder; built with Image I/O (photos, with orientation applied), AVFoundation (first video frame) or embedded cover art (songs). Memory cache holds 200. Oldest-created files are removed first when the limit (500 MB, 1 GB default, 2 GB, 4 GB) is exceeded. Full-size photos and Now Playing artwork (up to 1,200 px) are not cached on disk. The widget keeps its own 640 px copy.
+  - *Faces:* runs only on photos the user selects. Vision's face rectangles, a 15% padded crop, a Vision feature print per face (768 floats, length 1, plain Euclidean distance), same person if distance is 0.22 or less, grouped by transitive closure, differently named faces are never merged, new boxes overlapping an existing face by more than 30% (IoU) are dropped. Fingerprints and crops are not stored. Names go to XMP `PersonInImage`, boxes to MWG and ACDSee regions on Save Metadata.
+  - *Places:* MapKit reverse geocoding (coordinates rounded to 3 decimals, about 111 m, one lookup per distinct spot) and forward geocoding (city and country text, results are approximate city centers). The two fix tools save straight to the file when they run, writing IPTC Country/City, XMP `LocationCreated` and ACDSee categories, or EXIF GPS.
 - CarPlay: there is no CarPlay app yet (it is a backlog item and needs an Apple entitlement). Playback gives lock screen and Control Center controls. Do not write "CarPlay" as a feature.
 - The stray GPL v3 LICENSE file was deleted from the source repository (2026-10-22). The apps are closed source.
 - Founder-tested: Raza Songs plays through a real car over Bluetooth every day. CarPlay itself is untested and has no app.
@@ -198,12 +212,15 @@ Voice is constant. Tone flexes by context. Website contexts are evidenced; other
 | Privacy & security pages | Medium-High | Low (calm) | Medium-High | State facts precisely; invite verification |
 | Support / FAQ | Low-Medium | Warm | Medium | Diagnose, fix, explain why; sign as the developer |
 | Comparison / local-first explainers | Medium | Medium | Medium | Contrast with facts; include the downside |
+| Mechanism explainers (metadata, thumbnails, faces, places) | Medium | Medium, calm | High | Show the real mechanism and numbers; "it's just local maths" |
 | App Store description *(inferred)* | Medium | Medium | Low | Same promises, shorter; lead with benefit |
 | Social media *(inferred)* | Low | Medium-High | Low | One concrete claim and a curiosity hook |
 | Cold outreach *(inferred)* | Medium | Medium | Low | Short, specific benefit; no pressure |
 | Proposals / press *(inferred)* | Medium-High | Low-Medium | Medium-High | Architecture-first facts |
 
 **Product & marketing pages.** Confident, plain, with a hook; selling is allowed and expected. Open with a short declarative claim, then a one-line elaboration. Name the mechanism, use ✗/✓ contrasts, end with a clear call to action. No unproven superlatives, fake urgency, or a hook the page doesn't pay off.
+
+**Mechanism explainers.** See "Mechanism explainers" in Part 1. Technical depth is the point: tables, thresholds, API names, worked examples, one friendly image before each technical layer. Confident and nonchalant, never an audit.
 
 **Privacy & security.** Calm, precise, transparent. Say what the page is not, then state the fact. List what the app does not do, explain each permission, offer a way to verify. No euphemism, "we take your privacy seriously", or unscoped "100% secure". Model: "Your home network is already a trusted perimeter. Our apps treat it as one, rather than adding a second perimeter on top of it."
 
@@ -286,6 +303,7 @@ Pages built for discoverability, because search results for the household questi
 - **Search Console:** export Queries and Pages once the new pages have had a week or two, to find the position-16 query and compare it with what the new pages target.
 - **Translations:** the apps have five languages and the site has one. German first, then French.
 - **App Store listing copy:** draft after the site wording settles, and check that price and wording match the site.
+- **Mechanism pages (2026-10-23):** `thumbnails`, `photos/face-detection` and `photos/places` are built and linked from the apps (cache settings, Tag Faces, Fix Location, Adding GPS dialogs). Candidates next: how moved or renamed files are handled on rescan, how dates are chosen when sources disagree, and a small "How it works" hub linking all of them.
 - **Pricing:** settled (2026-10-08). See Pricing language.
 - **Inferred contexts:** App Store text, social posts and outreach drafts would replace the inferred tone rows with evidence.
 - **Not covered:** customer conversations (support emails, reviews) and visual identity.
